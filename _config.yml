@@ -8,9 +8,7 @@
 # Site settings
 title: The Dude
 email: 472239548@qq.com
-description:  Write an awesome description for your new site here. You can edit this
-              line in _config.yml. It will appear in your document head meta (for
-              Google search results) and in your feed.xml site description.
+description:  F2E
 baseurl: "./" # the subpath of your site, e.g. /blog
 url: "http://lijiahao8898.github.io" # the base hostname & protocol for your site
 twitter_username: jekyllrb
