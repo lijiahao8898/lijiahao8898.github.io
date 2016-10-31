@@ -9,7 +9,7 @@
 title: The Dude
 email: 472239548@qq.com
 description:  F2E
-baseurl: "./" # the subpath of your site, e.g. /blog
+baseurl: "https://lijiahao8898.github.io/" # the subpath of your site, e.g. /blog
 url: "http://lijiahao8898.github.io" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
