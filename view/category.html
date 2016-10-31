@@ -1,0 +1,12 @@
+---
+layout: default
+title: 我的Blog
+---
+
+<div class='category'>
+    <ul>
+        {% for cat in site.categories %}
+        <li><a href="{{ site.BASE_PATH }}/category.html#{{ cat[0] }}">{{ cat[0] }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
