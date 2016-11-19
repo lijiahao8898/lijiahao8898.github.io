@@ -1,11 +1,6 @@
 ---
-
-layout: default
-title: 你好，世界
-
+layout: post
+title: hello world
 ---
-## {{ page.title }}
 
-### 我的文章
-
-#### {{ page.date | date_to_string }}
+hello world

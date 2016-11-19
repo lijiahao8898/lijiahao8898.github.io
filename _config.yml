@@ -1,1 +1,22 @@
-baseurl: /lijiahao8898.github.io
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+
+# Setup
+title:               'Lijiahao8898'
+tagline:             'F2E'
+description:         'make progress every day'
+url:                 http://lanyon.getpoole.com
+baseurl:             ''
+paginate:            1
+gems:                [jekyll-paginate]
+
+# About/contact
+author:
+  name:              lijiahao
+  url:               https://lijiahao8898.io
+  email:             '#'
+
+# Custom vars
+version:             1.0.0
