@@ -1,6 +1,7 @@
 ---
 layout: post
 title: 学习知识资源网站的整理
+categories: [学习]
 ---
 
 学习知识资源网站的整理

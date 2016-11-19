@@ -32,6 +32,20 @@
 
     {% endfor %}
 
+    <!-- 类目 -->
+
+    {% for category in site.categories %}
+
+    <a class="sidebar-nav-item"><span>{{ category | first }}</span><span>({{ category | last | size }})</span></a>
+
+      {% for post in category.last %}
+
+      <a class="sidebar-nav-item {% if page.url == post.url %} active{% endif %}" href="{{ post.url }}">{{ post.title }}&nbsp;&nbsp;{{ post.date | date:"%d/%m/%Y"}}</a>
+
+      {% endfor %}
+
+    {% endfor %}
+
     <!--<a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a>-->
 
     <!--<a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>-->
