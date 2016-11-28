@@ -10,6 +10,7 @@ description:         'make progress every day'
 url:                 http://lanyon.getpoole.com
 baseurl:             ''
 paginate:            1
+paginate_path:       "page:num"
 gems:                [jekyll-paginate]
 
 # About/contact

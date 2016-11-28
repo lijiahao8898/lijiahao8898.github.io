@@ -40,7 +40,7 @@
 
       {% for post in category.last %}
 
-      <a class="sidebar-nav-item {% if page.url == post.url %} active{% endif %}" href="{{ post.url }}">{{ post.title }}&nbsp;&nbsp;{{ post.date | date:"%d/%m/%Y"}}</a>
+      <a class="sidebar-nav-item {% if page.url == post.url %} active{% endif %}" href="{{ post.url }}">{{ post.title }}&nbsp;&nbsp;<span class="date">{{ post.date | date:"%d/%m/%Y"}}</span></a>
 
       {% endfor %}
 
