@@ -19,26 +19,8 @@ title: 主页
     {% endfor %}
 </div>
 
-<!--<div class="pagination">-->
-    <!--{% if paginator.total_pages > 1 %}-->
-    <!--&lt;!&ndash; 分页代码 &ndash;&gt;-->
-        <!--{% if paginator.next_page %}-->
-            <!--<a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">上一页</a>-->
-        <!--{% else %}-->
-            <!--<span class="pagination-item older">上一页</span>-->
-        <!--{% endif %}-->
-        <!--{% if paginator.previous_page %}-->
-            <!--{% if paginator.page == 2 %}-->
-                <!--<a class="pagination-item newer" href="{{ site.baseurl }}/">下一页</a>-->
-            <!--{% else %}-->
-                <!--<a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">下一页</a>-->
-            <!--{% endif %}-->
-        <!--{% else %}-->
-            <!--<span class="pagination-item newer">下一页</span>-->
-        <!--{% endif %}-->
-    <!--{% endif %}-->
-<!--</div>-->
 
+<!-- 翻页部分 -->
 <div class="pagination">
 
     {% if paginator.total_pages > 1 %}
@@ -52,7 +34,7 @@ title: 主页
             {% endif %}
 
             {% else %}
-                <span class="pagination-item newer"> > </span>
+                <span class="pagination-item newer"> < </span>
             {% endif %}
 
         {% for page in (1..paginator.total_pages) %}
