@@ -78,6 +78,7 @@ http://www.bootcss.com/p/icheck/
 ## 干货
 1. [github issues](https://github.com/amfe/article/issues)：https://github.com/amfe/article/issues
 2. [最新最好的bootstrap免费主题](http://www.open-open.com/news/view/1bde2f8)：http://www.open-open.com/news/view/1bde2f8
+3. [淘宝前端团队-视频播放那些事](http://taobaofed.org/blog/2016/05/23/video-player/)：http://taobaofed.org/blog/2016/05/23/video-player/
 
 ## 外链
 1. [最全的前端知识整理](http://www.jianshu.com/p/c3dae0951f74)：http://www.jianshu.com/p/c3dae0951f74
