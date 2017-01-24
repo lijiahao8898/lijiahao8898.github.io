@@ -11,7 +11,7 @@
 
   <title>
     
-      hello world &middot; Lijiahao8898
+      node单个文件压缩-js&css &middot; Lijiahao8898
     
   </title>
 
@@ -93,31 +93,11 @@
 
     
 
-      
-
-        
-
-      
-
-    
-
-      
-
-        
-
-      
-
-    
-
     <!-- 类目 -->
 
     
 
-    <a class="sidebar-nav-item"><span>study</span><span>(4)</span></a>
-
-      
-
-      <a class="sidebar-nav-item  active" href="/2016/11/11/hello-world">hello world&nbsp;&nbsp;<span class="date">11/11/2016</span></a>
+    <a class="sidebar-nav-item"><span>study</span><span>(3)</span></a>
 
       
 
@@ -135,11 +115,41 @@
 
     
 
+    <a class="sidebar-nav-item"><span>git</span><span>(1)</span></a>
+
+      
+
+      <a class="sidebar-nav-item " href="/2016/08/22/git">git&nbsp;&nbsp;<span class="date">22/08/2016</span></a>
+
+      
+
+    
+
+    <a class="sidebar-nav-item"><span>node</span><span>(1)</span></a>
+
+      
+
+      <a class="sidebar-nav-item  active" href="/2016/11/11/hello-world">node单个文件压缩-js&css&nbsp;&nbsp;<span class="date">11/11/2016</span></a>
+
+      
+
+    
+
     <a class="sidebar-nav-item"><span>学习</span><span>(1)</span></a>
 
       
 
       <a class="sidebar-nav-item " href="/2016/11/19/study-knowledge">F2E整理&nbsp;&nbsp;<span class="date">19/11/2016</span></a>
+
+      
+
+    
+
+    <a class="sidebar-nav-item"><span>Q&A</span><span>(1)</span></a>
+
+      
+
+      <a class="sidebar-nav-item " href="/2017/01/24/question">问题整理&nbsp;&nbsp;<span class="date">24/01/2017</span></a>
 
       
 
@@ -152,7 +162,7 @@
 
   <div class="sidebar-item">
     <p>
-      &copy; 2016. All rights reserved.
+      &copy; 2017. All rights reserved.
     </p>
   </div>
 </div>
@@ -181,15 +191,50 @@
   <div class="container content">
 
     <div class="post">
-  <h1 class="post-title">hello world</h1>
+  <h1 class="post-title">node单个文件压缩-js&css</h1>
   <span class="post-date">11 Nov 2016</span>
-  <p>hello world</p>
+  <h1 id="node">node</h1>
+
+<h3 id="node--js">1 - node 压缩 js</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 安装
+npm install uglify-js -g 或者 sudo npm install uglify-js -g
+
+// 压缩
+uglifyjs *.js -o *.min.js
+
+uglifyjs *.js -m -o *.min.js
+
+ps -m 将参数压缩成a.b.c
+
+</code></pre>
+</div>
+
+<h3 id="node--css">2 - node 压缩 css</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 安装
+npm install clean-css-cli -g 或者 sudo npm install clean-css-cli -g
+
+// 压缩
+cleancss -o *.min.css *.css
+
+</code></pre>
+</div>
 
 </div>
 
 <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2017/01/24/question">
+            问题整理
+            <small>24 Jan 2017</small>
+          </a>
+        </h3>
+      </li>
     
       <li>
         <h3>
@@ -202,18 +247,9 @@
     
       <li>
         <h3>
-          <a href="/2014/01/02/introducing-lanyon">
-            Introducing Lanyon
-            <small>02 Jan 2014</small>
-          </a>
-        </h3>
-      </li>
-    
-      <li>
-        <h3>
-          <a href="/2014/01/01/example-content">
-            Example content
-            <small>01 Jan 2014</small>
+          <a href="/2016/08/22/git">
+            git
+            <small>22 Aug 2016</small>
           </a>
         </h3>
       </li>

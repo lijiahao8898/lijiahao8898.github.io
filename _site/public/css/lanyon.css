@@ -93,7 +93,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media (min-width: 56em) {
   .container {
-    max-width: 38rem;
+    max-width: 50rem;
+  }
+}
+@media (min-width: 70em) {
+  .container {
+    max-width: 70rem;
   }
 }
 
@@ -381,6 +386,7 @@ a.sidebar-nav-item:focus {
  */
 
 .pagination {
+  margin-bottom: 0.75rem;
   overflow: hidden; /* clearfix */
   margin-left: -1rem;
   margin-right: -1rem;
@@ -391,7 +397,7 @@ a.sidebar-nav-item:focus {
 
 /* Pagination items can be `span`s or `a`s */
 .pagination-item {
-  display: block;
+  /*display: block;*/
   padding: 1rem;
 }
 .pagination-item:first-child {
@@ -407,10 +413,10 @@ a.pagination-item:hover {
   .pagination {
     margin: 3rem 0;
   }
-  .pagination-item {
-    float: left;
-    width: 50%;
-  }
+  /*.pagination-item {*/
+    /*float: left;*/
+    /*width: 50%;*/
+  /*}*/
   .pagination-item:first-child {
     margin-bottom: 0;
     border-top-left-radius:    4px;

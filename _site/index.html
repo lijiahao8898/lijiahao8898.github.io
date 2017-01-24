@@ -93,31 +93,11 @@
 
     
 
-      
-
-        
-
-      
-
-    
-
-      
-
-        
-
-      
-
-    
-
     <!-- 类目 -->
 
     
 
-    <a class="sidebar-nav-item"><span>study</span><span>(4)</span></a>
-
-      
-
-      <a class="sidebar-nav-item " href="/2016/11/11/hello-world">hello world&nbsp;&nbsp;<span class="date">11/11/2016</span></a>
+    <a class="sidebar-nav-item"><span>study</span><span>(3)</span></a>
 
       
 
@@ -135,11 +115,41 @@
 
     
 
+    <a class="sidebar-nav-item"><span>git</span><span>(1)</span></a>
+
+      
+
+      <a class="sidebar-nav-item " href="/2016/08/22/git">git&nbsp;&nbsp;<span class="date">22/08/2016</span></a>
+
+      
+
+    
+
+    <a class="sidebar-nav-item"><span>node</span><span>(1)</span></a>
+
+      
+
+      <a class="sidebar-nav-item " href="/2016/11/11/hello-world">node单个文件压缩-js&css&nbsp;&nbsp;<span class="date">11/11/2016</span></a>
+
+      
+
+    
+
     <a class="sidebar-nav-item"><span>学习</span><span>(1)</span></a>
 
       
 
       <a class="sidebar-nav-item " href="/2016/11/19/study-knowledge">F2E整理&nbsp;&nbsp;<span class="date">19/11/2016</span></a>
+
+      
+
+    
+
+    <a class="sidebar-nav-item"><span>Q&A</span><span>(1)</span></a>
+
+      
+
+      <a class="sidebar-nav-item " href="/2017/01/24/question">问题整理&nbsp;&nbsp;<span class="date">24/01/2017</span></a>
 
       
 
@@ -152,7 +162,7 @@
 
   <div class="sidebar-item">
     <p>
-      &copy; 2016. All rights reserved.
+      &copy; 2017. All rights reserved.
     </p>
   </div>
 </div>
@@ -181,6 +191,102 @@
   <div class="container content">
 
     <div class="posts">
+    
+    <div class="post">
+        <h1 class="post-title">
+            <a href="/2017/01/24/question">
+                问题整理
+            </a>
+        </h1>
+
+        <span class="post-date">24 Jan 2017</span>
+
+        <div class="highlighter-rouge"><pre class="highlight"><code>1 - 微信中不能直接打开itunes的下载地址的问题 ？
+
+知乎文章：
+https://www.zhihu.com/question/24029212
+
+解决方案：
+方案一，申请应用宝，先跳转到应用宝页面，再点击下载根据设备的不同转去AppStore或是Android的应用宝下载地址。
+方案二，在页面前端做处理，如果无法跳转到AppStore就提示用户在微信里手动选择用Safari打开页面。
+方案三，二百二维码里面配置：http://hotapp.cn/?src=http://www.hao2b.cn
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>2 - 防止网页被恶意嵌套入其他的网页中
+
+&lt;script type="text/javascript"&gt;
+if (window!=top)                          // 判断当前的window对象是否是top对象
+top.location.href =window.location.href;  // 如果不是，将top对象的网址自动导向被嵌入网页的网址
+&lt;/script&gt;
+
+// 升级版
+try{
+
+　　top.location.hostname;
+
+　　if (top.location.hostname != window.location.hostname) {
+
+　　　　top.location.href =window.location.href;
+
+　　}
+
+}
+
+catch(e){
+
+　　top.location.href = window.location.href;
+
+}
+
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>3 - 在iPhone中在li标签下的click事件无效
+
+解决方案：
+
+方案一，在对应的css中添加cursor：pointer样式
+方案二，将li标签改成a标签
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>4 - 时间日期格式问题
+
+// 时间处理 no = ‘2016-12-12 11:48:20'
+formatTime: function(no){
+    var date= new Date(no);
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1 &lt; 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+    var datetime = date.getDate() &lt; 10 ? "0" + date.getDate() : date.getDate();
+    return year + "-" + month + "-" + datetime;
+}
+
+表象：
+上述时间处理在PC游览器端呈现的是正常的。
+在IOS iphone6s 里面 展现出invalid date的报错
+
+解决方案：
+// 时间处理 no = ‘2016-12-12 11:48:20’
+formatTime: function(no){
+    no = no.replace(/-/g,':').replace(' ',':');
+    no = no.split(':’);
+    var date = new Date(no[0],(no[1]-1),no[2],no[3],no[4],no[5]);
+    var date= new Date(dateTime);
+    var year = date.getFullYear();
+    var month = date.getMonth() + 1 &lt; 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+    var datetime = date.getDate() &lt; 10 ? "0" + date.getDate() : date.getDate();
+    return year + "-" + month + "-" + datetime;
+}
+将no 日期格式转换成 ‘2016-12-12T11:48:20’ 或者 ‘2016/12/12 11:48:20’
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>5 - htm5 无刷新改变url地址
+</code></pre>
+</div>
+
+    </div>
     
     <div class="post">
         <h1 class="post-title">
@@ -299,6 +405,45 @@ http://www.bootcss.com/p/icheck/</li>
 
     </div>
     
+    <div class="post">
+        <h1 class="post-title">
+            <a href="/2016/11/11/hello-world">
+                node单个文件压缩-js&css
+            </a>
+        </h1>
+
+        <span class="post-date">11 Nov 2016</span>
+
+        <h1 id="node">node</h1>
+
+<h3 id="node--js">1 - node 压缩 js</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 安装
+npm install uglify-js -g 或者 sudo npm install uglify-js -g
+
+// 压缩
+uglifyjs *.js -o *.min.js
+
+uglifyjs *.js -m -o *.min.js
+
+ps -m 将参数压缩成a.b.c
+
+</code></pre>
+</div>
+
+<h3 id="node--css">2 - node 压缩 css</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 安装
+npm install clean-css-cli -g 或者 sudo npm install clean-css-cli -g
+
+// 压缩
+cleancss -o *.min.css *.css
+
+</code></pre>
+</div>
+
+    </div>
+    
 </div>
 
 
@@ -313,23 +458,15 @@ http://www.bootcss.com/p/icheck/</li>
 
         
             
-                <span class="active">1</span>
+                <span class="active pagination-item">1</span>
             
         
             
-                <a href="/page2">2</a>
+                <a class="pagination-item" href="/page2">2</a>
             
         
             
-                <a href="/page3">3</a>
-            
-        
-            
-                <a href="/page4">4</a>
-            
-        
-            
-                <a href="/page5">5</a>
+                <a class="pagination-item" href="/page3">3</a>
             
         
 

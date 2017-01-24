@@ -52,11 +52,11 @@ html {
   font-size: 16px;
   line-height: 1.5;
 }
-@media (min-width: 38em) {
-  html {
-    font-size: 20px;
-  }
-}
+/*@media (min-width: 38em) {*/
+  /*html {*/
+    /*font-size: 20px;*/
+  /*}*/
+/*}*/
 
 body {
   color: #515151;
@@ -156,7 +156,7 @@ code {
   padding: .25em .5em;
   font-size: 85%;
   color: #bf616a;
-  background-color: #f9f9f9;
+  background-color: #d8d5d5;
   border-radius: 3px;
 }
 pre {
@@ -170,7 +170,7 @@ pre {
   white-space: pre-wrap;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: #f9f9f9;
+  background-color: #d8d5d5;
 }
 pre code {
   padding: 0;
@@ -286,7 +286,7 @@ tbody tr:nth-child(odd) th {
  */
 
 .container {
-  max-width: 38rem;
+  max-width: 50rem;
   padding-left:  1rem;
   padding-right: 1rem;
   margin-left:  auto;
@@ -387,6 +387,7 @@ tbody tr:nth-child(odd) th {
  */
 
 .pagination {
+  margin-bottom: 0.75rem;
   overflow: hidden; /* clearfix */
   margin-left: -1rem;
   margin-right: -1rem;
@@ -397,7 +398,7 @@ tbody tr:nth-child(odd) th {
 
 /* Pagination items can be `span`s or `a`s */
 .pagination-item {
-  display: block;
+  /*display: block;*/
   padding: 1rem;
 }
 .pagination-item:first-child {
@@ -413,10 +414,10 @@ a.pagination-item:hover {
   .pagination {
     margin: 3rem 0;
   }
-  .pagination-item {
-    float: left;
-    width: 50%;
-  }
+  /*.pagination-item {*/
+    /*float: left;*/
+    /*width: 50%;*/
+  /*}*/
   .pagination-item:first-child {
     margin-bottom: 0;
     border-top-left-radius:    4px;
