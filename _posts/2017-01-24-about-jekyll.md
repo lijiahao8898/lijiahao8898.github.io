@@ -1,3 +1,9 @@
+---
+layout: post
+title: jekyll
+categories: [jekyll]
+---
+
 _config.yml :存储配置数据。把配置写在这个文件里面，可以让你不用在命令行中写。
 _drafts:草稿，格式是:没有日期.md
 _includes:包含一些模板，可以重复利用。你可以用通过{% include file.ext %}包含_includes/file.ext文件{这种方式是liquid语法}
