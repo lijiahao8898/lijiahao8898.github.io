@@ -97,59 +97,73 @@
 
     
 
-    <a class="sidebar-nav-item"><span>study</span><span>(3)</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;study</span><span class="category-number">&nbsp;—3&nbsp;]</span></a>
 
       
 
-      <a class="sidebar-nav-item " href="/2014/01/02/introducing-lanyon">Introducing Lanyon&nbsp;&nbsp;<span class="date">02/01/2014</span></a>
+      <a class="sidebar-nav-item " href="/2014/01/02/introducing-lanyon">&nbsp;&nbsp;&nbsp;Introducing Lanyon&nbsp;&nbsp;<p class="date">&nbsp;&nbsp;&nbsp;2014 - 01 - 02</p></a>
 
       
 
-      <a class="sidebar-nav-item " href="/2014/01/01/example-content">Example content&nbsp;&nbsp;<span class="date">01/01/2014</span></a>
+      <a class="sidebar-nav-item " href="/2014/01/01/example-content">&nbsp;&nbsp;&nbsp;Example content&nbsp;&nbsp;<p class="date">&nbsp;&nbsp;&nbsp;2014 - 01 - 01</p></a>
 
       
 
-      <a class="sidebar-nav-item " href="/2013/12/31/whats-jekyll">What's Jekyll?&nbsp;&nbsp;<span class="date">31/12/2013</span></a>
-
-      
-
-    
-
-    <a class="sidebar-nav-item"><span>git</span><span>(1)</span></a>
-
-      
-
-      <a class="sidebar-nav-item " href="/2016/08/22/git">git&nbsp;&nbsp;<span class="date">22/08/2016</span></a>
+      <a class="sidebar-nav-item " href="/2013/12/31/whats-jekyll">&nbsp;&nbsp;&nbsp;What's Jekyll?&nbsp;&nbsp;<p class="date">&nbsp;&nbsp;&nbsp;2013 - 12 - 31</p></a>
 
       
 
     
 
-    <a class="sidebar-nav-item"><span>node</span><span>(1)</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;javascript</span><span class="category-number">&nbsp;—1&nbsp;]</span></a>
 
       
 
-      <a class="sidebar-nav-item " href="/2016/11/11/hello-world">node单个文件压缩-js&css&nbsp;&nbsp;<span class="date">11/11/2016</span></a>
-
-      
-
-    
-
-    <a class="sidebar-nav-item"><span>学习</span><span>(1)</span></a>
-
-      
-
-      <a class="sidebar-nav-item " href="/2016/11/19/study-knowledge">F2E整理&nbsp;&nbsp;<span class="date">19/11/2016</span></a>
+      <a class="sidebar-nav-item " href="/2016/08/19/javascript-es6">&nbsp;&nbsp;&nbsp;ES6&nbsp;&nbsp;<p class="date">&nbsp;&nbsp;&nbsp;2016 - 08 - 19</p></a>
 
       
 
     
 
-    <a class="sidebar-nav-item"><span>Q&A</span><span>(1)</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;git</span><span class="category-number">&nbsp;—1&nbsp;]</span></a>
 
       
 
-      <a class="sidebar-nav-item " href="/2017/01/24/question">问题整理&nbsp;&nbsp;<span class="date">24/01/2017</span></a>
+      <a class="sidebar-nav-item " href="/2016/08/22/git">&nbsp;&nbsp;&nbsp;git&nbsp;&nbsp;<p class="date">&nbsp;&nbsp;&nbsp;2016 - 08 - 22</p></a>
+
+      
+
+    
+
+    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;学习</span><span class="category-number">&nbsp;—2&nbsp;]</span></a>
+
+      
+
+      <a class="sidebar-nav-item " href="/2016/11/19/study-knowledge">&nbsp;&nbsp;&nbsp;F2E整理&nbsp;&nbsp;<p class="date">&nbsp;&nbsp;&nbsp;2016 - 11 - 19</p></a>
+
+      
+
+      <a class="sidebar-nav-item " href="/2016/08/30/console">&nbsp;&nbsp;&nbsp;非常实用的console&nbsp;&nbsp;<p class="date">&nbsp;&nbsp;&nbsp;2016 - 08 - 30</p></a>
+
+      
+
+    
+
+    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;node</span><span class="category-number">&nbsp;—1&nbsp;]</span></a>
+
+      
+
+      <a class="sidebar-nav-item " href="/2016/11/11/node-js-css-min">&nbsp;&nbsp;&nbsp;node单个文件压缩-js&css&nbsp;&nbsp;<p class="date">&nbsp;&nbsp;&nbsp;2016 - 11 - 11</p></a>
+
+      
+
+    
+
+    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;Q&A</span><span class="category-number">&nbsp;—1&nbsp;]</span></a>
+
+      
+
+      <a class="sidebar-nav-item " href="/2017/01/24/question">&nbsp;&nbsp;&nbsp;问题整理&nbsp;&nbsp;<p class="date">&nbsp;&nbsp;&nbsp;2017 - 01 - 24</p></a>
 
       
 
@@ -191,6 +205,193 @@
   <div class="container content">
 
     <div class="posts">
+    
+    <div class="post">
+        <h1 class="post-title">
+            <a href="/2016/08/30/console">
+                非常实用的console
+            </a>
+        </h1>
+
+        <span class="post-date">30 Aug 2016</span>
+
+        <h2 id="section">五种提示</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>console.log('this is log’);
+
+console.info('this is info’);
+
+console.debug('this is debug’);
+
+console.warn('this is warn’);
+
+console.error(‘this is error’);
+</code></pre>
+</div>
+
+<h2 id="section-1">占位符</h2>
+
+<p>占位符的种类比较少，只支持字符（%s）、整数（%d或%i）、浮点数（%f）和对象（%o）。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>console.log("%d年%d月%d日",2011,3,26);
+
+console.log("圆周率是%f",3.1415926);
+</code></pre>
+</div>
+
+<p>%o占位符，可以用来查看一个对象内部情况。比如，有这样一个对象：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var dog = {} ;
+
+dog.name = "大毛" ;
+
+dog.color = "黄色";
+
+console.log("%o",dog);
+
+尝试下测试用例
+</code></pre>
+</div>
+
+<p>还有一种特殊的标示符%c，对输出的文字可以附加特殊的样式，当进行大型项目开发的时候，代码中可能有很多其他开发者添加的控制台语句。开发者对自己的输出定制特别的样式就可以方便自己在眼花缭乱的输出结果中一眼看到自己需要的内容。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>console.log('%cMy name is lijiahao.', 'color: #fff; background: #f40; font-size: 24px;');
+</code></pre>
+</div>
+
+<h2 id="section-2">分组信息</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>　console.group("第一组信息");
+
+　　　　console.log("第一组第一条");
+
+　　　　console.log("第一组第二条")
+
+　　console.groupEnd();
+
+　　console.group("第二组信息");
+
+　　　　console.log("第二组第一条");
+
+　　　　console.log("第二组第二条");
+
+　　console.groupEnd();
+</code></pre>
+</div>
+
+<h2 id="consoledir">console.dir()</h2>
+
+<p>console.dir()可以显示一个对象所有的属性和方法。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>dog.bark = function(){alert("汪汪汪");};
+
+console.dir(dog);
+</code></pre>
+</div>
+
+<h2 id="consoledirxml">console.dirxml()</h2>
+
+<p>console.dirxml()用来显示网页的某个节点（node）所包含的html/xml代码。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var table = document.getElementsByTagNmae(“body");
+
+console.dirxml(table);
+</code></pre>
+</div>
+
+<h2 id="consoleassert">console.assert()</h2>
+
+<p>console.assert()用来判断一个表达式或变量是否为真。如果结果为否，则在控制台输出一条相应信息，并且抛出一个异常。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var result = 0;
+
+console.assert( result );
+
+var year = 2000;
+
+console.assert(year == 2011 );
+</code></pre>
+</div>
+
+<h2 id="consoletrace">console.trace()</h2>
+
+<p>console.trace()用来追踪函数的调用轨迹。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>function add(a,b){
+
+    console.trace();
+
+　　return a+b;
+}
+
+function add3(a,b){return add2(a,b);}
+
+function add2(a,b){return add1(a,b);}
+
+function add1(a,b){return add(a,b);}
+
+var x = add3(1,1);
+</code></pre>
+</div>
+
+<h2 id="consolecount">console.count()</h2>
+
+<p>console.count()输出执行到该行的次数</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>(function() {
+  for (var i = 0; i &lt; 5; i++) {
+    console.count('count');
+  }
+})();
+</code></pre>
+</div>
+<h2 id="section-3">显示运行时间</h2>
+
+<p>console.time()、console.timeEnd()用来显示代码的运行时间。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>console.time("计时器一");
+
+for(var i=0;i&lt;1000;i++){
+
+　　for(var j=0;j&lt;1000;j++){}
+
+}
+
+console.timeEnd("计时器一");
+</code></pre>
+</div>
+
+<h2 id="section-4">性能分析</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>function Foo(){
+
+　　for(var i=0;i&lt;10;i++){funcA(1000);}
+
+　　funcB(10000);
+
+}
+
+function funcA(count){
+
+　　for(var i=0;i&lt;count;i++){}
+
+}
+
+function funcB(count){
+
+　　for(var i=0;i&lt;count;i++){}
+
+}
+
+console.profile('性能分析器一');
+
+Foo();
+
+console.profileEnd('性能分析器一’);
+</code></pre>
+</div>
+
+    </div>
     
     <div class="post">
         <h1 class="post-title">
@@ -288,187 +489,65 @@ $ git push origin :refs/tags/&lt;tagname&gt;                  // 删除远程tag
     
     <div class="post">
         <h1 class="post-title">
-            <a href="/2014/01/02/introducing-lanyon">
-                Introducing Lanyon
+            <a href="/2016/08/19/javascript-es6">
+                ES6
             </a>
         </h1>
 
-        <span class="post-date">02 Jan 2014</span>
+        <span class="post-date">19 Aug 2016</span>
 
-        <p>Lanyon is an unassuming <a href="http://jekyllrb.com">Jekyll</a> theme that places content first by tucking away navigation in a hidden drawer. It’s based on <a href="http://getpoole.com">Poole</a>, the Jekyll butler.</p>
+        <p>传送门: <a href="http://es6.ruanyifeng.com/#docs/let">ES6文档</a></p>
 
-<h3 id="built-on-poole">Built on Poole</h3>
+<h2 id="let">let</h2>
 
-<p>Poole is the Jekyll Butler, serving as an upstanding and effective foundation for Jekyll themes by <a href="https://twitter.com/mdo">@mdo</a>. Poole, and every theme built on it (like Lanyon here) includes the following:</p>
+<p>声明变量。</p>
 
-<ul>
-  <li>Complete Jekyll setup included (layouts, config, <a href="/404">404</a>, <a href="/atom.xml">RSS feed</a>, posts, and <a href="/about">example page</a>)</li>
-  <li>Mobile friendly design and development</li>
-  <li>Easily scalable text and component sizing with <code class="highlighter-rouge">rem</code> units in the CSS</li>
-  <li>Support for a wide gamut of HTML elements</li>
-  <li>Related posts (time-based, because Jekyll) below each post</li>
-  <li>Syntax highlighting, courtesy Pygments (the Python-based code snippet highlighter)</li>
-</ul>
+<p>类似于var,但是声明的变量只在let命令所在的代码块内有效。</p>
 
-<h3 id="lanyon-features">Lanyon features</h3>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
+     </span><span class="err">let</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">1;</span><span class="w">
+     </span><span class="err">var</span><span class="w"> </span><span class="err">b</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">2;</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-<p>In addition to the features of Poole, Lanyon adds the following:</p>
+</span><span class="err">a;</span><span class="w">               </span><span class="err">//</span><span class="w"> </span><span class="err">undefined</span><span class="w">
 
-<ul>
-  <li>Toggleable sliding sidebar (built with only CSS) via <strong>☰</strong> link in top corner</li>
-  <li>Sidebar includes support for textual modules and a dynamically generated navigation with active link support</li>
-  <li>Two orientations for content and sidebar, default (left sidebar) and <a href="https://github.com/poole/lanyon#reverse-layout">reverse</a> (right sidebar), available via <code class="highlighter-rouge">&lt;body&gt;</code> classes</li>
-  <li><a href="https://github.com/poole/lanyon#themes">Eight optional color schemes</a>, available via <code class="highlighter-rouge">&lt;body&gt;</code> classes</li>
-</ul>
-
-<p><a href="https://github.com/poole/lanyon#readme">Head to the readme</a> to learn more.</p>
-
-<h3 id="browser-support">Browser support</h3>
-
-<p>Lanyon is by preference a forward-thinking project. In addition to the latest versions of Chrome, Safari (mobile and desktop), and Firefox, it is only compatible with Internet Explorer 9 and above.</p>
-
-<h3 id="download">Download</h3>
-
-<p>Lanyon is developed on and hosted with GitHub. Head to the <a href="https://github.com/poole/lanyon">GitHub repository</a> for downloads, bug reports, and features requests.</p>
-
-<p>Thanks!</p>
-
-    </div>
-    
-    <div class="post">
-        <h1 class="post-title">
-            <a href="/2014/01/01/example-content">
-                Example content
-            </a>
-        </h1>
-
-        <span class="post-date">01 Jan 2014</span>
-
-        <div class="message">
-  Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
+</span><span class="err">b;</span><span class="w">              </span><span class="err">//</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span></code></pre>
 </div>
 
-<p>Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. <em>Aenean eu leo quam.</em> Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>var a = [];
 
-<blockquote>
-  <p>Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-</blockquote>
+for ( var i = 0; i &lt; 10; i ++ ){
+     a[i] = function(){
+          console.log(i);
+     };
+};
 
-<p>Etiam porta <strong>sem malesuada magna</strong> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+a[6]   // 10
 
-<h2 id="inline-html-elements">Inline HTML elements</h2>
+****************************************
 
-<p>HTML defines a long list of available inline tags, a complete list of which can be found on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element">Mozilla Developer Network</a>.</p>
+var b = [];
 
-<ul>
-  <li><strong>To bold text</strong>, use <code class="highlighter-rouge">&lt;strong&gt;</code>.</li>
-  <li><em>To italicize text</em>, use <code class="highlighter-rouge">&lt;em&gt;</code>.</li>
-  <li>Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use <code class="highlighter-rouge">&lt;abbr&gt;</code>, with an optional <code class="highlighter-rouge">title</code> attribute for the full phrase.</li>
-  <li>Citations, like <cite>— Mark otto</cite>, should use <code class="highlighter-rouge">&lt;cite&gt;</code>.</li>
-  <li><del>Deleted</del> text should use <code class="highlighter-rouge">&lt;del&gt;</code> and <ins>inserted</ins> text should use <code class="highlighter-rouge">&lt;ins&gt;</code>.</li>
-  <li>Superscript <sup>text</sup> uses <code class="highlighter-rouge">&lt;sup&gt;</code> and subscript <sub>text</sub> uses <code class="highlighter-rouge">&lt;sub&gt;</code>.</li>
-</ul>
+for ( let i = 0; i &lt; 10; i ++ ){
+     b[i] = function(){
+          console.log(i);
+     };
+};
 
-<p>Most of these elements are styled by browsers with few modifications on our part.</p>
+b[6]   // 6
+</code></pre>
+</div>
 
-<h2 id="heading">Heading</h2>
+<p>let 不存在变量提升。</p>
 
-<p>Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>console.log(foo);               // 输出undefined
+console.log(bar);               // error
 
-<h3 id="code">Code</h3>
-
-<p>Cum sociis natoque penatibus et magnis dis <code class="highlighter-rouge">code element</code> montes, nascetur ridiculus mus.</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Example can be run directly in your JavaScript console
-</span>
-
-<span class="c1">// Create a function that takes two arguments and returns the sum of those arguments
-</span>
-<span class="kd">var</span> <span class="nx">adder</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Function</span><span class="p">(</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">,</span> <span class="s2">"return a + b"</span><span class="p">);</span>
-
-<span class="c1">// Call the function
-</span>
-<span class="nx">adder</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
-<span class="c1">// &gt; 8</span></code></pre></figure>
-
-<p>Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-
-<h3 id="lists">Lists</h3>
-
-<p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-
-<ul>
-  <li>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</li>
-  <li>Donec id elit non mi porta gravida at eget metus.</li>
-  <li>Nulla vitae elit libero, a pharetra augue.</li>
-</ul>
-
-<p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.</p>
-
-<ol>
-  <li>Vestibulum id ligula porta felis euismod semper.</li>
-  <li>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</li>
-  <li>Maecenas sed diam eget risus varius blandit sit amet non magna.</li>
-</ol>
-
-<p>Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.</p>
-
-<dl>
-  <dt>HyperText Markup Language (HTML)</dt>
-  <dd>The language used to describe and define the content of a Web page</dd>
-
-  <dt>Cascading Style Sheets (CSS)</dt>
-  <dd>Used to describe the appearance of Web content</dd>
-
-  <dt>JavaScript (JS)</dt>
-  <dd>The programming language used to build advanced Web sites and applications</dd>
-</dl>
-
-<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-
-<h3 id="tables">Tables</h3>
-
-<p>Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Upvotes</th>
-      <th>Downvotes</th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td>Totals</td>
-      <td>21</td>
-      <td>23</td>
-    </tr>
-  </tfoot>
-  <tbody>
-    <tr>
-      <td>Alice</td>
-      <td>10</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>Bob</td>
-      <td>4</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Charlie</td>
-      <td>7</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-
-<hr />
-
-<p>Want to see something else added? <a href="https://github.com/poole/poole/issues/new">Open an issue.</a></p>
+var foo = 2;
+let bar = 2;
+</code></pre>
+</div>
 
     </div>
     
