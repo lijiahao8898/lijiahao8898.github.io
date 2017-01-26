@@ -19,6 +19,7 @@
   <link rel="stylesheet" href="/public/css/poole.css">
   <link rel="stylesheet" href="/public/css/syntax.css">
   <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="/public/css/aboutme.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
 
   <!-- Icons -->
@@ -93,6 +94,14 @@
 
     
 
+      
+
+        
+
+      
+
+    
+
     <!-- 类目 -->
 
     
@@ -115,7 +124,25 @@
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;javascript</span><span class="category-number">&nbsp;—1&nbsp;]</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;打包工具</span><span class="category-number">&nbsp;—1&nbsp;]</span></a>
+
+      
+
+      <a class="sidebar-nav-item " href="/2016/06/29/tool-grunt">&nbsp;&nbsp;&nbsp;tool - grunt&nbsp;&nbsp;<p class="date">&nbsp;&nbsp;&nbsp;2016 - 06 - 29</p></a>
+
+      
+
+    
+
+    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;javascript</span><span class="category-number">&nbsp;—3&nbsp;]</span></a>
+
+      
+
+      <a class="sidebar-nav-item " href="/2016/10/31/javascript-object">&nbsp;&nbsp;&nbsp;javascript - 对象&nbsp;&nbsp;<p class="date">&nbsp;&nbsp;&nbsp;2016 - 10 - 31</p></a>
+
+      
+
+      <a class="sidebar-nav-item " href="/2016/08/26/javascript-this">&nbsp;&nbsp;&nbsp;javascript - this&nbsp;&nbsp;<p class="date">&nbsp;&nbsp;&nbsp;2016 - 08 - 26</p></a>
 
       
 
@@ -204,7 +231,93 @@
 
   <div class="container content">
 
-    <div class="posts">
+    <div class="about-me">
+    <div class="my-info">
+        <div class="left">
+            <div><img src="./public/my.jpg"></div>
+        </div>
+        <div class="right">
+            <dl>
+                <dd><label>name:</label><span>lijiahao</span></dd>
+                <dd><label>address:</label><span>cn</span></dd>
+                <dd><label>github:</label><span><a href="https://github.com/lijiahao8898" target="_blank">https://github.com/lijiahao8898</a></span></dd>
+                <dd><a href="#">more</a></dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+<div class="posts">
+    
+    <div class="post">
+        <h1 class="post-title">
+            <a href="/2016/10/31/javascript-object">
+                javascript - 对象
+            </a>
+        </h1>
+
+        <span class="post-date">31 Oct 2016</span>
+
+        <p>JavaScript中所有变量都可以当做对象使用，除了两个例外 null 和 undefined。</p>
+
+<p>一个常见的误解是数字的字面值（literal）不能当作对象使用。这是因为 JavaScript 解析器的一个错误， 它试图将点操作符解析为浮点数字面值的一部分。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>2.toString();   // 出错：SyntaxError
+
+// 变通方法
+2..toString();
+2 .toString();
+(2).toString();
+</code></pre>
+</div>
+
+<h1 id="section">访问属性</h1>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 有两种方式来访问对象的属性。点操作符或者中括号操作符
+
+var foo = { name: 'kitten' }
+
+foo.name;               // kitten
+foo['name’];            // kitten
+
+var get = 'name';
+foo[get];               // kitten
+
+foo.1234;               // SyntaxError
+foo['1234'];            // works
+</code></pre>
+</div>
+
+<p>两种语法是等价的，但是中括号操作符在下面两种情况下依然有效</p>
+
+<ul>
+  <li>动态设置属性</li>
+  <li>属性名不是一个有效的变量名 （比如属性名中包含空格，或者属性名是 JS 的关键词）</li>
+</ul>
+
+<h1 id="section-1">删除属性</h1>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 删除属性唯一的方法是delete.
+// undefined和null 并不能删除属性. 而仅仅是移除了属性和值的关联
+
+var obj = {
+    bar: 1,
+    foo: 2,
+    baz: 3
+};
+obj.bar = undefined;
+obj.foo = null;
+delete obj.baz;
+
+for(var i in obj) {
+    if (obj.hasOwnProperty(i)) {
+        console.log(i, '' + obj[i]);
+    }
+}
+</code></pre>
+</div>
+
+    </div>
     
     <div class="post">
         <h1 class="post-title">
@@ -395,159 +508,329 @@ console.profileEnd('性能分析器一’);
     
     <div class="post">
         <h1 class="post-title">
-            <a href="/2016/08/22/git">
-                git
+            <a href="/2016/08/26/javascript-this">
+                javascript - this
             </a>
         </h1>
 
-        <span class="post-date">22 Aug 2016</span>
+        <span class="post-date">26 Aug 2016</span>
 
-        <p>git相关文档：<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">1</a></p>
+        <p>this是JavaScript的一个关键字。
+代表在函数运行时，自动生成的一个内部对象，这个内部对象被称为函数上下文。只在函数内部调用。</p>
 
-<h3 id="section">查看不同</h3>
+<p>在看本文章时。先把下面的话记住。不然你会懵逼！血崩！
+教科书知识点：this对象是在运行时基于函数的执行环境绑定的：</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git diff
-</code></pre>
-</div>
+<ol>
+  <li>
+    <p>在全局函数中，this等于window。</p>
+  </li>
+  <li>
+    <p>当函数作为某个对象的方法调用时，this指向那个对象。</p>
+  </li>
+  <li>
+    <p>匿名函数的执行环境具有全局性，因此this通常指向window。</p>
+  </li>
+</ol>
 
-<h3 id="idea">删除.idea：</h3>
+<h3 id="section">纯粹的函数调用</h3>
 
-<p>如果远程分支已经提交了讨厌的.idea</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>// 这是函数的最通常用法，属于全局性调用，因此this就代表全局对象Global。
+// ps:在非严格模式下。如果在严格模式下则为undefined。
+// test() 又可以写作 window.test()
 
-<div class="highlighter-rouge"><pre class="highlight"><code>rm -rf .idea                 （删除本地的.idea）
-
-$ git rm -r --cached .idea   （取消跟踪.idea）
-</code></pre>
-</div>
-
-<h3 id="gitignore">创建 gitignore</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ touch .gitignore           （创建并配置gitignore）
-</code></pre>
-</div>
-
-<h3 id="section-1">删除远程分支</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git push origin :&lt;branchName&gt;
-
-$ git push origin —delete master
-</code></pre>
-</div>
-
-<h3 id="commit">查看 commit的记录</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git log
-
-$ git log --pretty=oneline       // 简洁显示
-
-$ git reflog                     // 查看每一次的git操作命令
-</code></pre>
-</div>
-
-<h3 id="commit-1">回滚当前分支的前一个commit记录</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git reset —-hard head^         // head^ 表示上个版本。 head^^ 表示上上个版本。 head~100 表示100个版本
-
-$ git reset —-hard 版本id        // 回到某个特定的版本下
-</code></pre>
-</div>
-
-<h2 id="git-stash">暂存 git stash</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git stash                      // 备份当前的工作区的内容，从最近的一次提交中读取相关内容，让工作区保证和上次提交的内容一致。同时，将当前的工作区内容保存到Git栈中
-
-$ git stash pop                  // 从Git栈中读取最近一次保存的内容，恢复工作区的相关内容。由于可能存在多个Stash的内容，所以用栈来管理，pop会从最近的一个stash中读取内容并恢复。
-
-$ git stash list                 // 显示Git栈内的所有备份，可以利用这个列表来决定从那个地方恢复。
-
-$ git stash clear                // 清空Git栈。
-
-$ git stash apply stash@{1}      // 可以将你指定版本号为stash@{1}的工作取出来
-</code></pre>
-</div>
-
-<h2 id="section-2">撤销修改</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git checkout —- filename        // 如果没有—- 就变成了切换分支
-</code></pre>
-</div>
-
-<h2 id="tag">打tag</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>$ git tag &lt;name&gt; &lt;id&gt;
-
-$ git tag -a v0.1 -m "version 0.1 released" 3628164     // 打tab 并附加说明
-
-$ git show &lt;tagname&gt;                                    // 查看版本说明
-
-$ git push origin :refs/tags/&lt;tagname&gt;                  // 删除远程tag
-
-</code></pre>
-</div>
-
-    </div>
-    
-    <div class="post">
-        <h1 class="post-title">
-            <a href="/2016/08/19/javascript-es6">
-                ES6
-            </a>
-        </h1>
-
-        <span class="post-date">19 Aug 2016</span>
-
-        <p>传送门: <a href="http://es6.ruanyifeng.com/#docs/let">ES6文档</a></p>
-
-<h2 id="let">let</h2>
-
-<p>声明变量。</p>
-
-<p>类似于var,但是声明的变量只在let命令所在的代码块内有效。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">{</span><span class="w">
-     </span><span class="err">let</span><span class="w"> </span><span class="err">a</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">1;</span><span class="w">
-     </span><span class="err">var</span><span class="w"> </span><span class="err">b</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">2;</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span><span class="err">a;</span><span class="w">               </span><span class="err">//</span><span class="w"> </span><span class="err">undefined</span><span class="w">
-
-</span><span class="err">b;</span><span class="w">              </span><span class="err">//</span><span class="w"> </span><span class="mi">2</span><span class="w">
-</span></code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var a = [];
-
-for ( var i = 0; i &lt; 10; i ++ ){
-     a[i] = function(){
-          console.log(i);
-     };
+// 写法1
+function test () {
+     this.x = 1;
+     alert(this.x);
 };
 
-a[6]   // 10
+test();                    // 1
 
-****************************************
-
-var b = [];
-
-for ( let i = 0; i &lt; 10; i ++ ){
-     b[i] = function(){
-          console.log(i);
-     };
+// 写法1拓展
+function test () {
+     'use strict'
+     this.x = 1;
+     alert(this.x)
 };
 
-b[6]   // 6
+test()                    // error! x undefined
+
+// 写法2
+var x = 1 ;
+function test () {
+     alert(this.x);
+};
+
+test()                     // 1
+
+// 写法3
+var x = 1 ;
+function test () {
+     this.x = 0;
+};
+
+test();
+
+alert(x);                 // 0
 </code></pre>
 </div>
 
-<p>let 不存在变量提升。</p>
+<h3 id="section-1">作为对象方法的调用</h3>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>console.log(foo);               // 输出undefined
-console.log(bar);               // error
+<div class="highlighter-rouge"><pre class="highlight"><code>// 函数还可以作为某个对象的方法调用，这时this就指这个上级对象。
 
-var foo = 2;
-let bar = 2;
+function test (){
+     alert(this.x);
+}
+
+var o = {};
+o.x = 1;
+o.m = test;
+o.m();     // 1
 </code></pre>
 </div>
+
+<h3 id="section-2">作为构造函数调用</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 所谓构造函数，就是通过这个函数生成一个新对象（object）。这时，this就指这个新对象。
+
+// 写法1
+function test () {
+     this.x = 1;
+}
+
+var o = new test();
+
+alert(o.x);     // 1
+
+// 写法2
+var x = 2;
+
+function test () {
+     this.x = 1;
+}
+
+var o = new test();
+
+alert(o.x);     // 1
+</code></pre>
+</div>
+
+<h3 id="applycall">apply(,[])和call(,[],[])调用</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// apply()是函数对象的一个方法，它的作用是改变函数的调用对象。
+// apply()的第一个参数就表示改变后的调用这个函数的对象。因此，this指的就是这第一个参数
+// apply()传入2个参数。一个作为函数上下文对象，另一个作为函数参数所组成的数组。
+// call() 与 apply()唯一不同的是给函数传入的参数是一个参数列表，而不是单个数组。
+
+// example 1
+var x = 0;
+
+function test(){
+     alert(this.x);
+}
+
+var o={};
+o.x = 1;
+o.m = test;
+o.m.apply();      //0
+
+// example 2
+var x = 0;
+
+function test(){
+     alert(this.x);
+}
+
+var o={};
+o.x = 1;
+o.m = test;
+o.m.apply(o);      //1
+</code></pre>
+</div>
+
+<h3 id="es6-this">ES6 this</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// es6中，箭头函数中始终会捕捉其“定义时”所在上下文的this值，作为自己的this.
+
+// example 1
+const obj = {
+    func: () =&gt; {
+        console.log(this === window); // true，非箭头函数时指向 obj
+    }
+};
+
+obj.func();
+
+// example 2
+const obj = {
+     func: function(){
+          console.log(this === obj); // true
+     }
+};
+obj.func();
+</code></pre>
+</div>
+
+<h3 id="section-3">其他</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// bind() 改变函数上下文
+//ECMAScript 5 引入了 `Function.prototype.bind`，其会创建一个绑定函数，当调用这个绑定函数时，函数上下文将会是 bind() 方法的第一个参数。上面的例子中，将 obj1 设置为函数上下文，所以利用 func 来调用函数时，函数的上下文为 obj1，而不是它的调用者 obj2。
+
+const obj1 = {
+     a: 1
+};
+
+const obj2 = {
+     a: 2,
+     func: function() {
+          console.log(this.a);
+     }.bind(obj1)
+};
+
+obj2.func(); // 1
+
+// Array 的 5 个 方法（ 暂时不看 ）
+
+every,some,forEach,map,filter
+
+const arr = ["segmentfault"];
+const obj = {};
+arr.forEach(function(ele, ind) {
+     console.log(this === window); // true
+});
+arr.forEach(function(ele, ind) {
+     console.log(this === obj); // true
+}, obj);
+</code></pre>
+</div>
+
+<h2 id="ps---">PS - 相关问题</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// example 1
+if( true ){
+     console.log(this)
+}
+
+// example 2
+const obj = {
+     someData: 'string';
+}
+
+function myFun(){
+     console.log(this);
+}
+obj.staticFunction = myFun;
+obj.staticFunction();
+
+// example 3
+const obj = {
+     myFunc: function(){
+          console.log(this);
+     }
+}
+const myFun = obj.myFunc;
+myFun
+
+// example 4
+function myFun(){
+     console.log(this);
+}
+const obj = {
+     someData : 'a'
+}
+myFun.call(obj);
+</code></pre>
+</div>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 知乎一个人的提问：https://www.zhihu.com/question/34450250
+// ps:这是一个坑！！！
+// ps: this 是基于函数的执行环境绑定的。而不是定义环境。
+
+// example1
+var name = 'obj';
+var objA = {
+     name: 'A',
+     showName: function(){
+          console.log(this.name);
+     }
+}
+var objB = {
+     name: 'B',
+     showName: function(){
+          var show = objA.showName();
+          show;               // show;
+     }
+}
+objB.showName();                         // A
+
+// example 2
+var name = 'obj';
+var objA = {
+     name: 'A',
+     showName: function(){
+          console.log(this.name);
+     }
+}
+var objB = {
+     name: 'B',
+     showName: function(){
+          var show = objA.showName;
+          show();
+     }
+}
+objB.showName();                         // obj
+
+// example 2 又可以理解成
+var name = 'obj';
+var objA = {
+     name: 'A',
+     showName: function(){
+          console.log(this.name);
+     }
+}
+var objB = {
+     name: 'B',
+     showName: function(){
+          return function(){
+               alert(this.name)
+          }
+     }
+}
+objB.showName();                         // obj
+
+// example 3
+var name = 'obj';
+var objA = {
+     name: 'A',
+     showName: function(){
+          alert(self.name);
+          console.log(‘a:'+self);
+     }
+}
+var objB = {
+     name: 'B',
+     showName: function(){
+          var self = this;
+          var show = objA.showName;
+          console.log('b:'+self);
+          show();
+     }
+}
+objB.showName();                         // obj
+                                         // b
+                                         // window
+</code></pre>
+</div>
+
+<p>相关文章地址：</p>
+
+<ul>
+  <li><a href="https://zhuanlan.zhihu.com/p/23023311">知乎: https://zhuanlan.zhihu.com/p/23023311</a></li>
+  <li><a href="http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html">阮一峰：http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html</a></li>
+  <li><a href="https://bonsaiden.github.io/JavaScript-Garden/zh/#function.this">秘密花园：https://bonsaiden.github.io/JavaScript-Garden/zh/#function.this</a></li>
+</ul>
 
     </div>
     
@@ -578,6 +861,10 @@ let bar = 2;
         
             
                 <a class="pagination-item" href="/page3">3</a>
+            
+        
+            
+                <a class="pagination-item" href="/page4">4</a>
             
         
 

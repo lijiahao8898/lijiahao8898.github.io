@@ -16,8 +16,11 @@ gems:                [jekyll-paginate]
 # About/contact
 author:
   name:              lijiahao
+  cname:             李家豪
   url:               https://lijiahao8898.io
   email:             '#'
+  address:           cn
+  github:            https://github.com/lijiahao8898
 
 # Custom vars
 version:             1.0.0

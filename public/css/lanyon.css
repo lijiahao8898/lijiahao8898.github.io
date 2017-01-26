@@ -87,7 +87,8 @@ h1, h2, h3, h4, h5, h6 {
 .container {
   max-width: 28rem;
 }
-.container.content{
+.container.content .posts{
+  padding:5px;
   border:1px solid #eee;
 }
 @media (min-width: 38em) {

@@ -1,0 +1,53 @@
+.about-me{
+    overflow: hidden;
+}
+.about-me dl dd label{
+    display: inline-block;
+    min-width: 120px;
+}
+.about-me .left{
+    float: left;
+}
+.about-me .right{
+    float: left;
+}
+@media (max-width: 38em) {
+    .about-me {
+        max-width: 32rem;
+    }
+    .about-me dl dd span{
+        display: inline-block;
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+@media (min-width: 38em) {
+    .about-me {
+        max-width: 32rem;
+    }
+    .about-me dl dd span{
+        display: inline-block;
+        max-width: 200px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+@media (min-width: 56em) {
+    .about-me {
+        max-width: 50rem;
+    }
+    .about-me .left img{
+        height: 350px;
+    }
+}
+@media (min-width: 70em) {
+    .about-me {
+        max-width: 70rem;
+    }
+    .about-me .left img{
+        height: 350px;
+    }
+}
