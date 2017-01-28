@@ -132,7 +132,11 @@
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;打包工具</span><span class="category-number">&nbsp;—1&nbsp;</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;打包工具</span><span class="category-number">&nbsp;—2&nbsp;</span></a>
+
+      
+
+      <a class="sidebar-nav-item " href="/2016/08/11/tool-webpack">&nbsp;&nbsp;&nbsp;tool - webpack&nbsp;&nbsp;<p class="date">&nbsp;&nbsp;&nbsp;2016 - 08 - 11</p></a>
 
       
 
@@ -170,11 +174,15 @@
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;other</span><span class="category-number">&nbsp;—2&nbsp;</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;other</span><span class="category-number">&nbsp;—3&nbsp;</span></a>
 
       
 
       <a class="sidebar-nav-item " href="/2016/11/19/study-knowledge">&nbsp;&nbsp;&nbsp;F2E整理&nbsp;&nbsp;<p class="date">&nbsp;&nbsp;&nbsp;2016 - 11 - 19</p></a>
+
+      
+
+      <a class="sidebar-nav-item " href="/2016/10/26/github-and-jekyll">&nbsp;&nbsp;&nbsp;github & jekyll 编写自己的小网站&nbsp;&nbsp;<p class="date">&nbsp;&nbsp;&nbsp;2016 - 10 - 26</p></a>
 
       
 
@@ -260,6 +268,193 @@
 </div>
 
 <div class="posts">
+    
+    <div class="post">
+        <h1 class="post-title">
+            <a href="/2016/08/30/console">
+                非常实用的console
+            </a>
+        </h1>
+
+        <span class="post-date">30 Aug 2016</span>
+
+        <h2 id="section">五种提示</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>console.log('this is log’);
+
+console.info('this is info’);
+
+console.debug('this is debug’);
+
+console.warn('this is warn’);
+
+console.error(‘this is error’);
+</code></pre>
+</div>
+
+<h2 id="section-1">占位符</h2>
+
+<p>占位符的种类比较少，只支持字符（%s）、整数（%d或%i）、浮点数（%f）和对象（%o）。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>console.log("%d年%d月%d日",2011,3,26);
+
+console.log("圆周率是%f",3.1415926);
+</code></pre>
+</div>
+
+<p>%o占位符，可以用来查看一个对象内部情况。比如，有这样一个对象：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var dog = {} ;
+
+dog.name = "大毛" ;
+
+dog.color = "黄色";
+
+console.log("%o",dog);
+
+尝试下测试用例
+</code></pre>
+</div>
+
+<p>还有一种特殊的标示符%c，对输出的文字可以附加特殊的样式，当进行大型项目开发的时候，代码中可能有很多其他开发者添加的控制台语句。开发者对自己的输出定制特别的样式就可以方便自己在眼花缭乱的输出结果中一眼看到自己需要的内容。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>console.log('%cMy name is lijiahao.', 'color: #fff; background: #f40; font-size: 24px;');
+</code></pre>
+</div>
+
+<h2 id="section-2">分组信息</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>　console.group("第一组信息");
+
+　　　　console.log("第一组第一条");
+
+　　　　console.log("第一组第二条")
+
+　　console.groupEnd();
+
+　　console.group("第二组信息");
+
+　　　　console.log("第二组第一条");
+
+　　　　console.log("第二组第二条");
+
+　　console.groupEnd();
+</code></pre>
+</div>
+
+<h2 id="consoledir">console.dir()</h2>
+
+<p>console.dir()可以显示一个对象所有的属性和方法。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>dog.bark = function(){alert("汪汪汪");};
+
+console.dir(dog);
+</code></pre>
+</div>
+
+<h2 id="consoledirxml">console.dirxml()</h2>
+
+<p>console.dirxml()用来显示网页的某个节点（node）所包含的html/xml代码。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var table = document.getElementsByTagNmae(“body");
+
+console.dirxml(table);
+</code></pre>
+</div>
+
+<h2 id="consoleassert">console.assert()</h2>
+
+<p>console.assert()用来判断一个表达式或变量是否为真。如果结果为否，则在控制台输出一条相应信息，并且抛出一个异常。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var result = 0;
+
+console.assert( result );
+
+var year = 2000;
+
+console.assert(year == 2011 );
+</code></pre>
+</div>
+
+<h2 id="consoletrace">console.trace()</h2>
+
+<p>console.trace()用来追踪函数的调用轨迹。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>function add(a,b){
+
+    console.trace();
+
+　　return a+b;
+}
+
+function add3(a,b){return add2(a,b);}
+
+function add2(a,b){return add1(a,b);}
+
+function add1(a,b){return add(a,b);}
+
+var x = add3(1,1);
+</code></pre>
+</div>
+
+<h2 id="consolecount">console.count()</h2>
+
+<p>console.count()输出执行到该行的次数</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>(function() {
+  for (var i = 0; i &lt; 5; i++) {
+    console.count('count');
+  }
+})();
+</code></pre>
+</div>
+<h2 id="section-3">显示运行时间</h2>
+
+<p>console.time()、console.timeEnd()用来显示代码的运行时间。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>console.time("计时器一");
+
+for(var i=0;i&lt;1000;i++){
+
+　　for(var j=0;j&lt;1000;j++){}
+
+}
+
+console.timeEnd("计时器一");
+</code></pre>
+</div>
+
+<h2 id="section-4">性能分析</h2>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>function Foo(){
+
+　　for(var i=0;i&lt;10;i++){funcA(1000);}
+
+　　funcB(10000);
+
+}
+
+function funcA(count){
+
+　　for(var i=0;i&lt;count;i++){}
+
+}
+
+function funcB(count){
+
+　　for(var i=0;i&lt;count;i++){}
+
+}
+
+console.profile('性能分析器一');
+
+Foo();
+
+console.profileEnd('性能分析器一’);
+</code></pre>
+</div>
+
+    </div>
     
     <div class="post">
         <h1 class="post-title">
@@ -678,68 +873,6 @@ $ git show &lt;tagname&gt;                                    // 查看版本说
 
 $ git push origin :refs/tags/&lt;tagname&gt;                  // 删除远程tag
 
-</code></pre>
-</div>
-
-    </div>
-    
-    <div class="post">
-        <h1 class="post-title">
-            <a href="/2016/08/19/javascript-es6">
-                ES6
-            </a>
-        </h1>
-
-        <span class="post-date">19 Aug 2016</span>
-
-        <p>传送门: <a href="http://es6.ruanyifeng.com/#docs/let">ES6文档</a></p>
-
-<h2 id="let">let</h2>
-
-<p>声明变量。</p>
-
-<p>类似于var,但是声明的变量只在let命令所在的代码块内有效。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>let a = 1;
-var b = 2;
-
-a;               // undefined
-
-b;              // 2
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var a = [];
-
-for ( var i = 0; i &lt; 10; i ++ ){
-     a[i] = function(){
-          console.log(i);
-     };
-};
-
-a[6]   // 10
-
-****************************************
-
-var b = [];
-
-for ( let i = 0; i &lt; 10; i ++ ){
-     b[i] = function(){
-          console.log(i);
-     };
-};
-
-b[6]   // 6
-</code></pre>
-</div>
-
-<p>let 不存在变量提升。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>console.log(foo);               // 输出undefined
-console.log(bar);               // error
-
-var foo = 2;
-let bar = 2;
 </code></pre>
 </div>
 
