@@ -42,6 +42,13 @@
     .about-me .left img{
         height: 350px;
     }
+    .about-me dl dd span{
+        display: inline-block;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
 }
 @media (min-width: 70em) {
     .about-me {

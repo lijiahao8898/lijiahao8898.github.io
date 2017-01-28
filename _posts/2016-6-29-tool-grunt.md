@@ -12,6 +12,17 @@ categories: [打包工具]
 
 第二类是第三方提供的插件，不带有这两个特征。
 
+| Contrib-jshint | javascript语法错误检查；|
+| Contrib-watch  | 实时监控文件变化、调用相应的任务重新执行；|
+| Contrib-clean  | 清空文件、文件夹；|
+| Contrib-uglify | 压缩javascript代码；|
+| Contrib-copy   | 复制文件、文件夹；|
+| Contrib-concat | 合并多个文件的代码到一个文件中；|
+| karma          | 前端自动化测试工具；|
+| cssmin         | 压缩css代码；|
+| filerev        | 给文件增加md5的后缀名（重命名文件）类似于增加时间戳；|
+| usemin         | 替换html的引用 如果有filerev后的文件则优先使用；|
+
 * grunt常用的插件：
 
 #### grunt引入html：

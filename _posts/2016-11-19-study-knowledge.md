@@ -1,7 +1,7 @@
 ---
 layout: post
 title: F2E整理
-categories: [学习]
+categories: [other]
 ---
 
 F2E整理

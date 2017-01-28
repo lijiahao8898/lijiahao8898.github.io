@@ -13,10 +13,8 @@ categories: [javascript]
 类似于var,但是声明的变量只在let命令所在的代码块内有效。
 
 ```
-{
-     let a = 1;
-     var b = 2;
-}
+let a = 1;
+var b = 2;
 
 a;               // undefined
 

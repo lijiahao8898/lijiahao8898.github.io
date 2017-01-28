@@ -392,6 +392,7 @@ a.sidebar-nav-item:focus {
  */
 
 .pagination {
+  margin-top:0.75rem;;
   margin-bottom: 0.75rem;
   overflow: hidden; /* clearfix */
   margin-left: -1rem;
@@ -592,5 +593,5 @@ a.pagination-item:hover {
 .category{
   font-size: 0.95rem;
   font-weight: bold;
-  font-style: italic;
+  /*font-style: italic;*/
 }

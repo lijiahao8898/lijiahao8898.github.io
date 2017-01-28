@@ -102,11 +102,19 @@
 
     
 
+      
+
+        
+
+      
+
+    
+
     <!-- 类目 -->
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;study</span><span class="category-number">&nbsp;—3&nbsp;]</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;study</span><span class="category-number">&nbsp;—3&nbsp;</span></a>
 
       
 
@@ -124,7 +132,7 @@
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;打包工具</span><span class="category-number">&nbsp;—1&nbsp;]</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;打包工具</span><span class="category-number">&nbsp;—1&nbsp;</span></a>
 
       
 
@@ -134,7 +142,7 @@
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;javascript</span><span class="category-number">&nbsp;—3&nbsp;]</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;javascript</span><span class="category-number">&nbsp;—3&nbsp;</span></a>
 
       
 
@@ -152,7 +160,7 @@
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;git</span><span class="category-number">&nbsp;—1&nbsp;]</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;git</span><span class="category-number">&nbsp;—1&nbsp;</span></a>
 
       
 
@@ -162,7 +170,7 @@
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;学习</span><span class="category-number">&nbsp;—2&nbsp;]</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;other</span><span class="category-number">&nbsp;—2&nbsp;</span></a>
 
       
 
@@ -176,7 +184,7 @@
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;node</span><span class="category-number">&nbsp;—1&nbsp;]</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;node</span><span class="category-number">&nbsp;—2&nbsp;</span></a>
 
       
 
@@ -184,9 +192,13 @@
 
       
 
+      <a class="sidebar-nav-item " href="/2016/09/12/node">&nbsp;&nbsp;&nbsp;node&nbsp;&nbsp;<p class="date">&nbsp;&nbsp;&nbsp;2016 - 09 - 12</p></a>
+
+      
+
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;Q&A</span><span class="category-number">&nbsp;—1&nbsp;]</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;Q&A</span><span class="category-number">&nbsp;—1&nbsp;</span></a>
 
       
 
@@ -273,8 +285,11 @@ https://www.zhihu.com/question/24029212
 <div class="highlighter-rouge"><pre class="highlight"><code>2 - 防止网页被恶意嵌套入其他的网页中
 
 &lt;script type="text/javascript"&gt;
+
 if (window!=top)                          // 判断当前的window对象是否是top对象
+
 top.location.href =window.location.href;  // 如果不是，将top对象的网址自动导向被嵌入网页的网址
+
 &lt;/script&gt;
 
 // 升级版
@@ -340,6 +355,12 @@ formatTime: function(no){
 </div>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>5 - htm5 无刷新改变url地址
+
+// history里面会增加一个记录
+window.history.pushState({}, 0, url);
+
+// history替换当前的url记录
+window.history.replaceState({}, 0, url);
 </code></pre>
 </div>
 
@@ -541,6 +562,10 @@ cleancss -o *.min.css *.css
         
             
                 <a class="pagination-item" href="/page4">4</a>
+            
+        
+            
+                <a class="pagination-item" href="/page5">5</a>
             
         
 

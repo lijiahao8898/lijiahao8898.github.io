@@ -36,7 +36,7 @@
 
     {% for category in site.categories %}
 
-    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;{{ category | first }}</span><span class="category-number">&nbsp;—{{ category | last | size }}&nbsp;]</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;{{ category | first }}</span><span class="category-number">&nbsp;—{{ category | last | size }}&nbsp;</span></a>
 
       {% for post in category.last %}
 

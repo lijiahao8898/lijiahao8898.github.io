@@ -102,11 +102,19 @@
 
     
 
+      
+
+        
+
+      
+
+    
+
     <!-- 类目 -->
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;study</span><span class="category-number">&nbsp;—3&nbsp;]</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;study</span><span class="category-number">&nbsp;—3&nbsp;</span></a>
 
       
 
@@ -124,7 +132,7 @@
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;打包工具</span><span class="category-number">&nbsp;—1&nbsp;]</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;打包工具</span><span class="category-number">&nbsp;—1&nbsp;</span></a>
 
       
 
@@ -134,7 +142,7 @@
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;javascript</span><span class="category-number">&nbsp;—3&nbsp;]</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;javascript</span><span class="category-number">&nbsp;—3&nbsp;</span></a>
 
       
 
@@ -152,7 +160,7 @@
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;git</span><span class="category-number">&nbsp;—1&nbsp;]</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;git</span><span class="category-number">&nbsp;—1&nbsp;</span></a>
 
       
 
@@ -162,7 +170,7 @@
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;学习</span><span class="category-number">&nbsp;—2&nbsp;]</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;other</span><span class="category-number">&nbsp;—2&nbsp;</span></a>
 
       
 
@@ -176,7 +184,7 @@
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;node</span><span class="category-number">&nbsp;—1&nbsp;]</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;node</span><span class="category-number">&nbsp;—2&nbsp;</span></a>
 
       
 
@@ -184,9 +192,13 @@
 
       
 
+      <a class="sidebar-nav-item " href="/2016/09/12/node">&nbsp;&nbsp;&nbsp;node&nbsp;&nbsp;<p class="date">&nbsp;&nbsp;&nbsp;2016 - 09 - 12</p></a>
+
+      
+
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">[&nbsp;Q&A</span><span class="category-number">&nbsp;—1&nbsp;]</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">&nbsp;Q&A</span><span class="category-number">&nbsp;—1&nbsp;</span></a>
 
       
 
@@ -316,6 +328,184 @@ for(var i in obj) {
 }
 </code></pre>
 </div>
+
+    </div>
+    
+    <div class="post">
+        <h1 class="post-title">
+            <a href="/2016/09/12/node">
+                node
+            </a>
+        </h1>
+
+        <span class="post-date">12 Sep 2016</span>
+
+        <p>node的优势:</p>
+<ul>
+  <li>非阻塞</li>
+  <li>单线程</li>
+  <li>事件驱动</li>
+</ul>
+
+<h3 id="http---">http - 模块</h3>
+
+<h4 id="hello-world">hello world</h4>
+
+<p>a. 全局方法require()是用来导入模块的，一般直接把 require() 方法的返回值赋值给一个变量，在 JavaScript 代码中直接使用此变量即可 。require(“http”) 就是加载系统预置的 http 模块</p>
+
+<p>b. http.createServer 是模块的方法，目的就是创建并返回一个新的web server对象，并且给服务绑定一个回调，用以处理请求。</p>
+
+<p>c. 通过 http.listen() 方法就可以让该 HTTP 服务器在特定端口监听。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var http = require('http');
+
+  http.createServer(function (req, res) {
+
+    res.writeHead(200, {'Content-Type': 'text/plain'});
+    res.end('Hello World\n');
+
+  }).listen(1337, "127.0.0.1");
+
+  console.log('Server running at http://127.0.0.1:1337/');
+</code></pre>
+</div>
+
+<h3 id="section">模块加载</h3>
+
+<p>模块名称以 “./“开始的，比如 require(“./myModule.js”)用来加载与当前JavaScript同一目录下的myModule.js 模块。</p>
+
+<p>myModule.js</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>console.log(‘hello jiahao!’);
+
+var name = ’jiahao’;               // 私有熟悉
+
+this.location = ‘hangZhou’;        // 共有属性
+
+this.showLog = function(){         // 共有方法
+     console.log(‘hi,jiaHao!’);
+}
+</code></pre>
+</div>
+
+<p>myTest.js</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var myModule = require(‘./myModule.js’);
+
+myModule.showLog();               // hi,jiahao
+
+myModule.name;                    // undefiend
+
+myModule.location                 // hangZhou
+</code></pre>
+</div>
+
+<p>私有方法我们在模块以外是取不到的，所以是undefined。共有属性和共有方法的声明需要在前面加上 this 关键字。</p>
+
+<h3 id="fs-">fs 模块(文件模块)</h3>
+
+<p>fs模块所有的方法都提供了异步和同步两种</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>api</th>
+      <th style="text-align: center">说明</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>readFile</td>
+      <td style="text-align: center">异步读取文件,后面的function是回调函数</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var fs = require('fs');
+
+fs.readFile('./myModule.js', function (err, data) {
+
+  if (err) throw err;
+  console.log('successfully');
+
+});
+
+console.log('async');
+</code></pre>
+</div>
+
+<h3 id="events-">events 模块</h3>
+
+<p>node 采用的是事件驱动的模式，其中的很多模块都会产生各种不同的事件，可由模块来添加事件处理方法，所有能够产生事件的对象都是事件模块中的 EventEmitter 类的实例.</p>
+
+<p>a. 使用require()方法添加了events模块并把返回值赋给了一个变量</p>
+
+<p>b. new events.EventEmitter()这句创建了一个事件触发器，也就是所谓的事件模块中的 EventEmitter 类的实例</p>
+
+<p>c. on(event, listener)用来为某个事件 event 添加事件处理方法监听器</p>
+
+<p>d. emit(event, [arg1], [arg2], […]) 方法用来产生事件。以提供的参数作为监听器函数的参数，顺序执行监听器列表中的每个监听器函数。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var events = require("events");
+
+var emitter = new events.EventEmitter();
+
+emitter.on("myEvent", function(msg) {
+    console.log(msg);
+});
+
+emitter.emit("myEvent", "Hello World.");
+</code></pre>
+</div>
+
+<p><b>EventEmitter 类中的方法都与事件的产生和处理相关：<b></b></b></p>
+
+<ol>
+  <li>
+    <p>addListener(event, listener) 和 on(event, listener) 这两个方法都是将一个监听器添加到指定事件的监听器数组的末尾</p>
+  </li>
+  <li>
+    <p>once(event, listener) 这个方法为事件为添加一次性的监听器。该监听器在事件第一次触发时执行，过后将被移除</p>
+  </li>
+  <li>
+    <p>removeListener(event, listener) 该方法用来将监听器从指定事件的监听器数组中移除出去</p>
+  </li>
+  <li>
+    <p>emit(event, [arg1], [arg2], […]) 刚刚提到过了。</p>
+  </li>
+</ol>
+
+<h3 id="node--express--jade-">node &amp; express &amp; jade 入门</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var express = require('express');
+
+var app = express();
+
+app.get('/', function(req, res){
+    res.send('hello world');
+    console.log('hello world');
+});
+
+app.listen('8808');
+</code></pre>
+</div>
+
+<table>
+  <tbody>
+    <tr>
+      <td>require()</td>
+      <td>用于在当前模块中加载和使用其他模块；此方法是模块的基础，使用中大概有路径的概念就行。PS：JS文件可以去掉”.js”后缀.</td>
+    </tr>
+    <tr>
+      <td>exports</td>
+      <td>表示模块的导出对象，用于导出模块的属性和公共方法</td>
+    </tr>
+    <tr>
+      <td>app.listen()</td>
+      <td>app.listen() 就是在给定的主机和端口上监听请求，这个和node中http模块的http.createServer(function(){…}).listen()效果一致；</td>
+    </tr>
+  </tbody>
+</table>
 
     </div>
     
@@ -506,334 +696,6 @@ console.profileEnd('性能分析器一’);
 
     </div>
     
-    <div class="post">
-        <h1 class="post-title">
-            <a href="/2016/08/26/javascript-this">
-                javascript - this
-            </a>
-        </h1>
-
-        <span class="post-date">26 Aug 2016</span>
-
-        <p>this是JavaScript的一个关键字。
-代表在函数运行时，自动生成的一个内部对象，这个内部对象被称为函数上下文。只在函数内部调用。</p>
-
-<p>在看本文章时。先把下面的话记住。不然你会懵逼！血崩！
-教科书知识点：this对象是在运行时基于函数的执行环境绑定的：</p>
-
-<ol>
-  <li>
-    <p>在全局函数中，this等于window。</p>
-  </li>
-  <li>
-    <p>当函数作为某个对象的方法调用时，this指向那个对象。</p>
-  </li>
-  <li>
-    <p>匿名函数的执行环境具有全局性，因此this通常指向window。</p>
-  </li>
-</ol>
-
-<h3 id="section">纯粹的函数调用</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// 这是函数的最通常用法，属于全局性调用，因此this就代表全局对象Global。
-// ps:在非严格模式下。如果在严格模式下则为undefined。
-// test() 又可以写作 window.test()
-
-// 写法1
-function test () {
-     this.x = 1;
-     alert(this.x);
-};
-
-test();                    // 1
-
-// 写法1拓展
-function test () {
-     'use strict'
-     this.x = 1;
-     alert(this.x)
-};
-
-test()                    // error! x undefined
-
-// 写法2
-var x = 1 ;
-function test () {
-     alert(this.x);
-};
-
-test()                     // 1
-
-// 写法3
-var x = 1 ;
-function test () {
-     this.x = 0;
-};
-
-test();
-
-alert(x);                 // 0
-</code></pre>
-</div>
-
-<h3 id="section-1">作为对象方法的调用</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// 函数还可以作为某个对象的方法调用，这时this就指这个上级对象。
-
-function test (){
-     alert(this.x);
-}
-
-var o = {};
-o.x = 1;
-o.m = test;
-o.m();     // 1
-</code></pre>
-</div>
-
-<h3 id="section-2">作为构造函数调用</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// 所谓构造函数，就是通过这个函数生成一个新对象（object）。这时，this就指这个新对象。
-
-// 写法1
-function test () {
-     this.x = 1;
-}
-
-var o = new test();
-
-alert(o.x);     // 1
-
-// 写法2
-var x = 2;
-
-function test () {
-     this.x = 1;
-}
-
-var o = new test();
-
-alert(o.x);     // 1
-</code></pre>
-</div>
-
-<h3 id="applycall">apply(,[])和call(,[],[])调用</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// apply()是函数对象的一个方法，它的作用是改变函数的调用对象。
-// apply()的第一个参数就表示改变后的调用这个函数的对象。因此，this指的就是这第一个参数
-// apply()传入2个参数。一个作为函数上下文对象，另一个作为函数参数所组成的数组。
-// call() 与 apply()唯一不同的是给函数传入的参数是一个参数列表，而不是单个数组。
-
-// example 1
-var x = 0;
-
-function test(){
-     alert(this.x);
-}
-
-var o={};
-o.x = 1;
-o.m = test;
-o.m.apply();      //0
-
-// example 2
-var x = 0;
-
-function test(){
-     alert(this.x);
-}
-
-var o={};
-o.x = 1;
-o.m = test;
-o.m.apply(o);      //1
-</code></pre>
-</div>
-
-<h3 id="es6-this">ES6 this</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// es6中，箭头函数中始终会捕捉其“定义时”所在上下文的this值，作为自己的this.
-
-// example 1
-const obj = {
-    func: () =&gt; {
-        console.log(this === window); // true，非箭头函数时指向 obj
-    }
-};
-
-obj.func();
-
-// example 2
-const obj = {
-     func: function(){
-          console.log(this === obj); // true
-     }
-};
-obj.func();
-</code></pre>
-</div>
-
-<h3 id="section-3">其他</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// bind() 改变函数上下文
-//ECMAScript 5 引入了 `Function.prototype.bind`，其会创建一个绑定函数，当调用这个绑定函数时，函数上下文将会是 bind() 方法的第一个参数。上面的例子中，将 obj1 设置为函数上下文，所以利用 func 来调用函数时，函数的上下文为 obj1，而不是它的调用者 obj2。
-
-const obj1 = {
-     a: 1
-};
-
-const obj2 = {
-     a: 2,
-     func: function() {
-          console.log(this.a);
-     }.bind(obj1)
-};
-
-obj2.func(); // 1
-
-// Array 的 5 个 方法（ 暂时不看 ）
-
-every,some,forEach,map,filter
-
-const arr = ["segmentfault"];
-const obj = {};
-arr.forEach(function(ele, ind) {
-     console.log(this === window); // true
-});
-arr.forEach(function(ele, ind) {
-     console.log(this === obj); // true
-}, obj);
-</code></pre>
-</div>
-
-<h2 id="ps---">PS - 相关问题</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// example 1
-if( true ){
-     console.log(this)
-}
-
-// example 2
-const obj = {
-     someData: 'string';
-}
-
-function myFun(){
-     console.log(this);
-}
-obj.staticFunction = myFun;
-obj.staticFunction();
-
-// example 3
-const obj = {
-     myFunc: function(){
-          console.log(this);
-     }
-}
-const myFun = obj.myFunc;
-myFun
-
-// example 4
-function myFun(){
-     console.log(this);
-}
-const obj = {
-     someData : 'a'
-}
-myFun.call(obj);
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// 知乎一个人的提问：https://www.zhihu.com/question/34450250
-// ps:这是一个坑！！！
-// ps: this 是基于函数的执行环境绑定的。而不是定义环境。
-
-// example1
-var name = 'obj';
-var objA = {
-     name: 'A',
-     showName: function(){
-          console.log(this.name);
-     }
-}
-var objB = {
-     name: 'B',
-     showName: function(){
-          var show = objA.showName();
-          show;               // show;
-     }
-}
-objB.showName();                         // A
-
-// example 2
-var name = 'obj';
-var objA = {
-     name: 'A',
-     showName: function(){
-          console.log(this.name);
-     }
-}
-var objB = {
-     name: 'B',
-     showName: function(){
-          var show = objA.showName;
-          show();
-     }
-}
-objB.showName();                         // obj
-
-// example 2 又可以理解成
-var name = 'obj';
-var objA = {
-     name: 'A',
-     showName: function(){
-          console.log(this.name);
-     }
-}
-var objB = {
-     name: 'B',
-     showName: function(){
-          return function(){
-               alert(this.name)
-          }
-     }
-}
-objB.showName();                         // obj
-
-// example 3
-var name = 'obj';
-var objA = {
-     name: 'A',
-     showName: function(){
-          alert(self.name);
-          console.log(‘a:'+self);
-     }
-}
-var objB = {
-     name: 'B',
-     showName: function(){
-          var self = this;
-          var show = objA.showName;
-          console.log('b:'+self);
-          show();
-     }
-}
-objB.showName();                         // obj
-                                         // b
-                                         // window
-</code></pre>
-</div>
-
-<p>相关文章地址：</p>
-
-<ul>
-  <li><a href="https://zhuanlan.zhihu.com/p/23023311">知乎: https://zhuanlan.zhihu.com/p/23023311</a></li>
-  <li><a href="http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html">阮一峰：http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html</a></li>
-  <li><a href="https://bonsaiden.github.io/JavaScript-Garden/zh/#function.this">秘密花园：https://bonsaiden.github.io/JavaScript-Garden/zh/#function.this</a></li>
-</ul>
-
-    </div>
-    
 </div>
 
 
@@ -865,6 +727,10 @@ objB.showName();                         // obj
         
             
                 <a class="pagination-item" href="/page4">4</a>
+            
+        
+            
+                <a class="pagination-item" href="/page5">5</a>
             
         
 
