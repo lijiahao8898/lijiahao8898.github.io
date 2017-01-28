@@ -591,7 +591,12 @@ a.pagination-item:hover {
 }
 
 .category{
+  cursor: pointer;
   font-size: 0.95rem;
   font-weight: bold;
   /*font-style: italic;*/
+}
+
+.is-show{
+  display: block!important;
 }

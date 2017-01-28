@@ -36,6 +36,7 @@
 </div>
 
 <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+<script type="text/javascript" src="../../../jquery.min.js"></script>
 
 <script>
   (function (document) {
@@ -50,6 +51,17 @@
       checkbox.checked = false;
     }, false);
   })(document);
+</script>
+
+<script>
+  (function () {
+    $('.category').click(function () {
+      var categoryTitle = $.trim($(this).find('.category-title').text());
+      var className = '.sidebar-' + categoryTitle;
+//      $(className).show();
+      $(className).toggleClass('is-show');
+    })
+  })();
 </script>
 </body>
 </html>
