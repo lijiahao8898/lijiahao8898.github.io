@@ -21,6 +21,7 @@ F2E整理
 10. [前端资源导航](http://www.css88.com/nav/)：http://www.css88.com/nav/
 11. [51CTO](http://blog.51cto.com/)：http://blog.51cto.com/
 12. [学习各种知识的网站](http://tool.oschina.net/apidocs/):http://tool.oschina.net/apidocs/
+13. [前端书籍下载](http://www1.qdfuns.com/feres.php);
 
 ## git
 1. [git](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)：http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
