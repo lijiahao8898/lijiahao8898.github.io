@@ -146,7 +146,13 @@
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">打包工具</span><span class="category-number">&nbsp;（3）</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">打包工具</span><span class="category-number">&nbsp;（4）</span></a>
+
+      
+
+      <a class="sidebar-nav-item  sidebar-打包工具" href="/2017/04/24/tool-fis3" style="display: none">&nbsp;&nbsp;&nbsp;tool - fis3&nbsp;&nbsp;
+        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 04 - 24</p>-->
+      </a>
 
       
 
@@ -260,6 +266,18 @@
 
     
 
+    <a class="sidebar-nav-item category"><span class="category-title">vue</span><span class="category-number">&nbsp;（1）</span></a>
+
+      
+
+      <a class="sidebar-nav-item  sidebar-vue" href="/2017/02/21/vue" style="display: none">&nbsp;&nbsp;&nbsp;vue&nbsp;&nbsp;
+        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 02 - 21</p>-->
+      </a>
+
+      
+
+    
+
     <!--<a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a>-->
 
     <!--<a class="sidebar-nav-item" href="">GitHub project</a>-->
@@ -312,6 +330,48 @@
 <!--</div>-->
 
 <div class="posts">
+    
+    <div class="post">
+        <h1 class="post-title">
+            <a href="/2017/04/24/tool-fis3">
+                tool - fis3
+            </a>
+        </h1>
+
+        <span class="post-date">24 Apr 2017</span>
+
+        <p>百度的打包工具FIS3</p>
+
+    </div>
+    
+    <div class="post">
+        <h1 class="post-title">
+            <a href="/2017/02/21/vue">
+                vue
+            </a>
+        </h1>
+
+        <span class="post-date">21 Feb 2017</span>
+
+        <p>vue 生命周期</p>
+
+<p>beforeCreate</p>
+
+<p>created</p>
+
+<p>beforeMount</p>
+
+<p>mounted</p>
+
+<p>beforeUpdate</p>
+
+<p>updated</p>
+
+<p>beforeDestroy</p>
+
+<p>destroy</p>
+
+    </div>
     
     <div class="post">
         <h1 class="post-title">
@@ -778,242 +838,6 @@ gulp.task('rc', ['html', 'clean'], function () {
 <ul>
   <li><a href="http://www.gulpjs.com.cn/">gulp中文网</a></li>
 </ul>
-
-    </div>
-    
-    <div class="post">
-        <h1 class="post-title">
-            <a href="/2017/01/24/question">
-                问题整理
-            </a>
-        </h1>
-
-        <span class="post-date">24 Jan 2017</span>
-
-        <div class="highlighter-rouge"><pre class="highlight"><code>1 - 微信中不能直接打开itunes的下载地址的问题 ？
-
-知乎文章：
-https://www.zhihu.com/question/24029212
-
-解决方案：
-方案一，申请应用宝，先跳转到应用宝页面，再点击下载根据设备的不同转去AppStore或是Android的应用宝下载地址。
-方案二，在页面前端做处理，如果无法跳转到AppStore就提示用户在微信里手动选择用Safari打开页面。
-方案三，二百二维码里面配置：http://hotapp.cn/?src=http://www.hao2b.cn
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>2 - 防止网页被恶意嵌套入其他的网页中
-
-&lt;script type="text/javascript"&gt;
-
-if (window!=top)                          // 判断当前的window对象是否是top对象
-
-top.location.href =window.location.href;  // 如果不是，将top对象的网址自动导向被嵌入网页的网址
-
-&lt;/script&gt;
-
-// 升级版
-try{
-
-　　top.location.hostname;
-
-　　if (top.location.hostname != window.location.hostname) {
-
-　　　　top.location.href =window.location.href;
-
-　　}
-
-}
-
-catch(e){
-
-　　top.location.href = window.location.href;
-
-}
-
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>3 - 在iPhone中在li标签下的click事件无效
-
-解决方案：
-
-方案一，在对应的css中添加cursor：pointer样式
-方案二，将li标签改成a标签
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>4 - 时间日期格式问题
-
-// 时间处理 no = ‘2016-12-12 11:48:20'
-formatTime: function(no){
-    var date= new Date(no);
-    var year = date.getFullYear();
-    var month = date.getMonth() + 1 &lt; 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
-    var datetime = date.getDate() &lt; 10 ? "0" + date.getDate() : date.getDate();
-    return year + "-" + month + "-" + datetime;
-}
-
-表象：
-上述时间处理在PC游览器端呈现的是正常的。
-在IOS iphone6s 里面 展现出invalid date的报错
-
-解决方案：
-// 时间处理 no = ‘2016-12-12 11:48:20’
-formatTime: function(no){
-    no = no.replace(/-/g,':').replace(' ',':');
-    no = no.split(':’);
-    var date = new Date(no[0],(no[1]-1),no[2],no[3],no[4],no[5]);
-    var date= new Date(dateTime);
-    var year = date.getFullYear();
-    var month = date.getMonth() + 1 &lt; 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
-    var datetime = date.getDate() &lt; 10 ? "0" + date.getDate() : date.getDate();
-    return year + "-" + month + "-" + datetime;
-}
-将no 日期格式转换成 ‘2016-12-12T11:48:20’ 或者 ‘2016/12/12 11:48:20’
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>5 - htm5 无刷新改变url地址
-
-// history里面会增加一个记录
-window.history.pushState({}, 0, url);
-
-// history替换当前的url记录
-window.history.replaceState({}, 0, url);
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>6 - 获取cookie
-function getCookie(name) {
-    var arr = document.cookie.match(new RegExp("(^| )" + name + "=([^;]*)(;|$)"));
-    if (arr != null){
-        return unescape(arr[2]);
-    }else{
-        return null;
-    };
-}
-</code></pre>
-</div>
-
-    </div>
-    
-    <div class="post">
-        <h1 class="post-title">
-            <a href="/2016/11/19/study-knowledge">
-                F2E整理
-            </a>
-        </h1>
-
-        <span class="post-date">19 Nov 2016</span>
-
-        <p>F2E整理</p>
-
-<h2 id="section">网站</h2>
-<ol>
-  <li><a href="http://gold.xitu.io/">掘金</a>：http://gold.xitu.io/</li>
-  <li><a href="http://www.jianshu.com/">简书</a>：http://www.jianshu.com/</li>
-  <li><a href="https://www.zhihu.com/">知乎</a>：https://www.zhihu.com/</li>
-  <li><a href="http://www.css88.com/">web前端网站</a>：http://www.css88.com/</li>
-  <li><a href="http://www.html-js.com/">前端乱炖</a>：http://www.html-js.com/</li>
-  <li><a href="http://f2e.souche.com/blog/">大搜车前端团队博客</a>：http://f2e.souche.com/blog/</li>
-  <li><a href="http://frontenddev.org/">FED社区</a>：http://frontenddev.org/</li>
-  <li><a href="http://www.w3cfuns.com/">W3Cfuns</a>：http://www.w3cfuns.com/</li>
-  <li><a href="http://www.imooc.com/">慕课网</a>：http://www.imooc.com/</li>
-  <li><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1433401084&amp;token=&amp;lang=zh_CN">微信公众平台</a>：https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1433401084&amp;token=&amp;lang=zh_CN</li>
-  <li><a href="http://mp.weixin.qq.com/wiki/17/fa4e1434e57290788bde25603fa2fcbd.html">微信公众平台开发者文档</a>：http://mp.weixin.qq.com/wiki/17/fa4e1434e57290788bde25603fa2fcbd.html</li>
-  <li><a href="http://www.css88.com/nav/">前端资源导航</a>：http://www.css88.com/nav/</li>
-  <li><a href="http://blog.51cto.com/">51CTO</a>：http://blog.51cto.com/</li>
-  <li><a href="http://tool.oschina.net/apidocs/">学习各种知识的网站</a>:http://tool.oschina.net/apidocs/</li>
-  <li><a href="http://www1.qdfuns.com/feres.php">前端书籍下载</a>;</li>
-</ol>
-
-<h2 id="git">git</h2>
-<ol>
-  <li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">git</a>：http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</li>
-</ol>
-
-<h2 id="javascript">javascript文档</h2>
-<ol>
-  <li><a href="http://es6.ruanyifeng.com/#docs/intro">ES6</a>：http://es6.ruanyifeng.com/#docs/intro</li>
-  <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Introduction">MDN</a>:https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Introduction</li>
-</ol>
-
-<h2 id="section-1">工具网站</h2>
-<ol>
-  <li><a href="http://caniuse.com/">检查代码兼容</a>：http://caniuse.com/</li>
-  <li><a href="http://www.getmarkman.com/">马克鳗</a>：http://www.getmarkman.com/</li>
-</ol>
-
-<h2 id="section-2">前端框架</h2>
-<ol>
-  <li><a href="http://www.h-ui.net/Hui-4.4-slider.shtml">H-ui前端框架简单 · 免费 · 适合中国网站</a>：http://www.h-ui.net/Hui-4.4-slider.shtml</li>
-  <li><a href="http://reactnative.cn/">react-native</a>：http://reactnative.cn/</li>
-  <li><a href="http://www.apjs.net/#dir33">angular.js</a>：http://www.apjs.net/#dir33</li>
-  <li><a href="http://juicer.name/docs/docs_zh_cn.html">Juicer模板</a>：http://juicer.name/docs/docs_zh_cn.html</li>
-  <li><a href="http://www.material-ui.com/#/components/circular-progress">google前端框架</a>：http://www.material-ui.com/#/components/circular-progress</li>
-  <li><a href="http://amazeui.org/javascript/tabs">amazeUi</a>：http://amazeui.org/javascript/tabs</li>
-  <li><a href="http://www.auicss.com/?m=Home&amp;c=Document#pullrefresh">AUi</a>：http://www.auicss.com/?m=Home&amp;c=Document#pullrefresh</li>
-  <li><a href="http://dev.dcloud.net.cn/mui/">MUi</a>：http://dev.dcloud.net.cn/mui/</li>
-  <li><a href="http://docs.kissyui.com/1.4/docs/html/guideline/get-started.html">KISSY</a>：http://docs.kissyui.com/1.4/docs/html/guideline/get-started.html</li>
-  <li><a href="https://almsaeedstudio.com/AdminLTE">AdminLTE：后台UI</a>：https://almsaeedstudio.com/AdminLTE</li>
-  <li><a href="https://www.almsaeedstudio.com/themes/AdminLTE/documentation/index.html">AdminLTE</a>：https://www.almsaeedstudio.com/themes/AdminLTE/documentation/index.html</li>
-</ol>
-
-<h2 id="section-3">命名规范</h2>
-<ol>
-  <li><a href="http://xhtml.blog.51cto.com/3754279/1749450">http://xhtml.blog.51cto.com/3754279/1749450</a></li>
-  <li><a href="http://alloyteam.github.io/CodeGuide/">http://alloyteam.github.io/CodeGuide/</a></li>
-</ol>
-
-<h2 id="section-4">图表</h2>
-<ol>
-  <li><a href="https://github.com/d3/d3/wiki/Gallery">D3</a>：https://github.com/d3/d3/wiki/Gallery</li>
-  <li><a href="http://echarts.baidu.com/echarts2/doc/example.html">图形ECharts</a>：http://echarts.baidu.com/echarts2/doc/example.html</li>
-  <li><a href="http://echarts.baidu.com/option.html#title">图片ECharts2</a>：http://echarts.baidu.com/option.html#title</li>
-</ol>
-
-<h2 id="section-5">插件网站</h2>
-<ol>
-  <li><a href="http://www.dowebok.com/">http://www.dowebok.com/</a>: http://www.dowebok.com/</li>
-</ol>
-
-<h4 id="section-6">[图片轮播插件]</h4>
-<ol>
-  <li><a href="http://www.dowebok.com/194.html">带有回调的轮播插件jquery.slidizle</a>: http://www.dowebok.com/194.html</li>
-</ol>
-
-<h4 id="icon">[icon]</h4>
-<ol>
-  <li><a href="http://ionicons.com/">icon图标</a>:http://ionicons.com/</li>
-  <li><a href="http://fontawesome.dashgame.com/">Font Awesome</a>：http://fontawesome.dashgame.com/</li>
-</ol>
-
-<h4 id="icheck">[icheck]</h4>
-<ol>
-  <li><a href="http://www.bootcss.com/p/icheck/">icheck</a>:
-http://www.bootcss.com/p/icheck/</li>
-</ol>
-
-<h2 id="section-7">方法</h2>
-<ol>
-  <li><a href="http://blog.csdn.net/z69183787/article/details/17393159">jquery 在textarea 指定 位置处 插入内容</a>：http://blog.csdn.net/z69183787/article/details/17393159</li>
-  <li><a href="http://www.uncletoo.com/html/jsjquery/755.html">用JQuery获取textarea或input中的光标位置</a>：http://www.uncletoo.com/html/jsjquery/755.html</li>
-  <li><a href="http://www.ruanyifeng.com/blog/2011/08/a_detailed_explanation_of_jquery_deferred_object.html">deferred对象详解</a>:http://www.ruanyifeng.com/blog/2011/08/a_detailed_explanation_of_jquery_deferred_object.html
-4.</li>
-</ol>
-
-<h2 id="section-8">干货</h2>
-<ol>
-  <li><a href="https://github.com/amfe/article/issues">github issues</a>：https://github.com/amfe/article/issues</li>
-  <li><a href="http://www.open-open.com/news/view/1bde2f8">最新最好的bootstrap免费主题</a>：http://www.open-open.com/news/view/1bde2f8</li>
-  <li><a href="http://taobaofed.org/blog/2016/05/23/video-player/">淘宝前端团队-视频播放那些事</a>：http://taobaofed.org/blog/2016/05/23/video-player/</li>
-</ol>
-
-<h2 id="section-9">外链</h2>
-<ol>
-  <li><a href="http://www.jianshu.com/p/c3dae0951f74">最全的前端知识整理</a>：http://www.jianshu.com/p/c3dae0951f74</li>
-</ol>
 
     </div>
     

@@ -146,7 +146,13 @@
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">打包工具</span><span class="category-number">&nbsp;（3）</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">打包工具</span><span class="category-number">&nbsp;（4）</span></a>
+
+      
+
+      <a class="sidebar-nav-item  sidebar-打包工具" href="/2017/04/24/tool-fis3" style="display: none">&nbsp;&nbsp;&nbsp;tool - fis3&nbsp;&nbsp;
+        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 04 - 24</p>-->
+      </a>
 
       
 
@@ -260,6 +266,18 @@
 
     
 
+    <a class="sidebar-nav-item category"><span class="category-title">vue</span><span class="category-number">&nbsp;（1）</span></a>
+
+      
+
+      <a class="sidebar-nav-item  sidebar-vue" href="/2017/02/21/vue" style="display: none">&nbsp;&nbsp;&nbsp;vue&nbsp;&nbsp;
+        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 02 - 21</p>-->
+      </a>
+
+      
+
+    
+
     <!--<a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a>-->
 
     <!--<a class="sidebar-nav-item" href="">GitHub project</a>-->
@@ -312,6 +330,125 @@
 <!--</div>-->
 
 <div class="posts">
+    
+    <div class="post">
+        <h1 class="post-title">
+            <a href="/2016/10/31/javascript-object">
+                javascript - 对象
+            </a>
+        </h1>
+
+        <span class="post-date">31 Oct 2016</span>
+
+        <p>JavaScript中所有变量都可以当做对象使用，除了两个例外 null 和 undefined。</p>
+
+<p>一个常见的误解是数字的字面值（literal）不能当作对象使用。这是因为 JavaScript 解析器的一个错误， 它试图将点操作符解析为浮点数字面值的一部分。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>2.toString();   // 出错：SyntaxError
+
+// 变通方法
+2..toString();
+2 .toString();
+(2).toString();
+</code></pre>
+</div>
+
+<h1 id="section">访问属性</h1>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 有两种方式来访问对象的属性。点操作符或者中括号操作符
+
+var foo = { name: 'kitten' }
+
+foo.name;               // kitten
+foo['name’];            // kitten
+
+var get = 'name';
+foo[get];               // kitten
+
+foo.1234;               // SyntaxError
+foo['1234'];            // works
+</code></pre>
+</div>
+
+<p>两种语法是等价的，但是中括号操作符在下面两种情况下依然有效</p>
+
+<ul>
+  <li>动态设置属性</li>
+  <li>属性名不是一个有效的变量名 （比如属性名中包含空格，或者属性名是 JS 的关键词）</li>
+</ul>
+
+<h1 id="section-1">删除属性</h1>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 删除属性唯一的方法是delete.
+// undefined和null 并不能删除属性. 而仅仅是移除了属性和值的关联
+
+var obj = {
+    bar: 1,
+    foo: 2,
+    baz: 3
+};
+obj.bar = undefined;
+obj.foo = null;
+delete obj.baz;
+
+for(var i in obj) {
+    if (obj.hasOwnProperty(i)) {
+        console.log(i, '' + obj[i]);
+    }
+}
+</code></pre>
+</div>
+
+    </div>
+    
+    <div class="post">
+        <h1 class="post-title">
+            <a href="/2016/10/26/github-and-jekyll">
+                github & jekyll 编写自己的小网站
+            </a>
+        </h1>
+
+        <span class="post-date">26 Oct 2016</span>
+
+        <div class="highlighter-rouge"><pre class="highlight"><code>gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/  // 将gem资源指向 指向国内
+
+sudo gem install jekyll  // 安装jekyll
+
+jekyll -v // 查看jekyll 版本
+
+jekyll server // 启服务
+
+jekyll build // 构建
+</code></pre>
+</div>
+
+<p>jekyll 语法 :</p>
+<ul>
+  <li>layout：                           指定模板</li>
+  <li>title:                             标题</li>
+  <li>description：                      描述</li>
+  <li>category/categories：              分类</li>
+  <li>published:                         是否发布</li>
+  <li>weather:                           自定义变量</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>---
+layout: post
+title: title
+category: blog
+published: true # default true (可以不写这一行)
+weather: sunny # 天气
+---
+</code></pre>
+</div>
+
+<p>调用的时候使用</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+</code></pre>
+</div>
+
+    </div>
     
     <div class="post">
         <h1 class="post-title">
@@ -488,521 +625,6 @@ app.listen('8808');
     </tr>
   </tbody>
 </table>
-
-    </div>
-    
-    <div class="post">
-        <h1 class="post-title">
-            <a href="/2016/08/30/console">
-                非常实用的console
-            </a>
-        </h1>
-
-        <span class="post-date">30 Aug 2016</span>
-
-        <h2 id="section">五种提示</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>console.log('this is log’);
-
-console.info('this is info’);
-
-console.debug('this is debug’);
-
-console.warn('this is warn’);
-
-console.error(‘this is error’);
-</code></pre>
-</div>
-
-<h2 id="section-1">占位符</h2>
-
-<p>占位符的种类比较少，只支持字符（%s）、整数（%d或%i）、浮点数（%f）和对象（%o）。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>console.log("%d年%d月%d日",2011,3,26);
-
-console.log("圆周率是%f",3.1415926);
-</code></pre>
-</div>
-
-<p>%o占位符，可以用来查看一个对象内部情况。比如，有这样一个对象：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var dog = {} ;
-
-dog.name = "大毛" ;
-
-dog.color = "黄色";
-
-console.log("%o",dog);
-
-尝试下测试用例
-</code></pre>
-</div>
-
-<p>还有一种特殊的标示符%c，对输出的文字可以附加特殊的样式，当进行大型项目开发的时候，代码中可能有很多其他开发者添加的控制台语句。开发者对自己的输出定制特别的样式就可以方便自己在眼花缭乱的输出结果中一眼看到自己需要的内容。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>console.log('%cMy name is lijiahao.', 'color: #fff; background: #f40; font-size: 24px;');
-</code></pre>
-</div>
-
-<h2 id="section-2">分组信息</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>　console.group("第一组信息");
-
-　　　　console.log("第一组第一条");
-
-　　　　console.log("第一组第二条")
-
-　　console.groupEnd();
-
-　　console.group("第二组信息");
-
-　　　　console.log("第二组第一条");
-
-　　　　console.log("第二组第二条");
-
-　　console.groupEnd();
-</code></pre>
-</div>
-
-<h2 id="consoledir">console.dir()</h2>
-
-<p>console.dir()可以显示一个对象所有的属性和方法。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>dog.bark = function(){alert("汪汪汪");};
-
-console.dir(dog);
-</code></pre>
-</div>
-
-<h2 id="consoledirxml">console.dirxml()</h2>
-
-<p>console.dirxml()用来显示网页的某个节点（node）所包含的html/xml代码。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var table = document.getElementsByTagNmae(“body");
-
-console.dirxml(table);
-</code></pre>
-</div>
-
-<h2 id="consoleassert">console.assert()</h2>
-
-<p>console.assert()用来判断一个表达式或变量是否为真。如果结果为否，则在控制台输出一条相应信息，并且抛出一个异常。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var result = 0;
-
-console.assert( result );
-
-var year = 2000;
-
-console.assert(year == 2011 );
-</code></pre>
-</div>
-
-<h2 id="consoletrace">console.trace()</h2>
-
-<p>console.trace()用来追踪函数的调用轨迹。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>function add(a,b){
-
-    console.trace();
-
-　　return a+b;
-}
-
-function add3(a,b){return add2(a,b);}
-
-function add2(a,b){return add1(a,b);}
-
-function add1(a,b){return add(a,b);}
-
-var x = add3(1,1);
-</code></pre>
-</div>
-
-<h2 id="consolecount">console.count()</h2>
-
-<p>console.count()输出执行到该行的次数</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>(function() {
-  for (var i = 0; i &lt; 5; i++) {
-    console.count('count');
-  }
-})();
-</code></pre>
-</div>
-<h2 id="section-3">显示运行时间</h2>
-
-<p>console.time()、console.timeEnd()用来显示代码的运行时间。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>console.time("计时器一");
-
-for(var i=0;i&lt;1000;i++){
-
-　　for(var j=0;j&lt;1000;j++){}
-
-}
-
-console.timeEnd("计时器一");
-</code></pre>
-</div>
-
-<h2 id="section-4">性能分析</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>function Foo(){
-
-　　for(var i=0;i&lt;10;i++){funcA(1000);}
-
-　　funcB(10000);
-
-}
-
-function funcA(count){
-
-　　for(var i=0;i&lt;count;i++){}
-
-}
-
-function funcB(count){
-
-　　for(var i=0;i&lt;count;i++){}
-
-}
-
-console.profile('性能分析器一');
-
-Foo();
-
-console.profileEnd('性能分析器一’);
-</code></pre>
-</div>
-
-    </div>
-    
-    <div class="post">
-        <h1 class="post-title">
-            <a href="/2016/08/26/javascript-this">
-                javascript - this
-            </a>
-        </h1>
-
-        <span class="post-date">26 Aug 2016</span>
-
-        <p>this是JavaScript的一个关键字。
-代表在函数运行时，自动生成的一个内部对象，这个内部对象被称为函数上下文。只在函数内部调用。</p>
-
-<p>在看本文章时。先把下面的话记住。不然你会懵逼！血崩！
-教科书知识点：this对象是在运行时基于函数的执行环境绑定的：</p>
-
-<ol>
-  <li>
-    <p>在全局函数中，this等于window。</p>
-  </li>
-  <li>
-    <p>当函数作为某个对象的方法调用时，this指向那个对象。</p>
-  </li>
-  <li>
-    <p>匿名函数的执行环境具有全局性，因此this通常指向window。</p>
-  </li>
-</ol>
-
-<h3 id="section">纯粹的函数调用</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// 这是函数的最通常用法，属于全局性调用，因此this就代表全局对象Global。
-// ps:在非严格模式下。如果在严格模式下则为undefined。
-// test() 又可以写作 window.test()
-
-// 写法1
-function test () {
-     this.x = 1;
-     alert(this.x);
-};
-
-test();                    // 1
-
-// 写法1拓展
-function test () {
-     'use strict'
-     this.x = 1;
-     alert(this.x)
-};
-
-test()                    // error! x undefined
-
-// 写法2
-var x = 1 ;
-function test () {
-     alert(this.x);
-};
-
-test()                     // 1
-
-// 写法3
-var x = 1 ;
-function test () {
-     this.x = 0;
-};
-
-test();
-
-alert(x);                 // 0
-</code></pre>
-</div>
-
-<h3 id="section-1">作为对象方法的调用</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// 函数还可以作为某个对象的方法调用，这时this就指这个上级对象。
-
-function test (){
-     alert(this.x);
-}
-
-var o = {};
-o.x = 1;
-o.m = test;
-o.m();     // 1
-</code></pre>
-</div>
-
-<h3 id="section-2">作为构造函数调用</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// 所谓构造函数，就是通过这个函数生成一个新对象（object）。这时，this就指这个新对象。
-
-// 写法1
-function test () {
-     this.x = 1;
-}
-
-var o = new test();
-
-alert(o.x);     // 1
-
-// 写法2
-var x = 2;
-
-function test () {
-     this.x = 1;
-}
-
-var o = new test();
-
-alert(o.x);     // 1
-</code></pre>
-</div>
-
-<h3 id="applycall">apply(,[])和call(,[],[])调用</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// apply()是函数对象的一个方法，它的作用是改变函数的调用对象。
-// apply()的第一个参数就表示改变后的调用这个函数的对象。因此，this指的就是这第一个参数
-// apply()传入2个参数。一个作为函数上下文对象，另一个作为函数参数所组成的数组。
-// call() 与 apply()唯一不同的是给函数传入的参数是一个参数列表，而不是单个数组。
-
-// example 1
-var x = 0;
-
-function test(){
-     alert(this.x);
-}
-
-var o={};
-o.x = 1;
-o.m = test;
-o.m.apply();      //0
-
-// example 2
-var x = 0;
-
-function test(){
-     alert(this.x);
-}
-
-var o={};
-o.x = 1;
-o.m = test;
-o.m.apply(o);      //1
-</code></pre>
-</div>
-
-<h3 id="es6-this">ES6 this</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// es6中，箭头函数中始终会捕捉其“定义时”所在上下文的this值，作为自己的this.
-
-// example 1
-const obj = {
-    func: () =&gt; {
-        console.log(this === window); // true，非箭头函数时指向 obj
-    }
-};
-
-obj.func();
-
-// example 2
-const obj = {
-     func: function(){
-          console.log(this === obj); // true
-     }
-};
-obj.func();
-</code></pre>
-</div>
-
-<h3 id="section-3">其他</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// bind() 改变函数上下文
-//ECMAScript 5 引入了 `Function.prototype.bind`，其会创建一个绑定函数，当调用这个绑定函数时，函数上下文将会是 bind() 方法的第一个参数。上面的例子中，将 obj1 设置为函数上下文，所以利用 func 来调用函数时，函数的上下文为 obj1，而不是它的调用者 obj2。
-
-const obj1 = {
-     a: 1
-};
-
-const obj2 = {
-     a: 2,
-     func: function() {
-          console.log(this.a);
-     }.bind(obj1)
-};
-
-obj2.func(); // 1
-
-// Array 的 5 个 方法（ 暂时不看 ）
-
-every,some,forEach,map,filter
-
-const arr = ["segmentfault"];
-const obj = {};
-arr.forEach(function(ele, ind) {
-     console.log(this === window); // true
-});
-arr.forEach(function(ele, ind) {
-     console.log(this === obj); // true
-}, obj);
-</code></pre>
-</div>
-
-<h2 id="ps---">PS - 相关问题</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// example 1
-if( true ){
-     console.log(this)
-}
-
-// example 2
-const obj = {
-     someData: 'string';
-}
-
-function myFun(){
-     console.log(this);
-}
-obj.staticFunction = myFun;
-obj.staticFunction();
-
-// example 3
-const obj = {
-     myFunc: function(){
-          console.log(this);
-     }
-}
-const myFun = obj.myFunc;
-myFun
-
-// example 4
-function myFun(){
-     console.log(this);
-}
-const obj = {
-     someData : 'a'
-}
-myFun.call(obj);
-</code></pre>
-</div>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// 知乎一个人的提问：https://www.zhihu.com/question/34450250
-// ps:这是一个坑！！！
-// ps: this 是基于函数的执行环境绑定的。而不是定义环境。
-
-// example1
-var name = 'obj';
-var objA = {
-     name: 'A',
-     showName: function(){
-          console.log(this.name);
-     }
-}
-var objB = {
-     name: 'B',
-     showName: function(){
-          var show = objA.showName();
-          show;               // show;
-     }
-}
-objB.showName();                         // A
-
-// example 2
-var name = 'obj';
-var objA = {
-     name: 'A',
-     showName: function(){
-          console.log(this.name);
-     }
-}
-var objB = {
-     name: 'B',
-     showName: function(){
-          var show = objA.showName;
-          show();
-     }
-}
-objB.showName();                         // obj
-
-// example 2 又可以理解成
-var name = 'obj';
-var objA = {
-     name: 'A',
-     showName: function(){
-          console.log(this.name);
-     }
-}
-var objB = {
-     name: 'B',
-     showName: function(){
-          return function(){
-               alert(this.name)
-          }
-     }
-}
-objB.showName();                         // obj
-
-// example 3
-var name = 'obj';
-var objA = {
-     name: 'A',
-     showName: function(){
-          alert(self.name);
-          console.log(‘a:'+self);
-     }
-}
-var objB = {
-     name: 'B',
-     showName: function(){
-          var self = this;
-          var show = objA.showName;
-          console.log('b:'+self);
-          show();
-     }
-}
-objB.showName();                         // obj
-                                         // b
-                                         // window
-</code></pre>
-</div>
-
-<p>相关文章地址：</p>
-
-<ul>
-  <li><a href="https://zhuanlan.zhihu.com/p/23023311">知乎: https://zhuanlan.zhihu.com/p/23023311</a></li>
-  <li><a href="http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html">阮一峰：http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html</a></li>
-  <li><a href="https://bonsaiden.github.io/JavaScript-Garden/zh/#function.this">秘密花园：https://bonsaiden.github.io/JavaScript-Garden/zh/#function.this</a></li>
-</ul>
 
     </div>
     
