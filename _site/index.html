@@ -270,8 +270,8 @@
 
       
 
-      <a class="sidebar-nav-item  sidebar-vue" href="/2017/02/21/vue" style="display: none">&nbsp;&nbsp;&nbsp;vue&nbsp;&nbsp;
-        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 02 - 21</p>-->
+      <a class="sidebar-nav-item  sidebar-vue" href="/2017/05/14/vue" style="display: none">&nbsp;&nbsp;&nbsp;vue&nbsp;&nbsp;
+        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 05 - 14</p>-->
       </a>
 
       
@@ -333,6 +333,68 @@
     
     <div class="post">
         <h1 class="post-title">
+            <a href="/2017/05/14/vue">
+                vue
+            </a>
+        </h1>
+
+        <span class="post-date">14 May 2017</span>
+
+        <h3 id="初识vuejs">初识vue.js</h3>
+
+<p>一个非常简单的例子</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;div id="app"&gt;
+    \{\{ message }\}\
+&lt;/div&gt;
+
+new Vue({
+    el: '#app'
+    data: {
+        message: 'hello world!'
+    }
+})
+
+</code></pre>
+</div>
+
+<p>重要的属性:</p>
+<ul>
+  <li>data - 数据</li>
+  <li>methods - 方法</li>
+  <li>watch - 监听</li>
+  <li>component - 注册组件</li>
+</ul>
+
+<p>模板指令:</p>
+<ul>
+  <li>模板渲染 - v-text,v-html,{{  }}\</li>
+  <li>控制模板显示或者隐藏 - v-if,v-show</li>
+  <li>循环 - v-for</li>
+  <li>事件绑定 - v-on
+点击事件<code class="highlighter-rouge">v-on:click</code>也可以简写为<code class="highlighter-rouge">@click</code></li>
+  <li>属性绑定 - v-bind</li>
+</ul>
+
+<p>vuejs 组件之间的信息通讯 - props</p>
+
+<h5 id="vue-生命周期">vue 生命周期</h5>
+
+<ul>
+  <li>beforeCreate</li>
+  <li>created</li>
+  <li>beforeMount</li>
+  <li>mounted</li>
+  <li>beforeUpdate</li>
+  <li>updated</li>
+  <li>beforeDestroy</li>
+  <li>destroy</li>
+</ul>
+
+    </div>
+    
+    <div class="post">
+        <h1 class="post-title">
             <a href="/2017/04/24/tool-fis3">
                 tool - fis3
             </a>
@@ -341,35 +403,6 @@
         <span class="post-date">24 Apr 2017</span>
 
         <p>百度的打包工具FIS3</p>
-
-    </div>
-    
-    <div class="post">
-        <h1 class="post-title">
-            <a href="/2017/02/21/vue">
-                vue
-            </a>
-        </h1>
-
-        <span class="post-date">21 Feb 2017</span>
-
-        <p>vue 生命周期</p>
-
-<p>beforeCreate</p>
-
-<p>created</p>
-
-<p>beforeMount</p>
-
-<p>mounted</p>
-
-<p>beforeUpdate</p>
-
-<p>updated</p>
-
-<p>beforeDestroy</p>
-
-<p>destroy</p>
 
     </div>
     
@@ -384,7 +417,7 @@
 
         <h2 id="gulp">gulp</h2>
 
-<h3 id="section">入门指南</h3>
+<h3 id="入门指南">入门指南</h3>
 
 <p>本文主要了解gulp,存在偏差忘指正。</p>
 
@@ -469,19 +502,19 @@ gulp.src('./src/fn/main.js')
 
 <p><code class="highlighter-rouge">cb</code>：每次变动需要执行的 callback。</p>
 
-<h3 id="gulp-1">gulp插件</h3>
+<h3 id="gulp插件">gulp插件</h3>
 
 <p>以下是我用到的插件。</p>
 
 <p>相关的说明和文档可以到<a href="https://www.npmjs.com/">这里</a>去查找</p>
 
-<h5 id="gulp-concat---">gulp-concat - 合并文件</h5>
+<h5 id="gulp-concat---合并文件">gulp-concat - 合并文件</h5>
 
-<h5 id="gulp-uglify---js">gulp-uglify - 压缩js</h5>
+<h5 id="gulp-uglify---压缩js">gulp-uglify - 压缩js</h5>
 
-<h5 id="gulp-rename---">gulp-rename - 重命名文件</h5>
+<h5 id="gulp-rename---重命名文件">gulp-rename - 重命名文件</h5>
 
-<h5 id="gulp-ruby-sass---sassscss">gulp-ruby-sass - 编译并压缩sass,scss</h5>
+<h5 id="gulp-ruby-sass---编译并压缩sassscss">gulp-ruby-sass - 编译并压缩sass,scss</h5>
 
 <ul>
   <li>参数说明</li>
@@ -495,7 +528,7 @@ gulp.src('./src/fn/main.js')
 </code></pre>
 </div>
 
-<h5 id="gulp-autoprefixer---css">gulp-autoprefixer - 自动增加css前缀</h5>
+<h5 id="gulp-autoprefixer---自动增加css前缀">gulp-autoprefixer - 自动增加css前缀</h5>
 
 <ul>
   <li>参数说明</li>
@@ -512,15 +545,15 @@ gulp.src('./src/fn/main.js')
 </code></pre>
 </div>
 
-<h5 id="gulp-inject---jscss">gulp-inject - 引入公共部分js和css</h5>
+<h5 id="gulp-inject---引入公共部分js和css">gulp-inject - 引入公共部分js和css</h5>
 
-<h5 id="gulp-file-include---">gulp-file-include - 引入文件内容</h5>
+<h5 id="gulp-file-include---引入文件内容">gulp-file-include - 引入文件内容</h5>
 
-<h5 id="gulp-clean---">gulp-clean - 清除文件</h5>
+<h5 id="gulp-clean---清除文件">gulp-clean - 清除文件</h5>
 
-<h5 id="gulp-htmlmin---html">gulp-htmlmin - 压缩html</h5>
+<h5 id="gulp-htmlmin---压缩html">gulp-htmlmin - 压缩html</h5>
 
-<h5 id="gulp-cssmin---css">gulp-cssmin - 压缩css</h5>
+<h5 id="gulp-cssmin---压缩css">gulp-cssmin - 压缩css</h5>
 
 <h5 id="gulp-rev-hash---hash">gulp-rev-hash - hash</h5>
 
@@ -530,7 +563,7 @@ gulp.src('./src/fn/main.js')
 
 <p>想知道我是干嘛的?<a href="http://www.browsersync.cn/">点击这里</a></p>
 
-<h3 id="gulpfile">下面是我的整个gulpfile文件</h3>
+<h3 id="下面是我的整个gulpfile文件">下面是我的整个gulpfile文件</h3>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>/**
  * gulpfile
@@ -833,7 +866,7 @@ gulp.task('rc', ['html', 'clean'], function () {
 </code></pre>
 </div>
 
-<h3 id="section-1">资料</h3>
+<h3 id="资料">资料</h3>
 
 <ul>
   <li><a href="http://www.gulpjs.com.cn/">gulp中文网</a></li>

@@ -83,3 +83,10 @@ http://www.bootcss.com/p/icheck/
 
 ## 外链
 1. [最全的前端知识整理](http://www.jianshu.com/p/c3dae0951f74)：http://www.jianshu.com/p/c3dae0951f74
+
+## 饿了么前端
+[饿了么前端](https://github.com/ElemeFE): https://github.com/ElemeFE
+
+## 百度前端
+[百度前端](https://github.com/fex-team): https://github.com/fex-team
+
