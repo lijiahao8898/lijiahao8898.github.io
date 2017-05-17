@@ -118,6 +118,14 @@
 
     
 
+      
+
+        
+
+      
+
+    
+
     <!-- 类目 -->
 
     
@@ -176,7 +184,13 @@
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">javascript</span><span class="category-number">&nbsp;（3）</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">javascript</span><span class="category-number">&nbsp;（4）</span></a>
+
+      
+
+      <a class="sidebar-nav-item  sidebar-javascript" href="/2017/05/02/javascript-object" style="display: none">&nbsp;&nbsp;&nbsp;object&nbsp;&nbsp;
+        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 05 - 02</p>-->
+      </a>
 
       
 
@@ -333,6 +347,45 @@
     
     <div class="post">
         <h1 class="post-title">
+            <a href="/2016/11/11/node-js-css-min">
+                node单个文件压缩-js&css
+            </a>
+        </h1>
+
+        <span class="post-date">11 Nov 2016</span>
+
+        <h1 id="node">node</h1>
+
+<h3 id="node--js">1 - node 压缩 js</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 安装
+npm install uglify-js -g 或者 sudo npm install uglify-js -g
+
+// 压缩
+uglifyjs *.js -o *.min.js
+
+uglifyjs *.js -m -o *.min.js
+
+ps -m 将参数压缩成a.b.c
+
+</code></pre>
+</div>
+
+<h3 id="node--css">2 - node 压缩 css</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 安装
+npm install clean-css-cli -g 或者 sudo npm install clean-css-cli -g
+
+// 压缩
+cleancss -o *.min.css *.css
+
+</code></pre>
+</div>
+
+    </div>
+    
+    <div class="post">
+        <h1 class="post-title">
             <a href="/2016/10/31/javascript-object">
                 javascript - 对象
             </a>
@@ -450,184 +503,6 @@ weather: sunny # 天气
 
     </div>
     
-    <div class="post">
-        <h1 class="post-title">
-            <a href="/2016/09/12/node">
-                node
-            </a>
-        </h1>
-
-        <span class="post-date">12 Sep 2016</span>
-
-        <p>node的优势:</p>
-<ul>
-  <li>非阻塞</li>
-  <li>单线程</li>
-  <li>事件驱动</li>
-</ul>
-
-<h3 id="http---">http - 模块</h3>
-
-<h4 id="hello-world">hello world</h4>
-
-<p>a. 全局方法require()是用来导入模块的，一般直接把 require() 方法的返回值赋值给一个变量，在 JavaScript 代码中直接使用此变量即可 。require(“http”) 就是加载系统预置的 http 模块</p>
-
-<p>b. http.createServer 是模块的方法，目的就是创建并返回一个新的web server对象，并且给服务绑定一个回调，用以处理请求。</p>
-
-<p>c. 通过 http.listen() 方法就可以让该 HTTP 服务器在特定端口监听。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var http = require('http');
-
-  http.createServer(function (req, res) {
-
-    res.writeHead(200, {'Content-Type': 'text/plain'});
-    res.end('Hello World\n');
-
-  }).listen(1337, "127.0.0.1");
-
-  console.log('Server running at http://127.0.0.1:1337/');
-</code></pre>
-</div>
-
-<h3 id="section">模块加载</h3>
-
-<p>模块名称以 “./“开始的，比如 require(“./myModule.js”)用来加载与当前JavaScript同一目录下的myModule.js 模块。</p>
-
-<p>myModule.js</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>console.log(‘hello jiahao!’);
-
-var name = ’jiahao’;               // 私有熟悉
-
-this.location = ‘hangZhou’;        // 共有属性
-
-this.showLog = function(){         // 共有方法
-     console.log(‘hi,jiaHao!’);
-}
-</code></pre>
-</div>
-
-<p>myTest.js</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var myModule = require(‘./myModule.js’);
-
-myModule.showLog();               // hi,jiahao
-
-myModule.name;                    // undefiend
-
-myModule.location                 // hangZhou
-</code></pre>
-</div>
-
-<p>私有方法我们在模块以外是取不到的，所以是undefined。共有属性和共有方法的声明需要在前面加上 this 关键字。</p>
-
-<h3 id="fs-">fs 模块(文件模块)</h3>
-
-<p>fs模块所有的方法都提供了异步和同步两种</p>
-
-<table>
-  <thead>
-    <tr>
-      <th>api</th>
-      <th style="text-align: center">说明</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>readFile</td>
-      <td style="text-align: center">异步读取文件,后面的function是回调函数</td>
-    </tr>
-  </tbody>
-</table>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var fs = require('fs');
-
-fs.readFile('./myModule.js', function (err, data) {
-
-  if (err) throw err;
-  console.log('successfully');
-
-});
-
-console.log('async');
-</code></pre>
-</div>
-
-<h3 id="events-">events 模块</h3>
-
-<p>node 采用的是事件驱动的模式，其中的很多模块都会产生各种不同的事件，可由模块来添加事件处理方法，所有能够产生事件的对象都是事件模块中的 EventEmitter 类的实例.</p>
-
-<p>a. 使用require()方法添加了events模块并把返回值赋给了一个变量</p>
-
-<p>b. new events.EventEmitter()这句创建了一个事件触发器，也就是所谓的事件模块中的 EventEmitter 类的实例</p>
-
-<p>c. on(event, listener)用来为某个事件 event 添加事件处理方法监听器</p>
-
-<p>d. emit(event, [arg1], [arg2], […]) 方法用来产生事件。以提供的参数作为监听器函数的参数，顺序执行监听器列表中的每个监听器函数。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var events = require("events");
-
-var emitter = new events.EventEmitter();
-
-emitter.on("myEvent", function(msg) {
-    console.log(msg);
-});
-
-emitter.emit("myEvent", "Hello World.");
-</code></pre>
-</div>
-
-<p><b>EventEmitter 类中的方法都与事件的产生和处理相关：<b></b></b></p>
-
-<ol>
-  <li>
-    <p>addListener(event, listener) 和 on(event, listener) 这两个方法都是将一个监听器添加到指定事件的监听器数组的末尾</p>
-  </li>
-  <li>
-    <p>once(event, listener) 这个方法为事件为添加一次性的监听器。该监听器在事件第一次触发时执行，过后将被移除</p>
-  </li>
-  <li>
-    <p>removeListener(event, listener) 该方法用来将监听器从指定事件的监听器数组中移除出去</p>
-  </li>
-  <li>
-    <p>emit(event, [arg1], [arg2], […]) 刚刚提到过了。</p>
-  </li>
-</ol>
-
-<h3 id="node--express--jade-">node &amp; express &amp; jade 入门</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var express = require('express');
-
-var app = express();
-
-app.get('/', function(req, res){
-    res.send('hello world');
-    console.log('hello world');
-});
-
-app.listen('8808');
-</code></pre>
-</div>
-
-<table>
-  <tbody>
-    <tr>
-      <td>require()</td>
-      <td>用于在当前模块中加载和使用其他模块；此方法是模块的基础，使用中大概有路径的概念就行。PS：JS文件可以去掉”.js”后缀.</td>
-    </tr>
-    <tr>
-      <td>exports</td>
-      <td>表示模块的导出对象，用于导出模块的属性和公共方法</td>
-    </tr>
-    <tr>
-      <td>app.listen()</td>
-      <td>app.listen() 就是在给定的主机和端口上监听请求，这个和node中http模块的http.createServer(function(){…}).listen()效果一致；</td>
-    </tr>
-  </tbody>
-</table>
-
-    </div>
-    
 </div>
 
 
@@ -667,6 +542,10 @@ app.listen('8808');
         
             
                 <a class="pagination-item" href="/page6">6</a>
+            
+        
+            
+                <a class="pagination-item" href="/page7">7</a>
             
         
 
