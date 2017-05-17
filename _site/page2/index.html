@@ -118,6 +118,14 @@
 
     
 
+      
+
+        
+
+      
+
+    
+
     <!-- 类目 -->
 
     
@@ -278,6 +286,18 @@
 
     
 
+    <a class="sidebar-nav-item category"><span class="category-title">style</span><span class="category-number">&nbsp;（1）</span></a>
+
+      
+
+      <a class="sidebar-nav-item  sidebar-style" href="/2017/05/17/css" style="display: none">&nbsp;&nbsp;&nbsp;css&nbsp;&nbsp;
+        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 05 - 17</p>-->
+      </a>
+
+      
+
+    
+
     <!--<a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a>-->
 
     <!--<a class="sidebar-nav-item" href="">GitHub project</a>-->
@@ -330,6 +350,474 @@
 <!--</div>-->
 
 <div class="posts">
+    
+    <div class="post">
+        <h1 class="post-title">
+            <a href="/2017/02/21/tool-gulp">
+                tool - gulp
+            </a>
+        </h1>
+
+        <span class="post-date">21 Feb 2017</span>
+
+        <h2 id="gulp">gulp</h2>
+
+<h3 id="入门指南">入门指南</h3>
+
+<p>本文主要了解gulp,存在偏差忘指正。</p>
+
+<p>安装gulp什么的就不去多说了,可以上gulp跟着节奏一步步走下来,基本上也就安装完成了。</p>
+
+<p>主要告诉大家的是gulp中几个比较重要的api和一些我用到的api.当然后期也会进行适当的补充。</p>
+
+<ul>
+  <li>1 - <code class="highlighter-rouge">gulp.task(name[, deps], fn)</code></li>
+</ul>
+
+<p><code class="highlighter-rouge">name</code>： 任务的名字</p>
+
+<p><code class="highlighter-rouge">deps</code>：一个包含任务列表的数组，这些任务会在你当前任务运行之前完成。</p>
+
+<p><code class="highlighter-rouge">fn</code>： 该函数定义任务所要执行的一些操作。通常来说，它会是这种形式：gulp.src().pipe(someplugin())。</p>
+
+<p>任务列表是可以省略的.</p>
+
+<p>如下：</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>gulp.task('html', function () {
+    DEST = 'html/';
+});
+</code></pre>
+</div>
+
+<p>有任务执行就必定有处理的先后顺序.默认情况下gulp的task是以最大的并发数进行的。某些相关依赖的任务可能就无法完成。</p>
+
+<p>如何异步调用这些任务?</p>
+
+<p>解决办法</p>
+
+<p>根据<code class="highlighter-rouge">deps</code>这些任务会在你当前任务运行之前完成的相关理解。</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>// gulp 执行任务的时候会先去执行one,再去执行two。
+gulp.task('one',function(){
+    return // do something
+
+})
+
+gulp.task('two', ['one'],function(){
+    // do something
+})
+
+gulp.task('default', ['two'], function(){
+
+})
+</code></pre>
+</div>
+<p><a href="http://www.gulpjs.com.cn/docs/api/">当然官网上也有些例子,处理异步的。可以相互探讨下</a></p>
+
+<ul>
+  <li>2 - <code class="highlighter-rouge">gulp.src(globs[, options])</code></li>
+</ul>
+
+<p>这里我们只讲<code class="highlighter-rouge">globs</code>,可以理解为符合匹配模式的需要操作的路径。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gulp.src(['./src/fn/*.js', '!./src/fn/common/*.js'])
+
+gulp.src('./src/fn/main.js')
+</code></pre>
+</div>
+
+<ul>
+  <li>3 - <code class="highlighter-rouge">gulp.dest(path[, options])</code></li>
+</ul>
+
+<p>这里我们只讲<code class="highlighter-rouge">path</code>,文件将被写入的路径（输出目录)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>gulp.dest('./build/minified_templates')
+</code></pre>
+</div>
+
+<ul>
+  <li>4 - <code class="highlighter-rouge">gulp.watch(glob [, opts], tasks)</code> 或 <code class="highlighter-rouge">gulp.watch(glob [, opts, cb])</code></li>
+</ul>
+
+<p>监视文件，并且可以在文件发生改动时候做一些事情</p>
+
+<p><code class="highlighter-rouge">glob</code>：监视哪些文件发生了变动</p>
+
+<p><code class="highlighter-rouge">tasks</code>：文件变动后所执行的相关任务</p>
+
+<p><code class="highlighter-rouge">cb</code>：每次变动需要执行的 callback。</p>
+
+<h3 id="gulp插件">gulp插件</h3>
+
+<p>以下是我用到的插件。</p>
+
+<p>相关的说明和文档可以到<a href="https://www.npmjs.com/">这里</a>去查找</p>
+
+<h5 id="gulp-concat---合并文件">gulp-concat - 合并文件</h5>
+
+<h5 id="gulp-uglify---压缩js">gulp-uglify - 压缩js</h5>
+
+<h5 id="gulp-rename---重命名文件">gulp-rename - 重命名文件</h5>
+
+<h5 id="gulp-ruby-sass---编译并压缩sassscss">gulp-ruby-sass - 编译并压缩sass,scss</h5>
+
+<ul>
+  <li>参数说明</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> * style有以下4种选择：
+     ● nested：嵌套缩进，它是默认值
+     ● expanded：每个属性占一行
+     ● compact：每条样式占一行
+     ● compressed：整个压缩成一行
+</code></pre>
+</div>
+
+<h5 id="gulp-autoprefixer---自动增加css前缀">gulp-autoprefixer - 自动增加css前缀</h5>
+
+<ul>
+  <li>参数说明</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>● last 2 versions: 主流浏览器的最新两个版本
+● last 1 Chrome versions: 谷歌浏览器的最新版本
+● last 2 Explorer versions: IE的最新两个版本
+● last 3 Safari versions: 苹果浏览器最新三个版本
+● Firefox &gt;= 20: 火狐浏览器的版本大于或等于20
+● iOS 7: IOS7版本
+● Firefox ESR: 最新ESR版本的火狐
+● &gt; 5%: 全球统计有超过5%的使用率
+</code></pre>
+</div>
+
+<h5 id="gulp-inject---引入公共部分js和css">gulp-inject - 引入公共部分js和css</h5>
+
+<h5 id="gulp-file-include---引入文件内容">gulp-file-include - 引入文件内容</h5>
+
+<h5 id="gulp-clean---清除文件">gulp-clean - 清除文件</h5>
+
+<h5 id="gulp-htmlmin---压缩html">gulp-htmlmin - 压缩html</h5>
+
+<h5 id="gulp-cssmin---压缩css">gulp-cssmin - 压缩css</h5>
+
+<h5 id="gulp-rev-hash---hash">gulp-rev-hash - hash</h5>
+
+<h5 id="path">path</h5>
+
+<h5 id="browser-sync">browser-sync</h5>
+
+<p>想知道我是干嘛的?<a href="http://www.browsersync.cn/">点击这里</a></p>
+
+<h3 id="下面是我的整个gulpfile文件">下面是我的整个gulpfile文件</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/**
+ * gulpfile
+ * q: scss编译成css在引用
+ */
+var gulp = require('gulp'),
+    concat = require('gulp-concat'),
+    uglify = require('gulp-uglify'),
+    rename = require('gulp-rename'),
+    sass = require('gulp-ruby-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    inject = require('gulp-inject'),
+    fileinclude = require('gulp-file-include'),
+    clean = require('gulp-clean'),
+    htmlmin = require('gulp-htmlmin'),
+    cssmin = require('gulp-cssmin'),
+    rev = require('gulp-rev-hash'),
+    path = require('path'),
+    browserSync = require('browser-sync').create();
+
+var DEST;
+var ROOT_PATH = path.resolve(__dirname);
+var HTML_PATH = path.resolve(ROOT_PATH, 'view/*.html');
+
+// 开发环境目录
+gulp.task('build', function () {
+    DEST = 'build/';
+});
+// 生产环境目录
+gulp.task('html', function () {
+    DEST = 'html/';
+});
+
+/**
+ * clean
+ * 清除文件.文件夹
+ */
+gulp.task('clean', function () {
+    return gulp.src(DEST)
+        .pipe(clean({force: true}));
+});
+
+/**
+ * hash
+ * 增加hash
+ */
+gulp.task('hash', ['packHtml'], function () {
+    return gulp.src(DEST + '/view/*.html')
+        .pipe(rev({'assetsDir':'./' + DEST}))
+        .pipe(gulp.dest(DEST +'/view/'));
+});
+
+/**
+ * htmlmin
+ * 压缩html
+ */
+gulp.task('htmlmin', ['hash'], function () {
+    gulp.start(['cssmin']);
+    var options = {
+        collapseWhitespace: true,       //压缩HTML
+        minifyJS: true,                 //压缩页面JS
+        minifyCSS: true                 //压缩页面CSS
+    };
+    return gulp.src(DEST + 'view/*.html')
+        .pipe(htmlmin(options))
+        .pipe(gulp.dest(DEST + '/view'));
+});
+
+/**
+ * cssmin
+ * 压缩css
+ */
+gulp.task('cssmin', function () {
+    return gulp.src([DEST + 'style/*.css', DEST + 'style/**/*.css'])
+        .pipe(cssmin())
+        .pipe(gulp.dest(DEST + '/style'))
+
+});
+
+/**
+ * javascript
+ * 合并公共的js
+ */
+gulp.task('scripts', function () {
+    if (DEST.indexOf('build') != -1) {
+        // build
+        return gulp.src([
+                './src/fn/common/smartresize.js',
+                './src/fn/common/common.js'
+            ])
+            .pipe(concat('common.js'))
+            .pipe(gulp.dest(DEST + '/src/fn/common'))
+            .pipe(rename({suffix: '.min'}))
+            .pipe(uglify())
+            .pipe(gulp.dest(DEST + '/src/fn/common'))
+            .pipe(browserSync.stream());
+    } else {
+        // html
+        return gulp.src([
+                './src/fn/common/smartresize.js',
+                './src/fn/common/common.js'
+            ])
+            .pipe(concat('common.js'))
+            .pipe(uglify())
+            .pipe(gulp.dest(DEST + '/src/fn/common'))
+            .pipe(browserSync.stream());
+    }
+});
+
+/**
+ * style
+ * sass,scss
+ * autoprefixer 自动处理游览器前缀
+ * @param filename
+ * @param options
+ * @param url
+ * @returns {*}
+ */
+
+//var compileCommonSASS = function (filename, options, url) {
+//    return sass(url, options)
+//        .pipe(autoprefixer('last 2 versions', '&gt; 5%'))
+//        .pipe(concat(filename))
+//        .pipe(gulp.dest('./style/common/'))
+//        .pipe(browserSync.stream());
+//};
+var compileCommonSASS = function (options, url) {
+    if( DEST.indexOf('build') != -1 ){
+        // build
+        return sass(url, options)
+            .pipe(autoprefixer('last 2 versions', '&gt; 5%'))
+            .pipe(gulp.dest('./style/css/'))
+            .pipe(gulp.dest(DEST + '/style/css/'))
+            .pipe(browserSync.stream());
+    }else{
+        // html
+        return sass(url, options)
+            .pipe(autoprefixer('last 2 versions', '&gt; 5%'))
+            .pipe(gulp.dest(DEST + '/style/css/'))
+            .pipe(browserSync.stream());
+    }
+};
+
+/**
+ * 编译sass
+ * style有以下4种选择：
+ * nested：          嵌套缩进，它是默认值
+ * expanded：        每个属性占一行
+ * compact：         每条样式占一行
+ * compressed：      整个压缩成一行
+ */
+gulp.task('sass', function () {
+    var url = ['./style/scss/*.{scss,sass}'];
+
+    if (DEST.indexOf('build') != -1) {
+        return compileCommonSASS({}, url);
+    } else {
+        //return compileCommonSASS({}, url);
+        return compileCommonSASS({style: 'compressed'}, url);
+    }
+
+});
+
+/**
+ * html
+ * 合并html =&gt; include
+ * @param srcArr
+ * @returns {*}
+ */
+var pickHtml = function (srcArr) {
+    return gulp.src(HTML_PATH)
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(inject(gulp.src(srcArr, {read: false}), {relative: true}))
+        .pipe(gulp.dest(DEST + '/view'));
+};
+
+gulp.task('packHtml', ['sass', 'scripts'], function () {
+    var srcArr;
+
+    if (DEST.indexOf('build') != -1) {
+        srcArr = [
+            './src/plugin/bootstrap/css/bootstrap.css',
+            './src/plugin/font-awesome/css/font-awesome.css',
+            './src/plugin/nprogress/css/nprogress.css',
+            './src/plugin/animate/css/animate.css',
+            './src/plugin/daterangepicker/css/daterangepicker.css',
+            './src/plugin/iCheck/skins/flat/green.css',
+            './src/plugin/toastr/toastr.min.css',
+            './style/css/custom.css',
+            './src/plugin/jquery/js/jquery.js',
+            './src/plugin/bootstrap/js/bootstrap.js',
+            './src/plugin/moment/js/moment.min.js',
+            './src/plugin/daterangepicker/js/daterangepicker.js',
+            './src/plugin/iCheck/js/icheck.js',
+            './src/plugin/nprogress/js/nprogress.js',
+            './src/plugin/jquery.paginator/jqPaginator.min.js',
+            './src/plugin/toastr/toastr.min.js',
+            './src/fn/common/common.js'
+        ];
+
+    } else {
+        srcArr = [
+            './src/plugin/bootstrap/css/bootstrap.min.css',
+            './src/plugin/font-awesome/css/font-awesome.min.css',
+            './src/plugin/nprogress/css/nprogress.min.css',
+            './src/plugin/animate/css/animate.min.css',
+            './src/plugin/daterangepicker/css/daterangepicker.min.css',
+            './src/plugin/iCheck/skins/flat/green.min.css',
+            './src/plugin/toastr/toastr.min.css',
+            './style/css/custom.css',
+            './src/plugin/jquery/js/jquery.min.js',
+            './src/plugin/bootstrap/js/bootstrap.min.js',
+            './src/plugin/moment/js/moment.min.js',
+            './src/plugin/daterangepicker/js/daterangepicker.min.js',
+            './src/plugin/iCheck/js/icheck.min.js',
+            './src/plugin/nprogress/js/nprogress.min.js',
+            './src/plugin/jquery.paginator/jqPaginator.min.js',
+            './src/plugin/toastr/toastr.min.js',
+            './src/fn/common/common.js'
+        ];
+    }
+
+    return pickHtml(srcArr)
+});
+
+/**
+ * 静态服务器
+ */
+gulp.task('browser-sync', ['packHtml'], function () {
+    return browserSync.init({
+        server: {
+            baseDir: './'
+        },
+        startPath: './build/view/login.html'
+    }, function () {
+        console.log('============browser-sync服务启动完成!============')
+    });
+});
+
+/**
+ * copy
+ * 复制
+ */
+gulp.task('copy-plugin', function () {
+    return gulp.src(['./src/plugin/**'])
+        .pipe(gulp.dest(DEST + '/src/plugin'))
+});
+
+gulp.task('copy-js', function () {
+
+    if (DEST.indexOf('build') != -1) {
+        return gulp.src(['./src/fn/*.js', '!./src/fn/common/*.js'])
+            .pipe(gulp.dest(DEST + '/src/fn'))
+            .pipe(rename({suffix: '.min'}))
+            .pipe(uglify())
+            .pipe(gulp.dest(DEST + '/src/fn'))
+    } else {
+        return gulp.src(['./src/fn/*.js', '!./src/fn/common/*.js'])
+            .pipe(uglify())
+            .pipe(gulp.dest(DEST + '/src/fn'))
+    }
+
+});
+
+/**
+ * watch
+ */
+
+gulp.task('watch', function () {
+    // Watch .html files
+    gulp.watch('view/*.html', ['packHtml'], browserSync.reload);
+
+    // Watch .js files
+    gulp.watch(['src/fn/**.js'], ['copy-js'], browserSync.reload);
+
+    // Watch .scss files
+    gulp.watch(['style/scss/*.{sass,scss}'], ['sass'], browserSync.reload);
+    // Watch .js files
+    //gulp.watch('src/js/*.js', ['scripts']);
+    // Watch .scss files
+    //gulp.watch('src/scss/*.scss', ['sass']);
+});
+
+// Dev Task
+// 开发环境
+gulp.task('dev', ['build', 'clean'], function () {
+    gulp.start(['copy-plugin', 'copy-js', 'browser-sync', 'watch']);
+    console.log('============dev OK version!============')
+});
+
+// Rc Task
+// 生产环境
+gulp.task('rc', ['html', 'clean'], function () {
+    gulp.start(['copy-plugin', 'copy-js', 'hash', 'htmlmin']);
+    console.log('============rc OK version!============')
+});
+</code></pre>
+</div>
+
+<h3 id="资料">资料</h3>
+
+<ul>
+  <li><a href="http://www.gulpjs.com.cn/">gulp中文网</a></li>
+</ul>
+
+    </div>
     
     <div class="post">
         <h1 class="post-title">
@@ -630,45 +1118,6 @@ http://www.bootcss.com/p/icheck/</li>
 
     </div>
     
-    <div class="post">
-        <h1 class="post-title">
-            <a href="/2016/11/11/node-js-css-min">
-                node单个文件压缩-js&css
-            </a>
-        </h1>
-
-        <span class="post-date">11 Nov 2016</span>
-
-        <h1 id="node">node</h1>
-
-<h3 id="1---node-压缩-js">1 - node 压缩 js</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// 安装
-npm install uglify-js -g 或者 sudo npm install uglify-js -g
-
-// 压缩
-uglifyjs *.js -o *.min.js
-
-uglifyjs *.js -m -o *.min.js
-
-ps -m 将参数压缩成a.b.c
-
-</code></pre>
-</div>
-
-<h3 id="2---node-压缩-css">2 - node 压缩 css</h3>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// 安装
-npm install clean-css-cli -g 或者 sudo npm install clean-css-cli -g
-
-// 压缩
-cleancss -o *.min.css *.css
-
-</code></pre>
-</div>
-
-    </div>
-    
 </div>
 
 
@@ -708,6 +1157,10 @@ cleancss -o *.min.css *.css
         
             
                 <a class="pagination-item" href="/page6">6</a>
+            
+        
+            
+                <a class="pagination-item" href="/page7">7</a>
             
         
 
