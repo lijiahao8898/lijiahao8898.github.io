@@ -284,8 +284,20 @@
 
       
 
-      <a class="sidebar-nav-item  sidebar-vue" href="/2017/02/21/vue" style="display: none">&nbsp;&nbsp;&nbsp;vue&nbsp;&nbsp;
-        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 02 - 21</p>-->
+      <a class="sidebar-nav-item  sidebar-vue" href="/2017/05/14/vue" style="display: none">&nbsp;&nbsp;&nbsp;vue&nbsp;&nbsp;
+        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 05 - 14</p>-->
+      </a>
+
+      
+
+    
+
+    <a class="sidebar-nav-item category"><span class="category-title">style</span><span class="category-number">&nbsp;（1）</span></a>
+
+      
+
+      <a class="sidebar-nav-item  sidebar-style" href="/2017/05/17/css" style="display: none">&nbsp;&nbsp;&nbsp;css&nbsp;&nbsp;
+        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 05 - 17</p>-->
       </a>
 
       
@@ -347,6 +359,117 @@
     
     <div class="post">
         <h1 class="post-title">
+            <a href="/2017/05/17/css">
+                css
+            </a>
+        </h1>
+
+        <span class="post-date">17 May 2017</span>
+
+        <h2 id="css">记录一些css效果</h2>
+
+<blockquote>
+  <p>品牌墙效果</p>
+</blockquote>
+
+<style>
+ #wall{
+    overflow: hidden;
+    border: 1px solid #eee;
+ }
+ #wall ul{
+    overflow:hidden;
+ }
+ #wall ul li{
+    text-align: center;
+    list-style-type: none;
+    float: left;
+    padding: 15px;
+    width: 25%;
+ }
+</style>
+
+<div id="wall">
+    <ul>
+        <li>wall1</li>
+        <li>wall2</li>
+        <li>wall3</li>
+        <li>wall4</li>
+        <li>wall5</li>
+        <li>wall6</li>
+        <li>wall7</li>
+        <li>wall8</li>
+        <li>wall9</li>
+        <li>wall10</li>
+    </ul>
+</div>
+
+    </div>
+    
+    <div class="post">
+        <h1 class="post-title">
+            <a href="/2017/05/14/vue">
+                vue
+            </a>
+        </h1>
+
+        <span class="post-date">14 May 2017</span>
+
+        <h3 id="vuejs">初识vue.js</h3>
+
+<p>一个非常简单的例子</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;div id="app"&gt;
+    \{\{ message }\}\
+&lt;/div&gt;
+
+new Vue({
+    el: '#app'
+    data: {
+        message: 'hello world!'
+    }
+})
+
+</code></pre>
+</div>
+
+<p>重要的属性:</p>
+<ul>
+  <li>data - 数据</li>
+  <li>methods - 方法</li>
+  <li>watch - 监听</li>
+  <li>component - 注册组件</li>
+</ul>
+
+<p>模板指令:</p>
+<ul>
+  <li>模板渲染 - v-text,v-html,{{  }}\</li>
+  <li>控制模板显示或者隐藏 - v-if,v-show</li>
+  <li>循环 - v-for</li>
+  <li>事件绑定 - v-on
+点击事件<code class="highlighter-rouge">v-on:click</code>也可以简写为<code class="highlighter-rouge">@click</code></li>
+  <li>属性绑定 - v-bind</li>
+</ul>
+
+<p>vuejs 组件之间的信息通讯 - props</p>
+
+<h5 id="vue-">vue 生命周期</h5>
+
+<ul>
+  <li>beforeCreate</li>
+  <li>created</li>
+  <li>beforeMount</li>
+  <li>mounted</li>
+  <li>beforeUpdate</li>
+  <li>updated</li>
+  <li>beforeDestroy</li>
+  <li>destroy</li>
+</ul>
+
+    </div>
+    
+    <div class="post">
+        <h1 class="post-title">
             <a href="/2017/05/02/javascript-object">
                 object
             </a>
@@ -369,48 +492,6 @@
 
 </code></pre>
 </div>
-
-    </div>
-    
-    <div class="post">
-        <h1 class="post-title">
-            <a href="/2017/04/24/tool-fis3">
-                tool - fis3
-            </a>
-        </h1>
-
-        <span class="post-date">24 Apr 2017</span>
-
-        <p>百度的打包工具FIS3</p>
-
-    </div>
-    
-    <div class="post">
-        <h1 class="post-title">
-            <a href="/2017/02/21/vue">
-                vue
-            </a>
-        </h1>
-
-        <span class="post-date">21 Feb 2017</span>
-
-        <p>vue 生命周期</p>
-
-<p>beforeCreate</p>
-
-<p>created</p>
-
-<p>beforeMount</p>
-
-<p>mounted</p>
-
-<p>beforeUpdate</p>
-
-<p>updated</p>
-
-<p>beforeDestroy</p>
-
-<p>destroy</p>
 
     </div>
     

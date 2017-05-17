@@ -284,8 +284,20 @@
 
       
 
-      <a class="sidebar-nav-item  sidebar-vue" href="/2017/02/21/vue" style="display: none">&nbsp;&nbsp;&nbsp;vue&nbsp;&nbsp;
-        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 02 - 21</p>-->
+      <a class="sidebar-nav-item  sidebar-vue" href="/2017/05/14/vue" style="display: none">&nbsp;&nbsp;&nbsp;vue&nbsp;&nbsp;
+        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 05 - 14</p>-->
+      </a>
+
+      
+
+    
+
+    <a class="sidebar-nav-item category"><span class="category-title">style</span><span class="category-number">&nbsp;（1）</span></a>
+
+      
+
+      <a class="sidebar-nav-item  sidebar-style" href="/2017/05/17/css" style="display: none">&nbsp;&nbsp;&nbsp;css&nbsp;&nbsp;
+        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 05 - 17</p>-->
       </a>
 
       
@@ -344,6 +356,19 @@
 <!--</div>-->
 
 <div class="posts">
+    
+    <div class="post">
+        <h1 class="post-title">
+            <a href="/2017/04/24/tool-fis3">
+                tool - fis3
+            </a>
+        </h1>
+
+        <span class="post-date">24 Apr 2017</span>
+
+        <p>百度的打包工具FIS3</p>
+
+    </div>
     
     <div class="post">
         <h1 class="post-title">
@@ -965,124 +990,24 @@ window.history.replaceState({}, 0, url);
 所以我就把canvas的宽度设为422的4倍也就是1688像素, 按照这个像素画完之后, width:100%又会把canvas的宽度缩小至父元素的宽度那么大,
 因此整个canvas的宽度被缩小了, 大尺寸的canvas内容被缩小了之后肯定不会产生锯齿现象, 所以这个解决方案也是可以的.</p>
 
-    </div>
-    
-    <div class="post">
-        <h1 class="post-title">
-            <a href="/2016/11/19/study-knowledge">
-                F2E整理
-            </a>
-        </h1>
+<blockquote>
+  <p>8 - 获取页面的url参数</p>
+</blockquote>
 
-        <span class="post-date">19 Nov 2016</span>
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">getQuery</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">key</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">"?"</span><span class="p">,</span><span class="s2">""</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&amp;</span><span class="se">?([^</span><span class="sr">=&amp;</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">=</span><span class="se">([^</span><span class="sr">=&amp;</span><span class="se">]</span><span class="sr">*</span><span class="se">)</span><span class="sr">/g</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$0</span><span class="p">,</span> <span class="nx">$1</span><span class="p">,</span><span class="nx">$2</span><span class="p">){</span> <span class="nx">t</span><span class="p">[</span><span class="nx">$1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">$2</span><span class="p">;</span> <span class="p">});</span>
+    <span class="k">return</span> <span class="k">typeof</span> <span class="nx">t</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">===</span> <span class="s2">"undefined"</span> <span class="p">?</span> <span class="s2">""</span> <span class="p">:</span> <span class="nx">t</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre>
+</div>
 
-        <p>F2E整理</p>
+<blockquote>
+  <p>9 - Object.keys() and array.some(callback[, thisObject])</p>
+</blockquote>
 
-<h2 id="section">网站</h2>
-<ol>
-  <li><a href="http://gold.xitu.io/">掘金</a>：http://gold.xitu.io/</li>
-  <li><a href="http://www.jianshu.com/">简书</a>：http://www.jianshu.com/</li>
-  <li><a href="https://www.zhihu.com/">知乎</a>：https://www.zhihu.com/</li>
-  <li><a href="http://www.css88.com/">web前端网站</a>：http://www.css88.com/</li>
-  <li><a href="http://www.html-js.com/">前端乱炖</a>：http://www.html-js.com/</li>
-  <li><a href="http://f2e.souche.com/blog/">大搜车前端团队博客</a>：http://f2e.souche.com/blog/</li>
-  <li><a href="http://frontenddev.org/">FED社区</a>：http://frontenddev.org/</li>
-  <li><a href="http://www.w3cfuns.com/">W3Cfuns</a>：http://www.w3cfuns.com/</li>
-  <li><a href="http://www.imooc.com/">慕课网</a>：http://www.imooc.com/</li>
-  <li><a href="https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1433401084&amp;token=&amp;lang=zh_CN">微信公众平台</a>：https://mp.weixin.qq.com/wiki?t=resource/res_main&amp;id=mp1433401084&amp;token=&amp;lang=zh_CN</li>
-  <li><a href="http://mp.weixin.qq.com/wiki/17/fa4e1434e57290788bde25603fa2fcbd.html">微信公众平台开发者文档</a>：http://mp.weixin.qq.com/wiki/17/fa4e1434e57290788bde25603fa2fcbd.html</li>
-  <li><a href="http://www.css88.com/nav/">前端资源导航</a>：http://www.css88.com/nav/</li>
-  <li><a href="http://blog.51cto.com/">51CTO</a>：http://blog.51cto.com/</li>
-  <li><a href="http://tool.oschina.net/apidocs/">学习各种知识的网站</a>:http://tool.oschina.net/apidocs/</li>
-  <li><a href="http://www1.qdfuns.com/feres.php">前端书籍下载</a>;</li>
-</ol>
-
-<h2 id="git">git</h2>
-<ol>
-  <li><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">git</a>：http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</li>
-</ol>
-
-<h2 id="javascript">javascript文档</h2>
-<ol>
-  <li><a href="http://es6.ruanyifeng.com/#docs/intro">ES6</a>：http://es6.ruanyifeng.com/#docs/intro</li>
-  <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Introduction">MDN</a>:https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Introduction</li>
-</ol>
-
-<h2 id="section-1">工具网站</h2>
-<ol>
-  <li><a href="http://caniuse.com/">检查代码兼容</a>：http://caniuse.com/</li>
-  <li><a href="http://www.getmarkman.com/">马克鳗</a>：http://www.getmarkman.com/</li>
-</ol>
-
-<h2 id="section-2">前端框架</h2>
-<ol>
-  <li><a href="http://www.h-ui.net/Hui-4.4-slider.shtml">H-ui前端框架简单 · 免费 · 适合中国网站</a>：http://www.h-ui.net/Hui-4.4-slider.shtml</li>
-  <li><a href="http://reactnative.cn/">react-native</a>：http://reactnative.cn/</li>
-  <li><a href="http://www.apjs.net/#dir33">angular.js</a>：http://www.apjs.net/#dir33</li>
-  <li><a href="http://juicer.name/docs/docs_zh_cn.html">Juicer模板</a>：http://juicer.name/docs/docs_zh_cn.html</li>
-  <li><a href="http://www.material-ui.com/#/components/circular-progress">google前端框架</a>：http://www.material-ui.com/#/components/circular-progress</li>
-  <li><a href="http://amazeui.org/javascript/tabs">amazeUi</a>：http://amazeui.org/javascript/tabs</li>
-  <li><a href="http://www.auicss.com/?m=Home&amp;c=Document#pullrefresh">AUi</a>：http://www.auicss.com/?m=Home&amp;c=Document#pullrefresh</li>
-  <li><a href="http://dev.dcloud.net.cn/mui/">MUi</a>：http://dev.dcloud.net.cn/mui/</li>
-  <li><a href="http://docs.kissyui.com/1.4/docs/html/guideline/get-started.html">KISSY</a>：http://docs.kissyui.com/1.4/docs/html/guideline/get-started.html</li>
-  <li><a href="https://almsaeedstudio.com/AdminLTE">AdminLTE：后台UI</a>：https://almsaeedstudio.com/AdminLTE</li>
-  <li><a href="https://www.almsaeedstudio.com/themes/AdminLTE/documentation/index.html">AdminLTE</a>：https://www.almsaeedstudio.com/themes/AdminLTE/documentation/index.html</li>
-</ol>
-
-<h2 id="section-3">命名规范</h2>
-<ol>
-  <li><a href="http://xhtml.blog.51cto.com/3754279/1749450">http://xhtml.blog.51cto.com/3754279/1749450</a></li>
-  <li><a href="http://alloyteam.github.io/CodeGuide/">http://alloyteam.github.io/CodeGuide/</a></li>
-</ol>
-
-<h2 id="section-4">图表</h2>
-<ol>
-  <li><a href="https://github.com/d3/d3/wiki/Gallery">D3</a>：https://github.com/d3/d3/wiki/Gallery</li>
-  <li><a href="http://echarts.baidu.com/echarts2/doc/example.html">图形ECharts</a>：http://echarts.baidu.com/echarts2/doc/example.html</li>
-  <li><a href="http://echarts.baidu.com/option.html#title">图片ECharts2</a>：http://echarts.baidu.com/option.html#title</li>
-</ol>
-
-<h2 id="section-5">插件网站</h2>
-<ol>
-  <li><a href="http://www.dowebok.com/">http://www.dowebok.com/</a>: http://www.dowebok.com/</li>
-</ol>
-
-<h4 id="section-6">[图片轮播插件]</h4>
-<ol>
-  <li><a href="http://www.dowebok.com/194.html">带有回调的轮播插件jquery.slidizle</a>: http://www.dowebok.com/194.html</li>
-</ol>
-
-<h4 id="icon">[icon]</h4>
-<ol>
-  <li><a href="http://ionicons.com/">icon图标</a>:http://ionicons.com/</li>
-  <li><a href="http://fontawesome.dashgame.com/">Font Awesome</a>：http://fontawesome.dashgame.com/</li>
-</ol>
-
-<h4 id="icheck">[icheck]</h4>
-<ol>
-  <li><a href="http://www.bootcss.com/p/icheck/">icheck</a>:
-http://www.bootcss.com/p/icheck/</li>
-</ol>
-
-<h2 id="section-7">方法</h2>
-<ol>
-  <li><a href="http://blog.csdn.net/z69183787/article/details/17393159">jquery 在textarea 指定 位置处 插入内容</a>：http://blog.csdn.net/z69183787/article/details/17393159</li>
-  <li><a href="http://www.uncletoo.com/html/jsjquery/755.html">用JQuery获取textarea或input中的光标位置</a>：http://www.uncletoo.com/html/jsjquery/755.html</li>
-  <li><a href="http://www.ruanyifeng.com/blog/2011/08/a_detailed_explanation_of_jquery_deferred_object.html">deferred对象详解</a>:http://www.ruanyifeng.com/blog/2011/08/a_detailed_explanation_of_jquery_deferred_object.html
-4.</li>
-</ol>
-
-<h2 id="section-8">干货</h2>
-<ol>
-  <li><a href="https://github.com/amfe/article/issues">github issues</a>：https://github.com/amfe/article/issues</li>
-  <li><a href="http://www.open-open.com/news/view/1bde2f8">最新最好的bootstrap免费主题</a>：http://www.open-open.com/news/view/1bde2f8</li>
-  <li><a href="http://taobaofed.org/blog/2016/05/23/video-player/">淘宝前端团队-视频播放那些事</a>：http://taobaofed.org/blog/2016/05/23/video-player/</li>
-</ol>
-
-<h2 id="section-9">外链</h2>
-<ol>
-  <li><a href="http://www.jianshu.com/p/c3dae0951f74">最全的前端知识整理</a>：http://www.jianshu.com/p/c3dae0951f74</li>
-</ol>
+<p><code class="highlighter-rouge">Object.keys()</code>: 返回一个由给定对象的自身可枚举属性组成的数组
+<code class="highlighter-rouge">array.some()</code>: 测试数组中的某个元素是否通过由提供的功能来实现测试</p>
 
     </div>
     
