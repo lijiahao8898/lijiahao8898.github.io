@@ -366,7 +366,7 @@
 
         <span class="post-date">17 May 2017</span>
 
-        <h2 id="css">记录一些css效果</h2>
+        <h2 id="css">那些让你爱不释手的css效果</h2>
 
 <blockquote>
   <p>品牌墙效果</p>
@@ -379,29 +379,111 @@
  }
  #wall ul{
     overflow:hidden;
+    padding: 15px;
+    margin: 0;
+    background: #eee;
  }
  #wall ul li{
     text-align: center;
     list-style-type: none;
     float: left;
-    padding: 15px;
+    padding: 40px 15px;
     width: 25%;
+    border: 1px solid #eee;
+    background: #fff;
+ }
+ #wall ul li, #wall ul li img, #wall ul li a{
+     -webkit-transition: all 0.2s linear;
+     transition: all 0.2s linear
+ }
+ #wall ul li a{
+     display: inline-table;
+     text-decoration: none;
+ }
+ #wall ul li:hover{
+     z-index: 2;
+     box-shadow: 1px 1px 10px rgba(0,0,0,0.1),-1px -1px 10px rgba(0,0,0,0.1);
+     -webkit-box-shadow: 1px 1px 10px rgba(0,0,0,0.1),-1px -1px 10px rgba(0,0,0,0.1);
+     -o-box-shadow: 1px 1px 10px rgba(0,0,0,0.1),-1px -1px 10px rgba(0,0,0,0.1);
+     -moz-box-shadow: 1px 1px 10px rgba(0,0,0,0.1),-1px -1px 10px rgba(0,0,0,0.1);
+     -ms-box-shadow: 1px 1px 10px rgba(0,0,0,0.1),-1px -1px 10px rgba(0,0,0,0.1);
+     transform: translate3d(0, 0, 0);
+     -webkit-transform: translate3d(0, 0, 0);
+     -moz-transform: translate3d(0, 0, 0);
+     -ms-transform: translate3d(0, 0, 0);
+     -o-transform: translate3d(0, 0, 0);
+ }
+ #wall ul li:hover img, #wall ul li:hover a{
+     transform: translate3d(0, -3px, 0);
+     -webkit-transform: translate3d(0, -3px, 0);
+     -o-transform: translate3d(0, -3px, 0);
+     -moz-transform: translate3d(0, -3px, 0);
+     -ms-transform: translate3d(0, -3px, 0);
  }
 </style>
 
 <div id="wall">
     <ul>
-        <li>wall1</li>
-        <li>wall2</li>
-        <li>wall3</li>
-        <li>wall4</li>
-        <li>wall5</li>
-        <li>wall6</li>
-        <li>wall7</li>
-        <li>wall8</li>
-        <li>wall9</li>
-        <li>wall10</li>
+        <li><a href="javascript:;">WALL</a></li>
+        <li><a href="javascript:;">WALL</a></li>
+        <li><a href="javascript:;">WALL</a></li>
+        <li><a href="javascript:;">WALL</a></li>
+        <li><a href="javascript:;">WALL</a></li>
+        <li><a href="javascript:;">WALL</a></li>
+        <li><a href="javascript:;">WALL</a></li>
+        <li><a href="javascript:;">WALL</a></li>
+        <li><a href="javascript:;">WALL</a></li>
+        <li><a href="javascript:;">WALL</a></li>
+        <li><a href="javascript:;">WALL</a></li>
+        <li><a href="javascript:;">WALL</a></li>
     </ul>
+</div>
+<p><br /></p>
+<h4 id="css-1">主要的css样式:</h4>
+
+<div class="language-css highlighter-rouge"><pre class="highlight"><code> <span class="nf">#wall</span> <span class="nt">ul</span> <span class="nt">li</span><span class="o">,</span> <span class="nf">#wall</span> <span class="nt">ul</span> <span class="nt">li</span> <span class="nt">img</span><span class="o">,</span> <span class="nf">#wall</span> <span class="nt">ul</span> <span class="nt">li</span> <span class="nt">a</span><span class="p">{</span>
+     <span class="nl">-webkit-transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">0.2s</span> <span class="n">linear</span><span class="p">;</span>
+     <span class="nl">transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">0.2s</span> <span class="n">linear</span>
+ <span class="p">}</span>
+ <span class="nf">#wall</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:hover</span><span class="p">{</span>
+     <span class="nl">z-index</span><span class="p">:</span> <span class="m">2</span><span class="p">;</span>
+     <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">),</span><span class="m">-1px</span> <span class="m">-1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">);</span>
+     <span class="nl">-webkit-box-shadow</span><span class="p">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">),</span><span class="m">-1px</span> <span class="m">-1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">);</span>
+     <span class="nl">-o-box-shadow</span><span class="p">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">),</span><span class="m">-1px</span> <span class="m">-1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">);</span>
+     <span class="nl">-moz-box-shadow</span><span class="p">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">),</span><span class="m">-1px</span> <span class="m">-1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">);</span>
+     <span class="nl">-ms-box-shadow</span><span class="p">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">),</span><span class="m">-1px</span> <span class="m">-1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">);</span>
+     <span class="nl">transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+     <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+     <span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+     <span class="nl">-ms-transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+     <span class="nl">-o-transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+ <span class="p">}</span>
+ <span class="nf">#wall</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:hover</span> <span class="nt">img</span><span class="o">,</span> <span class="nf">#wall</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:hover</span> <span class="nt">a</span><span class="p">{</span>
+     <span class="nl">transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">-3px</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+     <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">-3px</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+     <span class="nl">-o-transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">-3px</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+     <span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">-3px</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+     <span class="nl">-ms-transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">-3px</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
+ <span class="p">}</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>照片效果</p>
+</blockquote>
+<style>
+    #photo{
+        width: 400px;
+        height: 400px;
+        border: 1px solid #eee;
+    }
+    #photo p{
+        text-align: center;
+    }
+</style>
+
+<div id="photo">
+    <p>就照片效果</p>
 </div>
 
     </div>
