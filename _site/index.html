@@ -366,7 +366,13 @@
 
         <span class="post-date">17 May 2017</span>
 
-        <h2 id="css">那些让你爱不释手的css效果</h2>
+        <div class="highlighter-rouge"><pre class="highlight"><code>                                     ============================
+                                     ======      css       ======
+                                     ============================
+</code></pre>
+</div>
+
+<h2 id="css">那些让你爱不释手的css效果</h2>
 
 <blockquote>
   <p>品牌墙效果</p>
@@ -665,6 +671,7 @@
 </style>
 
 <div id="photo3">
+    <h1 class="title">CSS3 六边形效果 <span></span></h1>
     <div class="con-show01">
         <div class="con-show02">
           <div class="con-show03 bg01">
@@ -760,19 +767,6 @@
     * html .group { height: 1%; }
     *:first-child+html .group { min-height: 1px; }
 
-    body { font-family: Arial, Helvetica, sans-serif; font-size: 100%; }
-
-    /* @font-face {
-        font-family: 'AdelleBasicBold';
-        src: url('../fonts/adellebasic_bold-webfont.eot?') format('eot'),
-             url('../fonts/adellebasic_bold-webfont.woff') format('woff'),
-             url('../fonts/adellebasic_bold-webfont.ttf') format('truetype'),
-             url('../fonts/adellebasic_bold-webfont.svg#webfontll9eFuSn') format('svg');
-        font-weight: normal;
-        font-style: normal;
-
-    } */
-
     #container { max-width: 57.5em; padding: 0 20px; margin: 0 auto; }
 
     h1, h2, h3, p { color: #333; margin-bottom: 20px; }
@@ -800,7 +794,8 @@
     .stack:last-of-type { margin-right: 0; }
 
     /* Stacks creted by the use of generated content */
-    .stack:before, .stack:after { content: ""; border-radius: 3px; width: 100%; height: 100%; position: absolute; border: 10px solid #fff; left: 0;
+    .stack:before, .stack:after { content: "";
+        border-radius: 3px; width: 100%; height: 100%; position: absolute; border: 10px solid #fff; left: 0;
     	-webkit-box-sizing: border-box;
     	-moz-box-sizing: border-box;
     	box-sizing: border-box;
@@ -857,9 +852,9 @@
     	-webkit-transform-origin: bottom left;
     	-moz-transform-origin: bottom left;
     	transform-origin: bottom left;
-    	-webkit-transform: rotate(-6deg);
-    	-moz-transform: rotate(-6deg);
-    	transform: rotate(-6deg);
+    	-webkit-transform: rotate(-9deg);
+    	-moz-transform: rotate(-9deg);
+    	transform: rotate(-9deg);
     }
 
     /* Reset all rotations on hover */
@@ -896,6 +891,107 @@
         </div>
     </div>
 </div>
+
+<div class="language-css highlighter-rouge"><pre class="highlight"><code> <span class="c">/*
+    Stacks CSS ----------------------------------------------------------------------------------------------------------- */</span>
+
+    <span class="c">/* Layout */</span>
+    <span class="nc">.stack</span> <span class="p">{</span> <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span> <span class="nl">width</span><span class="p">:</span> <span class="m">22%</span><span class="p">;</span> <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">4%</span> <span class="m">4%</span> <span class="m">0</span><span class="p">;</span> <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span> <span class="nl">z-index</span><span class="p">:</span> <span class="m">10</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="c">/* Image styles */</span>
+    <span class="nc">.stack</span> <span class="nt">img</span> <span class="p">{</span> <span class="nl">max-width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span> <span class="nl">height</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span> <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">bottom</span><span class="p">;</span> <span class="nl">border</span><span class="p">:</span> <span class="m">10px</span> <span class="nb">solid</span> <span class="m">#fff</span><span class="p">;</span> <span class="nl">border-radius</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span>
+    	<span class="nl">-webkit-box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+    	<span class="nl">-moz-box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+    	<span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+    	<span class="nl">-webkit-box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">4px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.4</span><span class="p">);</span>
+    	<span class="nl">-moz-box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">4px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.4</span><span class="p">);</span>
+    	<span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">4px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.4</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nc">.stack</span><span class="nd">:last-of-type</span> <span class="p">{</span> <span class="nl">margin-right</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span> <span class="p">}</span>
+
+    <span class="c">/* Stacks creted by the use of generated content */</span>
+    <span class="nc">.stack</span><span class="nd">:before</span><span class="o">,</span> <span class="nc">.stack</span><span class="nd">:after</span> <span class="p">{</span> <span class="nl">content</span><span class="p">:</span> <span class="s1">""</span><span class="p">;</span>
+        <span class="nl">border-radius</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span> <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span> <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span> <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span> <span class="nl">border</span><span class="p">:</span> <span class="m">10px</span> <span class="nb">solid</span> <span class="m">#fff</span><span class="p">;</span> <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    	<span class="nl">-webkit-box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+    	<span class="nl">-moz-box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+    	<span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
+    	<span class="nl">-webkit-box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">4px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.4</span><span class="p">);</span>
+    	<span class="nl">-moz-box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">4px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.4</span><span class="p">);</span>
+    	<span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">4px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.4</span><span class="p">);</span>
+    	<span class="nl">-webkit-transition</span><span class="p">:</span> <span class="m">0.3s</span> <span class="n">all</span> <span class="n">ease-out</span><span class="p">;</span>
+    	<span class="nl">-moz-transition</span><span class="p">:</span> <span class="m">0.3s</span> <span class="n">all</span> <span class="n">ease-out</span><span class="p">;</span>
+    	<span class="nl">transition</span><span class="p">:</span> <span class="m">0.3s</span> <span class="n">all</span> <span class="n">ease-out</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="nc">.stack</span><span class="nd">:before</span> <span class="p">{</span> <span class="nl">top</span><span class="p">:</span> <span class="m">4px</span><span class="p">;</span> <span class="nl">z-index</span><span class="p">:</span> <span class="m">-10</span><span class="p">;</span> <span class="p">}</span> <span class="c">/* 1st element in stack (behind image) */</span>
+    <span class="nc">.stack</span><span class="nd">:after</span> <span class="p">{</span> <span class="nl">top</span><span class="p">:</span> <span class="m">8px</span><span class="p">;</span> <span class="nl">z-index</span><span class="p">:</span> <span class="m">-20</span><span class="p">;</span> <span class="p">}</span> <span class="c">/* 2nd element in stack (behind image) */</span>
+
+    <span class="c">/* Second stack example (rotated to the right from the bottom left) */</span>
+    <span class="nc">.stack.rotated</span><span class="nd">:before</span> <span class="p">{</span>
+    	<span class="nl">-webkit-transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
+    	<span class="nl">-moz-transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
+    	<span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
+    	<span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">2deg</span><span class="p">);</span>
+    	<span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">2deg</span><span class="p">);</span>
+    	<span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">2deg</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nc">.stack.rotated</span><span class="nd">:after</span> <span class="p">{</span>
+    	<span class="nl">-webkit-transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
+    	<span class="nl">-moz-transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
+    	<span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
+    	<span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">4deg</span><span class="p">);</span>
+    	<span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">4deg</span><span class="p">);</span>
+    	<span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">4deg</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c">/* Third stack example (One stack element rotated in the opposite direction) */</span>
+    <span class="nc">.stack.twisted</span><span class="nd">:before</span> <span class="p">{</span>
+    	<span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">4deg</span><span class="p">);</span>
+    	<span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">4deg</span><span class="p">);</span>
+    	<span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">4deg</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nc">.stack.twisted</span><span class="nd">:after</span> <span class="p">{</span>
+    	<span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-4deg</span><span class="p">);</span>
+    	<span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-4deg</span><span class="p">);</span>
+    	<span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-4deg</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c">/* Fourth stack example (Similar to the second but rotated left) */</span>
+    <span class="nc">.stack.rotated-left</span><span class="nd">:before</span> <span class="p">{</span>
+    	<span class="nl">-webkit-transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
+    	<span class="nl">-moz-transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
+    	<span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
+    	<span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-3deg</span><span class="p">);</span>
+    	<span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-3deg</span><span class="p">);</span>
+    	<span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-3deg</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="nc">.stack.rotated-left</span><span class="nd">:after</span> <span class="p">{</span>
+    	<span class="nl">-webkit-transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
+    	<span class="nl">-moz-transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
+    	<span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
+    	<span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-9deg</span><span class="p">);</span>
+    	<span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-9deg</span><span class="p">);</span>
+    	<span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-9deg</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c">/* Reset all rotations on hover */</span>
+    <span class="nc">.stack</span><span class="nd">:hover:before</span><span class="o">,</span> <span class="nc">.stack</span><span class="nd">:hover:after</span> <span class="p">{</span>
+    	<span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">0deg</span><span class="p">);</span>
+    	<span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">0deg</span><span class="p">);</span>
+    	<span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">0deg</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="c">/*
+    iPhone and mobile widths --------------------------------------------------------------------------------------------------------------------------- */</span>
+    <span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">320px</span><span class="p">)</span> <span class="n">and</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">480px</span><span class="p">)</span> <span class="p">{</span>
+    	<span class="nc">.stack</span> <span class="p">{</span> <span class="nl">float</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span> <span class="nl">width</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span> <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">35px</span><span class="p">;</span> <span class="p">}</span>
+    	<span class="nt">h1</span><span class="nc">.title</span> <span class="p">{</span> <span class="nl">margin</span><span class="p">:</span> <span class="m">15px</span> <span class="m">0</span><span class="p">;</span> <span class="p">}</span>
+    <span class="p">}</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>3D文字效果</p>
+</blockquote>
 
 
     </div>
