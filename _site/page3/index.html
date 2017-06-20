@@ -304,6 +304,18 @@
 
     
 
+    <a class="sidebar-nav-item category"><span class="category-title">angular</span><span class="category-number">&nbsp;（1）</span></a>
+
+      
+
+      <a class="sidebar-nav-item  sidebar-angular" href="/2017/05/24/angular1" style="display: none">&nbsp;&nbsp;&nbsp;angular&nbsp;&nbsp;
+        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 05 - 24</p>-->
+      </a>
+
+      
+
+    
+
     <!--<a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a>-->
 
     <!--<a class="sidebar-nav-item" href="">GitHub project</a>-->
@@ -356,6 +368,179 @@
 <!--</div>-->
 
 <div class="posts">
+    
+    <div class="post">
+        <h1 class="post-title">
+            <a href="/2017/01/24/question">
+                问题整理
+            </a>
+        </h1>
+
+        <span class="post-date">24 Jan 2017</span>
+
+        <blockquote>
+  <p>1 - 微信中不能直接打开itunes的下载地址的问题 ？</p>
+</blockquote>
+
+<p>知乎文章：
+https://www.zhihu.com/question/24029212</p>
+
+<p>解决方案：</p>
+<ul>
+  <li>方案一，申请应用宝，先跳转到应用宝页面，再点击下载根据设备的不同转去AppStore或是Android的应用宝下载地址。</li>
+  <li>方案二，在页面前端做处理，如果无法跳转到AppStore就提示用户在微信里手动选择用Safari打开页面。</li>
+  <li>方案三，二百二维码里面配置：http://hotapp.cn/?src=http://www.hao2b.cn</li>
+</ul>
+
+<blockquote>
+  <p>2 - 防止网页被恶意嵌套入其他的网页中</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code>
+<span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="o">!=</span><span class="nx">top</span><span class="p">){</span>                             <span class="c1">// 判断当前的window对象是否是top对象</span>
+
+    <span class="nx">top</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">;</span>  <span class="c1">// 如果不是，将top对象的网址自动导向被嵌入网页的网址</span>
+
+<span class="p">}</span>
+
+<span class="c1">// 升级版</span>
+<span class="k">try</span><span class="p">{</span>
+
+<span class="nx">top</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span><span class="p">;</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nx">top</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span> <span class="o">!=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">hostname</span><span class="p">)</span> <span class="p">{</span>
+
+<span class="nx">top</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span><span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+<span class="p">}</span>
+
+<span class="k">catch</span><span class="p">(</span><span class="nx">e</span><span class="p">){</span>
+
+<span class="nx">top</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+</code></pre>
+</div>
+
+<blockquote>
+  <p>3 - 在iPhone中在li标签下的click事件无效</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+解决方案：
+
+方案一，在对应的css中添加cursor：pointer样式
+方案二，将li标签改成a标签
+</code></pre>
+</div>
+
+<blockquote>
+  <p>4 - 时间日期格式问题</p>
+</blockquote>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code>
+<span class="c1">// 时间处理 no = ‘2016-12-12 11:48:20'</span>
+<span class="nl">formatTime</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">no</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">date</span><span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">no</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">year</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">month</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">?</span> <span class="s2">"0"</span> <span class="o">+</span> <span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">datetime</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">?</span> <span class="s2">"0"</span> <span class="o">+</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span> <span class="p">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nx">year</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">+</span> <span class="nx">month</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">+</span> <span class="nx">datetime</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// 表象：</span>
+<span class="c1">// 上述时间处理在PC游览器端呈现的是正常的。</span>
+<span class="c1">// 在IOS iphone6s 里面 展现出invalid date的报错</span>
+
+<span class="c1">// 解决方案：</span>
+<span class="c1">// 时间处理 no = ‘2016-12-12 11:48:20’</span>
+<span class="nl">formatTime</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">no</span><span class="p">){</span>
+    <span class="nx">no</span> <span class="o">=</span> <span class="nx">no</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/-/g</span><span class="p">,</span><span class="s1">':'</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="s1">' '</span><span class="p">,</span><span class="s1">':'</span><span class="p">);</span>
+    <span class="nx">no</span> <span class="o">=</span> <span class="nx">no</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">':'</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">date</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">no</span><span class="p">[</span><span class="mi">0</span><span class="p">],(</span><span class="nx">no</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">),</span><span class="nx">no</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span><span class="nx">no</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span><span class="nx">no</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="nx">no</span><span class="p">[</span><span class="mi">5</span><span class="p">]);</span>
+    <span class="kd">var</span> <span class="nx">date</span><span class="o">=</span> <span class="k">new</span> <span class="nb">Date</span><span class="p">(</span><span class="nx">dateTime</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">year</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">();</span>
+    <span class="kd">var</span> <span class="nx">month</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">?</span> <span class="s2">"0"</span> <span class="o">+</span> <span class="p">(</span><span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="p">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">datetime</span> <span class="o">=</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mi">10</span> <span class="p">?</span> <span class="s2">"0"</span> <span class="o">+</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span> <span class="p">:</span> <span class="nx">date</span><span class="p">.</span><span class="nx">getDate</span><span class="p">();</span>
+    <span class="k">return</span> <span class="nx">year</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">+</span> <span class="nx">month</span> <span class="o">+</span> <span class="s2">"-"</span> <span class="o">+</span> <span class="nx">datetime</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// 将no 日期格式转换成 ‘2016-12-12T11:48:20’ 或者 ‘2016/12/12 11:48:20’</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>5 - htm5 无刷新改变url地址</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+// history里面会增加一个记录
+window.history.pushState({}, 0, url);
+
+// history替换当前的url记录
+window.history.replaceState({}, 0, url);
+</code></pre>
+</div>
+<blockquote>
+  <p>6 - 获取cookie</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">getCookie</span><span class="p">(</span><span class="nx">name</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">arr</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="k">new</span> <span class="nb">RegExp</span><span class="p">(</span><span class="s2">"(^| )"</span> <span class="o">+</span> <span class="nx">name</span> <span class="o">+</span> <span class="s2">"=([^;]*)(;|$)"</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">arr</span> <span class="o">!=</span> <span class="kc">null</span><span class="p">){</span>
+        <span class="k">return</span> <span class="nx">unescape</span><span class="p">(</span><span class="nx">arr</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+        <span class="k">return</span> <span class="kc">null</span><span class="p">;</span>
+    <span class="p">};</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>7 - 如何处理canvas的锯齿问题</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 最近在做转盘抽奖页面,然后转盘是套用一个插件来做的.插件用的是canvas元素画出来的. 宽度用的是300.
+// 然后在手机上会发现存在明显的锯齿现象.
+// 度娘上的解决办法一搜有很多.
+// 在这里记录下我成功的解决办法:
+// 将canvas的width和height设置成原来的4倍 也就是1200
+// 然后将canvas的width设置成inherit
+// 父容器的宽度根据屏幕大小来
+// 在手机屏幕下缩放后锯齿就消失了
+</code></pre>
+</div>
+<p>以下为参考的原文:
+<br />
+最近在做一个转盘抽奖页面, 然后转盘是使用HTML5的canvas元素画出来的. 然而在几个手机上测试都发现转盘有一点锯齿问题, 而且文字都比较模糊.
+除了在上面的canvas标签中设置了width=”422px”,height=”422px”之外, 还在外部链接的CSS样式表中设置了该canvas的宽度为100%, 公司的”导师”告诉我,
+这个应该是手机的宽是720像素的, 而这个canvas是按照422像素画出来的, 所以在720像素的手机上显示时, 这个canvas的内容其实是经过拉伸的,
+所以会出现模糊和锯齿. 解决方案就是把canvas的行间样式的宽度设为手机端的最大像素值, 因为现在的手机端宽度的最大的只有1080像素宽,
+所以我就把canvas的宽度设为422的4倍也就是1688像素, 按照这个像素画完之后, width:100%又会把canvas的宽度缩小至父元素的宽度那么大,
+因此整个canvas的宽度被缩小了, 大尺寸的canvas内容被缩小了之后肯定不会产生锯齿现象, 所以这个解决方案也是可以的.</p>
+
+<blockquote>
+  <p>8 - 获取页面的url参数</p>
+</blockquote>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">getQuery</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">key</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="p">{};</span>
+    <span class="nx">location</span><span class="p">.</span><span class="nx">search</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s2">"?"</span><span class="p">,</span><span class="s2">""</span><span class="p">).</span><span class="nx">replace</span><span class="p">(</span><span class="sr">/&amp;</span><span class="se">?([^</span><span class="sr">=&amp;</span><span class="se">]</span><span class="sr">+</span><span class="se">)</span><span class="sr">=</span><span class="se">([^</span><span class="sr">=&amp;</span><span class="se">]</span><span class="sr">*</span><span class="se">)</span><span class="sr">/g</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$0</span><span class="p">,</span> <span class="nx">$1</span><span class="p">,</span><span class="nx">$2</span><span class="p">){</span> <span class="nx">t</span><span class="p">[</span><span class="nx">$1</span><span class="p">]</span> <span class="o">=</span> <span class="nx">$2</span><span class="p">;</span> <span class="p">});</span>
+    <span class="k">return</span> <span class="k">typeof</span> <span class="nx">t</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">===</span> <span class="s2">"undefined"</span> <span class="p">?</span> <span class="s2">""</span> <span class="p">:</span> <span class="nx">t</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>9 - Object.keys() and array.some(callback[, thisObject])</p>
+</blockquote>
+
+<p><code class="highlighter-rouge">Object.keys()</code>: 返回一个由给定对象的自身可枚举属性组成的数组
+<code class="highlighter-rouge">array.some()</code>: 测试数组中的某个元素是否通过由提供的功能来实现测试</p>
+
+    </div>
     
     <div class="post">
         <h1 class="post-title">
@@ -517,76 +702,6 @@ npm install clean-css-cli -g 或者 sudo npm install clean-css-cli -g
 // 压缩
 cleancss -o *.min.css *.css
 
-</code></pre>
-</div>
-
-    </div>
-    
-    <div class="post">
-        <h1 class="post-title">
-            <a href="/2016/10/31/javascript-object">
-                javascript - 对象
-            </a>
-        </h1>
-
-        <span class="post-date">31 Oct 2016</span>
-
-        <p>JavaScript中所有变量都可以当做对象使用，除了两个例外 null 和 undefined。</p>
-
-<p>一个常见的误解是数字的字面值（literal）不能当作对象使用。这是因为 JavaScript 解析器的一个错误， 它试图将点操作符解析为浮点数字面值的一部分。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>2.toString();   // 出错：SyntaxError
-
-// 变通方法
-2..toString();
-2 .toString();
-(2).toString();
-</code></pre>
-</div>
-
-<h1 id="section">访问属性</h1>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// 有两种方式来访问对象的属性。点操作符或者中括号操作符
-
-var foo = { name: 'kitten' }
-
-foo.name;               // kitten
-foo['name’];            // kitten
-
-var get = 'name';
-foo[get];               // kitten
-
-foo.1234;               // SyntaxError
-foo['1234'];            // works
-</code></pre>
-</div>
-
-<p>两种语法是等价的，但是中括号操作符在下面两种情况下依然有效</p>
-
-<ul>
-  <li>动态设置属性</li>
-  <li>属性名不是一个有效的变量名 （比如属性名中包含空格，或者属性名是 JS 的关键词）</li>
-</ul>
-
-<h1 id="section-1">删除属性</h1>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// 删除属性唯一的方法是delete.
-// undefined和null 并不能删除属性. 而仅仅是移除了属性和值的关联
-
-var obj = {
-    bar: 1,
-    foo: 2,
-    baz: 3
-};
-obj.bar = undefined;
-obj.foo = null;
-delete obj.baz;
-
-for(var i in obj) {
-    if (obj.hasOwnProperty(i)) {
-        console.log(i, '' + obj[i]);
-    }
-}
 </code></pre>
 </div>
 

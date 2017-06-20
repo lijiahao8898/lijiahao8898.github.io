@@ -304,6 +304,18 @@
 
     
 
+    <a class="sidebar-nav-item category"><span class="category-title">angular</span><span class="category-number">&nbsp;（1）</span></a>
+
+      
+
+      <a class="sidebar-nav-item  sidebar-angular" href="/2017/05/24/angular1" style="display: none">&nbsp;&nbsp;&nbsp;angular&nbsp;&nbsp;
+        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 05 - 24</p>-->
+      </a>
+
+      
+
+    
+
     <!--<a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a>-->
 
     <!--<a class="sidebar-nav-item" href="">GitHub project</a>-->
@@ -356,6 +368,162 @@
 <!--</div>-->
 
 <div class="posts">
+    
+    <div class="post">
+        <h1 class="post-title">
+            <a href="/2017/05/24/angular1">
+                angular
+            </a>
+        </h1>
+
+        <span class="post-date">24 May 2017</span>
+
+        <h2 id="angular">初识angular</h2>
+
+<blockquote>
+  <p>ng-app</p>
+</blockquote>
+
+<blockquote>
+  <p>ng-model</p>
+</blockquote>
+
+<pre><code class="language-ng">ng-model 指令可以为应用数据提供状态值(invalid, dirty, touched, error)
+
+ng-model 指令根据表单域的状态添加/移除以下类：
+
+ng-empty
+ng-not-empty
+ng-touched
+ng-untouched
+ng-valid
+ng-invalid
+ng-dirty
+ng-pending
+ng-pristine
+
+</code></pre>
+
+<blockquote>
+  <p>ng-bind</p>
+</blockquote>
+
+<blockquote>
+  <p>ng-controller</p>
+</blockquote>
+
+<blockquote>
+  <p>ng-repeat</p>
+</blockquote>
+
+<blockquote>
+  <p>app.directive 函数添加自定义指令</p>
+</blockquote>
+
+<pre><code class="language-ng">app.directive("runoobDirective", function() {
+    return {
+        restrict : "A",
+        template : "&lt;h1&gt;自定义指令!&lt;/h1&gt;"
+    };
+});
+
+restrict 值可以是以下几种:
+E 作为元素名使用
+A 作为属性使用
+C 作为类名使用
+M 作为注释使用
+
+</code></pre>
+
+<blockquote>
+  <p>ng-show</p>
+</blockquote>
+
+<blockquote>
+  <p>Scope(作用域)</p>
+</blockquote>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">ng-app=</span><span class="s">"myApp"</span> <span class="na">ng-controller=</span><span class="s">"myCtrl"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;h1&gt;&lt;/h1&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'myApp'</span><span class="p">,</span> <span class="p">[]);</span>
+
+<span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'myCtrl'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$scope</span><span class="p">.</span><span class="nx">carname</span> <span class="o">=</span> <span class="s2">"Volvo"</span><span class="p">;</span>
+<span class="p">});</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre>
+</div>
+
+<blockquote>
+  <p>ng-click</p>
+</blockquote>
+
+<blockquote>
+  <p>根作用域</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;div ng-app="myApp" ng-controller="myCtrl"&gt;
+
+&lt;h1&gt; 家族成员:&lt;/h1&gt;
+
+&lt;ul&gt;
+    &lt;li ng-repeat="x in names"&gt; &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;script&gt;
+var app = angular.module('myApp', []);
+
+app.controller('myCtrl', function($scope, $rootScope) {
+    $scope.names = ["Emil", "Tobias", "Linus"];
+    $rootScope.lastname = "Refsnes";
+});
+&lt;/script&gt;
+
+</code></pre>
+</div>
+
+<blockquote>
+  <p>angular 过滤器</p>
+</blockquote>
+
+<blockquote>
+  <p>angular 服务</p>
+</blockquote>
+
+<blockquote>
+  <p>angular http</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>// 简单的 GET 请求，可以改为 POST
+$http({
+	method: 'GET',
+	url: '/someUrl'
+}).then(function successCallback(response) {
+		// 请求成功执行代码
+	}, function errorCallback(response) {
+		// 请求失败执行代码
+});
+
+</code></pre>
+</div>
+
+<blockquote>
+  <p>ng-options 与 ng-repeat</p>
+</blockquote>
+
+<blockquote>
+  <p>ng-include 包html</p>
+</blockquote>
+
+
+    </div>
     
     <div class="post">
         <h1 class="post-title">
@@ -1055,33 +1223,6 @@ new Vue({
   <li>beforeDestroy</li>
   <li>destroy</li>
 </ul>
-
-    </div>
-    
-    <div class="post">
-        <h1 class="post-title">
-            <a href="/2017/05/02/javascript-object">
-                object
-            </a>
-        </h1>
-
-        <span class="post-date">02 May 2017</span>
-
-        <h3 id="objectkeys-">object.keys( )</h3>
-<p>返回一个数组，包含指定对象的所有自有可遍历属性的名称。</p>
-
-<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">vendors</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="s1">''</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
-  <span class="na">Webkit</span><span class="p">:</span> <span class="s1">'webkit'</span><span class="p">,</span>
-  <span class="na">Moz</span><span class="p">:</span> <span class="s1">''</span><span class="p">,</span>
-  <span class="na">O</span><span class="p">:</span> <span class="s1">'o'</span><span class="p">,</span>
-  <span class="na">ms</span><span class="p">:</span> <span class="s1">'ms'</span>
-<span class="p">};</span>
-
-<span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">vendors</span><span class="p">)</span>            <span class="c1">// ["", "Webkit", "Moz", "O", "ms"]</span>
-
-</code></pre>
-</div>
 
     </div>
     
