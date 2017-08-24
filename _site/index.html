@@ -134,6 +134,14 @@
 
     
 
+      
+
+        
+
+      
+
+    
+
     <!-- 类目 -->
 
     
@@ -192,7 +200,13 @@
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">javascript</span><span class="category-number">&nbsp;（4）</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">javascript</span><span class="category-number">&nbsp;（5）</span></a>
+
+      
+
+      <a class="sidebar-nav-item  sidebar-javascript" href="/2017/08/18/javascript-fanxiang" style="display: none">&nbsp;&nbsp;&nbsp;javascript - !~&nbsp;&nbsp;
+        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 08 - 18</p>-->
+      </a>
 
       
 
@@ -336,6 +350,24 @@
 
     
 
+    <a class="sidebar-nav-item category"><span class="category-title">react</span><span class="category-number">&nbsp;（2）</span></a>
+
+      
+
+      <a class="sidebar-nav-item  sidebar-react" href="/2017/08/23/react-jsj" style="display: none">&nbsp;&nbsp;&nbsp;react脚手架&nbsp;&nbsp;
+        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 08 - 23</p>-->
+      </a>
+
+      
+
+      <a class="sidebar-nav-item  sidebar-react" href="/2017/08/22/react-first" style="display: none">&nbsp;&nbsp;&nbsp;初识react&nbsp;&nbsp;
+        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 08 - 22</p>-->
+      </a>
+
+      
+
+    
+
     <!--<a class="sidebar-nav-item" href="/archive/v1.0.0.zip">Download</a>-->
 
     <!--<a class="sidebar-nav-item" href="">GitHub project</a>-->
@@ -391,809 +423,350 @@
     
     <div class="post">
         <h1 class="post-title">
-            <a href="/2017/06/26/wechat-xcx">
-                wechat
+            <a href="/2017/08/23/react-jsj">
+                react脚手架
             </a>
         </h1>
 
-        <span class="post-date">26 Jun 2017</span>
+        <span class="post-date">23 Aug 2017</span>
 
-        <h3 id="section">微信小程序</h3>
+        <blockquote>
+  <p><a href="https://github.com/facebookincubator/create-react-app">facebook react脚手架</a></p>
+</blockquote>
+
+<p>主要的特性：</p>
+
+<ul>
+  <li>无需配置；</li>
+  <li>集成了对 <code class="highlighter-rouge">React</code>, <code class="highlighter-rouge">JSX</code>, <code class="highlighter-rouge">ES6</code> 和 <code class="highlighter-rouge">Flow</code> 的支持；</li>
+  <li>集成了开发服务器；</li>
+  <li>配置好了浏览器热加载的功能；</li>
+  <li>在 <code class="highlighter-rouge">JavaScript</code> 中可以直接 <code class="highlighter-rouge">import CSS</code> 和图片；</li>
+  <li>自动处理 <code class="highlighter-rouge">CSS</code> 的兼容问题，无需添加 <code class="highlighter-rouge">-webkit</code> 前缀；</li>
+  <li>集成好了编译命令，编译后直接发布成产品，并且还包含了 <code class="highlighter-rouge">sourcemaps</code>。</li>
+</ul>
+
+<p>值得注意：</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Node</code> 的版本必须 &gt;= 4，推荐 <code class="highlighter-rouge">Node</code> &gt;= 6 and <code class="highlighter-rouge">npm</code> &gt;= 3；</li>
+  <li>运行起来后浏览器已经实现了热加载刷新，修改代码保存后浏览器会自动刷新；</li>
+  <li>执行 <code class="highlighter-rouge">npm test</code> 或 <code class="highlighter-rouge">yarn test</code> 可以执行测试动作。；</li>
+  <li>编译项目执行 <code class="highlighter-rouge">npm run build</code> 或 <code class="highlighter-rouge">yarn build</code>；</li>
+</ul>
+
+<blockquote>
+  <p>[蚂蚁金服 ant.design react脚手架]</p>
+</blockquote>
 
     </div>
     
     <div class="post">
         <h1 class="post-title">
-            <a href="/2017/05/24/angular1">
-                angular
+            <a href="/2017/08/22/react-first">
+                初识react
             </a>
         </h1>
 
-        <span class="post-date">24 May 2017</span>
+        <span class="post-date">22 Aug 2017</span>
 
-        <h2 id="angular">初识angular</h2>
-
-<blockquote>
-  <p>ng-app</p>
+        <blockquote>
+  <p>一、JSX语法</p>
 </blockquote>
 
-<blockquote>
-  <p>ng-model</p>
-</blockquote>
-
-<pre><code class="language-ng">ng-model 指令可以为应用数据提供状态值(invalid, dirty, touched, error)
-
-ng-model 指令根据表单域的状态添加/移除以下类：
-
-ng-empty
-ng-not-empty
-ng-touched
-ng-untouched
-ng-valid
-ng-invalid
-ng-dirty
-ng-pending
-ng-pristine
-
-</code></pre>
-
-<blockquote>
-  <p>ng-bind</p>
-</blockquote>
-
-<blockquote>
-  <p>ng-controller</p>
-</blockquote>
-
-<blockquote>
-  <p>ng-repeat</p>
-</blockquote>
-
-<blockquote>
-  <p>app.directive 函数添加自定义指令</p>
-</blockquote>
-
-<pre><code class="language-ng">app.directive("runoobDirective", function() {
-    return {
-        restrict : "A",
-        template : "&lt;h1&gt;自定义指令!&lt;/h1&gt;"
-    };
-});
-
-restrict 值可以是以下几种:
-E 作为元素名使用
-A 作为属性使用
-C 作为类名使用
-M 作为注释使用
-
-</code></pre>
-
-<blockquote>
-  <p>ng-show</p>
-</blockquote>
-
-<blockquote>
-  <p>Scope(作用域)</p>
-</blockquote>
-
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">ng-app=</span><span class="s">"myApp"</span> <span class="na">ng-controller=</span><span class="s">"myCtrl"</span><span class="nt">&gt;</span>
-
-<span class="nt">&lt;h1&gt;&lt;/h1&gt;</span>
-
-<span class="nt">&lt;/div&gt;</span>
-
-<span class="nt">&lt;script&gt;</span>
-<span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'myApp'</span><span class="p">,</span> <span class="p">[]);</span>
-
-<span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'myCtrl'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">$scope</span><span class="p">.</span><span class="nx">carname</span> <span class="o">=</span> <span class="s2">"Volvo"</span><span class="p">;</span>
-<span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span>
-</code></pre>
-</div>
-
-<blockquote>
-  <p>ng-click</p>
-</blockquote>
-
-<blockquote>
-  <p>根作用域</p>
-</blockquote>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;div ng-app="myApp" ng-controller="myCtrl"&gt;
-
-&lt;h1&gt; 家族成员:&lt;/h1&gt;
-
-&lt;ul&gt;
-    &lt;li ng-repeat="x in names"&gt; &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;/div&gt;
-
-&lt;script&gt;
-var app = angular.module('myApp', []);
-
-app.controller('myCtrl', function($scope, $rootScope) {
-    $scope.names = ["Emil", "Tobias", "Linus"];
-    $rootScope.lastname = "Refsnes";
-});
+<p><code class="highlighter-rouge">React</code> 独有的 <code class="highlighter-rouge">JSX</code> 语法， <code class="highlighter-rouge">javascript</code> 不兼容。使用 <code class="highlighter-rouge">Browser.js</code> ，将 <code class="highlighter-rouge">JSX</code> 语法转换成 <code class="highlighter-rouge">javascript</code> 语法。</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;script type="text/babel"&gt;
+  // ** Our code goes here! **
 &lt;/script&gt;
 
 </code></pre>
 </div>
+<p>什么是 <code class="highlighter-rouge">JSX</code> 语法？ 就是 <code class="highlighter-rouge">HTML</code> 不使用引号直接和 <code class="highlighter-rouge">javascript</code> 混写。</p>
+
+<p><code class="highlighter-rouge">JSX</code> 语法基本规则：遇到 <code class="highlighter-rouge">HTML</code> 标签（以 <code class="highlighter-rouge">&lt;</code> 开头），就用 <code class="highlighter-rouge">HTML</code> 规则解析；遇到代码块（以 <code class="highlighter-rouge"><span class="p">{</span></code> 开头），就用 <code class="highlighter-rouge">JavaScript</code> 规则解析。</p>
+
+<p><code class="highlighter-rouge">JSX</code> 允许直接在模板插入 <code class="highlighter-rouge">JavaScript</code> 变量。如果这个变量是一个数组，则会展开这个数组的所有成员。</p>
 
 <blockquote>
-  <p>angular 过滤器</p>
+  <p>二、React基本用法：</p>
 </blockquote>
 
-<blockquote>
-  <p>angular 服务</p>
-</blockquote>
-
-<blockquote>
-  <p>angular http</p>
-</blockquote>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>// 简单的 GET 请求，可以改为 POST
-$http({
-	method: 'GET',
-	url: '/someUrl'
-}).then(function successCallback(response) {
-		// 请求成功执行代码
-	}, function errorCallback(response) {
-		// 请求失败执行代码
-});
-
+<div class="highlighter-rouge"><pre class="highlight"><code>ReactDOM.render(
+    '&lt;h1&gt;hello,world&lt;/h1&gt;',
+    document.getElementById('example')
+)
 </code></pre>
 </div>
 
 <blockquote>
-  <p>ng-options 与 ng-repeat</p>
+  <p>三、React组件：</p>
 </blockquote>
 
+<div class="highlighter-rouge"><pre class="highlight"><code>var HelloMessage = React.createClass({
+  render: function() {
+    return &lt;h1&gt;Hello {this.props.name}&lt;/h1&gt;;
+  }
+});
+
+ReactDOM.render(
+  &lt;HelloMessage name="John" /&gt;,
+  document.getElementById('example')
+);
+</code></pre>
+</div>
+
+<p><code class="highlighter-rouge">React.createClass</code> 方法就用于生成一个组件类，<code class="highlighter-rouge">HelloMessage</code>就是一个组件类。</p>
+
+<p>ps:</p>
+
+<ul>
+  <li>组件类的第一个字母必须大写，否则会报错。</li>
+  <li>添加组件属性，有一个地方需要注意，就是 <code class="highlighter-rouge">class</code> 属性需要写成 <code class="highlighter-rouge">className</code> ，<code class="highlighter-rouge">for</code> 属性需要写成 <code class="highlighter-rouge">htmlFor</code> ，这是因为 <code class="highlighter-rouge">class</code> 和 <code class="highlighter-rouge">for</code> 是 JavaScript 的保留字。</li>
+  <li>组件类只能包含一个顶层标签，否则会报错。如下例子会报错：</li>
+</ul>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var HelloMessage = React.createClass({
+  render: function() {
+    return &lt;h1&gt;
+      Hello {this.props.name}
+    &lt;/h1&gt;&lt;p&gt;
+      some text
+    &lt;/p&gt;;
+  }
+});
+</code></pre>
+</div>
+
+<p>组件的生命周期：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Mounting：已插入真实 DOM
+Updating：正在被重新渲染
+Unmounting：已移出真实 DOM
+
+生命周期下对应的方法：
+componentWillMount()
+componentDidMount()
+componentWillUpdate(object nextProps, object nextState)
+componentDidUpdate(object prevProps, object prevState)
+componentWillUnmount()
+
+特殊状态的处理函数：
+componentWillReceiveProps(object nextProps)：已加载组件收到新的参数时调用
+shouldComponentUpdate(object nextProps, object nextState)：组件判断是否重新渲染时调用
+
+</code></pre>
+</div>
+
+<p>组件的样式写法：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>错误写法：style="opacity:{this.state.opacity};"
+
+正确写法：style=/{/{opacity: this.state.opacity/}/}
+</code></pre>
+</div>
+
 <blockquote>
-  <p>ng-include 包html</p>
+  <p>四、this.props.children</p>
 </blockquote>
+
+<p><code class="highlighter-rouge">this.props</code> 对象的属性与组件的属性一一对应，但是有一个例外，就是 <code class="highlighter-rouge">this.props.children</code> 属性。它表示组件的所有子节点。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var NotesList = React.createClass({
+  render: function() {
+    return (
+      &lt;ol&gt;
+      {
+        React.Children.map(this.props.children, function (child) {
+          return &lt;li&gt;{child}&lt;/li&gt;;
+        })
+      }
+      &lt;/ol&gt;
+    );
+  }
+});
+
+ReactDOM.render(
+  &lt;NotesList&gt;
+    &lt;span&gt;hello&lt;/span&gt;
+    &lt;span&gt;world&lt;/span&gt;
+  &lt;/NotesList&gt;,
+  document.body
+);
+</code></pre>
+</div>
+
+<p>这里需要注意， <code class="highlighter-rouge">this.props.children</code> 的值有三种可能：如果当前组件没有子节点，它就是 <code class="highlighter-rouge">undefined</code> ;如果有一个子节点，数据类型是 <code class="highlighter-rouge">object</code> ；
+如果有多个子节点，数据类型就是 <code class="highlighter-rouge">array</code> 。所以，处理 <code class="highlighter-rouge">this.props.children</code> 的时候要小心。
+<code class="highlighter-rouge">React</code> 提供一个工具方法 <code class="highlighter-rouge">React.Children</code> 来处理 <code class="highlighter-rouge">this.props.children</code> 。
+我们可以用 <code class="highlighter-rouge">React.Children.map</code> 来遍历子节点，而不用担心 <code class="highlighter-rouge">this.props.children</code> 的数据类型是 <code class="highlighter-rouge">undefined</code> 还是 <code class="highlighter-rouge">object</code>。</p>
+
+<blockquote>
+  <p>五、PropTypes</p>
+</blockquote>
+
+<p>验证别人使用组件时，提供的参数是否符合要求。</p>
+
+<blockquote>
+  <p>六、ref 用于获取真实的DOM节点</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var MyComponent = React.createClass({
+  handleClick: function() {
+    this.refs.myTextInput.focus();
+  },
+  render: function() {
+    return (
+      &lt;div&gt;
+        &lt;input type="text" ref="myTextInput" /&gt;
+        &lt;input type="button" value="Focus the text input" onClick={this.handleClick} /&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+
+ReactDOM.render(
+  &lt;MyComponent /&gt;,
+  document.getElementById('example')
+);
+</code></pre>
+</div>
+
+<blockquote>
+  <p>七、this.state</p>
+</blockquote>
+
+<p>组件免不了要与用户互动，<code class="highlighter-rouge">React</code> 的一大创新，就是将组件看成是一个状态机，一开始有一个初始状态，然后用户互动，导致状态变化，从而触发重新渲染 <code class="highlighter-rouge">UI</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var LikeButton = React.createClass({
+  getInitialState: function() {
+    return {liked: false};
+  },
+  handleClick: function(event) {
+    this.setState({liked: !this.state.liked});
+  },
+  render: function() {
+    var text = this.state.liked ? 'like' : 'haven\'t liked';
+    return (
+      &lt;p onClick={this.handleClick}&gt;
+        You {text} this. Click to toggle.
+      &lt;/p&gt;
+    );
+  }
+});
+
+ReactDOM.render(
+  &lt;LikeButton /&gt;,
+  document.getElementById('example')
+);
+</code></pre>
+</div>
+<p>上面代码是一个 <code class="highlighter-rouge">LikeButton</code> 组件，它的 <code class="highlighter-rouge">getInitialState</code> 方法用于定义初始状态，也就是一个对象，这个对象可以通过 <code class="highlighter-rouge">this.state</code> 属性读取。
+当用户点击组件，导致状态变化，<code class="highlighter-rouge">this.setState</code> 方法就修改状态值，每次修改以后，自动调用 <code class="highlighter-rouge">this.render</code> 方法，再次渲染组件。
+由于 <code class="highlighter-rouge">this.props</code> 和 <code class="highlighter-rouge">this.state</code> 都用于描述组件的特性，可能会产生混淆。一个简单的区分方法是，<code class="highlighter-rouge">this.props</code> 表示那些一旦定义，
+就不再改变的特性，而 <code class="highlighter-rouge">this.state</code> 是会随着用户互动而产生变化的特性。</p>
+
+<blockquote>
+  <p>八、表单</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var Input = React.createClass({
+  getInitialState: function() {
+    return {value: 'Hello!'};
+  },
+  handleChange: function(event) {
+    this.setState({value: event.target.value});
+  },
+  render: function () {
+    var value = this.state.value;
+    return (
+      &lt;div&gt;
+        &lt;input type="text" value={value} onChange={this.handleChange} /&gt;
+        &lt;p&gt;{value}&lt;/p&gt;
+      &lt;/div&gt;
+    );
+  }
+});
+
+ReactDOM.render(&lt;Input/&gt;, document.body);
+</code></pre>
+</div>
+
+<p>上面代码中，文本输入框的值，不能用 <code class="highlighter-rouge">this.props.value</code> 读取，而要定义一个 <code class="highlighter-rouge">onChange</code> 事件的回调函数，通过 <code class="highlighter-rouge">event.target.value</code> 读取用户输入的值。
+<code class="highlighter-rouge">textarea</code> 元素、<code class="highlighter-rouge">select</code>元素、<code class="highlighter-rouge">radio</code>元素都属于这种情况。</p>
+
+<blockquote>
+  <p>九、Ajax</p>
+</blockquote>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>var UserGist = React.createClass({
+  getInitialState: function() {
+    return {
+      username: '',
+      lastGistUrl: ''
+    };
+  },
+
+  componentDidMount: function() {
+    $.get(this.props.source, function(result) {
+      var lastGist = result[0];
+      if (this.isMounted()) {
+        this.setState({
+          username: lastGist.owner.login,
+          lastGistUrl: lastGist.html_url
+        });
+      }
+    }.bind(this));
+  },
+
+  render: function() {
+    return (
+      &lt;div&gt;
+        {this.state.username}'s last gist is
+        &lt;a href={this.state.lastGistUrl}&gt;here&lt;/a&gt;.
+      &lt;/div&gt;
+    );
+  }
+});
+
+ReactDOM.render(
+  &lt;UserGist source="https://api.github.com/users/octocat/gists" /&gt;,
+  document.body
+);
+</code></pre>
+</div>
+
+<p>组件的数据来源，通常是通过 <code class="highlighter-rouge">Ajax</code> 请求从服务器获取，可以使用 <code class="highlighter-rouge">componentDidMount</code> 方法设置 Ajax 请求，等到请求成功，再用 <code class="highlighter-rouge">this.setState</code> 方法重新渲染 UI</p>
 
 
     </div>
     
     <div class="post">
         <h1 class="post-title">
-            <a href="/2017/05/17/css">
-                css
+            <a href="/2017/08/18/javascript-fanxiang">
+                javascript - !~
             </a>
         </h1>
 
-        <span class="post-date">17 May 2017</span>
+        <span class="post-date">18 Aug 2017</span>
 
-        <div class="highlighter-rouge"><pre class="highlight"><code>                                     ============================
-                                     ======      css       ======
-                                     ============================
+        <h3 id="javascript---">javascript - 按位取反</h3>
+
+<p>// 过滤market标签的数据</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>        /**
+         * 过滤掉营销组件
+         *
+         * @param {Array} modList
+         * @returns
+         */
+
+        function filterMods(modList) {
+            return modList.filter(function(item) {
+                return item.tag &amp;&amp; (!~item.tag.indexOf('market'));
+            });
+        }
 </code></pre>
 </div>
-
-<h2 id="css">那些让你爱不释手的css效果</h2>
-
-<blockquote>
-  <p>品牌墙效果</p>
-</blockquote>
-
-<style>
- #wall{
-    overflow: hidden;
-    border: 1px solid #eee;
- }
- #wall ul{
-    overflow:hidden;
-    padding: 15px;
-    margin: 0;
-    background: #eee;
- }
- #wall ul li{
-    text-align: center;
-    list-style-type: none;
-    float: left;
-    padding: 40px 15px;
-    width: 25%;
-    border: 1px solid #eee;
-    background: #fff;
- }
- #wall ul li, #wall ul li img, #wall ul li a{
-     -webkit-transition: all 0.2s linear;
-     transition: all 0.2s linear
- }
- #wall ul li a{
-     display: inline-table;
-     text-decoration: none;
- }
- #wall ul li:hover{
-     z-index: 2;
-     box-shadow: 1px 1px 10px rgba(0,0,0,0.1),-1px -1px 10px rgba(0,0,0,0.1);
-     -webkit-box-shadow: 1px 1px 10px rgba(0,0,0,0.1),-1px -1px 10px rgba(0,0,0,0.1);
-     -o-box-shadow: 1px 1px 10px rgba(0,0,0,0.1),-1px -1px 10px rgba(0,0,0,0.1);
-     -moz-box-shadow: 1px 1px 10px rgba(0,0,0,0.1),-1px -1px 10px rgba(0,0,0,0.1);
-     -ms-box-shadow: 1px 1px 10px rgba(0,0,0,0.1),-1px -1px 10px rgba(0,0,0,0.1);
-     transform: translate3d(0, 0, 0);
-     -webkit-transform: translate3d(0, 0, 0);
-     -moz-transform: translate3d(0, 0, 0);
-     -ms-transform: translate3d(0, 0, 0);
-     -o-transform: translate3d(0, 0, 0);
- }
- #wall ul li:hover img, #wall ul li:hover a{
-     transform: translate3d(0, -3px, 0);
-     -webkit-transform: translate3d(0, -3px, 0);
-     -o-transform: translate3d(0, -3px, 0);
-     -moz-transform: translate3d(0, -3px, 0);
-     -ms-transform: translate3d(0, -3px, 0);
- }
-</style>
-
-<div id="wall">
-    <ul>
-        <li><a href="javascript:;">WALL</a></li>
-        <li><a href="javascript:;">WALL</a></li>
-        <li><a href="javascript:;">WALL</a></li>
-        <li><a href="javascript:;">WALL</a></li>
-        <li><a href="javascript:;">WALL</a></li>
-        <li><a href="javascript:;">WALL</a></li>
-        <li><a href="javascript:;">WALL</a></li>
-        <li><a href="javascript:;">WALL</a></li>
-        <li><a href="javascript:;">WALL</a></li>
-        <li><a href="javascript:;">WALL</a></li>
-        <li><a href="javascript:;">WALL</a></li>
-        <li><a href="javascript:;">WALL</a></li>
-    </ul>
-</div>
-<p><br /></p>
-<h4 id="css-1">主要的css样式:</h4>
-
-<div class="language-css highlighter-rouge"><pre class="highlight"><code> <span class="nf">#wall</span> <span class="nt">ul</span> <span class="nt">li</span><span class="o">,</span> <span class="nf">#wall</span> <span class="nt">ul</span> <span class="nt">li</span> <span class="nt">img</span><span class="o">,</span> <span class="nf">#wall</span> <span class="nt">ul</span> <span class="nt">li</span> <span class="nt">a</span><span class="p">{</span>
-     <span class="nl">-webkit-transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">0.2s</span> <span class="n">linear</span><span class="p">;</span>
-     <span class="nl">transition</span><span class="p">:</span> <span class="n">all</span> <span class="m">0.2s</span> <span class="n">linear</span>
- <span class="p">}</span>
- <span class="nf">#wall</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:hover</span><span class="p">{</span>
-     <span class="nl">z-index</span><span class="p">:</span> <span class="m">2</span><span class="p">;</span>
-     <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">),</span><span class="m">-1px</span> <span class="m">-1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">);</span>
-     <span class="nl">-webkit-box-shadow</span><span class="p">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">),</span><span class="m">-1px</span> <span class="m">-1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">);</span>
-     <span class="nl">-o-box-shadow</span><span class="p">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">),</span><span class="m">-1px</span> <span class="m">-1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">);</span>
-     <span class="nl">-moz-box-shadow</span><span class="p">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">),</span><span class="m">-1px</span> <span class="m">-1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">);</span>
-     <span class="nl">-ms-box-shadow</span><span class="p">:</span> <span class="m">1px</span> <span class="m">1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">),</span><span class="m">-1px</span> <span class="m">-1px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">);</span>
-     <span class="nl">transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
-     <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
-     <span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
-     <span class="nl">-ms-transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
-     <span class="nl">-o-transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
- <span class="p">}</span>
- <span class="nf">#wall</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:hover</span> <span class="nt">img</span><span class="o">,</span> <span class="nf">#wall</span> <span class="nt">ul</span> <span class="nt">li</span><span class="nd">:hover</span> <span class="nt">a</span><span class="p">{</span>
-     <span class="nl">transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">-3px</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
-     <span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">-3px</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
-     <span class="nl">-o-transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">-3px</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
-     <span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">-3px</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
-     <span class="nl">-ms-transform</span><span class="p">:</span> <span class="n">translate3d</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">-3px</span><span class="p">,</span> <span class="m">0</span><span class="p">);</span>
- <span class="p">}</span>
-</code></pre>
-</div>
-
-<blockquote>
-  <p>翘边阴影效果 ( 一 )</p>
-</blockquote>
-<style>
-    #photo{
-        width: 400px;
-        height: 400px;
-        border: 1px solid #eee;
-        position: relative;
-        background: #fff;
-        box-shadow: 3px 3px 10px rgba(0,0,0,0.1) inset,-3px -3px 10px rgba(0,0,0,0.1) inset;
-    }
-    #photo:before{
-       content: '';
-       position: absolute;
-       left: 22px;
-       right: 25px;
-       bottom: 11px;
-       top: 23px;
-       box-shadow: 0px 8px 10px rgba(0,0,0,0.6), 0px -8px 10px rgba(0,0,0,0.6);
-       transform: skew(10deg) rotate(4deg);
-       z-index: -1;
-    }
-    #photo:after{
-        content: '';
-        position: absolute;
-        left: 25px;
-        right: 20px;
-        bottom: 13px;
-        top: 24px;
-        box-shadow: 0px 8px 10px rgba(0,0,0,0.6), 0px -8px 10px rgba(0,0,0,0.6);
-        transform: skew(-10deg) rotate(-4deg);
-        z-index: -1;
-    }
-    #photo p{
-        text-align: center;
-    }
-</style>
-
-<div id="photo">
-  <p>翘边阴影效果 ( 一 )</p>
-</div>
-<p><br /></p>
-
-<div class="language-css highlighter-rouge"><pre class="highlight"><code>    <span class="nf">#photo</span><span class="p">{</span>
-        <span class="nl">width</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
-        <span class="nl">height</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
-        <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#eee</span><span class="p">;</span>
-        <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
-        <span class="nl">background</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
-        <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">3px</span> <span class="m">3px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">)</span> <span class="nb">inset</span><span class="p">,</span><span class="m">-3px</span> <span class="m">-3px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.1</span><span class="p">)</span> <span class="nb">inset</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nf">#photo</span><span class="nd">:before</span><span class="p">{</span>
-       <span class="nl">content</span><span class="p">:</span> <span class="s2">''</span><span class="p">;</span>
-       <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
-       <span class="nl">left</span><span class="p">:</span> <span class="m">22px</span><span class="p">;</span>
-       <span class="nl">right</span><span class="p">:</span> <span class="m">25px</span><span class="p">;</span>
-       <span class="nl">bottom</span><span class="p">:</span> <span class="m">11px</span><span class="p">;</span>
-       <span class="nl">top</span><span class="p">:</span> <span class="m">23px</span><span class="p">;</span>
-       <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0px</span> <span class="m">8px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.6</span><span class="p">),</span> <span class="m">0px</span> <span class="m">-8px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.6</span><span class="p">);</span>
-       <span class="nl">transform</span><span class="p">:</span> <span class="n">skew</span><span class="p">(</span><span class="m">10deg</span><span class="p">)</span> <span class="n">rotate</span><span class="p">(</span><span class="m">4deg</span><span class="p">);</span>
-       <span class="nl">z-index</span><span class="p">:</span> <span class="m">-1</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nf">#photo</span><span class="nd">:after</span><span class="p">{</span>
-        <span class="nl">content</span><span class="p">:</span> <span class="s2">''</span><span class="p">;</span>
-        <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
-        <span class="nl">left</span><span class="p">:</span> <span class="m">25px</span><span class="p">;</span>
-        <span class="nl">right</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
-        <span class="nl">bottom</span><span class="p">:</span> <span class="m">13px</span><span class="p">;</span>
-        <span class="nl">top</span><span class="p">:</span> <span class="m">24px</span><span class="p">;</span>
-        <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0px</span> <span class="m">8px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.6</span><span class="p">),</span> <span class="m">0px</span> <span class="m">-8px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.6</span><span class="p">);</span>
-        <span class="nl">transform</span><span class="p">:</span> <span class="n">skew</span><span class="p">(</span><span class="m">-10deg</span><span class="p">)</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-4deg</span><span class="p">);</span>
-        <span class="nl">z-index</span><span class="p">:</span> <span class="m">-1</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nf">#photo</span> <span class="nt">p</span><span class="p">{</span>
-        <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
-    <span class="p">}</span>
-</code></pre>
-</div>
-
-<blockquote>
-  <p>翘边阴影效果 ( 二 )</p>
-</blockquote>
-
-<style>
-    #photo2{
-        width: 400px;
-        height: 400px;
-        border: 1px solid #eee;
-        position: relative;
-        background: #fff;
-    }
-    #photo2:after{
-        content: '';
-        position: absolute;
-        left: 3px;
-        right: 3px;
-        bottom: 3px;
-        top: 200px;
-        box-shadow: 0px 10px 10px rgba(0,0,0,0.6), 0px -10px 10px rgba(0,0,0,0.6);
-        /* transform: skew(-10deg) rotate(-4deg); */
-        z-index: -1;
-        border-radius: 100px / 10px;
-    }
-    #photo2 p{
-        text-align: center;
-    }
-</style>
-
-<div id="photo2">
-  <p>翘边阴影效果 ( 二 )</p>
-</div>
-<p><br /></p>
-
-<div class="language-css highlighter-rouge"><pre class="highlight"><code> <span class="nf">#photo2</span><span class="p">{</span>
-         <span class="nl">width</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
-         <span class="nl">height</span><span class="p">:</span> <span class="m">400px</span><span class="p">;</span>
-         <span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#eee</span><span class="p">;</span>
-         <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
-         <span class="nl">background</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
-     <span class="p">}</span>
- <span class="nf">#photo2</span><span class="nd">:after</span><span class="p">{</span>
-     <span class="nl">content</span><span class="p">:</span> <span class="s2">''</span><span class="p">;</span>
-     <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
-     <span class="nl">left</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span>
-     <span class="nl">right</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span>
-     <span class="nl">bottom</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span>
-     <span class="nl">top</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
-     <span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0px</span> <span class="m">10px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.6</span><span class="p">),</span> <span class="m">0px</span> <span class="m">-10px</span> <span class="m">10px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0</span><span class="p">,</span><span class="m">0.6</span><span class="p">);</span>
-     <span class="c">/* transform: skew(-10deg) rotate(-4deg); */</span>
-     <span class="nl">z-index</span><span class="p">:</span> <span class="m">-1</span><span class="p">;</span>
-     <span class="nl">border-radius</span><span class="p">:</span> <span class="m">100px</span> <span class="p">/</span> <span class="m">10px</span><span class="p">;</span>
- <span class="p">}</span>
- <span class="nf">#photo2</span> <span class="nt">p</span><span class="p">{</span>
-     <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
- <span class="p">}</span>
-</code></pre>
-</div>
-
-<blockquote>
-  <p>六边形效果</p>
-</blockquote>
-<style>
-#photo3{
-    overflow:hidden;
-}
-#photo3 .clear{
-    clear: both;
-}
-#photo3 .con-show01{
-    width: 200px;
-    height: 250px;
-    float: left;
-    margin-left: 10px;
-    overflow: hidden;
-    transform:rotate(120deg);
-}
-#photo3 .con-show02{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    transform:rotate(-60deg);
-}
-#photo3 .con-show03{
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    transform:rotate(-60deg);
-    position: relative;
-    background: pink;
-}
-#photo3 .con-show03 > div{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    line-height: 250px;
-    text-align: center;
-    color: #fff;
-    cursor: pointer;
-    background: url(../images/a.png);
-    transition: opacity 0.3s;
-    }
-#photo3 .con-show03:hover > div{
-    opacity: 1;
-}
-#photo3 .margin-left{
-    margin-left: 115px;
-}
-#photo3 .margin-top{
-    margin-top: -70px;
-}
-</style>
-
-<div id="photo3">
-    <h1 class="title">CSS3 六边形效果 <span></span></h1>
-    <div class="con-show01">
-        <div class="con-show02">
-          <div class="con-show03 bg01">
-            <div>
-            <p>六边形效果</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    <div class="con-show01">
-        <div class="con-show02">
-            <div class="con-show03 bg01">
-              <div>
-              <p>六边形效果</p>
-              </div>
-            </div>
-        </div>
-    </div>
-    <div class="clear"></div>
-    <div class="con-show01 margin-left margin-top">
-        <div class="con-show02">
-          <div class="con-show03 bg01">
-            <div>
-            <p>六边形效果</p>
-            </div>
-          </div>
-        </div>
-    </div>
-</div>
-
-<div class="language-css highlighter-rouge"><pre class="highlight"><code><span class="nf">#photo3</span><span class="p">{</span>
-    <span class="nl">overflow</span><span class="p">:</span><span class="nb">hidden</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nf">#photo3</span> <span class="nc">.clear</span><span class="p">{</span>
-<span class="nl">clear</span><span class="p">:</span> <span class="nb">both</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nf">#photo3</span> <span class="nc">.con-show01</span><span class="p">{</span>
-    <span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
-    <span class="nl">height</span><span class="p">:</span> <span class="m">250px</span><span class="p">;</span>
-    <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
-    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">10px</span><span class="p">;</span>
-    <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
-    <span class="nl">transform</span><span class="p">:</span><span class="n">rotate</span><span class="p">(</span><span class="m">120deg</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="nf">#photo3</span> <span class="nc">.con-show02</span><span class="p">{</span>
-    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-    <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-    <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
-    <span class="nl">transform</span><span class="p">:</span><span class="n">rotate</span><span class="p">(</span><span class="m">-60deg</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="nf">#photo3</span> <span class="nc">.con-show03</span><span class="p">{</span>
-    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-    <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-    <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
-    <span class="nl">transform</span><span class="p">:</span><span class="n">rotate</span><span class="p">(</span><span class="m">-60deg</span><span class="p">);</span>
-    <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
-    <span class="nl">background</span><span class="p">:</span> <span class="no">pink</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nf">#photo3</span> <span class="nc">.con-show03</span> <span class="o">&gt;</span> <span class="nt">div</span><span class="p">{</span>
-    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-    <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-    <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
-    <span class="nl">top</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-    <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-    <span class="nl">opacity</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-    <span class="nl">line-height</span><span class="p">:</span> <span class="m">250px</span><span class="p">;</span>
-    <span class="nl">text-align</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
-    <span class="nl">color</span><span class="p">:</span> <span class="m">#fff</span><span class="p">;</span>
-    <span class="nl">cursor</span><span class="p">:</span> <span class="nb">pointer</span><span class="p">;</span>
-    <span class="nl">background</span><span class="p">:</span> <span class="sx">url(../images/a.png)</span><span class="p">;</span>
-    <span class="nl">transition</span><span class="p">:</span> <span class="n">opacity</span> <span class="m">0.3s</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="nf">#photo3</span> <span class="nc">.con-show03</span><span class="nd">:hover</span> <span class="o">&gt;</span> <span class="nt">div</span><span class="p">{</span>
-    <span class="nl">opacity</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nf">#photo3</span> <span class="nc">.margin-left</span><span class="p">{</span>
-    <span class="nl">margin-left</span><span class="p">:</span> <span class="m">115px</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nf">#photo3</span> <span class="nc">.margin-top</span><span class="p">{</span>
-    <span class="nl">margin-top</span><span class="p">:</span> <span class="m">-70px</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre>
-</div>
-
-<blockquote>
-  <p>照片堆叠效果</p>
-</blockquote>
-
-<style>
-    /*
-    Float clearing goodness from Handcrafted CSS book ------------------------------------------------------------- */
-    .group:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
-    * html .group { height: 1%; }
-    *:first-child+html .group { min-height: 1px; }
-
-    #container { max-width: 57.5em; padding: 0 20px; margin: 0 auto; }
-
-    h1, h2, h3, p { color: #333; margin-bottom: 20px; }
-    h1, h2 { font-family: 'AdelleBasicBold', Arial, sans-serif; }
-    h1.title { font-size: 68px; letter-spacing: -3px; font-weight: bold; text-align: center; margin: 100px 0 50px; text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6); }
-
-    h1.title span { font-size: 38px; line-height: 48px; display: block; letter-spacing: -1px; color: rgba(51, 51, 51, 0.5); }
-
-
-    /*
-    Stacks CSS ----------------------------------------------------------------------------------------------------------- */
-
-    /* Layout */
-    .stack { float: left; width: 22%; margin: 0 4% 4% 0; position: relative; z-index: 10; }
-
-    /* Image styles */
-    .stack img { max-width: 100%; height: auto; vertical-align: bottom; border: 10px solid #fff; border-radius: 3px;
-    	-webkit-box-sizing: border-box;
-    	-moz-box-sizing: border-box;
-    	box-sizing: border-box;
-    	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    }
-    .stack:last-of-type { margin-right: 0; }
-
-    /* Stacks creted by the use of generated content */
-    .stack:before, .stack:after { content: "";
-        border-radius: 3px; width: 100%; height: 100%; position: absolute; border: 10px solid #fff; left: 0;
-    	-webkit-box-sizing: border-box;
-    	-moz-box-sizing: border-box;
-    	box-sizing: border-box;
-    	-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    	-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-    	-webkit-transition: 0.3s all ease-out;
-    	-moz-transition: 0.3s all ease-out;
-    	transition: 0.3s all ease-out;
-    }
-    .stack:before { top: 4px; z-index: -10; } /* 1st element in stack (behind image) */
-    .stack:after { top: 8px; z-index: -20; } /* 2nd element in stack (behind image) */
-
-    /* Second stack example (rotated to the right from the bottom left) */
-    .stack.rotated:before {
-    	-webkit-transform-origin: bottom left;
-    	-moz-transform-origin: bottom left;
-    	transform-origin: bottom left;
-    	-webkit-transform: rotate(2deg);
-    	-moz-transform: rotate(2deg);
-    	transform: rotate(2deg);
-    }
-    .stack.rotated:after {
-    	-webkit-transform-origin: bottom left;
-    	-moz-transform-origin: bottom left;
-    	transform-origin: bottom left;
-    	-webkit-transform: rotate(4deg);
-    	-moz-transform: rotate(4deg);
-    	transform: rotate(4deg);
-    }
-
-    /* Third stack example (One stack element rotated in the opposite direction) */
-    .stack.twisted:before {
-    	-webkit-transform: rotate(4deg);
-    	-moz-transform: rotate(4deg);
-    	transform: rotate(4deg);
-    }
-    .stack.twisted:after {
-    	-webkit-transform: rotate(-4deg);
-    	-moz-transform: rotate(-4deg);
-    	transform: rotate(-4deg);
-    }
-
-    /* Fourth stack example (Similar to the second but rotated left) */
-    .stack.rotated-left:before {
-    	-webkit-transform-origin: bottom left;
-    	-moz-transform-origin: bottom left;
-    	transform-origin: bottom left;
-    	-webkit-transform: rotate(-3deg);
-    	-moz-transform: rotate(-3deg);
-    	transform: rotate(-3deg);
-    }
-    .stack.rotated-left:after {
-    	-webkit-transform-origin: bottom left;
-    	-moz-transform-origin: bottom left;
-    	transform-origin: bottom left;
-    	-webkit-transform: rotate(-9deg);
-    	-moz-transform: rotate(-9deg);
-    	transform: rotate(-9deg);
-    }
-
-    /* Reset all rotations on hover */
-    .stack:hover:before, .stack:hover:after {
-    	-webkit-transform: rotate(0deg);
-    	-moz-transform: rotate(0deg);
-    	transform: rotate(0deg);
-    }
-
-    /*
-    iPhone and mobile widths --------------------------------------------------------------------------------------------------------------------------- */
-    @media only screen and (min-width: 320px) and (max-width: 480px) {
-    	.stack { float: none; width: auto; margin-bottom: 35px; }
-    	h1.title { margin: 15px 0; }
-    }
-</style>
-
-<div id="container" class="group">
-
-    <h1 class="title">CSS3 Stacks <span>with pseudo-elements</span></h1>
-
-    <div class="group">
-        <div class="stack">
-            <img src="../../../assets/image1.jpg" />
-        </div>
-        <div class="stack rotated">
-            <img src="../../../assets/image2.jpg" />
-        </div>
-        <div class="stack twisted">
-            <img src="../../../assets/image3.jpg" />
-        </div>
-        <div class="stack rotated-left">
-            <img src="../../../assets/image4.jpg" />
-        </div>
-    </div>
-</div>
-
-<div class="language-css highlighter-rouge"><pre class="highlight"><code> <span class="c">/*
-    Stacks CSS ----------------------------------------------------------------------------------------------------------- */</span>
-
-    <span class="c">/* Layout */</span>
-    <span class="nc">.stack</span> <span class="p">{</span> <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span> <span class="nl">width</span><span class="p">:</span> <span class="m">22%</span><span class="p">;</span> <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">4%</span> <span class="m">4%</span> <span class="m">0</span><span class="p">;</span> <span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span> <span class="nl">z-index</span><span class="p">:</span> <span class="m">10</span><span class="p">;</span> <span class="p">}</span>
-
-    <span class="c">/* Image styles */</span>
-    <span class="nc">.stack</span> <span class="nt">img</span> <span class="p">{</span> <span class="nl">max-width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span> <span class="nl">height</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span> <span class="nl">vertical-align</span><span class="p">:</span> <span class="nb">bottom</span><span class="p">;</span> <span class="nl">border</span><span class="p">:</span> <span class="m">10px</span> <span class="nb">solid</span> <span class="m">#fff</span><span class="p">;</span> <span class="nl">border-radius</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span>
-    	<span class="nl">-webkit-box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
-    	<span class="nl">-moz-box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
-    	<span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
-    	<span class="nl">-webkit-box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">4px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.4</span><span class="p">);</span>
-    	<span class="nl">-moz-box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">4px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.4</span><span class="p">);</span>
-    	<span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">4px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.4</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="nc">.stack</span><span class="nd">:last-of-type</span> <span class="p">{</span> <span class="nl">margin-right</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span> <span class="p">}</span>
-
-    <span class="c">/* Stacks creted by the use of generated content */</span>
-    <span class="nc">.stack</span><span class="nd">:before</span><span class="o">,</span> <span class="nc">.stack</span><span class="nd">:after</span> <span class="p">{</span> <span class="nl">content</span><span class="p">:</span> <span class="s1">""</span><span class="p">;</span>
-        <span class="nl">border-radius</span><span class="p">:</span> <span class="m">3px</span><span class="p">;</span> <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span> <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span> <span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span> <span class="nl">border</span><span class="p">:</span> <span class="m">10px</span> <span class="nb">solid</span> <span class="m">#fff</span><span class="p">;</span> <span class="nl">left</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-    	<span class="nl">-webkit-box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
-    	<span class="nl">-moz-box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
-    	<span class="nl">box-sizing</span><span class="p">:</span> <span class="n">border-box</span><span class="p">;</span>
-    	<span class="nl">-webkit-box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">4px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.4</span><span class="p">);</span>
-    	<span class="nl">-moz-box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">4px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.4</span><span class="p">);</span>
-    	<span class="nl">box-shadow</span><span class="p">:</span> <span class="m">0</span> <span class="m">1px</span> <span class="m">4px</span> <span class="n">rgba</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.4</span><span class="p">);</span>
-    	<span class="nl">-webkit-transition</span><span class="p">:</span> <span class="m">0.3s</span> <span class="n">all</span> <span class="n">ease-out</span><span class="p">;</span>
-    	<span class="nl">-moz-transition</span><span class="p">:</span> <span class="m">0.3s</span> <span class="n">all</span> <span class="n">ease-out</span><span class="p">;</span>
-    	<span class="nl">transition</span><span class="p">:</span> <span class="m">0.3s</span> <span class="n">all</span> <span class="n">ease-out</span><span class="p">;</span>
-    <span class="p">}</span>
-    <span class="nc">.stack</span><span class="nd">:before</span> <span class="p">{</span> <span class="nl">top</span><span class="p">:</span> <span class="m">4px</span><span class="p">;</span> <span class="nl">z-index</span><span class="p">:</span> <span class="m">-10</span><span class="p">;</span> <span class="p">}</span> <span class="c">/* 1st element in stack (behind image) */</span>
-    <span class="nc">.stack</span><span class="nd">:after</span> <span class="p">{</span> <span class="nl">top</span><span class="p">:</span> <span class="m">8px</span><span class="p">;</span> <span class="nl">z-index</span><span class="p">:</span> <span class="m">-20</span><span class="p">;</span> <span class="p">}</span> <span class="c">/* 2nd element in stack (behind image) */</span>
-
-    <span class="c">/* Second stack example (rotated to the right from the bottom left) */</span>
-    <span class="nc">.stack.rotated</span><span class="nd">:before</span> <span class="p">{</span>
-    	<span class="nl">-webkit-transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
-    	<span class="nl">-moz-transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
-    	<span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
-    	<span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">2deg</span><span class="p">);</span>
-    	<span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">2deg</span><span class="p">);</span>
-    	<span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">2deg</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="nc">.stack.rotated</span><span class="nd">:after</span> <span class="p">{</span>
-    	<span class="nl">-webkit-transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
-    	<span class="nl">-moz-transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
-    	<span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
-    	<span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">4deg</span><span class="p">);</span>
-    	<span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">4deg</span><span class="p">);</span>
-    	<span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">4deg</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="c">/* Third stack example (One stack element rotated in the opposite direction) */</span>
-    <span class="nc">.stack.twisted</span><span class="nd">:before</span> <span class="p">{</span>
-    	<span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">4deg</span><span class="p">);</span>
-    	<span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">4deg</span><span class="p">);</span>
-    	<span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">4deg</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="nc">.stack.twisted</span><span class="nd">:after</span> <span class="p">{</span>
-    	<span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-4deg</span><span class="p">);</span>
-    	<span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-4deg</span><span class="p">);</span>
-    	<span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-4deg</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="c">/* Fourth stack example (Similar to the second but rotated left) */</span>
-    <span class="nc">.stack.rotated-left</span><span class="nd">:before</span> <span class="p">{</span>
-    	<span class="nl">-webkit-transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
-    	<span class="nl">-moz-transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
-    	<span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
-    	<span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-3deg</span><span class="p">);</span>
-    	<span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-3deg</span><span class="p">);</span>
-    	<span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-3deg</span><span class="p">);</span>
-    <span class="p">}</span>
-    <span class="nc">.stack.rotated-left</span><span class="nd">:after</span> <span class="p">{</span>
-    	<span class="nl">-webkit-transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
-    	<span class="nl">-moz-transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
-    	<span class="nl">transform-origin</span><span class="p">:</span> <span class="nb">bottom</span> <span class="nb">left</span><span class="p">;</span>
-    	<span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-9deg</span><span class="p">);</span>
-    	<span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-9deg</span><span class="p">);</span>
-    	<span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">-9deg</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="c">/* Reset all rotations on hover */</span>
-    <span class="nc">.stack</span><span class="nd">:hover:before</span><span class="o">,</span> <span class="nc">.stack</span><span class="nd">:hover:after</span> <span class="p">{</span>
-    	<span class="nl">-webkit-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">0deg</span><span class="p">);</span>
-    	<span class="nl">-moz-transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">0deg</span><span class="p">);</span>
-    	<span class="nl">transform</span><span class="p">:</span> <span class="n">rotate</span><span class="p">(</span><span class="m">0deg</span><span class="p">);</span>
-    <span class="p">}</span>
-
-    <span class="c">/*
-    iPhone and mobile widths --------------------------------------------------------------------------------------------------------------------------- */</span>
-    <span class="k">@media</span> <span class="n">only</span> <span class="n">screen</span> <span class="n">and</span> <span class="p">(</span><span class="n">min-width</span><span class="p">:</span> <span class="m">320px</span><span class="p">)</span> <span class="n">and</span> <span class="p">(</span><span class="n">max-width</span><span class="p">:</span> <span class="m">480px</span><span class="p">)</span> <span class="p">{</span>
-    	<span class="nc">.stack</span> <span class="p">{</span> <span class="nl">float</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span> <span class="nl">width</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span> <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">35px</span><span class="p">;</span> <span class="p">}</span>
-    	<span class="nt">h1</span><span class="nc">.title</span> <span class="p">{</span> <span class="nl">margin</span><span class="p">:</span> <span class="m">15px</span> <span class="m">0</span><span class="p">;</span> <span class="p">}</span>
-    <span class="p">}</span>
-</code></pre>
-</div>
-
-<blockquote>
-  <p>3D文字效果</p>
-</blockquote>
-
 
     </div>
     
@@ -1240,6 +813,10 @@ $http({
         
             
                 <a class="pagination-item" href="/page8">8</a>
+            
+        
+            
+                <a class="pagination-item" href="/page9">9</a>
             
         
 
