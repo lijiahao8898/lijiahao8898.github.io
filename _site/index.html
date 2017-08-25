@@ -437,23 +437,103 @@
 <p>主要的特性：</p>
 
 <ul>
-  <li>无需配置；</li>
-  <li>集成了对 <code class="highlighter-rouge">React</code>, <code class="highlighter-rouge">JSX</code>, <code class="highlighter-rouge">ES6</code> 和 <code class="highlighter-rouge">Flow</code> 的支持；</li>
-  <li>集成了开发服务器；</li>
-  <li>配置好了浏览器热加载的功能；</li>
-  <li>在 <code class="highlighter-rouge">JavaScript</code> 中可以直接 <code class="highlighter-rouge">import CSS</code> 和图片；</li>
-  <li>自动处理 <code class="highlighter-rouge">CSS</code> 的兼容问题，无需添加 <code class="highlighter-rouge">-webkit</code> 前缀；</li>
-  <li>集成好了编译命令，编译后直接发布成产品，并且还包含了 <code class="highlighter-rouge">sourcemaps</code>。</li>
+  <li>
+    <p>无需配置；</p>
+  </li>
+  <li>
+    <p>集成了对 <code class="highlighter-rouge">React</code>, <code class="highlighter-rouge">JSX</code>, <code class="highlighter-rouge">ES6</code> 和 <code class="highlighter-rouge">Flow</code> 的支持；</p>
+  </li>
+  <li>
+    <p>集成了开发服务器；</p>
+  </li>
+  <li>
+    <p>配置好了浏览器热加载的功能；</p>
+  </li>
+  <li>
+    <p>在 <code class="highlighter-rouge">JavaScript</code> 中可以直接 <code class="highlighter-rouge">import CSS</code> 和图片；</p>
+  </li>
+  <li>
+    <p>自动处理 <code class="highlighter-rouge">CSS</code> 的兼容问题，无需添加 <code class="highlighter-rouge">-webkit</code> 前缀；</p>
+  </li>
+  <li>
+    <p>集成好了编译命令，编译后直接发布成产品，并且还包含了 <code class="highlighter-rouge">sourcemaps</code>。</p>
+  </li>
 </ul>
 
 <p>值得注意：</p>
 
 <ul>
-  <li><code class="highlighter-rouge">Node</code> 的版本必须 &gt;= 4，推荐 <code class="highlighter-rouge">Node</code> &gt;= 6 and <code class="highlighter-rouge">npm</code> &gt;= 3；</li>
-  <li>运行起来后浏览器已经实现了热加载刷新，修改代码保存后浏览器会自动刷新；</li>
-  <li>执行 <code class="highlighter-rouge">npm test</code> 或 <code class="highlighter-rouge">yarn test</code> 可以执行测试动作。；</li>
-  <li>编译项目执行 <code class="highlighter-rouge">npm run build</code> 或 <code class="highlighter-rouge">yarn build</code>；</li>
+  <li>
+    <p><code class="highlighter-rouge">Node</code> 的版本必须 &gt;= 4，推荐 <code class="highlighter-rouge">Node</code> &gt;= 6 and <code class="highlighter-rouge">npm</code> &gt;= 3；</p>
+  </li>
+  <li>
+    <p>运行起来后浏览器已经实现了热加载刷新，修改代码保存后浏览器会自动刷新；</p>
+  </li>
+  <li>
+    <p>执行 <code class="highlighter-rouge">npm test</code> 或 <code class="highlighter-rouge">yarn test</code> 可以执行测试动作。；</p>
+  </li>
+  <li>
+    <p>编译项目执行 <code class="highlighter-rouge">npm run build</code> 或 <code class="highlighter-rouge">yarn build</code>；</p>
+  </li>
 </ul>
+
+<p>HOW TO USE ?</p>
+
+<ol>
+  <li>先去安装全局的命令</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>npm install -g create-react-app
+</code></pre>
+</div>
+
+<ol>
+  <li>进入你想要的文件下目录下创建自己都react应用</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>create-react-app ant-react // ant-react自己项目应用的名称
+</code></pre>
+</div>
+
+<ol>
+  <li>启动服务</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>cd ant-react
+
+npm start
+</code></pre>
+</div>
+
+<p>生成的目录结构如下</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>ant-react
+├── README.md
+├── node_modules
+├── package.json
+├── .gitignore
+├── public
+│   └── favicon.ico
+│   └── index.html
+│   └── manifest.json
+└── src
+    └── App.css
+    └── App.js
+    └── App.test.js
+    └── index.css
+    └── index.js
+    └── logo.svg
+    └── registerServiceWorker.js
+</code></pre>
+</div>
+
+<ol>
+  <li>编译</li>
+</ol>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>npm run build
+</code></pre>
+</div>
 
 <blockquote>
   <p>[蚂蚁金服 ant.design react脚手架]</p>
@@ -471,6 +551,30 @@
         <span class="post-date">22 Aug 2017</span>
 
         <blockquote>
+  <p>相关</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">React</code> - <code class="highlighter-rouge">react</code> 库文件用来实现 <code class="highlighter-rouge">React</code> 的核心功能</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">react-dom</code> - <code class="highlighter-rouge">react-dom</code> 则用来把它渲染到浏览器当中</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">Redux</code> - 解决状态管理问题的</p>
+  </li>
+</ul>
+
+<p>目前已有的其他平台的解决方案还包括：</p>
+
+<ol>
+  <li><code class="highlighter-rouge">React Native</code></li>
+  <li><code class="highlighter-rouge">React VR</code></li>
+  <li><code class="highlighter-rouge">React XP</code></li>
+</ol>
+
+<blockquote>
   <p>一、JSX语法</p>
 </blockquote>
 

@@ -4,6 +4,20 @@ title: 初识react
 categories: [react]
 ---
 
+> 相关
+
+* `React` - `react` 库文件用来实现 `React` 的核心功能
+
+* `react-dom` - `react-dom` 则用来把它渲染到浏览器当中
+
+* `Redux` - 解决状态管理问题的
+
+目前已有的其他平台的解决方案还包括：
+
+1. `React Native`
+2. `React VR`
+3. `React XP`
+
 > 一、JSX语法
 
 `React` 独有的 `JSX` 语法， `javascript` 不兼容。使用 `Browser.js` ，将 `JSX` 语法转换成 `javascript` 语法。
