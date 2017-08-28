@@ -350,7 +350,19 @@
 
     
 
-    <a class="sidebar-nav-item category"><span class="category-title">react</span><span class="category-number">&nbsp;（2）</span></a>
+    <a class="sidebar-nav-item category"><span class="category-title">react</span><span class="category-number">&nbsp;（4）</span></a>
+
+      
+
+      <a class="sidebar-nav-item  sidebar-react" href="/2017/08/28/react-router" style="display: none">&nbsp;&nbsp;&nbsp;初识react（三）- router&nbsp;&nbsp;
+        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 08 - 28</p>-->
+      </a>
+
+      
+
+      <a class="sidebar-nav-item  sidebar-react" href="/2017/08/25/react-redux" style="display: none">&nbsp;&nbsp;&nbsp;初识react（二）- redux&nbsp;&nbsp;
+        <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 08 - 25</p>-->
+      </a>
 
       
 
@@ -360,7 +372,7 @@
 
       
 
-      <a class="sidebar-nav-item  sidebar-react" href="/2017/08/22/react-first" style="display: none">&nbsp;&nbsp;&nbsp;初识react&nbsp;&nbsp;
+      <a class="sidebar-nav-item  sidebar-react" href="/2017/08/22/react-first" style="display: none">&nbsp;&nbsp;&nbsp;初识react（一）- react&nbsp;&nbsp;
         <!--<p class="date">&nbsp;&nbsp;&nbsp;2017 - 08 - 22</p>-->
       </a>
 
@@ -393,7 +405,7 @@
 
         <a href="/" title="Home">Lijiahao8898</a>
 
-        <small>F2E</small>
+        <small>F2E - 人丑就要多读书</small>
 
       </h3>
 
@@ -420,6 +432,282 @@
 <!--</div>-->
 
 <div class="posts">
+    
+    <div class="post">
+        <h1 class="post-title">
+            <a href="/2017/08/28/react-router">
+                初识react（三）- router
+            </a>
+        </h1>
+
+        <span class="post-date">28 Aug 2017</span>
+
+        <h2 id="what-is-react-router-">what is react-router ?</h2>
+
+<p><code class="highlighter-rouge">react-router</code> 前端路由功能。</p>
+
+<p>最大的特点是 <code class="highlighter-rouge">react-router</code> 不需要配置专门的路由配置文件，只需要像普通的组件一样，引入几个组件，就能够添加 <code class="highlighter-rouge">react</code> 的路由功能。</p>
+
+<h3 id="react-router">使用react-router</h3>
+
+<p><code class="highlighter-rouge">react-router</code> 的使用非常简单，它目前已经发行到了 v4 版本，而之前的3个版本在网络上也能找到非常多的应用。在这里我们仅拿最新的版本
+作为示例。在 <code class="highlighter-rouge">react-router@4</code> 版本当中，专门为Web端提供了高度封装好的 <code class="highlighter-rouge">react-router-dom</code> 库，这下我们几乎不需要任何的配置就可
+以直接使用前端路由功能了：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* 这里引入的3个方法全部都是封装好的 React 组件，使用方法和其他 React 组件几乎没有任何差别 */
+const { HashRouter, Route, Redirect } = ReactRouterDOM;
+</code></pre>
+</div>
+
+<h3 id="hashrouter">HashRouter</h3>
+
+<p><code class="highlighter-rouge">HashRouter</code> 为我们的应用提供了 <code class="highlighter-rouge">hash</code> 形式（也就是带#的路由）路由的功能支持。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* 在通常情况下，我们不需要为 HashRouter 进行任何设置，直接引入使用即可。 */
+&lt;HashRouter&gt;
+  &lt;App/&gt;
+&lt;/HashRouter&gt;
+</code></pre>
+</div>
+
+<p>主要到在 <code class="highlighter-rouge">react-router</code> 提供的所有类型的 <code class="highlighter-rouge">Router</code> 组件当中，第一级的子组件有且只能有一个。因此我们在使用的时候，通常在我们应用
+组件的最外层包裹上一个 <code class="highlighter-rouge">&lt;div&gt;</code> 标签：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;HashRouter&gt;
+  &lt;div&gt;
+    ...
+  &lt;/div&gt;
+&lt;/HashRouter&gt;
+</code></pre>
+</div>
+
+<p>这里为了方便在线演示，所以我们使用了 <code class="highlighter-rouge">HashRouter</code> 组件，在实际的开发当中，更经常使用的是 <code class="highlighter-rouge">BrowserRouter</code> 组件，它可以为我们提
+供不带 # 的前端路由支持，更加友好。</p>
+
+<h3 id="route">Route</h3>
+
+<p>前端路由的主要功能就是通过判断不同的浏览器地址显示不同的内容，那么具体某个路由地址要怎么展示某个组件呢？</p>
+
+<p>这就是 <code class="highlighter-rouge">Route</code> 组件为我们提供的功能：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;HashRouter&gt;
+    &lt;div&gt;
+      &lt;Route path='/:title?' component={App} /&gt;
+    &lt;/div&gt;
+&lt;/HashRouter&gt;
+</code></pre>
+</div>
+
+<p>其中的 <code class="highlighter-rouge">path</code> 属性用来设置匹配的目标路由地址，路由地址可以是固定的字符串，例如 <code class="highlighter-rouge">home/about/user</code> 之类的，也可以像我们示例中一样
+，以冒号开头将路由的地址作为参数，之后我们可以在组件当中获取到对应的路由参数（以?结尾则表示这一参数是可选的）：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>const Title = props =&gt; &lt;h1&gt;{props.title}&lt;/h1&gt;;
+
+const App = ({ match }) =&gt; (
+  &lt;Provider store={store}&gt;
+    &lt;Counter title={match.params.title} /&gt;
+  &lt;/Provider&gt;
+);
+</code></pre>
+</div>
+
+<p>这里的 <code class="highlighter-rouge">match.params.title</code> 也就是我们路由参数当中对应的值了。</p>
+
+<h3 id="link">Link</h3>
+
+<p>有了前端路由的内容，我们还需要相应的前端路由的导航。前端路由导航的主要功能是实现浏览器地址栏 URL 的切换，并触发Web应用展示对应的内容，
+而不是像原生的 HTML 超链接试图向服务器发起对应 URL 的请求。</p>
+
+<p><code class="highlighter-rouge">react-router</code> 同样为我们提供了现成的 <code class="highlighter-rouge">Link</code> 导航组件：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;HashRouter&gt;
+    &lt;div&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;Link to='/react'&gt;react&lt;/Link&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;Link to='/redux'&gt;redux&lt;/Link&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;Link to='/react-router'&gt;react-router&lt;/Link&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;Route path='/:title?' component={App} /&gt;
+    &lt;/div&gt;
+&lt;/HashRouter&gt;
+</code></pre>
+</div>
+
+
+    </div>
+    
+    <div class="post">
+        <h1 class="post-title">
+            <a href="/2017/08/25/react-redux">
+                初识react（二）- redux
+            </a>
+        </h1>
+
+        <span class="post-date">25 Aug 2017</span>
+
+        <h2 id="what-is-redux-">what is redux ?</h2>
+
+<p><code class="highlighter-rouge">react</code> 处理数据的方式主要有 <code class="highlighter-rouge">props</code> 和 <code class="highlighter-rouge">state</code> 两种。</p>
+
+<p>其中的 <code class="highlighter-rouge">props</code> 必须是从父组件传递到子组件，如果嵌套层级很多，<code class="highlighter-rouge">props</code> 必须逐级从保存数据的组件层层
+传递到使用 <code class="highlighter-rouge">props</code> 的组件当中。而 <code class="highlighter-rouge">state</code> 在使用的时候，必须通过调用 <code class="highlighter-rouge">this.setState()</code> 方法，
+在改变 <code class="highlighter-rouge">state</code> 值的同时，触发 <code class="highlighter-rouge">React</code> 组件运行的生命周期，来触发界面的更新。 <code class="highlighter-rouge">this.setState()</code> 方
+法可以传递数据、方法、回调函数。在同一次操作中，连续调用多次 <code class="highlighter-rouge">this.setState()</code> 方法也会造成许多难以预料的结果，
+仅仅通过看代码你很难判断出最后值会变成什么。</p>
+
+<p><code class="highlighter-rouge">redux</code> 的理念：把一个应用的所有状态数据存储在一个统一的地方集中管理。</p>
+
+<p>如下图：</p>
+
+<p><img src="../../../assets/1.png" /></p>
+
+<h3 id="action">Action</h3>
+
+<p><code class="highlighter-rouge">Action</code> 就是用统一的形式，描述所有改变应用状态数据的操作的方法。其实就是一个带有 <code class="highlighter-rouge">type</code> 属性的一
+个 <code class="highlighter-rouge">JavaScript</code> 对象。</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="p">{</span>
+  <span class="nl">type</span><span class="p">:</span> <span class="s1">'INCREMENT'</span><span class="p">,</span>
+  <span class="nx">value</span><span class="err">:</span> <span class="mi">1</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h3 id="reducer">Reducer</h3>
+
+<p><code class="highlighter-rouge">Reducer</code> 则是 <code class="highlighter-rouge">Redux</code> 的设计理念当中最核心的方法，它接受当前的状态数据以及触发的 <code class="highlighter-rouge">Action</code> 操作作为参数，根据内
+部 <code class="highlighter-rouge">switch</code> 结构的逻辑判断，返回一个新的状态数据：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>(previousState, action) =&gt; newState
+</code></pre>
+</div>
+
+<p>例如在我们的计数器当中，可以抽象编写出这样一个 <code class="highlighter-rouge">Reducer</code> 方法：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>function counter(state, action) {
+    if (typeof state === 'undefined') {
+        return 0
+    }
+    switch (action.type) {
+      case 'INCREMENT':
+        return state + action.value
+      default:
+        return state
+    }
+}
+</code></pre>
+</div>
+
+<p>我们可以看到 <code class="highlighter-rouge">counter</code> 函数接受 <code class="highlighter-rouge">state</code> 和 <code class="highlighter-rouge">action</code> 两个参数，返回值则是经过一个 <code class="highlighter-rouge">switch</code> 结构判断的新的 <code class="highlighter-rouge">state</code>数
+据。这样结构的函数也就是我们在使用 <code class="highlighter-rouge">Redux</code> 时编写的 <code class="highlighter-rouge">Reducer</code> 方法。</p>
+
+<p>这是 <code class="highlighter-rouge">Redux</code> 理念当中最核心的一个部分，它决定了一个应用当中的状态数据在不同的 <code class="highlighter-rouge">Action</code> 被触发时具体会如何改变。</p>
+
+<h3 id="store">Store</h3>
+
+<p><code class="highlighter-rouge">Store</code> 则是 <code class="highlighter-rouge">Redux</code> 当中我们用来存储状态数据的地方，它提供了3个主要的方法：</p>
+
+<ul>
+  <li>
+    <p>用来获取当前状态数据的 <code class="highlighter-rouge">getState()</code></p>
+  </li>
+  <li>
+    <p>用来触发应用 <code class="highlighter-rouge">action</code> 动作的 <code class="highlighter-rouge">dispatch(action)</code></p>
+  </li>
+  <li>
+    <p>用来订阅响应事件（<code class="highlighter-rouge">state</code>改变之后进行的操作）的 <code class="highlighter-rouge">subscribe(listener)</code></p>
+  </li>
+</ul>
+
+<p>而在使用 <code class="highlighter-rouge">Redux</code> 时，我们可以通过它提供的 <code class="highlighter-rouge">createStore</code> 方法，直接从 <code class="highlighter-rouge">reducer</code> 函数生成对应的 <code class="highlighter-rouge">store</code> ：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>const { createStore } = Redux;
+
+const store = createStore(counter);
+</code></pre>
+</div>
+
+<p>当然可以直接在 <code class="highlighter-rouge">react</code> 中使用 <code class="highlighter-rouge">redux</code> ：</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+// 把之前 React 的渲染函数命名为 render
+const render = () =&gt; {
+  /* 传入 store.getState() 获取 Redux 当中存储的状态数据
+   * 传入 store.dispatch() 方法来执行对应 action 修改状态数据
+   */
+  ReactDOM.render(&lt;Counter
+              number={store.getState()}
+              onIncrement={() =&gt; store.dispatch({
+                          type: 'INCREMENT',
+                          value: 1
+                        })}
+             /&gt;,
+             document.getElementById('root'));
+}
+
+// 调用一次 render 方法进行初次渲染
+render()
+
+// 使用 store.subscribe 方法订阅 render 这样每次 store.dispatch 方法触发时就会自动调用 render
+store.subscribe(render);
+</code></pre>
+</div>
+
+<h3 id="react-redux">react-redux</h3>
+
+<p>当然，每次 <code class="highlighter-rouge">Redux</code> 当中的状态数据改变时都强制执行 <code class="highlighter-rouge">ReactDOM</code> 的 <code class="highlighter-rouge">render</code> 方法并不是最优选择。事实上，
+社区已经开发出了一个名为 <code class="highlighter-rouge">react-redux</code> 的库专门来辅助我们对 <code class="highlighter-rouge">React</code> 和 <code class="highlighter-rouge">Redux</code> 进行协同使用。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/* Provider 充当为整个 React 应用传入 Redux 当中 store 的容器组件
+ * connect 用来为需要使用 store 的组件提供相应的状态数据或 dispatch 方法
+ */
+
+const { Provider, connect } = ReactRedux;
+
+/* 我们通过 mapStateToProps 来将 Redux 当中的状态数据映射到 React 相应的 props 当中 */
+
+const mapStateToProps = state =&gt; ({
+  number: state
+});
+
+class Counter extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  handleClick() {
+
+    // 在这里调用传入组件的 dispatch 方法
+
+    this.props.dispatch({
+      type: 'INCREMENT',
+      value: 1
+    });
+  }
+
+  render() {
+    return (
+      &lt;div&gt;
+        &lt;Title /&gt;
+        &lt;Number number={this.props.number} /&gt;
+        &lt;Button onClick={() =&gt; this.handleClick()} /&gt;
+      &lt;/div&gt;
+    )
+  }
+}
+/* 我们需要通过 connect 方法来包装一下 React 的 Counter 组件，使其获取到 Redux 的 store 当中的方法和数据 */
+Counter = connect(mapStateToProps)(Counter);
+</code></pre>
+</div>
+
+<h3 id="section">参考文档</h3>
+
+<ul>
+  <li><a href="http://cn.redux.js.org//index.html">redux中文文档</a></li>
+  <li><a href="https://zhuanlan.zhihu.com/p/28241673">知乎专栏https://zhuanlan.zhihu.com/p/28241673</a></li>
+</ul>
+
+    </div>
     
     <div class="post">
         <h1 class="post-title">
@@ -538,339 +826,6 @@ npm start
 <blockquote>
   <p>[蚂蚁金服 ant.design react脚手架]</p>
 </blockquote>
-
-    </div>
-    
-    <div class="post">
-        <h1 class="post-title">
-            <a href="/2017/08/22/react-first">
-                初识react
-            </a>
-        </h1>
-
-        <span class="post-date">22 Aug 2017</span>
-
-        <blockquote>
-  <p>相关</p>
-</blockquote>
-
-<ul>
-  <li>
-    <p><code class="highlighter-rouge">React</code> - <code class="highlighter-rouge">react</code> 库文件用来实现 <code class="highlighter-rouge">React</code> 的核心功能</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">react-dom</code> - <code class="highlighter-rouge">react-dom</code> 则用来把它渲染到浏览器当中</p>
-  </li>
-  <li>
-    <p><code class="highlighter-rouge">Redux</code> - 解决状态管理问题的</p>
-  </li>
-</ul>
-
-<p>目前已有的其他平台的解决方案还包括：</p>
-
-<ol>
-  <li><code class="highlighter-rouge">React Native</code></li>
-  <li><code class="highlighter-rouge">React VR</code></li>
-  <li><code class="highlighter-rouge">React XP</code></li>
-</ol>
-
-<blockquote>
-  <p>一、JSX语法</p>
-</blockquote>
-
-<p><code class="highlighter-rouge">React</code> 独有的 <code class="highlighter-rouge">JSX</code> 语法， <code class="highlighter-rouge">javascript</code> 不兼容。使用 <code class="highlighter-rouge">Browser.js</code> ，将 <code class="highlighter-rouge">JSX</code> 语法转换成 <code class="highlighter-rouge">javascript</code> 语法。</p>
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;script type="text/babel"&gt;
-  // ** Our code goes here! **
-&lt;/script&gt;
-
-</code></pre>
-</div>
-<p>什么是 <code class="highlighter-rouge">JSX</code> 语法？ 就是 <code class="highlighter-rouge">HTML</code> 不使用引号直接和 <code class="highlighter-rouge">javascript</code> 混写。</p>
-
-<p><code class="highlighter-rouge">JSX</code> 语法基本规则：遇到 <code class="highlighter-rouge">HTML</code> 标签（以 <code class="highlighter-rouge">&lt;</code> 开头），就用 <code class="highlighter-rouge">HTML</code> 规则解析；遇到代码块（以 <code class="highlighter-rouge"><span class="p">{</span></code> 开头），就用 <code class="highlighter-rouge">JavaScript</code> 规则解析。</p>
-
-<p><code class="highlighter-rouge">JSX</code> 允许直接在模板插入 <code class="highlighter-rouge">JavaScript</code> 变量。如果这个变量是一个数组，则会展开这个数组的所有成员。</p>
-
-<blockquote>
-  <p>二、React基本用法：</p>
-</blockquote>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>ReactDOM.render(
-    '&lt;h1&gt;hello,world&lt;/h1&gt;',
-    document.getElementById('example')
-)
-</code></pre>
-</div>
-
-<blockquote>
-  <p>三、React组件：</p>
-</blockquote>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var HelloMessage = React.createClass({
-  render: function() {
-    return &lt;h1&gt;Hello {this.props.name}&lt;/h1&gt;;
-  }
-});
-
-ReactDOM.render(
-  &lt;HelloMessage name="John" /&gt;,
-  document.getElementById('example')
-);
-</code></pre>
-</div>
-
-<p><code class="highlighter-rouge">React.createClass</code> 方法就用于生成一个组件类，<code class="highlighter-rouge">HelloMessage</code>就是一个组件类。</p>
-
-<p>ps:</p>
-
-<ul>
-  <li>组件类的第一个字母必须大写，否则会报错。</li>
-  <li>添加组件属性，有一个地方需要注意，就是 <code class="highlighter-rouge">class</code> 属性需要写成 <code class="highlighter-rouge">className</code> ，<code class="highlighter-rouge">for</code> 属性需要写成 <code class="highlighter-rouge">htmlFor</code> ，这是因为 <code class="highlighter-rouge">class</code> 和 <code class="highlighter-rouge">for</code> 是 JavaScript 的保留字。</li>
-  <li>组件类只能包含一个顶层标签，否则会报错。如下例子会报错：</li>
-</ul>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var HelloMessage = React.createClass({
-  render: function() {
-    return &lt;h1&gt;
-      Hello {this.props.name}
-    &lt;/h1&gt;&lt;p&gt;
-      some text
-    &lt;/p&gt;;
-  }
-});
-</code></pre>
-</div>
-
-<p>组件的生命周期：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>Mounting：已插入真实 DOM
-Updating：正在被重新渲染
-Unmounting：已移出真实 DOM
-
-生命周期下对应的方法：
-componentWillMount()
-componentDidMount()
-componentWillUpdate(object nextProps, object nextState)
-componentDidUpdate(object prevProps, object prevState)
-componentWillUnmount()
-
-特殊状态的处理函数：
-componentWillReceiveProps(object nextProps)：已加载组件收到新的参数时调用
-shouldComponentUpdate(object nextProps, object nextState)：组件判断是否重新渲染时调用
-
-</code></pre>
-</div>
-
-<p>组件的样式写法：</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>错误写法：style="opacity:{this.state.opacity};"
-
-正确写法：style=/{/{opacity: this.state.opacity/}/}
-</code></pre>
-</div>
-
-<blockquote>
-  <p>四、this.props.children</p>
-</blockquote>
-
-<p><code class="highlighter-rouge">this.props</code> 对象的属性与组件的属性一一对应，但是有一个例外，就是 <code class="highlighter-rouge">this.props.children</code> 属性。它表示组件的所有子节点。</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var NotesList = React.createClass({
-  render: function() {
-    return (
-      &lt;ol&gt;
-      {
-        React.Children.map(this.props.children, function (child) {
-          return &lt;li&gt;{child}&lt;/li&gt;;
-        })
-      }
-      &lt;/ol&gt;
-    );
-  }
-});
-
-ReactDOM.render(
-  &lt;NotesList&gt;
-    &lt;span&gt;hello&lt;/span&gt;
-    &lt;span&gt;world&lt;/span&gt;
-  &lt;/NotesList&gt;,
-  document.body
-);
-</code></pre>
-</div>
-
-<p>这里需要注意， <code class="highlighter-rouge">this.props.children</code> 的值有三种可能：如果当前组件没有子节点，它就是 <code class="highlighter-rouge">undefined</code> ;如果有一个子节点，数据类型是 <code class="highlighter-rouge">object</code> ；
-如果有多个子节点，数据类型就是 <code class="highlighter-rouge">array</code> 。所以，处理 <code class="highlighter-rouge">this.props.children</code> 的时候要小心。
-<code class="highlighter-rouge">React</code> 提供一个工具方法 <code class="highlighter-rouge">React.Children</code> 来处理 <code class="highlighter-rouge">this.props.children</code> 。
-我们可以用 <code class="highlighter-rouge">React.Children.map</code> 来遍历子节点，而不用担心 <code class="highlighter-rouge">this.props.children</code> 的数据类型是 <code class="highlighter-rouge">undefined</code> 还是 <code class="highlighter-rouge">object</code>。</p>
-
-<blockquote>
-  <p>五、PropTypes</p>
-</blockquote>
-
-<p>验证别人使用组件时，提供的参数是否符合要求。</p>
-
-<blockquote>
-  <p>六、ref 用于获取真实的DOM节点</p>
-</blockquote>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var MyComponent = React.createClass({
-  handleClick: function() {
-    this.refs.myTextInput.focus();
-  },
-  render: function() {
-    return (
-      &lt;div&gt;
-        &lt;input type="text" ref="myTextInput" /&gt;
-        &lt;input type="button" value="Focus the text input" onClick={this.handleClick} /&gt;
-      &lt;/div&gt;
-    );
-  }
-});
-
-ReactDOM.render(
-  &lt;MyComponent /&gt;,
-  document.getElementById('example')
-);
-</code></pre>
-</div>
-
-<blockquote>
-  <p>七、this.state</p>
-</blockquote>
-
-<p>组件免不了要与用户互动，<code class="highlighter-rouge">React</code> 的一大创新，就是将组件看成是一个状态机，一开始有一个初始状态，然后用户互动，导致状态变化，从而触发重新渲染 <code class="highlighter-rouge">UI</code></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var LikeButton = React.createClass({
-  getInitialState: function() {
-    return {liked: false};
-  },
-  handleClick: function(event) {
-    this.setState({liked: !this.state.liked});
-  },
-  render: function() {
-    var text = this.state.liked ? 'like' : 'haven\'t liked';
-    return (
-      &lt;p onClick={this.handleClick}&gt;
-        You {text} this. Click to toggle.
-      &lt;/p&gt;
-    );
-  }
-});
-
-ReactDOM.render(
-  &lt;LikeButton /&gt;,
-  document.getElementById('example')
-);
-</code></pre>
-</div>
-<p>上面代码是一个 <code class="highlighter-rouge">LikeButton</code> 组件，它的 <code class="highlighter-rouge">getInitialState</code> 方法用于定义初始状态，也就是一个对象，这个对象可以通过 <code class="highlighter-rouge">this.state</code> 属性读取。
-当用户点击组件，导致状态变化，<code class="highlighter-rouge">this.setState</code> 方法就修改状态值，每次修改以后，自动调用 <code class="highlighter-rouge">this.render</code> 方法，再次渲染组件。
-由于 <code class="highlighter-rouge">this.props</code> 和 <code class="highlighter-rouge">this.state</code> 都用于描述组件的特性，可能会产生混淆。一个简单的区分方法是，<code class="highlighter-rouge">this.props</code> 表示那些一旦定义，
-就不再改变的特性，而 <code class="highlighter-rouge">this.state</code> 是会随着用户互动而产生变化的特性。</p>
-
-<blockquote>
-  <p>八、表单</p>
-</blockquote>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var Input = React.createClass({
-  getInitialState: function() {
-    return {value: 'Hello!'};
-  },
-  handleChange: function(event) {
-    this.setState({value: event.target.value});
-  },
-  render: function () {
-    var value = this.state.value;
-    return (
-      &lt;div&gt;
-        &lt;input type="text" value={value} onChange={this.handleChange} /&gt;
-        &lt;p&gt;{value}&lt;/p&gt;
-      &lt;/div&gt;
-    );
-  }
-});
-
-ReactDOM.render(&lt;Input/&gt;, document.body);
-</code></pre>
-</div>
-
-<p>上面代码中，文本输入框的值，不能用 <code class="highlighter-rouge">this.props.value</code> 读取，而要定义一个 <code class="highlighter-rouge">onChange</code> 事件的回调函数，通过 <code class="highlighter-rouge">event.target.value</code> 读取用户输入的值。
-<code class="highlighter-rouge">textarea</code> 元素、<code class="highlighter-rouge">select</code>元素、<code class="highlighter-rouge">radio</code>元素都属于这种情况。</p>
-
-<blockquote>
-  <p>九、Ajax</p>
-</blockquote>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var UserGist = React.createClass({
-  getInitialState: function() {
-    return {
-      username: '',
-      lastGistUrl: ''
-    };
-  },
-
-  componentDidMount: function() {
-    $.get(this.props.source, function(result) {
-      var lastGist = result[0];
-      if (this.isMounted()) {
-        this.setState({
-          username: lastGist.owner.login,
-          lastGistUrl: lastGist.html_url
-        });
-      }
-    }.bind(this));
-  },
-
-  render: function() {
-    return (
-      &lt;div&gt;
-        {this.state.username}'s last gist is
-        &lt;a href={this.state.lastGistUrl}&gt;here&lt;/a&gt;.
-      &lt;/div&gt;
-    );
-  }
-});
-
-ReactDOM.render(
-  &lt;UserGist source="https://api.github.com/users/octocat/gists" /&gt;,
-  document.body
-);
-</code></pre>
-</div>
-
-<p>组件的数据来源，通常是通过 <code class="highlighter-rouge">Ajax</code> 请求从服务器获取，可以使用 <code class="highlighter-rouge">componentDidMount</code> 方法设置 Ajax 请求，等到请求成功，再用 <code class="highlighter-rouge">this.setState</code> 方法重新渲染 UI</p>
-
-
-    </div>
-    
-    <div class="post">
-        <h1 class="post-title">
-            <a href="/2017/08/18/javascript-fanxiang">
-                javascript - !~
-            </a>
-        </h1>
-
-        <span class="post-date">18 Aug 2017</span>
-
-        <h3 id="javascript---">javascript - 按位取反</h3>
-
-<p>// 过滤market标签的数据</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>        /**
-         * 过滤掉营销组件
-         *
-         * @param {Array} modList
-         * @returns
-         */
-
-        function filterMods(modList) {
-            return modList.filter(function(item) {
-                return item.tag &amp;&amp; (!~item.tag.indexOf('market'));
-            });
-        }
-</code></pre>
-</div>
 
     </div>
     

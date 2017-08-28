@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 初识react
+title: 初识react（一）- react
 categories: [react]
 ---
 
@@ -8,7 +8,7 @@ categories: [react]
 
 * `React` - `react` 库文件用来实现 `React` 的核心功能
 
-* `react-dom` - `react-dom` 则用来把它渲染到浏览器当中
+* `react-dom` - `react-dom` 用来把它渲染到浏览器当中
 
 * `Redux` - 解决状态管理问题的
 
@@ -18,7 +18,11 @@ categories: [react]
 2. `React VR`
 3. `React XP`
 
+`react`组件化的开发模式，所以非常适合高级做架构，中级封组件，初级写业务的模式。
+
 > 一、JSX语法
+
+`JSX` 是 `JavaScript` 的扩展语法，也可以说是 `JavaScript` 的一种语法糖~。
 
 `React` 独有的 `JSX` 语法， `javascript` 不兼容。使用 `Browser.js` ，将 `JSX` 语法转换成 `javascript` 语法。
 ```
@@ -59,7 +63,7 @@ ReactDOM.render(
 
 `React.createClass` 方法就用于生成一个组件类，`HelloMessage`就是一个组件类。
 
-ps:
+PS：
 
 * 组件类的第一个字母必须大写，否则会报错。
 * 添加组件属性，有一个地方需要注意，就是 `class` 属性需要写成 `className` ，`for` 属性需要写成 `htmlFor` ，这是因为 `class` 和 `for` 是 JavaScript 的保留字。
@@ -75,6 +79,56 @@ var HelloMessage = React.createClass({
     </p>;
   }
 });
+```
+
+新PS：在 `react@15.6` 当中已经废弃了 `createClass` 方法。下面分析函数定义组件和类定义组件：
+
+##### 函数定义组件
+
+比较简单的一些，只接受外部传入的数据的组件，我们一般通过函数定义的方式来编写：
+
+```
+var Button = function(props) {
+    return <button onClick={props.onClick}>+</button>;
+}
+
+// 当然也可以用 ES6 的 箭头函数 arrow function
+
+const Number = ({ number }) => <p>{number}</p>;
+```
+
+##### 类定义组件
+
+比较复杂的，需要处理事件，调用声明周期函数，与服务器交互数据的组件，我们通过类定义组件的方式来声明：
+
+```
+// 从 React 库当中获取组件的基础支持
+const { Component } = React;
+
+// 使用 ES6 当中的 class 关键字来声明组件
+class Container extends Component {
+    /* 类中的构造方法，调用super方法来确保我们能够获取到this，组件自身的 state 数据也在构造方法当中初始化。*/
+    constructor() {
+        super();
+        this.state = {
+            number: 0
+        }
+    }
+    /* 事件处理方法，在 React 当中我们通过调用 `setState` 方法来修改 state 数据，这样才能出发组件在界面当中自动重新渲染更新 */
+    handleClick() {
+        this.setState({number: this.state.number+1});
+    }
+    // 渲染方法，返回 React 元素
+    render() {
+        return (
+            <div>
+                <Title />
+                <Number number={this.state.number} />
+                <Button onClick={() => this.handleClick()} />
+            </div>
+            );
+    }
+}
 ```
 
 组件的生命周期：
@@ -265,4 +319,19 @@ ReactDOM.render(
 
 组件的数据来源，通常是通过 `Ajax` 请求从服务器获取，可以使用 `componentDidMount` 方法设置 Ajax 请求，等到请求成功，再用 `this.setState` 方法重新渲染 UI
 
+> 十、其他
+
+#### props & state
+
+`props` 就是组件数据的一种。在 `React` 当中，最常用的组件数据有两种：`props` 和 `state`.
+
+其中 `props` 是从外部传入的，内部无法修改，用来渲染展示的数据。
+
+而 `state` 则是组件内部维护，可以跟随应用状态改变而改变的数据（例如用户输入的表单项）。
+
+### 备注
+
+* [React中文文档](https://discountry.github.io/react/)
+
+* [Lean React - 知乎](https://zhuanlan.zhihu.com/leanreact)
 
