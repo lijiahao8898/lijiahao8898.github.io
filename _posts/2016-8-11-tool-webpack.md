@@ -4,42 +4,33 @@ title: tool - webpack
 categories: [打包工具]
 ---
 
-相关链接：
+## 基本
 
-[官网 - http://webpack.github.io/](http://webpack.github.io/)
+可能用到的相关知识：
 
-[文档地址 - http://webpack.github.io/docs/](http://webpack.github.io/docs/)
+* `commonJS` 、`NodeJS`
+* `React`
+* `gulp` 、`grunt`
+* `express`
 
-相关文章：
-* [一小时包教会—webpack入门指南 - http://www.w2bc.com/Article/50764](http://www.w2bc.com/Article/50764)
-* [webpack傻瓜式指南（1) - https://zhuanlan.zhihu.com/p/20367175](https://zhuanlan.zhihu.com/p/20367175)
-* [webpack傻瓜式指南（2）开发和部署技巧 - https://zhuanlan.zhihu.com/p/20397902](https://zhuanlan.zhihu.com/p/20397902)
-* [webpack傻瓜式指南（3）和React配合开发 - https://zhuanlan.zhihu.com/p/20522487](https://zhuanlan.zhihu.com/p/20522487)
-* [webpack和grunt、gulp的比较 - http://survivejs.com/webpack/webpack-compared/](http://survivejs.com/webpack/webpack-compared/)
+`webpack` 是以 `commonJS` 的形式来书写的，但对 `AMD/CMD` 的支持也很全面。
 
-相关知识：
+什么是 `commonJS` 规范？[点击查看](http://javascript.ruanyifeng.com/nodejs/module.html)
 
-* commonJS 、NodeJS
-* React
-* gulp、grunt
-* express
+`webpack` 的配置文件 `webpack.config.js` 主要分为三大块：
 
-webpack是已commonJS的形式来书写的，但对AMD/CMD的支持也很全面。
+* `entry`     入口文件 让 `webpack` 用哪个文件作为项目的入口
+* `output`    出口 让 `webpack` 把处理完成的文件放在哪里
+* `module`    模块 要用什么不同的模块来处理各种类型的文件
 
-webpack的配置文件 webpack.config.js主要分为三大块：
-
-* entry     入口文件 让webpack用哪个文件作为项目的入口
-* output    出口 让webpack把处理完成的文件放在哪里
-* module    模块 要用什么不同的模块来处理各种类型的文件
-
-安装：
+### 安装：
 
 ```
-mkdir forwebpack
+mkdir  forwebpack
 
-cd    forwebpack
+cd     forwebpack
 
-npm   init                              （创建package.json）
+npm    init                              创建package.json）
 
 sudo npm install webpack --save-dev
 
@@ -48,17 +39,15 @@ sudo npm install webpack --save-dev
 —save-dev                                (将安装信息放入package.json的devDependencies（开发模式）)
 ```
 
-git管理项目的时候记得将不必要上传的文件加入到gitignore里面
+`git` 管理项目的时候记得将不必要上传的文件加入到 `gitignore` 里面
 
-创建.gitignore文件
+创建 `.gitignore` 文件
 
 ```
 touch .gitignore
 ```
 
-创建目录：
-
-打开webstrom 选择工程 forWebpack
+### 工程目录：
 
 ```
 | - dist
@@ -79,63 +68,60 @@ touch .gitignore
 | - webpack.config.js
 ```
 
-webpack.config.js
+### webpack.config.js配置文件
 
-```
-/**
- * Created by lijiahao on 16/8/9.
- */
+```js
 var webpack           = require('webpack');
 var commonsPlugin     = new webpack.optimize.CommonsChunkPlugin('common.js');
 var path              = require('path');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
 
-//定义了一些文件夹的路径
+// 定义了一些文件夹的路径
 var ROOT_PATH   = path.resolve(__dirname);
 var APP_PATH    = path.resolve(ROOT_PATH, 'src/fn/entry.js');
 var BUILD_PATH  = path.resolve(ROOT_PATH, 'dist/src/fn');
 
 module.exports = {
-    //插件项
+    // 插件项
     plugins: [
         commonsPlugin,
         new HtmlwebpackPlugin({
         title: 'Hello World app'
     })
     ],
-    //页面入口文件配置
+    // 页面入口文件配置
     entry: {
-        //支持数组形式，将加载数组中的所有模块，但以最后一个模块作为输出
-        //index : './src/js/page/index.js'
+        // 支持数组形式，将加载数组中的所有模块，但以最后一个模块作为输出
+        // index : './src/js/page/index.js'
         index: APP_PATH
     },
-    //入口文件输出配置
+    // 入口文件输出配置
     output: {
         path: BUILD_PATH,
         filename: '[name].js'
     },
     module: {
-        //加载器配置
+        // 加载器配置，loader的处理顺序 右到左
         loaders: [
-            //.css 文件使用 style-loader 和 css-loader 来处理   //  loader的处理顺序 右到左
+            // .css 文件使用 style-loader 和 css-loader 来处理
             { test: /\.css$/, loader: 'style-loader!css-loader'},
-            //.js 文件使用 jsx-loader 来编译处理
+            // .js 文件使用 jsx-loader 来编译处理
             { test: /\.js$/, loader: 'jsx-loader?harmony' },
-            //.scss 文件使用 style-loader、css-loader 和 sass-loader 来编译处理
+            // .scss 文件使用 style-loader、css-loader 和 sass-loader 来编译处理
             { test: /\.scss$/, loader: 'style!css!sass?sourceMap'},
-            //图片文件使用 url-loader 来处理，小于8kb的直接转为base64
+            // 图片文件使用 url-loader 来处理，小于8kb的直接转为base64
             { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'}
         ]
     },
-    //其它解决方案配置
+    // 其它解决方案配置
     resolve: {
-        //查找module的话从这里开始查找
-        root: '/Users/lijiahao/projects/forWebpack', //绝对路径
-        //自动扩展文件后缀名，意味着我们require模块可以省略不写后缀名
+        // 查找module的话从这里开始查找
+        root: '/Users/lijiahao/projects/forWebpack',           // 绝对路径
+        // 自动扩展文件后缀名，意味着我们 require 模块可以省略不写后缀名
         extensions: ['', '.js', '.json', '.scss','css'],
-        //模块别名定义，方便后续直接引用别名，无须多写长长的地址
+        // 模块别名定义，方便后续直接引用别名，无须多写长长的地址
         alias: {
-            AppStore : 'js/stores/AppStores.js',//后续直接 require('AppStore') 即可
+            AppStore : 'js/stores/AppStores.js',                // 后续直接 require('AppStore') 即可
             ActionType : 'js/actions/ActionType.js',
             AppAction : 'js/actions/AppAction.js',
             indexCss: './style/index.css'
@@ -149,20 +135,23 @@ module.exports = {
     }
 };
 ```
+### webpack 文件详解
 
-entry入口：（可以是数组）
-这里我们使用的entry.js
-entry下的路径。index可能是将来生成的文件名。index.js   注：如果output的filename是有名称的则会使用filename来命名,否则使用自身的名称
+* `entry`入口：（可以是数组）这里我们使用的 `entry.js`
 
-output出口：
-让webpack把处理完成的文件放在哪里
-path输出的路径
-filename定义输出的文件名称（支出数组【name】，根据入口文件的entry的数量）
+`entry` 下的路径。`index` 可能是将来生成的文件名。`index.js`   注：如果 `output` 的 `filename` 是有名称的则会使用 `filename` 来命名,否则使用自身的名称
 
-module加载器:
-将用到的文件处理后再输出
--loader可以省略不写，多个loader之间用！连接
-loader是需要安装的 sudo npm install *-loader —save-dev
+* `output` 出口：让 `webpack` 把处理完成的文件放在哪里
+
+`path` - 输出的路径
+
+`filename` - 定义输出的文件名称（支出数组 `【name】`，根据入口文件的 `entry` 的数量）
+
+`module` 加载器：将用到的文件处理后再输出
+
+`-loader` 可以省略不写，多个 `loader` 之间用 `!` 连接
+
+`loader` 是需要安装的 `sudo npm install *-loader —save-dev`
 
 入口文件entry.js
 require相关的文件
@@ -415,3 +404,17 @@ jshint: {
 ```
 npm run start
 ```
+
+### 其他
+
+链接：
+
+* [官网 - http://webpack.github.io/](http://webpack.github.io/)
+* [文档地址 - http://webpack.github.io/docs/](http://webpack.github.io/docs/)
+* [一小时包教会—webpack入门指南 - http://www.w2bc.com/Article/50764](http://www.w2bc.com/Article/50764)
+* [webpack傻瓜式指南（1) - https://zhuanlan.zhihu.com/p/20367175](https://zhuanlan.zhihu.com/p/20367175)
+* [webpack傻瓜式指南（2）开发和部署技巧 - https://zhuanlan.zhihu.com/p/20397902](https://zhuanlan.zhihu.com/p/20397902)
+* [webpack傻瓜式指南（3）和React配合开发 - https://zhuanlan.zhihu.com/p/20522487](https://zhuanlan.zhihu.com/p/20522487)
+* [webpack和grunt、gulp的比较 - http://survivejs.com/webpack/webpack-compared/](http://survivejs.com/webpack/webpack-compared/)
+
+
