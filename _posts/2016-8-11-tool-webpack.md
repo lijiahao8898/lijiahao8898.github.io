@@ -153,26 +153,28 @@ module.exports = {
 
 `loader` 是需要安装的 `sudo npm install *-loader —save-dev`
 
-入口文件entry.js
-require相关的文件
+#### 入口文件entry.js：
 
-```
+`require` 相关的文件
+
+```js
 require('./module1');
 require('../../style/main.css');
 require('./common.js');
 require('./index.js');
 ```
 
-其他文件：
+#### 其他文件：
+
 common.js
 
-```
+```js
 console.log('hello world!');
 ```
 
 index.js
 
-```
+```js
 var $ = require('jquery');
 
 ;(function () {
@@ -211,7 +213,7 @@ var $ = require('jquery');
 
 module1.js
 
-```
+```js
 // 修改module1.js
 require(["./module3"], function(){
     console.log("Hello Webpack!");
@@ -220,7 +222,7 @@ require(["./module3"], function(){
 
 module2.js
 
-```
+```js
 // module2.js，使用的是CommonJs机制导出包
 module.exports = function(a, b){
     return a + b;
@@ -229,7 +231,7 @@ module.exports = function(a, b){
 
 module3.js
 
-```
+```js
 // module3.js，使用AMD模块机制
 define(['./module2.js'], function(sum){
     return console.log("1 + 2 = " + sum(1, 2));
@@ -238,20 +240,20 @@ define(['./module2.js'], function(sum){
 
 main.css
 
-```
+```css
 body{
     background: red;
     color: white;
 }
 ```
 
-运行webpack
+#### 运行webpack
 
 ```
 在命令行内输入webpack 或者 webpack —display-error-details（出错时能查阅更详尽的信息）
 ```
 
-其他有用的指令：
+#### 其他有用的指令：
 
 ```
 - webpack —config *.js  // 使用另外一份config文件在打包
@@ -260,21 +262,25 @@ body{
 - webpack -d                  // 生成map映射文件，告知哪些模块被最终打包到哪里了
 ```
 
-相关插件介绍：
+### 相关插件介绍：
 
-1.CommonsChunkPlugin（webpack插件）
-功能介绍：提取入口文件的公共脚本部分，然后生成一个*.js 在方面多页面之间的复用
+1.`CommonsChunkPlugin`
+
+功能介绍：提取入口文件的公共脚本部分，然后生成一个 `*.js` 在方面多页面之间的复用
+
 配置：
 
-```
+```js
 var commonsPlugin     = new webpack.optimize.CommonsChunkPlugin(‘【name】.js');
 plugin: [
      commonsPlugin
 ]
 ```
 
-2.html-webpack-plugin
+2.`html-webpack-plugin`
+
 功能介绍：自动快速生成HTML
+
 安装：
 
 ```
@@ -283,7 +289,7 @@ sudo npm install html-webpack-plugin —save-dev
 
 配置：
 
-```
+```js
 plugins: [
      new HtmlwebpackPlugin({
           title:''
@@ -291,8 +297,10 @@ plugins: [
 ]
 ```
 
-3.webpack-dev-server      server服务器代理
-功能：1.代码变动时候自动编译并且刷新浏览器
+3.`webpack-dev-server`
+
+功能介绍：server服务器代理，代码变动时候自动编译并且刷新浏览器
+
 安装：
 
 ```
@@ -300,9 +308,8 @@ sudo npm install webpack-dev-server —save-dev
 ```
 
 配置：
-（1）
 
-```
+```js
 devServer: {
      historyApiFallback: true,
      hot: true,
@@ -313,7 +320,7 @@ devServer: {
 
 再在package.json里面配置
 
-```
+```json
 "scripts": {
   "start": "webpack-dev-server --hot --inline"
 },
@@ -321,34 +328,39 @@ devServer: {
 
 然后输入npm start  在游览器里面输入localhost:8080。
 
-（2）这个不是很明白？
-既然常用webpack做React一类的SPA，那么一个典型的例子就是前后端分离。
-后端是一个RESTful的server不管用什么写的。
-假定在本机他是类似http://localhost:8080/api/*这类的请求，现在添加配置让ajax请求可以直接proxy过去。
+`SPA`：
 
-//其实很简单的，只要配置这个参数就可以了
+既然常用 `webpack` 做 `React` 一类的 `SPA`，那么一个典型的例子就是前后端分离。
 
-```
+后端是一个 `RESTful` 的 `server` 不管用什么写的。
+
+假定在本机他是类似 `http://localhost:8080/api/*` 这类的请求，现在添加配置让 `ajax` 请求可以直接 `proxy` 过去。
+
+```js
+// 其实很简单的，只要配置这个参数就可以了
 proxy: {
 '/api/*': {
-target: 'http://localhost:8080',
-secure: false
-}
+    target: 'http://localhost:8080',
+    secure: false
+    }
 }
 ```
 
-4.第三方库 如 jquery、underscore、momnet、zepto等
+4.第三方库 如 `jquery`、`underscore`、`momnet`、`zepto`等
+
 安装：
 
 ```
 sudo npm install jquery —save-dev
 ```
 
-5.ProvidePlugin（webpack插件）
-功能：将全局变量插入到所有代码中
+5.`ProvidePlugin`
+
+功能：将全局变量插入到所有代码中。
+
 配置：
 
-```
+```js
 new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
@@ -356,31 +368,36 @@ new webpack.ProvidePlugin({
 
     })
 ```
-6.import-loader
+
+6.`import-loader`
+
 安装：
 
 ```
 sudo npm install import-loader —save-dev
 ```
 
-//注意这种写法 我们把jQuery这个变量直接插入到plugin.js里面了
-//相当于在这个文件的开始添加了 var jQuery = require('jquery');
+```js
+// 注意这种写法 我们把 `jQuery` 这个变量直接插入到 `plugin.js` 里面了
+// 相当于在这个文件的开始添加了 `var jQuery = require('jquery')`;
 
 import 'imports?jQuery=jquery!./plugin.js';
+```
 
-7.添加es6的支持（未做）
+7.添加 `es6` 的支持（未做）
 
-8.jshint-loader
+8.`jshint-loader`
+
 功能：检查代码规范
+
 安装：
 
 ```
 sudo npm install jshint-loader —save-dev
 ```
 
-//和loaders一样的语法，很简单
-
-```
+```js
+// 和loaders一样的语法，很简单
 perLoaders: [
      {
      test: /\.jsx?$/,
@@ -390,16 +407,15 @@ perLoaders: [
 ]
 ```
 
-// 配置jshint 支持es6校验。
-
 ```
+// 配置jshint 支持es6校验。
 jshint: {
   "esnext": true
 
 },
 ```
 
-启动：
+### 启动：
 
 ```
 npm run start

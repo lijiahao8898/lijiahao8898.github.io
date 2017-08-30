@@ -14,4 +14,4 @@ categories: [javascript]
 
 资料：
 
-[ruanyifeng commonjs](http://javascript.ruanyifeng.com/nodejs/module.html#toc0)
+* [ruanyifeng commonjs](http://javascript.ruanyifeng.com/nodejs/module.html#toc0)
