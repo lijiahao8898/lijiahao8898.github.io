@@ -92,15 +92,3 @@ Object.getOwnPropertyNames(Point.prototype)
 类的属性名，可以采用表达式。
 
 ```js
-let methodName = 'getArea';
-
-class Square {
-  constructor(length) {
-    // ...
-  }
-
-  [methodName]() {
-    // ...
-  }
-}
-```
