@@ -3,41 +3,41 @@ layout: default
 ---
 
 <div class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
-  <span class="post-date">{{ page.date | date_to_string }}</span>
-  {{ content }}
+    <h1 class="post-title">{{ page.title }}</h1>
+    <span class="post-date">{{ page.date | date_to_string }}</span>
+    {{ content }}
 </div>
 
 <div class="related">
-  <h2>最新文章</h2>
-  <ul class="related-posts">
-    {% for post in site.related_posts limit:4 %}
-      <li>
-        <h3>
-          <a href="{{ site.baseurl }}{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-          </a>
-        </h3>
-      </li>
-    {% endfor %}
-  </ul>
+    <h2>最新</h2>
+    <ul class="related-posts">
+        {% for post in site.related_posts limit:4 %}
+        <li>
+            <h3>
+                <a href="{{ site.baseurl }}{{ post.url }}">
+                    {{ post.title }}
+                    <small>{{ post.date | date_to_string }}</small>
+                </a>
+            </h3>
+        </li>
+        {% endfor %}
+    </ul>
 </div>
 
 <!--<div class="pagination">-->
-  <!--&lt;!&ndash; 分页代码 &ndash;&gt;-->
-  <!--{% if paginator.next_page %}-->
-  <!--<a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">上一页</a>-->
-  <!--{% else %}-->
-  <!--<span class="pagination-item older">上一页</span>-->
-  <!--{% endif %}-->
-  <!--{% if paginator.previous_page %}-->
-  <!--{% if paginator.page == 2 %}-->
-  <!--<a class="pagination-item newer" href="{{ site.baseurl }}/">下一页</a>-->
-  <!--{% else %}-->
-  <!--<a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">下一页</a>-->
-  <!--{% endif %}-->
-  <!--{% else %}-->
-  <!--<span class="pagination-item newer">下一页</span>-->
-  <!--{% endif %}-->
+<!--&lt;!&ndash; 分页代码 &ndash;&gt;-->
+<!--{% if paginator.next_page %}-->
+<!--<a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">上一页</a>-->
+<!--{% else %}-->
+<!--<span class="pagination-item older">上一页</span>-->
+<!--{% endif %}-->
+<!--{% if paginator.previous_page %}-->
+<!--{% if paginator.page == 2 %}-->
+<!--<a class="pagination-item newer" href="{{ site.baseurl }}/">下一页</a>-->
+<!--{% else %}-->
+<!--<a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">下一页</a>-->
+<!--{% endif %}-->
+<!--{% else %}-->
+<!--<span class="pagination-item newer">下一页</span>-->
+<!--{% endif %}-->
 <!--</div>-->

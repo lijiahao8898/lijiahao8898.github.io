@@ -11,7 +11,7 @@ url:                 http://lanyon.getpoole.com
 baseurl:             ''
 paginate:            6
 paginate_path:       "page:num"
-gems:                [jekyll-paginate]
+plugins:             [jekyll-paginate]
 
 # About/contact
 author:
