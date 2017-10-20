@@ -9,7 +9,7 @@ tagline:             'F2E'
 description:         'make progress every day'
 url:                 http://lanyon.getpoole.com
 baseurl:             ''
-paginate:            6
+paginate:            2
 paginate_path:       "page:num"
 plugins:             [jekyll-paginate]
 

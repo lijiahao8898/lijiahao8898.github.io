@@ -1,0 +1,78 @@
+{% include head.html %}
+<h1>{{ site.baseurl }}</h1>
+<div class="posts">
+    {% for post in paginator.posts %}
+    <div class="post">
+        <h1 class="post-title">
+            <a href="{{ post.url }}">
+                {{ post.title }}
+            </a>
+        </h1>
+        <span class="post-date">{{ post.date | date_to_string }}</span>
+        {{ post.content }}
+    </div>
+    {% endfor %}
+</div>
+
+<!-- 翻页部分 -->
+<div class="pagination">
+    <!-- 定义变量 -->
+    {% if paginator.previous_page > 2 %}
+        {% assign pr = paginator.previous_page | minus: 1 %}
+    {% else %}
+        {% assign pr = 1 %}
+    {% endif %}
+    {% if paginator.next_page >= paginator.total_pages %}
+        {% assign total = paginator.total_pages %}
+    {% else %}
+        {% assign total = paginator.next_page | plus: 1 %}
+    {% endif %}
+    <!-- 定义变量 end -->
+
+    {% if paginator.total_pages > 1  %}
+        {% if paginator.previous_page %}
+            {% if paginator.page == 2 %}
+                <a class="pagination-item newer" href="{{ site.baseurl }}/"> < </a>
+            {% else %}
+                <a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}"> < </a>
+            {% endif %}
+        {% else %}
+            <span class="pagination-item newer"> < </span>
+        {% endif %}
+        {% for page in (pr..paginator.page) %}
+            {% if page == paginator.page %}
+                <span class="active pagination-item">{{ page }}</span>
+            {% elsif page == 1 %}
+                <a class="pagination-item" href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+            {% else %}
+                <a class="pagination-item" href="/{{ site.paginate_path | prepend: site.baseurl | replace: '/', '/' | replace: ':num', page }}">{{ page }}</a>
+            {% endif %}
+        {% endfor %}
+        {% if  paginator.page >= paginator.total_pages %}
+            {% for page in (total) %}
+                {% if page == paginator.page %}
+                    <span class="active pagination-item">{{ page }}</span>
+                {% elsif page == 1 %}
+                    <a class="pagination-item" href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+                {% else %}
+                    <a class="pagination-item" href="/{{ site.paginate_path | prepend: site.baseurl | replace: '/', '/' | replace: ':num', page }}">{{ page }}</a>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            {% for page in (paginator.next_page..total) %}
+                {% if page == paginator.page %}
+                    <span class="active pagination-item">{{ page }}</span>
+                {% elsif page == 1 %}
+                    <a class="pagination-item" href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+                {% else %}
+                    <a class="pagination-item" href="/{{ site.paginate_path | prepend: site.baseurl | replace: '/', '/' | replace: ':num', page }}">{{ page }}</a>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% if paginator.next_page %}
+        <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}"> > </a>
+    {% else %}
+        <span class="pagination-item older"> > </span>
+        {% endif %}
+    {% endif %}
+</div>
