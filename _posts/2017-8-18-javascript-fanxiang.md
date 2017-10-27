@@ -6,9 +6,9 @@ categories: [javascript]
 
 ### javascript - 按位取反
 
-// 过滤market标签的数据
+过滤market标签的数据
 
-```
+```js
         /**
          * 过滤掉营销组件
          *

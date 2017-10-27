@@ -1,16 +1,14 @@
 ---
 layout: post
-title: ES6 - const
+title: es6 - const
 categories: [javascript]
+subhead: const
 ---
 
-## const
-
-`const` 声明一个只读的常量，一旦声明，常量的值就不能改变。
-
-`const` 的作用域与 `let` 命令相同：只在声明所在的块级作用域内有效。
-
-`const` 命令声明的常量也是不提升，同样存在暂时性死区，只能在声明的位置后面使用。
+### 特性
+* `const` 声明一个只读的常量，一旦声明，常量的值就不能改变。
+* `const` 的作用域与 `let` 命令相同：只在声明所在的块级作用域内有效。
+* `const` 命令声明的常量也是不提升，同样存在暂时性死区，只能在声明的位置后面使用。
 
 ### 本质
 
@@ -34,11 +32,17 @@ foo = {}; // TypeError: "foo" is read-only
 
 下面是另一个例子。
 
-```
+```js
 const a = [];
-a.push('Hello'); // 可执行
-a.length = 0;    // 可执行
-a = ['Dave'];    // 报错
+
+// 可执行
+a.push('Hello');
+
+// 可执行
+a.length = 0;
+
+// 报错
+a = ['Dave'];
 ```
 
 上面代码中，常量 `a` 是一个数组，这个数组本身是可写的，但是如果将另一个数组赋值给 `a`，就会报错。

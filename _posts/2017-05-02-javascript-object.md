@@ -17,5 +17,4 @@ var vendors = {
 };
 
 Object.keys(vendors)            // ["", "Webkit", "Moz", "O", "ms"]
-
 ```

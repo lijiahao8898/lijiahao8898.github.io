@@ -333,6 +333,9 @@ tbody tr:nth-child(odd) th {
 .post {
   margin-bottom: 4em;
 }
+.post h1, .post h2{
+  text-align: center;
+}
 
 /* Blog post or page title */
 .page-title,
@@ -352,6 +355,7 @@ tbody tr:nth-child(odd) th {
   margin-top: -.5rem;
   margin-bottom: 1rem;
   color: #9a9a9a;
+  text-align: right;
 }
 
 /* Related posts */

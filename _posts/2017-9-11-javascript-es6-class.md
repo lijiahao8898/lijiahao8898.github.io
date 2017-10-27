@@ -1,10 +1,9 @@
 ---
 layout: post
-title: ES6 - class
+title: es6 - class
 categories: [javascript]
+subhead: class
 ---
-
-## class
 
 es5的构造方法。
 
@@ -20,6 +19,7 @@ Point.prototype.toString = function () {
 
 var p = new Point(1, 2);
 ```
+
 es6的写法。
 
 ```js
@@ -36,10 +36,10 @@ class Point {
 }
 ```
 
-注意，定义“类”的方法的时候，前面不需要加上 `function` 这个关键字，直接把函数定义放进去了就可以了。另外，方法之间不需要逗号分隔，加了会
-报错。
+注意，定义“类”的方法的时候，前面不需要加上 `function` 这个关键字，直接把函数定义放进去了就可以了。
+另外，方法之间不需要逗号分隔，加了会报错。
 
-ES6 的类，完全可以看作构造函数的另一种写法。
+es6的类，完全可以看作构造函数的另一种写法。
 
 ```js
 class Point {
@@ -90,5 +90,3 @@ Object.getOwnPropertyNames(Point.prototype)
 上面代码采用 `ES5` 的写法，`toString` 方法就是可枚举的。
 
 类的属性名，可以采用表达式。
-
-```js
