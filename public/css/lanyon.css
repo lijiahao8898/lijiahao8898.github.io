@@ -602,3 +602,26 @@ a.pagination-item:hover {
 .is-show{
   display: block!important;
 }
+
+.posts{
+  opacity: 0;
+}
+
+.music{
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.middle{
+  font-family: fantasy;
+}
+
+.middle .me img{
+  width: 64px;
+  height: 64px;
+  border-radius: 100%;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  padding: 2px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
