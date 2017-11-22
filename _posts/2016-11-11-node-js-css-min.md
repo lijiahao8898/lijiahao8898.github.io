@@ -18,7 +18,6 @@ uglifyjs *.js -o *.min.js
 uglifyjs *.js -m -o *.min.js
 
 ps -m 将参数压缩成a.b.c
-
 ```
 
 ### 2 - node 压缩 css
@@ -29,5 +28,4 @@ npm install clean-css-cli -g 或者 sudo npm install clean-css-cli -g
 
 // 压缩
 cleancss -o *.min.css *.css
-
 ```

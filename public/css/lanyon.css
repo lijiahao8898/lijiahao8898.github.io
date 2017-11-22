@@ -350,6 +350,11 @@ a.sidebar-nav-item:focus {
   margin-top: 0;
 }
 
+.post-header{
+  padding-bottom: 15px;
+  border-bottom: 1px dashed #ccc;
+}
+
 /* Meta data line below post title */
 .post-date {
   font-family: fantasy;
@@ -452,6 +457,7 @@ a.pagination-item:hover {
 .layout-reverse .sidebar-toggle {
   left: auto;
   right: 1rem;
+  z-index: 1024;
 }
 
 .layout-reverse #sidebar-checkbox:checked ~ .sidebar,
@@ -630,6 +636,7 @@ a.pagination-item:hover {
   position: absolute;
   left: 0;
   right: 0;
+  z-index: 1;
 }
 
 .middle .me .wrapper {
@@ -639,7 +646,7 @@ a.pagination-item:hover {
   min-height: 23rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.8);
   border-radius: 10px;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255,255,255,0.1);
 }
 
 .middle .me .me-img{
@@ -647,19 +654,18 @@ a.pagination-item:hover {
 }
 
 .middle .me .me-img img{
-  width: 5rem;
-  height: 5rem;
-  border-radius: 100%;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
   margin: 0 auto;
-  border: 1px solid #ccc;
-  padding: 3px;
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+  padding: 2px;
   background: #fff;
 }
 
 .middle .me .me-name{
   text-align: center;
   margin-top: 1rem;
+  font-size: 1.5rem;
 }
 
 .middle .me .me-professional{
@@ -670,6 +676,7 @@ a.pagination-item:hover {
   text-align: center;
   padding-bottom: 1rem;
   padding-top: 5rem;
+  letter-spacing: 1px;
 }
 
 .middle .incentive{

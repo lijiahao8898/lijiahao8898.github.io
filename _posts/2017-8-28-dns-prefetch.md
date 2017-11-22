@@ -15,10 +15,10 @@ subhead: 游览器性能提升
 1. 减少请求次数
 2. 提前对 `DNS` 预获取。
 
-`DNS` 作为互联网的基础协议，其解析速度很容易被网站优化人员SEO人员忽视，其典型的一次 `dns-prefetch`解析需要“20-120ms",
+`DNS` 作为互联网的基础协议，其解析速度很容易被网站优化人员、SEO人员忽视，其典型的一次 `dns-prefetch`解析需要“20-120ms",
 减少 `DNS` 解析时间和次数是一个不错的优化方式。
 
-`dns-prefetch` ​的作用简单说明就是当你浏览网页时，浏览器会加载网页时对网页中的域名进行解析缓存，这样在你单击当前网页链接
+`dns-prefetch` ​的作用简单说明就是当你浏览网页时，浏览器会在加载网页时对网页中的域名进行解析缓存，这样在你单击当前网页链接
 无需 `DNS` 解析，减少浏览者等待时间，提高用户体验。
 
 浏览器对网站第一次的域名 `DNS` 解析查找流程依次为：
@@ -32,11 +32,12 @@ subhead: 游览器性能提升
 
 ### 那么如何添加 dns-prefetch ？
 
-当然在浏览器支持方面 `google chrome`、 `firefox3.5`、`safari 5+`、`IE9`等。`dns-prefetch` 放入位置推荐在后面。具体代码为：
+当然在浏览器支持方面 `chrome`、 `firefox3.5`、`safari 5+`、`IE9`等。`dns-prefetch` 放入位置推荐在后面。具体代码为：
 
 ```html
 <!-- X-DNS-Prefetch-Control 头控制着浏览器的 DNS 预读取功能
 content: on 启用 DNS预解析，off 关闭 DNS预解析 -->
+
 <meta http-equiv="x-dns-prefetch-control" content="on" />
 
 <link rel="dns-prefetch" href="http://bdimg.share.baidu.com" />
@@ -50,7 +51,7 @@ content: on 启用 DNS预解析，off 关闭 DNS预解析 -->
 <meta http-equiv="x-dns-prefetch-control" content="off">
 ```
 
-您可以通过将 `content` 的参数设置为“on”来改变设置。
+您可以通过将 `content` 的参数设置为 `“on”` 来改变设置。
 
 ### 强制查询特定主机名
 

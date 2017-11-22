@@ -5,9 +5,9 @@ categories: [react]
 ---
 
 ### 相关
-* `React` - react库文件用来实现React的核心功能
-* `react-dom` - react-dom用来把它渲染到浏览器当中
-* `Redux` - 解决状态管理问题的
+* `React` - 实现 `React` 的核心功能
+* `react-dom` - 渲染到浏览器当中
+* `Redux` - 解决状态管理问题
 
 目前已有的其他平台的解决方案还包括：
 
@@ -22,9 +22,11 @@ categories: [react]
 
 `React` 独有的 `JSX` 语法， `javascript` 不兼容。使用 `Browser.js` ，将 `JSX` 语法转换成 `javascript` 语法。
 
-```
+```html
 <script type="text/babel">
+
   // ** Our code goes here! **
+
 </script>
 ```
 
@@ -36,7 +38,7 @@ categories: [react]
 
 ### React 基本用法
 
-```js
+```jsx
 ReactDOM.render(
     '<h1>hello,world</h1>',
     document.getElementById('example')
@@ -45,10 +47,10 @@ ReactDOM.render(
 
 ### React 组件
 
-```js
+```jsx
 var HelloMessage = React.createClass({
   render: function() {
-    return <h1>Hello {this.props.name}</h1>;
+    return <h1>Hello {this.props.name}</h1>
   }
 });
 
@@ -60,42 +62,42 @@ ReactDOM.render(
 
 `React.createClass` 方法就用于生成一个组件类，`HelloMessage`就是一个组件类。
 
-ps：
+注意：
 * 组件类的第一个字母必须大写，否则会报错。
 * 添加组件属性，有一个地方需要注意，就是 `class` 属性需要写成 `className` ，`for` 属性需要写成 `htmlFor` ，这是因为 `class` 和 `for` 是 JavaScript 的保留字。
 * 组件类只能包含一个顶层标签，否则会报错。如下例子会报错：
 
-```js
+```jsx
 var HelloMessage = React.createClass({
   render: function() {
     return <h1>
       Hello {this.props.name}
-    </h1><p>
+    </h1>
+    <p>
       some text
-    </p>;
+    </p>
   }
 });
 ```
 
-新ps：在 `react@15.6` 当中已经废弃了 `createClass` 方法。下面分析函数定义组件和类定义组件：
+新的注意点：在 `react@15.6` 当中已经废弃了 `createClass` 方法。下面分析函数定义组件和类定义组件：
 
 #### 函数定义组件
 比较简单的一些，只接受外部传入的数据的组件，我们一般通过函数定义的方式来编写：
 
-```js
+```jsx
 var Button = function(props) {
     return <button onClick={props.onClick}>+</button>;
 }
 
 // 当然也可以用 ES6 的 箭头函数 arrow function
-
 const Number = ({ number }) => <p>{number}</p>;
 ```
 
 #### 类定义组件
 比较复杂的，需要处理事件，调用声明周期函数，与服务器交互数据的组件，我们通过类定义组件的方式来声明：
 
-```js
+```jsx
 // 从 React 库当中获取组件的基础支持
 const { Component } = React;
 
@@ -126,7 +128,6 @@ class Container extends Component {
 ```
 
 #### 组件的生命周期
-
 ```
     Mounting：已插入真实 DOM
     Updating：正在被重新渲染
@@ -156,7 +157,7 @@ class Container extends Component {
 
 `this.props` 对象的属性与组件的属性一一对应，但是有一个例外，就是 `this.props.children` 属性。它表示组件的所有子节点。
 
-```js
+```jsx
 var NotesList = React.createClass({
   render: function() {
     return (
@@ -191,7 +192,7 @@ ReactDOM.render(
 
 ### ref 用于获取真实的DOM节点
 
-```js
+```jsx
 var MyComponent = React.createClass({
   handleClick: function() {
     this.refs.myTextInput.focus();
@@ -216,7 +217,7 @@ ReactDOM.render(
 
 组件免不了要与用户互动，`React` 的一大创新，就是将组件看成是一个状态机，一开始有一个初始状态，然后用户互动，导致状态变化，从而触发重新渲染 `UI`
 
-```js
+```jsx
 var LikeButton = React.createClass({
   getInitialState: function() {
     return {liked: false};
@@ -246,7 +247,7 @@ ReactDOM.render(
 
 ### 表单
 
-```js
+```jsx
 var Input = React.createClass({
   getInitialState: function() {
     return {value: 'Hello!'};
@@ -273,7 +274,7 @@ ReactDOM.render(<Input/>, document.body);
 
 ### Ajax
 
-```js
+```jsx
 var UserGist = React.createClass({
   getInitialState: function() {
     return {

@@ -4,8 +4,9 @@
             var middle = document.querySelector('.middle');
             var posts = document.querySelector('.posts');
             middle.style.height = window.innerHeight + 'px';
-            posts.style.opacity = 1;
-            console.log(middle);
+            if(posts){
+                posts.style.opacity = 1;
+            }
             var id = document.getElementById('my-shine');
             if(id === null){
                 return;
