@@ -714,8 +714,22 @@ a.pagination-item:hover {
 .middle .me .me-hobby {
     text-align: center;
     padding-bottom: 1rem;
-    padding-top: 5rem;
+    padding-top: 3rem;
     letter-spacing: 1px;
+}
+
+.middle .me .me-footer ul {
+    padding-left: 0;
+    text-align: center;
+}
+
+.middle .me .me-footer li {
+    list-style: none;
+    display: inline-block;
+}
+
+.middle .me .me-footer li a {
+    color: #fff;
 }
 
 .middle .incentive {
@@ -814,19 +828,67 @@ a.pagination-item:hover {
     }
 }
 
+.middle-title h2 {
+    font-size: 19px;
+    line-height: 20px;
+    color: #71717c;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-align: center;
+    padding: 5rem;
+}
+
+.middle-title h2:after {
+    content: "";
+    display: block;
+    width: 79px;
+    height: 2px;
+    background-color: rgba(255, 0, 0, 0.3);
+    margin: 17px auto;
+}
+
+.me-basic-information {
+    text-align: center;
+    min-height: 400px;
+    height: 400px;
+}
+
 .me-basic-information .left-information {
     height: inherit;
-    width: 45%;
+    width: 50%;
     display: inline-block;
+    float: left;
 }
 
 .me-basic-information .right-information {
     height: inherit;
-    width: 45%;
+    width: 50%;
+    display: inline-block;
+    float: left;
+}
+
+.me-basic-information ul {
     display: inline-block;
 }
 
+.me-basic-information li {
+    list-style: circle;
+    min-width: 100px;
+    text-align: left;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-family: fantasy;
+}
+
 .information-1 .right-information {
-    background: url("../../assets/3.jpeg") no-repeat 0 0;
+    background: url("../../assets/3.jpg") no-repeat 50% 0;
     background-attachment: fixed;
+    background-size: cover;
+}
+
+.information-2 .left-information {
+    background: url("../../assets/4.jpg") no-repeat 50% 0;
+    background-attachment: fixed;
+    background-size: cover;
 }

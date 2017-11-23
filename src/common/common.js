@@ -2,10 +2,8 @@
     var main = {
         init: function () {
             var middle = document.querySelector('.middle');
-            // var basic = document.querySelector('.me-basic-information');
             var posts = document.querySelector('.posts');
             middle.style.height = window.innerHeight + 'px';
-            // basic.style.height = window.innerHeight/2 + 'px';
             if (posts) {
                 posts.style.opacity = 1;
             }
