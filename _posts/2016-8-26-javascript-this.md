@@ -74,8 +74,8 @@ o.m();     // 1
 
 ### 作为构造函数调用
 
-```
-// 所谓构造函数，就是通过这个函数生成一个新对象（object）。这时，this就指这个新对象。
+```js
+/* 所谓构造函数，就是通过这个函数生成一个新对象（object）。这时，this就指这个新对象。*/
 
 // 写法1
 function test () {
@@ -133,8 +133,8 @@ o.m.apply(o);      //1
 
 ### ES6 this
 
-```
-// es6中，箭头函数中始终会捕捉其“定义时”所在上下文的this值，作为自己的this.
+```js
+/* es6中，箭头函数中始终会捕捉其“定义时”所在上下文的this值，作为自己的this. */
 
 // example 1
 const obj = {
@@ -156,9 +156,10 @@ obj.func();
 
 ### 其他
 
-```
-// bind() 改变函数上下文
-//ECMAScript 5 引入了 `Function.prototype.bind`，其会创建一个绑定函数，当调用这个绑定函数时，函数上下文将会是 bind() 方法的第一个参数。上面的例子中，将 obj1 设置为函数上下文，所以利用 func 来调用函数时，函数的上下文为 obj1，而不是它的调用者 obj2。
+```js
+/* bind() 改变函数上下文
+   ECMAScript 5 引入了 `Function.prototype.bind`，其会创建一个绑定函数，当调用这个绑定函数时，函数上下文将会是 bind() 方法的第一个
+   参数。上面的例子中，将 obj1 设置为函数上下文，所以利用 func 来调用函数时，函数的上下文为 obj1，而不是它的调用者 obj2。*/
 
 const obj1 = {
      a: 1
@@ -174,7 +175,6 @@ const obj2 = {
 obj2.func(); // 1
 
 // Array 的 5 个 方法（ 暂时不看 ）
-
 every,some,forEach,map,filter
 
 const arr = ["segmentfault"];
@@ -189,15 +189,13 @@ arr.forEach(function(ele, ind) {
 
 ## PS - 相关问题
 
-```
+```js
 // example 1
-if( true ){
-     console.log(this)
-}
+console.log(this)
 
 // example 2
 const obj = {
-     someData: 'string';
+     someData: 'string'
 }
 
 function myFun(){
@@ -213,7 +211,7 @@ const obj = {
      }
 }
 const myFun = obj.myFunc;
-myFun
+myFun()
 
 // example 4
 function myFun(){
@@ -225,7 +223,7 @@ const obj = {
 myFun.call(obj);
 ```
 
-```
+```js
 // 知乎一个人的提问：https://www.zhihu.com/question/34450250
 // ps:这是一个坑！！！
 // ps: this 是基于函数的执行环境绑定的。而不是定义环境。

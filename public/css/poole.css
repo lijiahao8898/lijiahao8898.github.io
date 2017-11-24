@@ -333,8 +333,10 @@ tbody tr:nth-child(odd) th {
 .post {
   margin-bottom: 4em;
 }
-.post h1, .post h2{
+.post h1{
   text-align: center;
+}
+.post h2{
 }
 
 /* Blog post or page title */

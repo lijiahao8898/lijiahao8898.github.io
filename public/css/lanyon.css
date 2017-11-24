@@ -358,6 +358,8 @@ a.sidebar-nav-item:focus {
 .page-title,
 .post-title {
     margin-top: 0;
+    color: transparent;
+    -webkit-text-stroke: 1px #000;
 }
 
 .post-header {
