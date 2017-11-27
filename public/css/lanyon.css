@@ -87,7 +87,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .container.content .posts {
     padding: 5px;
-    border: 1px solid #eee;
+    /*border: 1px solid #eee;*/
     margin-top: 15px;
 }
 
@@ -245,10 +245,9 @@ a.sidebar-nav-item:focus {
     top: .8rem;
     left: 1rem;
     display: block;
-    padding: .25rem .75rem;
+    padding: .2rem .6rem;
     color: #505050;
     background-color: #fff;
-    border-radius: .25rem;
     cursor: pointer;
 }
 
@@ -340,7 +339,15 @@ a.sidebar-nav-item:focus {
 
 .page,
 .post {
-    margin: 4em 0;
+    margin: 8em 0;
+}
+
+.posts .post:first-child{
+    margin-top: 0;
+}
+
+.posts .post{
+    border-bottom: 1px dashed #ccc;
 }
 
 .post li, .post li a {
@@ -360,6 +367,10 @@ a.sidebar-nav-item:focus {
     margin-top: 0;
     color: transparent;
     -webkit-text-stroke: 1px #000;
+}
+
+.post-title a {
+    color: transparent!important;
 }
 
 .post-header {
@@ -424,10 +435,15 @@ a.sidebar-nav-item:focus {
     text-align: center;
 }
 
+.pagination .active {
+    border: 1px solid #ccc;
+}
+
 /* Pagination items can be `span`s or `a`s */
 .pagination-item {
-    /*display: block;*/
-    padding: 1rem;
+    display: inline-block;
+    padding: 0.1rem 0.5rem;
+    border: 1px solid #ac4142;
 }
 
 .pagination-item:first-child {
@@ -437,6 +453,7 @@ a.sidebar-nav-item:focus {
 /* Only provide a hover state for linked pagination items */
 a.pagination-item:hover {
     background-color: #f5f5f5;
+    border: 1px solid #f5f5f5;
 }
 
 @media (min-width: 30em) {
@@ -450,14 +467,14 @@ a.pagination-item:hover {
     /*}*/
     .pagination-item:first-child {
         margin-bottom: 0;
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px;
+        /*border-top-left-radius: 4px;*/
+        /*border-bottom-left-radius: 4px;*/
     }
 
     .pagination-item:last-child {
         margin-left: -1px;
-        border-top-right-radius: 4px;
-        border-bottom-right-radius: 4px;
+        /*border-top-right-radius: 4px;*/
+        /*border-bottom-right-radius: 4px;*/
     }
 }
 
@@ -671,8 +688,7 @@ a.pagination-item:hover {
     max-width: 20rem;
     margin: 0 auto;
     min-height: 23rem;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8) inset, -1px -1px 2px rgba(0, 0, 0, 0.8) inset;
     background: rgba(255, 255, 255, 0.1);
 }
 
@@ -851,20 +867,21 @@ a.pagination-item:hover {
 
 .me-basic-information {
     text-align: center;
-    min-height: 400px;
-    height: 400px;
+    /*min-height: 300px;*/
+    /*height: 300px;*/
+    overflow: hidden;
 }
 
 .me-basic-information .left-information {
     height: inherit;
-    width: 50%;
+    width: 100%;
     display: inline-block;
     float: left;
 }
 
 .me-basic-information .right-information {
     height: inherit;
-    width: 50%;
+    width: 100%;
     display: inline-block;
     float: left;
 }
@@ -884,13 +901,11 @@ a.pagination-item:hover {
 }
 
 .information-1 .right-information {
-    background: url("../../assets/3.jpg") no-repeat 50% 0;
     background-attachment: fixed;
     background-size: cover;
 }
 
 .information-2 .left-information {
-    background: url("../../assets/4.jpg") no-repeat 50% 0;
     background-attachment: fixed;
     background-size: cover;
 }

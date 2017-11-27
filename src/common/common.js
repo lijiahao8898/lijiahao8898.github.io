@@ -3,7 +3,9 @@
         init: function () {
             var middle = document.querySelector('.middle');
             var posts = document.querySelector('.posts');
-            middle.style.height = window.innerHeight + 'px';
+            if (middle) {
+                middle.style.height = window.innerHeight + 'px';
+            }
             if (posts) {
                 posts.style.opacity = 1;
             }
@@ -30,6 +32,9 @@
         setMaskStyle: function (mask) {
             var date = new Date();
             var hours = date.getHours();
+            if (!mask) {
+                return;
+            }
             if (hours >= 6 && hours <= 18) {
                 // 白天
                 mask.style.backgroundColor = 'rgba(255, 0, 0, 0.3)'
