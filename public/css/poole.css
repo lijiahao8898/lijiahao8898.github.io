@@ -60,9 +60,24 @@ html {
 
 body {
   color: #515151;
-  background-color: #fff;
+  background-color: #ccc;
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
+}
+
+.filter-wrapper{
+  /*background: url("../../assets/bga.jpeg");*/
+  /*background-attachment: fixed;*/
+  /*-webkit-filter: blur(10px); !* Chrome, Opera *!*/
+  /*-moz-filter: blur(10px);*/
+  /*-ms-filter: blur(10px);*/
+  /*filter: blur(10px);*/
+  /*position: fixed;*/
+  /*left: 0;*/
+  /*right: 0;*/
+  /*bottom:0;*/
+  /*top:0;*/
+  /*z-index: 0;*/
 }
 
 /* No `:visited` state is required by default (browsers will use `a`) */

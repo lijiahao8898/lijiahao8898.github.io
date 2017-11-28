@@ -1,4 +1,4 @@
-;(function () {
+;(function (document, $) {
     var main = {
         init: function () {
             var middle = document.querySelector('.middle');
@@ -9,6 +9,21 @@
             if (posts) {
                 posts.style.opacity = 1;
             }
+
+            var active = $('.sidebar-nav-item.active');
+            var activeCate = active.attr('data-pcate');
+            $('.category[data-cate=' + activeCate + ']').addClass('active');
+            $('[data-pcate=' + activeCate + ']').addClass('is-show');
+            $('.category').click(function () {
+                var categoryTitle = $.trim($(this).find('.category-title').text());
+                var className = '.sidebar-' + categoryTitle;
+
+                $('.category').removeClass('active');
+                $(this).addClass('active');
+                $(className).toggleClass('is-show');
+            })
+
+            this.toggle();
             this.time();
             var id = document.getElementById('my-shine');
             if (id === null) {
@@ -19,6 +34,18 @@
                 shine.light.position.x = event.clientX;
                 shine.light.position.y = event.clientY;
                 shine.draw();
+            }, false);
+        },
+        toggle: function () {
+            var toggle = document.querySelector('.sidebar-toggle');
+            var sidebar = document.querySelector('#sidebar');
+            var checkbox = document.querySelector('#sidebar-checkbox');
+
+            document.addEventListener('click', function (e) {
+                var target = e.target;
+
+                if (!checkbox.checked || sidebar.contains(target) || (target === checkbox || target === toggle)) return;
+                checkbox.checked = false;
             }, false);
         },
         time: function () {
@@ -45,4 +72,4 @@
         }
     };
     main.init();
-})();
+})(document, jQuery);

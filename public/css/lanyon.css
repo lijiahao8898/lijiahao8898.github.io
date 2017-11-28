@@ -90,6 +90,11 @@ h1, h2, h3, h4, h5, h6 {
     /*border: 1px solid #eee;*/
     margin-top: 15px;
 }
+.container.content {
+    margin-top: 60px;
+    margin-bottom: 30px;
+    background: #fff;
+}
 
 @media (min-width: 38em) {
     .container {
@@ -128,13 +133,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .masthead-title a {
-    color: #505050;
+    color: #fff!important;
 }
 
 .masthead-title small {
     font-size: 75%;
     font-weight: 400;
-    color: #ac4142;
+    color: #fff;
     letter-spacing: 0;
 }
 
@@ -206,18 +211,36 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom: 1px solid rgba(255, 255, 255, .1);
 }
 
-.sidebar-nav-item {
+.sidebar-nav-category{
+    overflow: hidden;
+    width: 100%;
+}
+
+.sidebar-nav-item,.sidebar-nav-category {
     display: block;
     padding: .5rem 1rem;
     border-top: 1px solid rgba(255, 255, 255, .1);
 }
 
-.sidebar-nav-item.active,
-a.sidebar-nav-item:hover,
-a.sidebar-nav-item:focus {
+a.sidebar-nav-item:focus,
+a.sidebar-nav-category:hover,
+a.sidebar-nav-category:focus{
     text-decoration: none;
     background-color: rgba(255, 255, 255, .1);
     border-color: transparent;
+}
+
+a.sidebar-nav-item:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 1);
+    color: rgba(56, 56, 56, 1);
+    border-color: transparent;
+}
+
+.sidebar-nav-item.active {
+    text-decoration: none;
+    background-color: rgba(56, 56, 56, 1);
+    border-left: 5px solid #da4453;
 }
 
 @media (min-width: 48em) {
@@ -225,7 +248,7 @@ a.sidebar-nav-item:focus {
         padding: 1.5rem;
     }
 
-    .sidebar-nav-item {
+    .sidebar-nav-item,.sidebar-nav-category {
         padding-left: 1.5rem;
         padding-right: 1.5rem;
     }
@@ -291,6 +314,15 @@ a.sidebar-nav-item:focus {
     }
 }
 
+.category-number{
+    display: inline-block;
+    float: right;
+}
+.category-title{
+    display: inline-block;
+    float: left;
+}
+
 /* Slide effect
  *
  * Handle the sliding effects of the sidebar and content in one spot, seperate
@@ -340,7 +372,7 @@ a.sidebar-nav-item:focus {
 
 .page,
 .post {
-    margin: 8em 0;
+    padding: 8em 0;
 }
 
 .posts .post:first-child{
@@ -434,6 +466,7 @@ a.sidebar-nav-item:focus {
     font-family: "PT Sans", Helvetica, Arial, sans-serif;
     color: #ccc;
     text-align: center;
+    padding: 1rem 0;
 }
 
 .pagination .active {
@@ -444,7 +477,7 @@ a.sidebar-nav-item:focus {
 .pagination-item {
     display: inline-block;
     padding: 0.1rem 0.5rem;
-    border: 1px solid #ac4142;
+    border: 1px solid #da4453;
 }
 
 .pagination-item:first-child {
@@ -516,13 +549,13 @@ a.pagination-item:hover {
 .theme-base-08 .sidebar,
 .theme-base-08 .sidebar-toggle:active,
 .theme-base-08 #sidebar-checkbox:checked ~ .sidebar-toggle {
-    background-color: #ac4142;
+    background-color: #da4453;
 }
 
 .theme-base-08 .container a,
 .theme-base-08 .sidebar-toggle,
 .theme-base-08 .related-posts li a:hover {
-    color: #ac4142;
+    color: #da4453;
 }
 
 /* Orange */
@@ -644,13 +677,14 @@ a.pagination-item:hover {
 
 .category {
     cursor: pointer;
-    font-size: 0.95rem;
+    font-size: .8rem;
     font-weight: bold;
     /*font-style: italic;*/
 }
 
 .is-show {
     display: block !important;
+    background-color: rgba(56, 56, 56,1);
 }
 
 .posts {
@@ -848,6 +882,10 @@ a.pagination-item:hover {
     }
 }
 
+.middle-title{
+    background-color: #fff;
+}
+
 .middle-title h2 {
     font-size: 19px;
     line-height: 20px;
@@ -856,6 +894,7 @@ a.pagination-item:hover {
     font-weight: 600;
     text-align: center;
     padding: 5rem;
+    margin: 0;
 }
 
 .middle-title h2:after {
@@ -872,6 +911,7 @@ a.pagination-item:hover {
     /*min-height: 300px;*/
     /*height: 300px;*/
     overflow: hidden;
+    background-color: #fff;
 }
 
 .me-basic-information .left-information {

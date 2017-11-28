@@ -2,6 +2,7 @@
 <html lang="zh">
 {% include head.html %}
 <body class="theme-base-08 layout-reverse">
+<div class="filter-wrapper"></div>
 {% include sidebar.html %}
 <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
      content to avoid any CSS collisions with our real content. -->
@@ -14,36 +15,13 @@
             </h3>
         </div>
     </div>
-    <div class="container content">
-        {{ content }}
-    </div>
+</div>
+<div class="container content">
+    {{ content }}
 </div>
 <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 <script src="{{ site.baseurl }}/plugin/jquery/jquery.min.js"></script>
 <script src="{{ site.baseurl }}/plugin/shine/shine.min.js"></script>
 <script src="{{ site.baseurl }}/src/common/common.js"></script>
-<script>
-    (function (document) {
-        var toggle = document.querySelector('.sidebar-toggle');
-        var sidebar = document.querySelector('#sidebar');
-        var checkbox = document.querySelector('#sidebar-checkbox');
-
-        document.addEventListener('click', function (e) {
-            var target = e.target;
-
-            if (!checkbox.checked || sidebar.contains(target) || (target === checkbox || target === toggle)) return;
-            checkbox.checked = false;
-        }, false);
-    })(document);
-</script>
-<script>
-    (function () {
-        $('.category').click(function () {
-            var categoryTitle = $.trim($(this).find('.category-title').text());
-            var className = '.sidebar-' + categoryTitle;
-            $(className).toggleClass('is-show');
-        })
-    })();
-</script>
 </body>
 </html>

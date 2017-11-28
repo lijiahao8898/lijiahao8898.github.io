@@ -7,7 +7,7 @@
         <p>{{ site.description }}</p>
     </div>
     <nav class="sidebar-nav">
-        <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">主页</a>
+        <a class="sidebar-nav-category{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">首页</a>
         {% comment %}
         The code below dynamically generates a sidebar nav of pages with
         `layout: page` in the front-matter. See readme for usage.
@@ -23,11 +23,11 @@
         {% endfor %}
         <!-- 类目 -->
         {% for category in site.categories %}
-        <a class="sidebar-nav-item category"><span class="category-title">{{ category | first }}</span><span
+        <a class="sidebar-nav-category category"  data-cate="{{ category | first}}"><span class="category-title">{{ category | first }}</span><span
                 class="category-number">&nbsp;（{{ category | last | size }}）</span></a>
         {% for post in category.last %}
         <a class="sidebar-nav-item {% if page.url == post.url %} active{% endif %} sidebar-{{ category | first }}"
-           href="{{ post.url }}" style="display: none">&nbsp;&nbsp;&nbsp;{{ post.title }}&nbsp;&nbsp;
+           href="{{ post.url }}" style="display: none" data-pcate="{{ category | first }}">{{ post.title }}&nbsp;&nbsp;
             <!--<p class="date">&nbsp;&nbsp;&nbsp;{{ post.date | date:"%Y - %m - %d"}}</p>-->
         </a>
         {% endfor %}

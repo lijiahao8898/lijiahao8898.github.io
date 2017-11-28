@@ -71,6 +71,7 @@
                 <li>天赋异禀. The Gifted. S01E08.</li>
                 <li>哥谭. Gotham. S04E09.</li>
                 <li>路西法. Lucifer. S01E06</li>
+                <li><del>黑帆. Black Sails. S04E10</del></li>
             </ul>
         </div>
     </div>
@@ -116,28 +117,5 @@
 <script src="{{ site.baseurl }}/plugin/jquery/jquery.min.js"></script>
 <script src="{{ site.baseurl }}/plugin/shine/shine.min.js"></script>
 <script src="{{ site.baseurl }}/src/common/common.js"></script>
-<script>
-    (function (document) {
-        var toggle = document.querySelector('.sidebar-toggle');
-        var sidebar = document.querySelector('#sidebar');
-        var checkbox = document.querySelector('#sidebar-checkbox');
-
-        document.addEventListener('click', function (e) {
-            var target = e.target;
-
-            if (!checkbox.checked || sidebar.contains(target) || (target === checkbox || target === toggle)) return;
-            checkbox.checked = false;
-        }, false);
-    })(document);
-</script>
-<script>
-    (function () {
-        $('.category').click(function () {
-            var categoryTitle = $.trim($(this).find('.category-title').text());
-            var className = '.sidebar-' + categoryTitle;
-            $(className).toggleClass('is-show');
-        })
-    })();
-</script>
 </body>
 </html>
