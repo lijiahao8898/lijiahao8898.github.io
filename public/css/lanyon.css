@@ -280,10 +280,10 @@ a.sidebar-nav-item:hover {
     width: 1rem;
     height: .75rem;
     content: "";
-    background-image: -webkit-linear-gradient(to bottom, #555, #555 20%, #fff 20%, #fff 40%, #555 40%, #555 60%, #fff 60%, #fff 80%, #555 80%, #555 100%);
-    background-image: -moz-linear-gradient(to bottom, #555, #555 20%, #fff 20%, #fff 40%, #555 40%, #555 60%, #fff 60%, #fff 80%, #555 80%, #555 100%);
-    background-image: -ms-linear-gradient(to bottom, #555, #555 20%, #fff 20%, #fff 40%, #555 40%, #555 60%, #fff 60%, #fff 80%, #555 80%, #555 100%);
-    background-image: linear-gradient(to bottom, #555, #555 20%, #fff 20%, #fff 40%, #555 40%, #555 60%, #fff 60%, #fff 80%, #555 80%, #555 100%);
+    background-image: -webkit-linear-gradient(to bottom, #da4453, #da4453 20%, #fff 20%, #fff 40%, #da4453 40%, #da4453 60%, #fff 60%, #fff 80%, #da4453 80%, #da4453 100%);
+    background-image: -moz-linear-gradient(to bottom, #da4453, #da4453 20%, #fff 20%, #fff 40%, #da4453 40%, #da4453 60%, #fff 60%, #fff 80%, #da4453 80%, #da4453 100%);
+    background-image: -ms-linear-gradient(to bottom, #da4453, #da4453 20%, #fff 20%, #fff 40%, #da4453 40%, #da4453 60%, #fff 60%, #fff 80%, #da4453 80%, #da4453 100%);
+    background-image: linear-gradient(to bottom, #da4453, #da4453 20%, #fff 20%, #fff 40%, #da4453 40%, #da4453 60%, #fff 60%, #fff 80%, #da4453 80%, #da4453 100%);
 }
 
 .sidebar-toggle:active,
@@ -296,10 +296,10 @@ a.sidebar-nav-item:hover {
 .sidebar-toggle:active:before,
 #sidebar-checkbox:focus ~ .sidebar-toggle:before,
 #sidebar-checkbox:checked ~ .sidebar-toggle:before {
-    background-image: -webkit-linear-gradient(to bottom, #fff, #fff 20%, #555 20%, #555 40%, #fff 40%, #fff 60%, #555 60%, #555 80%, #fff 80%, #fff 100%);
-    background-image: -moz-linear-gradient(to bottom, #fff, #fff 20%, #555 20%, #555 40%, #fff 40%, #fff 60%, #555 60%, #555 80%, #fff 80%, #fff 100%);
-    background-image: -ms-linear-gradient(to bottom, #fff, #fff 20%, #555 20%, #555 40%, #fff 40%, #fff 60%, #555 60%, #555 80%, #fff 80%, #fff 100%);
-    background-image: linear-gradient(to bottom, #fff, #fff 20%, #555 20%, #555 40%, #fff 40%, #fff 60%, #555 60%, #555 80%, #fff 80%, #fff 100%);
+    background-image: -webkit-linear-gradient(to bottom, #fff, #fff 20%, #da4453 20%, #da4453 40%, #fff 40%, #fff 60%, #da4453 60%, #da4453 80%, #fff 80%, #fff 100%);
+    background-image: -moz-linear-gradient(to bottom, #fff, #fff 20%, #da4453 20%, #da4453 40%, #fff 40%, #fff 60%, #da4453 60%, #da4453 80%, #fff 80%, #fff 100%);
+    background-image: -ms-linear-gradient(to bottom, #fff, #fff 20%, #da4453 20%, #da4453 40%, #fff 40%, #fff 60%, #da4453 60%, #da4453 80%, #fff 80%, #fff 100%);
+    background-image: linear-gradient(to bottom, #fff, #fff 20%, #da4453 20%, #da4453 40%, #fff 40%, #fff 60%, #da4453 60%, #da4453 80%, #fff 80%, #fff 100%);
 }
 
 @media (min-width: 30.1em) {

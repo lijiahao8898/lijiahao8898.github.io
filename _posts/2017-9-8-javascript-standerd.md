@@ -1,6 +1,6 @@
 ---
 layout: post
-title: javascript
+title: javascript （一）
 categories: [javascript]
 subhead: javascript - 基础
 ---
@@ -20,20 +20,6 @@ javascript术语基本涵盖了以下三个部分：
 * 聚合 - 多个对象合并成一个新对象的过程；
 * 重用和继承 - 实现代码的重用；
 * 多态 - 不同的对象通过相同的方法调用来实现各自行为；
-
-### 变量
-变量的使用步骤：
-
-1. 变量的声明
-2. 变量的赋值
-
-```js
-var a = 1;
-```
-
-变量名可以由字母、数字、下划线及美元符号组合而成，但不能以数字开头。
-
-变量名区分大小写。
 
 ### 操作符
 
@@ -185,4 +171,113 @@ typeof(null) // object
 typeof(undefined) // undefined
 ```
 
+#### 对象（引用类型）
+对象的比较并非值的比较，即便两个对象包含相同的属性及相同的值，它们也是不相等的。各个索引元素完全相同的数组也不相等。
+```js
+var a = {x:1}, b = {x:1}
+a === b // false
+
+var c = [], d = []
+c === d // false
+```
+对象值都是引用，对象的比较都是引用的比较，当且仅当它们引用同一个基对象时，它们才相等。
+```js
+var a = [];
+var b = a;
+b[0] = 1;
+a === b // true;
+```
+- 内置对象：
+    * 数组
+    * 函数
+    * 日期
+    * 正则表达式
+- 宿主对象
+- 自定义对象
+- 自由属性
+- 继承属性
+
+对象的创建：
+* 对象直接量
+* new
+* Object.create()
+
+对象的枚举：
+* for/in
+* Object.keys()
+* Object.getOwnPropertyNames()
+
+
+### 变量
+变量的使用步骤：
+1. 变量的声明
+2. 变量的赋值
+
+```js
+var a = 1;
+```
+
+变量名可以由字母、数字、下划线及美元符号组合而成，但不能以数字开头。
+
+变量名区分大小写。
+
+#### 变量的作用域
+在函数体内，局部变量的优先级高于全局的同名变量。
+```js
+var scope = "global";
+
+function check () {
+    var scope = "local";
+    console.log(scope);
+}
+
+check();      // local;
+```
+当使用 `var` 声明一个变量时，无法使用 `delete` 删除。
+```js
+var a = 1;
+delete a;
+a // 1;
+```
+但是如果是在非严格模式下，并且给一个非声明的变量赋值，`JavaScript` 会自动创建一个对象。那么这个变量是可以被删除的。
+```js
+a = 1;
+delete a;
+a // a is not defined
+```
+
+### 函数
+函数作用域和声明提前。
+
+函数声明语句的函数名称和函数体均提前。
+
+其语法如下：
+```
+function funcname([args1 [,args2[...,argsn]]]) {
+    statements
+}
+```
+
+### 语句
+* 条件语句 - `if`，`if/else`，`else if`，`switch`
+* 循环语句 - `while`，`do/while`，`for`，`for/in`
+* 跳转语句 - `break`，`return`，`throw`，`continue`
+* 其他类型语句 - `with`，`debugger`，`use strict`
+
+#### 异常 throw
+```
+throw new Error('这个一个错误！')
+```
+
+```
+try {
+
+}
+catch (e) {
+
+}
+finally {
+
+}
+```
 
