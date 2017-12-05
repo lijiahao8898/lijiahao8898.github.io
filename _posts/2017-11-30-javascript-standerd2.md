@@ -2,8 +2,12 @@
 layout: post
 title: javascript （二）
 categories: [javascript]
-subhead: javascript - 基础
+subhead: javascript - 基础 - 数组篇
 ---
+
+> 学习一哈数组相关的内容~
+> > join()，reserve()，sort()，concat()，slice()，splice()，push()，pop()，unshift()，shift()，toString()，toLocalString()
+> > > forEach()，map()，filter()，every()，some()，reduce()，reduceRight()，indexOf()，lastIndexOf()
 
 ### 数组
 数组的创建：
@@ -107,6 +111,87 @@ a.concat(4,[5,[6,7]]) // [1,2,3,4,5,[6,7]]
 ```
 
 #### slice()
-`Array.slice()`
+`Array.slice()` 返回指定数组的片段或子数组。
 
-....未完待续！
+```js
+var a = [1,2,3,4,5];
+
+a.slice(1,3)   // [2,3]
+a.slice(3)     // [4,5]
+a.slice(1,-1)  // [2,3,4]
+a.slice(-3,-2) // [3]
+```
+
+#### splice()
+
+#### push()和pop()
+
+#### unshift()和shift()
+
+#### toString()和toLocalString()
+
+#### forEach()
+`forEach()`是从头到尾遍历数组，并为每个元素调用指定的函数。
+
+```js
+/* v是元素的值，i是元素的索引，a是数组本身 */
+var d = [1,2,3,4,5]
+
+d.forEach(function(v,i,a){
+    console.log(v);
+    console.log(i);
+    console.log(a);
+})
+```
+
+#### map()
+`map()`是调用数组的每个元素传给指定的函数，并且返回一个数组。
+```js
+var a = [1,2,3];
+var b = a.map(function(v){
+    return v*v
+}) // [1,4,9]
+```
+
+#### filter()
+`filter()`返回的是调用的数组的一个子集。
+
+```js
+var a = [1,2,3,4,5,6]
+
+a.filter(function(v){
+    return v <= 3
+}); // 1,2,3
+```
+
+#### every()和some()
+`every()` 和 `some()` 是对数组的逻辑判断，返回 `true` 或 `false`。
+
+其中 `every()` 是所有的元素都满足条件的时候返回 `true`。而 `some()` 是有元素满足条件的时候返回 `true`。
+```js
+var a = [1,2,3,4,5]
+a.every(function(v){
+    return v < 10
+}) // true
+
+a.some(function(v){
+    return v % 2 === 0;
+}) // true
+```
+#### reduce()和reduceRight()
+是将数组根据指定的函数进行整合。
+
+`reduceRight()` 是从右到左。
+
+```js
+var a = [1,2,3,4,5]
+a.reduce(function(){
+    return x+y;
+}) // 15
+
+a.reduce(function(){
+    return x+y
+},1) // 16
+```
+
+#### indexOf()和lastIndexOf()
