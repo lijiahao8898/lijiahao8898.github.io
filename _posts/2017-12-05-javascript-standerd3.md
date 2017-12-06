@@ -1,8 +1,10 @@
 ---
 layout: post
 title: javascript （三）
-categories: [javascript]
+categories:
+- javascript
 subhead: javascript - 基础 - 函数篇
 ---
 
 ....未完待续！
+<!--break-->

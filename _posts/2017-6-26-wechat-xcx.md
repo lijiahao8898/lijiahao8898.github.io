@@ -1,7 +1,10 @@
 ---
 layout: post
 title: wechat
-categories: [wechat]
+categories:
+- wechat
 ---
 
 ### 微信小程序
+
+<!--break-->

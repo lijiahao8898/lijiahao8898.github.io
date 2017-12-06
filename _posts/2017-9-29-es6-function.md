@@ -1,7 +1,9 @@
 ---
 layout: post
 title: ES6 - function
-categories: [javascript]
+categories:
+- javascript
+- ES6
 ---
 
 ### 函数参数的默认值
@@ -23,6 +25,7 @@ log(1);
 * 使用参数默认值时，函数不能有同名参数
 
 * 另外，一个容易忽略的地方是，参数默认值不是传值的，而是每次都重新计算默认值表达式的值。也就是说，参数默认值是惰性求值的。如下
+<!--break-->
 
 ```js
 let x = 99;

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: javascript （一）
-categories: [javascript]
+categories:
+- javascript
 subhead: javascript - 基础
 ---
 
@@ -20,7 +21,7 @@ javascript术语基本涵盖了以下三个部分：
 * 聚合 - 多个对象合并成一个新对象的过程；
 * 重用和继承 - 实现代码的重用；
 * 多态 - 不同的对象通过相同的方法调用来实现各自行为；
-
+<!--break-->
 ### 操作符
 
 * `+` - 加法运算

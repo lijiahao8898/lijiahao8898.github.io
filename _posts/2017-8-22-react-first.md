@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 初识react（一）- react
-categories: [react]
+categories:
+- react
 ---
 
 ### 相关
@@ -21,7 +22,7 @@ categories: [react]
 `JSX` 是 `JavaScript` 的扩展语法，也可以说是 `JavaScript` 的一种语法糖~。
 
 `React` 独有的 `JSX` 语法， `javascript` 不兼容。使用 `Browser.js` ，将 `JSX` 语法转换成 `javascript` 语法。
-
+<!--break-->
 ```html
 <script type="text/babel">
 

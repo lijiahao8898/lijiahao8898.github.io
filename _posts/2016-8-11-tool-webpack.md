@@ -1,7 +1,8 @@
 ---
 layout: post
 title: tool - webpack
-categories: [打包工具]
+categories:
+- tool
 ---
 
 ## 基本
@@ -22,7 +23,7 @@ categories: [打包工具]
 * `entry`     入口文件 让 `webpack` 用哪个文件作为项目的入口
 * `output`    出口 让 `webpack` 把处理完成的文件放在哪里
 * `module`    模块 要用什么不同的模块来处理各种类型的文件
-
+<!--break-->
 ### 安装：
 
 ```

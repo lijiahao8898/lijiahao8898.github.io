@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 初识react（二）- redux
-categories: [react]
+categories:
+- react
 ---
 
 ### what is redux ?
@@ -14,6 +15,7 @@ categories: [react]
 仅仅通过看代码你很难判断出最后值会变成什么。
 
 `redux` 的理念：把一个应用的所有状态数据存储在一个统一的地方集中管理。
+<!--break-->
 
 如下图：
 

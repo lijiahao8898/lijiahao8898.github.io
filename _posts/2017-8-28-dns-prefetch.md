@@ -1,7 +1,8 @@
 ---
 layout: post
 title: dns-prefetch
-categories: [browser]
+categories:
+- browser
 subhead: 游览器性能提升
 ---
 
@@ -20,6 +21,7 @@ subhead: 游览器性能提升
 
 `dns-prefetch` ​的作用简单说明就是当你浏览网页时，浏览器会在加载网页时对网页中的域名进行解析缓存，这样在你单击当前网页链接
 无需 `DNS` 解析，减少浏览者等待时间，提高用户体验。
+<!--break-->
 
 浏览器对网站第一次的域名 `DNS` 解析查找流程依次为：
 1. 浏览器缓存

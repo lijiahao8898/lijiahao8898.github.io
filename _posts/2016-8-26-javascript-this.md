@@ -1,7 +1,8 @@
 ---
 layout: post
 title: javascript - this
-categories: [javascript]
+categories:
+- javascript
 ---
 
 <br/>
@@ -13,7 +14,7 @@ categories: [javascript]
 1. 在全局函数中，this等于window。
 2. 当函数作为某个对象的方法调用时，this指向那个对象。
 3. 匿名函数的执行环境具有全局性，因此this通常指向window。
-
+<!--break-->
 ### 纯粹的函数调用
 
 ```js

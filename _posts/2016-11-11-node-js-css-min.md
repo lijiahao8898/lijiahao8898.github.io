@@ -1,7 +1,9 @@
 ---
 layout: post
 title: node单个文件压缩-js&css
-categories: [node]
+categories:
+- node
+- js&css-min
 ---
 
 # node
@@ -29,3 +31,4 @@ npm install clean-css-cli -g 或者 sudo npm install clean-css-cli -g
 // 压缩
 cleancss -o *.min.css *.css
 ```
+<!--break-->

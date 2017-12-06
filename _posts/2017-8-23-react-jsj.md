@@ -1,7 +1,8 @@
 ---
 layout: post
 title: react 脚手架
-categories: [react]
+categories:
+- react
 ---
 
 ### facebook react脚手架
@@ -20,6 +21,7 @@ categories: [react]
 * 运行起来后浏览器已经实现了热加载刷新，修改代码保存后浏览器会自动刷新；
 * 执行 `npm test` 或 `yarn test` 可以执行测试动作。；
 * 编译项目执行 `npm run build` 或 `yarn build`；
+<!--break-->
 
 #### how to use ?
 1. 先去安装全局的命令

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: tool - grunt
-categories: [打包工具]
+categories:
+- tool
 ---
 
 ### 插件介绍
@@ -24,7 +25,7 @@ categories: [打包工具]
 | usemin         | 替换html的引用 如果有filerev后的文件则优先使用；|
 
 * grunt常用的插件：
-
+<!--break-->
 #### grunt引入html：
 
 主要功能：主要用于公共部分的html引入。例如header和sidebar。

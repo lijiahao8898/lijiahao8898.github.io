@@ -87,13 +87,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .container.content .posts {
     padding: 5px;
-    /*border: 1px solid #eee;*/
     margin-top: 15px;
 }
 
 .container.content {
     margin-top: 60px;
-    /*margin-bottom: 30px;*/
     background-color: #fff;
 }
 
@@ -324,6 +322,14 @@ a.sidebar-nav-item:hover {
 .category-number {
     display: inline-block;
     float: right;
+    background: #fff;
+    border-radius: 8px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    color: #da4453;
+    font-weight: bold;
 }
 
 .category-title {
@@ -387,8 +393,18 @@ a.sidebar-nav-item:hover {
     margin-top: 0;
 }
 
-.posts .post {
-    border-bottom: 1px dashed #ccc;
+.posts.index-posts h1 {
+    font-size: 1.5rem;
+    text-align: left;
+}
+
+.posts.index-posts .post {
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+}
+
+.posts.index-posts .post a:hover {
+    text-decoration: none;
 }
 
 .post li, .post li a {
@@ -966,20 +982,22 @@ a.pagination-item:hover {
  */
 
 .line-content {
-    height: 400px;
+    height: 120px;
     background-color: #fff;
     position: relative;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 120px;
 }
 
 .line {
     width: 100%;
     position: absolute;
-    top: 200px;
+    top: 120px;
     border-bottom: 1px solid #ccc;
 }
 
 .ci-wrapper {
-    top: 180px;
+    top: 104px;
     left: 0;
     right: 0;
     position: absolute;
@@ -1002,12 +1020,13 @@ a.pagination-item:hover {
 .ci {
     width: 32px;
     height: 32px;
-    border: 1px solid #ccc;
+    border: 2px dashed #ccc;
     background-color: #fff;
     border-radius: 100%;
     display: block;
     margin: 0 auto 8px auto;
     transition: all .2s linear;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .ci-item.active .ci {
@@ -1077,6 +1096,39 @@ a.pagination-item:hover {
     color: #fff;
 }
 
+.card:hover .middle-title h2:after {
+    background-color: #fff;
+}
+
 .card .middle-title h2 {
     padding: 3rem;
+}
+
+/*
+ * read more
+ */
+.read-more {
+    padding-bottom: 1rem;
+    border-bottom: 2px dashed #ccc;
+    height: 50px;
+    clear: both;
+}
+
+.read-more .left {
+    float: left;
+}
+
+.read-more .right {
+    float: right;
+    background: #da4453;
+    box-shadow: 0 0 5px rgba(0,0,0,1);
+    border-radius: 20px;
+}
+
+.read-more .right a{
+    color: #fff;
+    padding: 4px 10px;
+    font-family: fantasy;
+    font-weight: bold;
+    font-size: 14px;
 }

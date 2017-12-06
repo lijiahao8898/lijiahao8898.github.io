@@ -1,7 +1,8 @@
 ---
 layout: post
 title: javascript - !~
-categories: [javascript]
+categories:
+- javascript
 ---
 
 ### javascript - 按位取反
@@ -22,3 +23,4 @@ categories: [javascript]
             });
         }
 ```
+<!--break-->

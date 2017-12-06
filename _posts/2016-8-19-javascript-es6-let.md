@@ -1,12 +1,14 @@
 ---
 layout: post
 title: ES6 - let
-categories: [javascript]
+categories:
+- javascript
+- ES6
 ---
 
 传送门: [ES6文档](http://es6.ruanyifeng.com/#docs/let)
 
-# Getting Started ES6
+## Getting Started
 
 es5变量声明：
 
@@ -23,7 +25,7 @@ es6新增的变量声明：
 * `import`
 
 * `class`
-
+<!--break-->
 ## let
 
 声明变量。

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: github & jekyll 编写自己的小网站
-categories: [other]
+categories:
+- other
 weather: sunny
 ---
 
@@ -40,3 +41,4 @@ weather: sunny # 天气
 ```
 {{ post.weather }}
 ```
+<!--break-->

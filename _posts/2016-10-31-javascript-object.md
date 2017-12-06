@@ -1,7 +1,8 @@
 ---
 layout: post
 title: javascript - 对象
-categories: [javascript]
+categories:
+- javascript
 ---
 
 <br/>
@@ -22,7 +23,7 @@ categories: [javascript]
 ### 访问属性
 
 有两种方式来访问对象的属性：点操作符或者中括号操作符。
-
+<!--break-->
 ```js
 var foo = { name: 'kitten' }
 

@@ -24,7 +24,7 @@
         <!-- 类目 -->
         {% for category in site.categories %}
         <a class="sidebar-nav-category category"  data-cate="{{ category | first}}"><span class="category-title">{{ category | first }}</span><span
-                class="category-number">&nbsp;（{{ category | last | size }}）</span></a>
+                class="category-number">{{ category | last | size }}</span></a>
         {% for post in category.last %}
         <a class="sidebar-nav-item {% if page.url == post.url %} active{% endif %} sidebar-{{ category | first }}"
            href="{{ post.url }}" style="display: none" data-pcate="{{ category | first }}">{{ post.title }}&nbsp;&nbsp;

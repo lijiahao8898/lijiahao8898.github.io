@@ -1,7 +1,8 @@
 ---
 layout: post
 title: commonjs规范
-categories: [javascript]
+categories:
+- javascript
 ---
 
 ### 概述
@@ -13,3 +14,4 @@ categories: [javascript]
 资料：
 
 * [阮一峰 - commonjs](http://javascript.ruanyifeng.com/nodejs/module.html#toc0)
+<!--break-->

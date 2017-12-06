@@ -1,7 +1,8 @@
 ---
 layout: post
 title: object
-categories: [javascript]
+categories:
+- javascript
 ---
 
 ### object.keys( )
@@ -18,3 +19,4 @@ var vendors = {
 
 Object.keys(vendors)            // ["", "Webkit", "Moz", "O", "ms"]
 ```
+<!--break-->

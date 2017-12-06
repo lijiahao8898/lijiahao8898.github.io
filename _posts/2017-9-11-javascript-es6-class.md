@@ -1,7 +1,9 @@
 ---
 layout: post
 title: es6 - class
-categories: [javascript]
+categories:
+- javascript
+- ES6
 subhead: class
 ---
 
@@ -40,6 +42,7 @@ class Point {
 另外，方法之间不需要逗号分隔，加了会报错。
 
 es6的类，完全可以看作构造函数的另一种写法。
+<!--break-->
 
 ```js
 class Point {

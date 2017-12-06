@@ -1,7 +1,8 @@
 ---
 layout: post
 title: javascript （二）
-categories: [javascript]
+categories:
+- javascript
 subhead: javascript - 基础 - 数组篇
 ---
 
@@ -27,6 +28,7 @@ a[0]; // 1
 var a = [];
 a[0] = 1;
 ```
+<!--break-->
 
 #### 稀疏数组
 稀疏数组就是数组的 `length` 属性大于数组的元素的个数或者说是从0开始的不连续索引的数组。
