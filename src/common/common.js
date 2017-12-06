@@ -51,6 +51,7 @@
                     this.className += ' ' + 'active';
                 })
             }
+            dom[0].click()
         },
         toggle: function () {
             var toggle = document.querySelector('.sidebar-toggle');
