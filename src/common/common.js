@@ -22,7 +22,7 @@
                 $(this).addClass('active');
                 $(className).toggleClass('is-show');
             })
-
+            this.showInfo();
             this.toggle();
             this.time();
             var id = document.getElementById('my-shine');
@@ -35,6 +35,22 @@
                 shine.light.position.y = event.clientY;
                 shine.draw();
             }, false);
+        },
+        showInfo: function () {
+            var dom = document.getElementsByClassName('ci-item');
+
+            for (var i = 0; i < dom.length; i++) {
+                dom[i].addEventListener('click', function (e) {
+                    var id = Number(this.getAttribute('data-id'));
+                    var info = document.getElementsByClassName('information-wrapper');
+                    for (var n = 0; n < dom.length; n++) {
+                        info[n].style.display = 'none';
+                        dom[n].className = 'ci-item';
+                    }
+                    info[id - 1].style.display = 'block';
+                    this.className += ' ' + 'active';
+                })
+            }
         },
         toggle: function () {
             var toggle = document.querySelector('.sidebar-toggle');
