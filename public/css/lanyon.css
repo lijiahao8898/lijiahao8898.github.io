@@ -85,14 +85,8 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 28rem;
 }
 
-.container.content .posts {
-    padding: 5px;
-    margin-top: 15px;
-}
-
 .container.content {
     margin-top: 60px;
-    background-color: #fff;
 }
 
 .container-wrapper {
@@ -331,7 +325,7 @@ a.sidebar-nav-category:focus {
 #sidebar-checkbox:focus ~ .sidebar-toggle,
 #sidebar-checkbox:checked ~ .sidebar-toggle {
     color: #fff;
-    background-color: #555;
+    background-color: #da4453;
 }
 
 .sidebar-toggle:active:before,
@@ -423,6 +417,12 @@ a.sidebar-nav-category:focus {
 .page,
 .post {
     padding: 8em 0;
+}
+
+.posts .post-wrapper{
+    background: #fff;
+    padding: .5rem;
+    margin-bottom: 2rem;
 }
 
 .posts .post:first-child {
@@ -937,8 +937,8 @@ a.pagination-item:hover {
 }
 
 .middle-title h2 {
-    font-size: 19px;
-    line-height: 20px;
+    font-size: 1rem;
+    line-height: 1rem;
     color: #71717c;
     text-transform: uppercase;
     font-weight: 600;
@@ -950,58 +950,42 @@ a.pagination-item:hover {
 .middle-title h2:after {
     content: "";
     display: block;
-    width: 79px;
+    width: 60px;
     height: 2px;
-    background-color: rgba(255, 0, 0, 0.3);
+    background-color: rgba(255, 0, 0, 0.4);
     margin: 17px auto;
+}
+
+.information {
+    background: url(./../../assets/bgc.jpg) no-repeat 0 0;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .me-basic-information {
     text-align: center;
     overflow: hidden;
-    /*background-color: #fff;*/
-}
-
-.me-basic-information .left-information {
-    height: inherit;
-    width: 100%;
-    display: inline-block;
-    float: left;
-}
-
-.me-basic-information .right-information {
-    height: inherit;
-    width: 100%;
-    display: inline-block;
-    float: left;
+    font-family: fantasy;
+    font-size: .9rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+    padding-bottom: 1rem;
 }
 
 .me-basic-information ul {
     display: inline-block;
+    margin-bottom: 0;
 }
 
 .me-basic-information li {
     list-style: circle;
     min-width: 100px;
     text-align: left;
-    font-size: 1rem;
-    letter-spacing: 1px;
-    font-weight: 600;
-    font-family: fantasy;
-}
-
-.information-1 .right-information {
-    background-attachment: fixed;
-    background-size: cover;
-}
-
-.information-2 .left-information {
-    background-attachment: fixed;
-    background-size: cover;
 }
 
 .information-wrapper {
     display: none;
+    text-align: center;
 }
 
 .information-wrapper > .middle-title, .container-wrapper > .middle-title {
@@ -1028,7 +1012,7 @@ a.pagination-item:hover {
 }
 
 .ci-wrapper {
-    top: 104px;
+    top: 106px;
     left: 0;
     right: 0;
     position: absolute;
@@ -1038,20 +1022,20 @@ a.pagination-item:hover {
 }
 
 .ci-item {
-    width: 160px;
+    width: 125px;
     text-align: center;
     color: #ccc;
     text-transform: uppercase;
-    font-size: 14px;
+    font-size: .8rem;
     font-weight: bold;
     font-family: "PT Sans", Helvetica, Arial, sans-serif;
     cursor: pointer;
 }
 
 .ci {
-    width: 32px;
-    height: 32px;
-    border: 2px dashed #ccc;
+    width: 28px;
+    height: 28px;
+    border: 1px dashed #ccc;
     background-color: #fff;
     border-radius: 100%;
     display: block;
@@ -1063,8 +1047,8 @@ a.pagination-item:hover {
 .ci-item.active .ci {
     background-color: #da4453;
     border: 2px dashed #fff;
-    width: 38px;
-    height: 38px;
+    width: 32px;
+    height: 32px;
 }
 
 .ci-item.active {
@@ -1074,8 +1058,8 @@ a.pagination-item:hover {
 .ci-item:hover .ci {
     background-color: #da4453;
     border: 2px dashed #fff;
-    width: 38px;
-    height: 38px;
+    width: 32px;
+    height: 32px;
 }
 
 .ci-item:hover {
@@ -1104,10 +1088,17 @@ a.pagination-item:hover {
  */
 
 .card {
-    width: 42%;
-    margin: 1%;
+    width: 40%;
+    min-width: 380px;
+    margin: 1% .5%;
     border-style: dashed;
     background: #fff;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.card.card-big{
+    width: 80%;
 }
 
 .card.card-2 {
@@ -1132,7 +1123,7 @@ a.pagination-item:hover {
 }
 
 .card .middle-title h2 {
-    padding: 3rem;
+    padding: 1.5rem;
 }
 
 /*

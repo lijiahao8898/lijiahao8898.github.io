@@ -7,13 +7,6 @@
     background: rgba(255, 255, 255, 0.2);
 }
 
-.masthead .logo {
-    display: inline-block;
-    width: 24px;
-    height: 24px;
-    vertical-align: sub;
-}
-
 .masthead h3 {
     display: inline-block;
 }

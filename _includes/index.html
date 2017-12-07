@@ -1,20 +1,20 @@
-{% include head.html %}
-
 <div class="posts index-posts">
     {% for post in paginator.posts %}
-    <div class="post">
-        <h1 class="post-title">
-            <a href="{{ post.url }}">
-                {{ post.title }}
-            </a>
-        </h1>
-        <span class="post-date">{{ post.date | date_to_string }}</span>
-        {{ post.content || split:'<!--break-->' | first }}
-    </div>
-    <div class="read-more">
-        <div class="left">......</div>
-        <div class="right">
-            <a href="{{ post.url }}">more</a>
+    <div class="post-wrapper">
+        <div class="post">
+            <h1 class="post-title">
+                <a href="{{ post.url }}">
+                    {{ post.title }}
+                </a>
+            </h1>
+            <span class="post-date">{{ post.date | date_to_string }}</span>
+            {{ post.content || split:'<!--break-->' | first }}
+        </div>
+        <div class="read-more">
+            <div class="left">......</div>
+            <div class="right">
+                <a href="{{ post.url }}">more</a>
+            </div>
         </div>
     </div>
     {% endfor %}
