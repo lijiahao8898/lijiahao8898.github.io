@@ -11,17 +11,18 @@
             }
 
             var active = $('.sidebar-nav-item.active');
-            var activeCate = active.attr('data-pcate');
-            $('.category[data-cate=' + activeCate + ']').addClass('active');
-            $('[data-pcate=' + activeCate + ']').addClass('is-show');
+            active.parents('.category').addClass('active');
+            active.parents('.category').find('ul').delay(0).slideDown();
             $('.category').click(function () {
-                var categoryTitle = $.trim($(this).find('.category-title').text());
-                var className = '.sidebar-' + categoryTitle;
-
-                $('.category').removeClass('active');
-                $(this).addClass('active');
-                $(className).toggleClass('is-show');
-            })
+                if(!$(this).hasClass('active')){
+                    $('.category').removeClass('active');
+                    $(this).addClass('active');
+                    $(this).find('ul').delay(0).slideDown();
+                }else{
+                    $('.category').removeClass('active');
+                    $(this).find('ul').delay(0).slideUp();
+                }
+            });
             this.showInfo();
             this.toggle();
             this.time();
