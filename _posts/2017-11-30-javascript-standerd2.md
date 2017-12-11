@@ -6,9 +6,9 @@ categories:
 subhead: javascript - 基础 - 数组篇
 ---
 
-> 学习一哈数组相关的内容~
-> > join()，reserve()，sort()，concat()，slice()，splice()，push()，pop()，unshift()，shift()，toString()，toLocalString()
-> > > forEach()，map()，filter()，every()，some()，reduce()，reduceRight()，indexOf()，lastIndexOf()
+> 学习一哈数组相关的内容~`join`，`reserve`，`sort`，`concat`，`slice`，`splice`，`push`，`pop`，`unshift`，`shift`，`toString`，`toLocalString`
+`forEach`，`map`，`filter`，`every`，`some`，`reduce`，`reduceRight`，`indexOf`，`lastIndexOf`
+<!--break-->
 
 ### 数组
 数组的创建：
@@ -28,7 +28,6 @@ a[0]; // 1
 var a = [];
 a[0] = 1;
 ```
-<!--break-->
 
 #### 稀疏数组
 稀疏数组就是数组的 `length` 属性大于数组的元素的个数或者说是从0开始的不连续索引的数组。

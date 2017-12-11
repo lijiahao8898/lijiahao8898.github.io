@@ -334,3 +334,4 @@ objB.showName();                         // obj
 * [知乎: https://zhuanlan.zhihu.com/p/23023311](https://zhuanlan.zhihu.com/p/23023311)
 * [阮一峰：http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html](http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html)
 * [秘密花园：https://bonsaiden.github.io/JavaScript-Garden/zh/#function.this](https://bonsaiden.github.io/JavaScript-Garden/zh/#function.this)
+* [掘金 - 全面理解 JavaScript 中的 this](https://juejin.im/entry/5a29df626fb9a045211e9c2a?utm_source=gold_browser_extension)

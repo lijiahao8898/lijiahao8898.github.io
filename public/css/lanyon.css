@@ -419,10 +419,15 @@ a.sidebar-nav-category:focus {
     padding: 8em 0;
 }
 
-.posts .post-wrapper,.post-wrapper{
-    background: #fff;
+.posts .post-wrapper {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.post-wrapper {
+    background: rgba(255, 255, 255, 1);
     padding: .5rem;
     margin-bottom: 2rem;
+    border-radius: 5px;
 }
 
 .posts .post:first-child {
@@ -1066,6 +1071,14 @@ a.pagination-item:hover {
     color: #da4453;
 }
 
+.feather-github {
+    fill: none;
+}
+
+.feather-github:hover {
+    fill: rgba(255, 255, 255, 0.8);
+}
+
 .icon {
     fill: #ccc;
     transition: fill .2s linear;
@@ -1097,7 +1110,7 @@ a.pagination-item:hover {
     vertical-align: top;
 }
 
-.card.card-big{
+.card.card-big {
     width: 80%;
 }
 
