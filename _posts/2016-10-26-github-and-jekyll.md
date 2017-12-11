@@ -2,7 +2,7 @@
 layout: post
 title: github & jekyll 编写自己的小网站
 categories:
-- other
+- Other
 weather: sunny
 ---
 

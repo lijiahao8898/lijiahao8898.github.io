@@ -2,7 +2,6 @@
 layout: post
 title: ES6 - function
 categories:
-- javascript
 - ES6
 ---
 

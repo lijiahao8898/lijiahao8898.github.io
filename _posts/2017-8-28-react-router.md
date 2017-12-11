@@ -2,7 +2,7 @@
 layout: post
 title: 初识react（三）— router
 categories:
-- react
+- React
 ---
 
 ### what is react-router ?

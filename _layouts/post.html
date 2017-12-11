@@ -2,33 +2,35 @@
 layout: default
 ---
 
-<div class="post">
-    <div class="post-header">
-        <h1 class="post-title">{{ page.title }}</h1>
-        <span class="post-date">{{ page.subhead }}</span>
-        <span class="post-date">
+<div class="post-wrapper">
+    <div class="post">
+        <div class="post-header">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <span class="post-date">{{ page.subhead }}</span>
+            <span class="post-date">
             {% for category in page.categories %}
               {{ category }}、
             {% endfor %}
         </span>
-        <span class="post-date">{{ page.date | date_to_string }}</span>
-        <span class="post-date">资料整理</span>
+            <span class="post-date">{{ page.date | date_to_string }}</span>
+            <span class="post-date">资料整理</span>
+        </div>
+        {{ content }}
     </div>
-    {{ content }}
-</div>
 
-<div class="related">
-    <h2>最新</h2>
-    <ul class="related-posts">
-        {% for post in site.related_posts limit:4 %}
-        <li>
-            <h3>
-                <a href="{{ site.baseurl }}{{ post.url }}">
-                    {{ post.title }}
-                    <small>{{ post.date | date_to_string }}</small>
-                </a>
-            </h3>
-        </li>
-        {% endfor %}
-    </ul>
+    <div class="related">
+        <h2>最新</h2>
+        <ul class="related-posts">
+            {% for post in site.related_posts limit:6 %}
+            <li>
+                <h3>
+                    <a href="{{ site.baseurl }}{{ post.url }}">
+                        {{ post.title }}
+                        <small>{{ post.date | date_to_string }}</small>
+                    </a>
+                </h3>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>

@@ -2,7 +2,7 @@
 layout: post
 title: tool - webpack
 categories:
-- tool
+- Tool
 ---
 
 ## 基本

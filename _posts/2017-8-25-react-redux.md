@@ -2,7 +2,7 @@
 layout: post
 title: 初识react（二）- redux
 categories:
-- react
+- React
 ---
 
 ### what is redux ?

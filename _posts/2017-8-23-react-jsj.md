@@ -2,7 +2,7 @@
 layout: post
 title: react 脚手架
 categories:
-- react
+- React
 ---
 
 ### facebook react脚手架

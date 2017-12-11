@@ -2,8 +2,7 @@
 layout: post
 title: css混合模式
 categories:
-- style
-- css
+- Css
 subhead: css3新特性混合模式：可以实现Photoshop中的图层效果
 ---
 

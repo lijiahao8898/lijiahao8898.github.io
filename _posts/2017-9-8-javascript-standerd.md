@@ -2,7 +2,7 @@
 layout: post
 title: javascript （一）
 categories:
-- javascript
+- ES5
 subhead: javascript - 基础
 ---
 

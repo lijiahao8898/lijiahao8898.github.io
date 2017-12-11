@@ -1,8 +1,7 @@
 ---
 layout: post
-title: es6 - class
+title: ES6 - class
 categories:
-- javascript
 - ES6
 subhead: class
 ---

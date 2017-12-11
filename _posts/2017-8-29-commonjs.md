@@ -2,7 +2,7 @@
 layout: post
 title: commonjs规范
 categories:
-- javascript
+- ES5
 ---
 
 ### 概述

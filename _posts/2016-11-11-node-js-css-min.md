@@ -2,7 +2,7 @@
 layout: post
 title: node单个文件压缩-js&css
 categories:
-- node
+- Node
 ---
 
 # node

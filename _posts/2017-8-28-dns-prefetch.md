@@ -2,7 +2,7 @@
 layout: post
 title: dns-prefetch
 categories:
-- browser
+- UA
 subhead: 游览器性能提升
 ---
 

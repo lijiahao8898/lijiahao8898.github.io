@@ -2,7 +2,6 @@
 layout: post
 title: ES6 - let
 categories:
-- javascript
 - ES6
 ---
 

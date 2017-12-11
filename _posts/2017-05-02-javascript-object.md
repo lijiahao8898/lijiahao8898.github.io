@@ -2,7 +2,7 @@
 layout: post
 title: object
 categories:
-- javascript
+- ES5
 ---
 
 ### object.keys( )

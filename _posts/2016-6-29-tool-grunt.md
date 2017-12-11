@@ -2,7 +2,7 @@
 layout: post
 title: tool - grunt
 categories:
-- tool
+- Tool
 ---
 
 ### 插件介绍

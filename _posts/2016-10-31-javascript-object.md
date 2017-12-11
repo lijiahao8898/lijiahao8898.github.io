@@ -2,7 +2,7 @@
 layout: post
 title: javascript - 对象
 categories:
-- javascript
+- ES5
 ---
 
 <br/>

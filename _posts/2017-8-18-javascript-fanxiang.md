@@ -2,7 +2,7 @@
 layout: post
 title: javascript - !~
 categories:
-- javascript
+- ES5
 ---
 
 ### javascript - 按位取反

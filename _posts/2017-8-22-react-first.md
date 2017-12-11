@@ -2,7 +2,7 @@
 layout: post
 title: 初识react（一）- react
 categories:
-- react
+- React
 ---
 
 ### 相关

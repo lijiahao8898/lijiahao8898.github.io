@@ -2,7 +2,7 @@
 layout: post
 title: javascript - this
 categories:
-- javascript
+- ES5
 ---
 
 <br/>
@@ -14,6 +14,7 @@ categories:
 1. 在全局函数中，this等于window。
 2. 当函数作为某个对象的方法调用时，this指向那个对象。
 3. 匿名函数的执行环境具有全局性，因此this通常指向window。
+
 <!--break-->
 ### 纯粹的函数调用
 
@@ -153,6 +154,30 @@ const obj = {
      }
 };
 obj.func();
+```
+
+```js
+/* 创建一个含有bar方法的obj对象，bar返回一个函数，这个函数返回它自己的this，
+   这个返回的函数是以箭头函数创建的，所以它的this被永久绑定到了它外层函数的this。
+   bar的值可以在调用中设置，它反过来又设置返回函数的值。*/
+var obj = {
+    bar: function() {
+        var x = (() => this);
+        return x;
+    }
+};
+
+/* 作为obj对象的一个方法来调用bar，把它的this绑定到obj。
+   x所指向的匿名函数赋值给fn。*/
+var fn = obj.bar();
+
+/* 直接调用fn而不设置this，通常(即不使用箭头函数的情况)默认为全局对象，若在严格模式则为undefined */
+console.log(fn() === obj); // true
+
+/* 但是注意，如果你只是引用obj的方法，而没有调用它(this是在函数调用过程中设置的) */
+var fn2 = obj.bar;
+/* 那么调用箭头函数后，this指向window，因为它从 bar 继承了this。*/
+console.log(fn2()() == window); // true
 ```
 
 ### 其他

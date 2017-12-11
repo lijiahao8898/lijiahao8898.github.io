@@ -2,7 +2,7 @@
 layout: post
 title: wechat
 categories:
-- wechat
+- Wechat
 ---
 
 ### 微信小程序

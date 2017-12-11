@@ -1,7 +1,8 @@
 ---
 layout: post
-title: es6 - const
-categories: [javascript]
+title: ES6 - const
+categories:
+- ES6
 subhead: const
 ---
 
