@@ -3,6 +3,8 @@
         init: function () {
             var middle = document.querySelector('.middle');
             var posts = document.querySelector('.posts');
+            var key = 'E3BFEC8B66E084312938C21F3FFC4D4E';
+            var dataId= '141585166';
             if (middle) {
                 middle.style.height = window.innerHeight + 'px';
             }
@@ -10,17 +12,53 @@
                 posts.style.opacity = 1;
             }
             
-            $.ajax({
-                url: 'http://api.steampowered.com/IEconDOTA2_E3BFEC8B66E084312938C21F3FFC4D4E/GetHeroes/v1',
-                type: 'post',
-                dataType: 'json',
-                success: function () {
-                    
-                },
-                error: function () {
-                    
-                }
-            });
+            // $.ajax({
+            //     url: 'http://api.steampowered.com/IEconDOTA2_570/GetHeroes/v1',
+            //     data: {
+            //         key: key,
+            //         language: 'zh'
+            //     },
+            //     type: 'get',
+            //     dataType: 'jsonp',
+            //     success: function () {
+            //
+            //     },
+            //     error: function () {
+            //
+            //     }
+            // });
+
+            // $.ajax({
+            //     url: 'https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001',
+            //     data: {
+            //         key: key,
+            //         account_id: dataId
+            //     },
+            //     type: 'get',
+            //     dataType: 'jsonp',
+            //     success: function () {
+            //
+            //     },
+            //     error: function () {
+            //
+            //     }
+            // });
+
+            // $.ajax({
+            //     url: 'http://api.steampowered.com/IEconDOTA2_570/GetGameItems/v1',
+            //     type: 'get',
+            //     data: {
+            //         key: key,
+            //         language: 'zh'
+            //     },
+            //     dataType: 'json',
+            //     success: function () {
+            //
+            //     },
+            //     error: function () {
+            //
+            //     }
+            // });
 
             var active = $('.sidebar-nav-item.active');
             active.parents('.category').addClass('active');
