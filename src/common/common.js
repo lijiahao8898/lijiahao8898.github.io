@@ -9,6 +9,18 @@
             if (posts) {
                 posts.style.opacity = 1;
             }
+            
+            $.ajax({
+                url: 'http://api.steampowered.com/IEconDOTA2_E3BFEC8B66E084312938C21F3FFC4D4E/GetHeroes/v1',
+                type: 'post',
+                dataType: 'json',
+                success: function () {
+                    
+                },
+                error: function () {
+                    
+                }
+            });
 
             var active = $('.sidebar-nav-item.active');
             active.parents('.category').addClass('active');
