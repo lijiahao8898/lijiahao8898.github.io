@@ -11,10 +11,7 @@
             {{ post.content || split:'<!--break-->' | first }}......
         </div>
         <div class="read-more">
-            <div class="left"></div>
-            <div class="right">
-                <a href="{{ post.url }}">more</a>
-            </div>
+            <a href="{{ post.url }}">more</a>
         </div>
     </div>
     {% endfor %}

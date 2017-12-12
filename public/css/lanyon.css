@@ -421,13 +421,14 @@ a.sidebar-nav-category:focus {
 
 .posts .post-wrapper {
     background: rgba(255, 255, 255, 0.6);
+    position: relative;
 }
 
 .post-wrapper {
     background: rgba(255, 255, 255, 1);
     padding: .5rem;
-    margin-bottom: 2rem;
-    border-radius: 5px;
+    margin-bottom: 1.5rem;
+    border-radius: 4px;
 }
 
 .posts .post:first-child {
@@ -440,8 +441,8 @@ a.sidebar-nav-category:focus {
 }
 
 .posts.index-posts .post {
-    padding: 1rem 0;
-    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    margin-bottom: 0;
 }
 
 .posts.index-posts .post a:hover {
@@ -542,6 +543,9 @@ a.sidebar-nav-category:focus {
     display: inline-block;
     padding: 0.1rem 0.5rem;
     border: 1px solid #da4453;
+}
+span.pagination-item{
+    border: 1px solid #ccc;
 }
 
 .pagination-item:first-child {
@@ -948,7 +952,7 @@ a.pagination-item:hover {
     text-transform: uppercase;
     font-weight: 600;
     text-align: center;
-    padding: 5rem;
+    padding: 3rem;
     margin: 0;
 }
 
@@ -962,9 +966,7 @@ a.pagination-item:hover {
 }
 
 .information {
-    background: url(./../../assets/bgc.jpg) no-repeat 0 0;
-    background-size: cover;
-    background-attachment: fixed;
+    background-color: #fff;
 }
 
 .me-basic-information {
@@ -1002,22 +1004,22 @@ a.pagination-item:hover {
  */
 
 .line-content {
-    height: 120px;
+    height: 60px;
     background-color: #fff;
     position: relative;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
-    margin-bottom: 120px;
+    margin-bottom: 90px;
 }
 
 .line {
     width: 100%;
     position: absolute;
-    top: 120px;
+    top: 60px;
     border-bottom: 1px solid #ccc;
 }
 
 .ci-wrapper {
-    top: 106px;
+    top: 46px;
     left: 0;
     right: 0;
     position: absolute;
@@ -1101,7 +1103,7 @@ a.pagination-item:hover {
  */
 
 .card {
-    width: 40%;
+    width: 30%;
     min-width: 380px;
     margin: 1% .5%;
     border-style: dashed;
@@ -1142,26 +1144,18 @@ a.pagination-item:hover {
 /*
  * read more
  */
+
 .read-more {
-    padding-bottom: 1rem;
-    border-bottom: 2px dashed #ccc;
-    height: 50px;
-    clear: both;
-}
-
-.read-more .left {
-    float: left;
-}
-
-.read-more .right {
-    float: right;
+    position: absolute;
     background: #da4453;
     box-shadow: 0 0 5px rgba(0, 0, 0, 1);
     border-radius: 20px;
+    right: 10px;
+    top: 10px;
 }
 
-.read-more .right a {
-    color: #fff;
+.read-more a {
+    color: #fff!important;
     padding: 4px 10px;
     font-family: fantasy;
     font-weight: bold;
