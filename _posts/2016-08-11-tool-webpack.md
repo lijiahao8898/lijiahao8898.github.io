@@ -7,23 +7,18 @@ categories:
 
 ## 基本
 
-可能用到的相关知识：
-
-* `commonJS` 、`NodeJS`
-* `React`
-* `gulp` 、`grunt`
-* `express`
-
 `webpack` 是以 `commonJS` 的形式来书写的，但对 `AMD/CMD` 的支持也很全面。
 
-什么是 `commonJS` 规范？[点击查看](http://javascript.ruanyifeng.com/nodejs/module.html)
+什么是 `commonJS` 规范？[《点击查看》](http://javascript.ruanyifeng.com/nodejs/module.html)
 
 `webpack` 的配置文件 `webpack.config.js` 主要分为三大块：
 
-* `entry`     入口文件 让 `webpack` 用哪个文件作为项目的入口
-* `output`    出口 让 `webpack` 把处理完成的文件放在哪里
-* `module`    模块 要用什么不同的模块来处理各种类型的文件
+* `entry` - 入口文件 让 `webpack` 用哪个文件作为项目的入口
+* `output` - 出口 让 `webpack` 把处理完成的文件放在哪里
+* `module` - 模块 要用什么不同的模块来处理各种类型的文件
+
 <!--break-->
+
 ### 安装：
 
 ```
@@ -31,21 +26,13 @@ mkdir  forwebpack
 
 cd     forwebpack
 
-npm    init                              创建package.json）
+npm    init                              // 创建package.json
 
 sudo npm install webpack --save-dev
 
---save                                  （将安装信息放入package.json的dependencies（产品模式））
+--save                                   // 将安装信息放入package.json的dependencies（产品模式）
 
-—save-dev                                (将安装信息放入package.json的devDependencies（开发模式）)
-```
-
-`git` 管理项目的时候记得将不必要上传的文件加入到 `gitignore` 里面
-
-创建 `.gitignore` 文件
-
-```
-touch .gitignore
+—save-dev                                // 将安装信息放入package.json的devDependencies（开发模式）
 ```
 
 ### 工程目录：

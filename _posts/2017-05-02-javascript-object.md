@@ -5,7 +5,7 @@ categories:
 - ES5
 ---
 
-> 整理一下碰到的 `Object` 的一些方法。 `Object.keys` 、`Object.defineProperty`
+> 整理一下碰到的 `Object` 的一些方法。 `Object.keys` 、`Object.defineProperty`、`Object.assign`
 
 ### Object.keys( )
 返回一个数组，包含指定对象的所有自有可遍历属性的名称。
@@ -70,3 +70,5 @@ Object.defineProperty(obj, "key", withValue("static"));
 // （value, get, set, enumerable, writable, configurable）
 (Object.freeze||Object)(Object.prototype);
 ```
+### Object.assign
+`Object.assign` 浅复制对象。
