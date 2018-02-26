@@ -42,3 +42,8 @@ weather: sunny # 天气
 {{ post.weather }}
 ```
 <!--break-->
+
+### 安装jekyll的时候遇到的问题
+
+1. Failed to build gem native extension
+安装xcode、 xcode-select --install
