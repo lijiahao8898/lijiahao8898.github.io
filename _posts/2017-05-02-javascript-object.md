@@ -72,4 +72,4 @@ Object.defineProperty(obj, "key", withValue("static"));
 ```
 ### Object.assign
 `Object.assign` 浅复制对象。
-123
+1234
