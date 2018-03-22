@@ -424,6 +424,53 @@ a.sidebar-nav-category:focus {
     position: relative;
 }
 
+@media screen and (min-width: 900px) {
+    .posts{
+        overflow: hidden;
+    }
+    .posts .post-left{
+        float: left;
+        width: 40%;
+        clear: both;
+        margin-top: 50px;
+        position: relative;
+    }
+    /*.posts .post-wrapper:nth-child(2){*/
+        /*margin-top: 100px;*/
+    /*}*/
+    .posts .post-right{
+        float: right;
+        width: 40%;
+        clear: both;
+        margin-top: 50px;
+        position: relative;
+    }
+    .posts .post-wrapper:nth-child(3){
+        margin-top: 100px;
+    }
+
+    .line{
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        width: 1px;
+        border-left: 1px solid #ccc;
+    }
+
+    .timeline{
+        display: block;
+        position: absolute;
+        background: #000;
+        padding: 10px;
+    }
+    .timeline-1{
+        right: -165px;
+    }
+    .timeline-2{
+        left: -165px;
+    }
+}
+
 .post-wrapper {
     background: rgba(255, 255, 255, 1);
     padding: .5rem;
@@ -544,7 +591,8 @@ a.sidebar-nav-category:focus {
     padding: 0.1rem 0.5rem;
     border: 1px solid #da4453;
 }
-span.pagination-item{
+
+span.pagination-item {
     border: 1px solid #ccc;
 }
 
@@ -752,6 +800,7 @@ a.pagination-item:hover {
 
 .posts {
     opacity: 0;
+    position: relative;
 }
 
 .music {
@@ -762,6 +811,10 @@ a.pagination-item:hover {
     left: 1px;
     right: 1px;
 }
+
+/**
+ * me style
+ */
 
 .middle {
     font-family: fantasy;
@@ -789,6 +842,13 @@ a.pagination-item:hover {
     min-height: 23rem;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8) inset, -1px -1px 2px rgba(0, 0, 0, 0.8) inset;
     background: rgba(255, 255, 255, 0.1);
+}
+
+@media screen and (max-width: 900px) {
+    .middle .me .wrapper {
+        box-shadow: none;
+        background: rgba(0, 0, 0, 0);
+    }
 }
 
 .middle .me .me-img {
@@ -1011,12 +1071,12 @@ a.pagination-item:hover {
     margin-bottom: 90px;
 }
 
-.line {
-    width: 100%;
-    position: absolute;
-    top: 60px;
-    border-bottom: 1px solid #ccc;
-}
+/*.line {*/
+    /*width: 100%;*/
+    /*position: absolute;*/
+    /*top: 60px;*/
+    /*border-bottom: 1px solid #ccc;*/
+/*}*/
 
 .ci-wrapper {
     top: 46px;
@@ -1148,14 +1208,14 @@ a.pagination-item:hover {
 .read-more {
     position: absolute;
     background: #da4453;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
     border-radius: 20px;
     right: 10px;
     top: 10px;
 }
 
 .read-more a {
-    color: #fff!important;
+    color: #fff !important;
     padding: 4px 10px;
     font-family: fantasy;
     font-weight: bold;
