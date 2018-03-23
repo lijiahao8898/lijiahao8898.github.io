@@ -1,7 +1,7 @@
 <div class="posts index-posts">
-    <div class="line"></div>
     {% for post in paginator.posts %}
     <div class="post-wrapper post-{% cycle 'left', 'right' %}">
+        <span class="arrow arrow-{% cycle 'one', 'two' %}"></span>
         <span class="timeline timeline-{% cycle '1', '2' %}">{{ post.date | date: "%Y-%m-%d" }}</span>
         <div class="post">
             <h1 class="post-title">

@@ -87,6 +87,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .container.content {
     margin-top: 60px;
+    padding-top: 45px;
+    position: relative;
 }
 
 .container-wrapper {
@@ -420,55 +422,103 @@ a.sidebar-nav-category:focus {
 }
 
 .posts .post-wrapper {
-    background: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.4);
     position: relative;
+    transition: all 0.5s;
+}
+
+@media screen and (max-width: 899px) {
+     .line, .arrow, .timeline{
+         display: none;
+     }
 }
 
 @media screen and (min-width: 900px) {
-    .posts{
+    .posts {
         overflow: hidden;
     }
-    .posts .post-left{
+
+    .posts .post-left {
         float: left;
         width: 40%;
         clear: both;
         margin-top: 50px;
         position: relative;
     }
+
     /*.posts .post-wrapper:nth-child(2){*/
-        /*margin-top: 100px;*/
+    /*margin-top: 100px;*/
     /*}*/
-    .posts .post-right{
+    .posts .post-right {
         float: right;
         width: 40%;
         clear: both;
         margin-top: 50px;
         position: relative;
     }
-    .posts .post-wrapper:nth-child(3){
+
+    .posts .post-wrapper:nth-child(3) {
         margin-top: 100px;
     }
 
-    .line{
-        height: 100%;
+    .line {
         position: absolute;
+        top: 0;
         left: 50%;
+        bottom: 100px;
         width: 1px;
-        border-left: 1px solid #ccc;
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
     }
 
-    .timeline{
+    .timeline {
         display: block;
         position: absolute;
         background: #da4453;
-        padding:5px 10px;
+        padding: 5px 10px;
         color: #fff;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
     }
-    .timeline-1{
+
+    .timeline-1 {
         right: -165px;
     }
-    .timeline-2{
+
+    .timeline-2 {
         left: -165px;
+    }
+
+    .arrow {
+        border: 10px solid transparent;
+        width: 0;
+        height: 0;
+        display: block;
+        position: absolute;
+        transition: all 0.5s;
+    }
+
+    .arrow-one {
+        border-left: 10px solid rgba(255, 255, 255, 0.4);
+        top: 15px;
+        right: -20px;
+    }
+
+    .arrow-two {
+        border-right: 10px solid rgba(255, 255, 255, 0.4);
+        top: 15px;
+        left: -20px;
+    }
+
+    .posts .post-wrapper:hover {
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5)
+    }
+
+    .posts .post-wrapper:hover .arrow-one {
+        border-left: 10px solid rgba(255, 255, 255, 1);
+    }
+
+    .posts .post-wrapper:hover .arrow-two {
+        border-right: 10px solid rgba(255, 255, 255, 1);
     }
 }
 
@@ -1073,10 +1123,10 @@ a.pagination-item:hover {
 }
 
 /*.line {*/
-    /*width: 100%;*/
-    /*position: absolute;*/
-    /*top: 60px;*/
-    /*border-bottom: 1px solid #ccc;*/
+/*width: 100%;*/
+/*position: absolute;*/
+/*top: 60px;*/
+/*border-bottom: 1px solid #ccc;*/
 /*}*/
 
 .ci-wrapper {
