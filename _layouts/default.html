@@ -6,6 +6,23 @@
 {% include sidebar.html %}
 <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
      content to avoid any CSS collisions with our real content. -->
+<style type="text/css">
+    #particleground {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 0;
+    }
+    .filter-img{
+        -webkit-filter: blur(1px); /* Chrome, Opera */
+        -moz-filter: blur(1px);
+        -ms-filter: blur(1px);
+        filter: blur(1px);
+        filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=1, MakeShadow=false); /* IE6~IE9 */
+    }
+</style>
 <div class="wrap">
     <div class="masthead">
         <div class="container">
@@ -16,12 +33,32 @@
         </div>
     </div>
 </div>
+<div id="particleground"></div>
 <div class="container content">
     {{ content }}
 </div>
 <label for="sidebar-checkbox" class="sidebar-toggle"></label>
 <script src="{{ site.baseurl }}/plugin/jquery/jquery.min.js"></script>
+<script src="{{ site.baseurl }}/plugin/jquery.particleground.min.js"></script>
 <script src="{{ site.baseurl }}/plugin/shine/shine.min.js"></script>
 <script src="{{ site.baseurl }}/src/common/common.js"></script>
+<script type="text/javascript">
+    (function ($) {
+        var main = {
+            init: function () {
+                var color = 'rgb' + '(' + Math.ceil(Math.random() * 245) + ',' + Math.ceil(Math.random() * 245) + ',' + Math.ceil(Math.random() * 245) + ')';
+                $('#particleground').particleground({
+                    dotColor: color,
+                    lineColor: color,
+                    lineWidth: 0.1,
+                    particleRadius: 6
+                });
+            }
+        };
+        $(function () {
+            main.init();
+        })
+    })(jQuery)
+</script>
 </body>
 </html>

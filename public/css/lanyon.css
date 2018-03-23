@@ -418,7 +418,7 @@ a.sidebar-nav-category:focus {
 
 .page,
 .post {
-    padding: 8em 0;
+    padding: 2em 0;
 }
 
 .posts .post-wrapper {
@@ -436,6 +436,7 @@ a.sidebar-nav-category:focus {
 @media screen and (min-width: 900px) {
     .posts {
         overflow: hidden;
+        padding: 0 10px;
     }
 
     .posts .post-left {
@@ -476,7 +477,7 @@ a.sidebar-nav-category:focus {
         background: #da4453;
         padding: 5px 10px;
         color: #fff;
-        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
     }
 
     .timeline-1 {
@@ -510,7 +511,7 @@ a.sidebar-nav-category:focus {
 
     .posts .post-wrapper:hover {
         background: rgba(255, 255, 255, 1);
-        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5)
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4)
     }
 
     .posts .post-wrapper:hover .arrow-one {
