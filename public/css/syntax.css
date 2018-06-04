@@ -5,7 +5,7 @@
 .highlight .err { color: #a00; background-color: #faa } /* Error */
 .highlight .k { color: #cc99cd; } /* Keyword */
 .highlight .o { color: #F8F8F2 } /* Operator */
-.highlight .cm { color: #1ba516; font-style: italic } /* Comment.Multiline */
+.highlight .cm { color: #A6E22E; font-style: italic } /* Comment.Multiline */
 .highlight .cp { color: #099 } /* Comment.Preproc */
 .highlight .c1 { color: #999; } /* Comment.Single */
 .highlight .cs { color: #999; } /* Comment.Special */
@@ -37,7 +37,7 @@
 .highlight .nf { color: #c0f } /* Name.Function */
 .highlight .nl { color: #99f } /* Name.Label */
 .highlight .nn { color: #0cf; } /* Name.Namespace */
-.highlight .nt { color: #2f6f9f; } /* Name.Tag */
+.highlight .nt { color: #f7ff35; } /* Name.Tag */
 .highlight .nv { color: #033 } /* Name.Variable */
 .highlight .ow { color: #000; } /* Operator.Word */
 .highlight .w { color: #bbb } /* Text.Whitespace */

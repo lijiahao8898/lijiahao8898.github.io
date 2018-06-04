@@ -167,7 +167,7 @@ code,
 pre {
   color: #ccc;
   background: none;
-  font-family: monospace,"微软雅黑","Microsoft YaHei",Consolas,Monaco,Andale Mono,Ubuntu Mono!important;
+  font-family: 'Monaco', courier, monospace,"微软雅黑","Microsoft YaHei",Consolas,Monaco,Andale Mono,Ubuntu Mono!important;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -212,7 +212,7 @@ pre code {
 
 /* Pygments via Jekyll */
 .highlight {
-  font-size: 16px;
+  font-size: 14px;
   margin-bottom: 1rem;
 }
 .highlight pre {

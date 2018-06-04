@@ -40,7 +40,6 @@ body {
 
 html {
     font-family: "PT Serif", Georgia, "Times New Roman", serif;
-    letter-spacing: 1px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -478,6 +477,8 @@ a.sidebar-nav-category:focus {
         padding: 5px 10px;
         color: #fff;
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+        font-family: fantasy;
+        font-weight: bold;
     }
 
     .timeline-1 {
@@ -877,6 +878,12 @@ a.pagination-item:hover {
     min-height: 690px;
 }
 
+.middle p {
+    font-family: fantasy;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
 .middle .me {
     top: 12rem;
     position: absolute;
@@ -920,7 +927,7 @@ a.pagination-item:hover {
 }
 
 .middle .me .me-img img:hover {
-    border: 6px solid #fff;
+    border: 5px solid #b3deff;
     transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
@@ -942,7 +949,6 @@ a.pagination-item:hover {
     text-align: center;
     padding-bottom: 1rem;
     padding-top: 3rem;
-    letter-spacing: 1px;
 }
 
 .middle .me .me-footer ul {
@@ -1079,26 +1085,6 @@ a.pagination-item:hover {
     background-color: #fff;
 }
 
-.me-basic-information {
-    text-align: center;
-    overflow: hidden;
-    font-size: .9rem;
-    letter-spacing: 1px;
-    font-weight: 600;
-    padding-bottom: 1rem;
-}
-
-.me-basic-information ul {
-    display: inline-block;
-    margin-bottom: 0;
-}
-
-.me-basic-information li {
-    list-style: circle;
-    min-width: 100px;
-    text-align: left;
-}
-
 .information-wrapper {
     display: none;
     text-align: center;
@@ -1119,13 +1105,6 @@ a.pagination-item:hover {
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 90px;
 }
-
-/*.line {*/
-/*width: 100%;*/
-/*position: absolute;*/
-/*top: 60px;*/
-/*border-bottom: 1px solid #ccc;*/
-/*}*/
 
 .ci-wrapper {
     top: 46px;
