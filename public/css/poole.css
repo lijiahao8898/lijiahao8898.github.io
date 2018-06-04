@@ -165,8 +165,22 @@ abbr[title] {
 /* Code */
 code,
 pre {
-  /*font-family: Menlo, Monaco, "Courier New", monospace;*/
-  font-family: fantasy;
+  color: #ccc;
+  background: none;
+  font-family: monospace,"微软雅黑","Microsoft YaHei",Consolas,Monaco,Andale Mono,Ubuntu Mono!important;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  letter-spacing: 0;
 }
 code {
   padding: .25em .8em;
@@ -187,7 +201,7 @@ pre {
   word-break: break-all;
   word-wrap: break-word;
   /*background-color: #f5f3f3;*/
-  background-color: #272822;
+  background-color: #282c34;
 }
 pre code {
   padding: 0;
@@ -369,7 +383,6 @@ tbody tr:nth-child(odd) th {
 
 /* Meta data line below post title */
 .post-date {
-  font-family: fantasy;
   display: block;
   margin-top: -.5rem;
   margin-bottom: 1rem;
