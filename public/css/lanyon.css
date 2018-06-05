@@ -84,9 +84,16 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 28rem;
 }
 
-.container.content {
-    margin-top: 60px;
-    padding-top: 45px;
+.container.post-container {
+    background: rgba(255, 255, 255, 0.9);
+    overflow: hidden;
+}
+
+.container.content{
+    position: relative;
+}
+
+.content.post-detail{
     position: relative;
 }
 
@@ -479,6 +486,8 @@ a.sidebar-nav-category:focus {
         box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
         font-family: fantasy;
         font-weight: bold;
+        line-height: 30px;
+        height: 34px;
     }
 
     .timeline-1 {
@@ -510,6 +519,12 @@ a.sidebar-nav-category:focus {
         left: -20px;
     }
 
+    .posts .post-wrapper {
+        padding: .5rem;
+        margin-bottom: 1.5rem;
+        border-radius: 4px;
+    }
+
     .posts .post-wrapper:hover {
         background: rgba(255, 255, 255, 1);
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4)
@@ -524,11 +539,15 @@ a.sidebar-nav-category:focus {
     }
 }
 
-.post-wrapper {
-    background: rgba(255, 255, 255, 1);
-    padding: .5rem;
+.post-wrapper .post {
+    padding: 0;
     margin-bottom: 1.5rem;
     border-radius: 4px;
+}
+
+.post .post-header{
+    background: #fff;
+    padding: .5rem;
 }
 
 .posts .post:first-child {
@@ -543,6 +562,7 @@ a.sidebar-nav-category:focus {
 .posts.index-posts .post {
     padding: 0.5rem 0;
     margin-bottom: 0;
+    overflow: scroll;
 }
 
 .posts.index-posts .post a:hover {
@@ -573,7 +593,7 @@ a.sidebar-nav-category:focus {
 }
 
 .post-header {
-    padding-bottom: 15px;
+    padding-top: 35px;
     border-bottom: 1px dashed #ccc;
 }
 
@@ -587,9 +607,9 @@ a.sidebar-nav-category:focus {
 
 /* Related posts */
 .related {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: .5rem;
     border-top: 1px solid #eee;
+    background: #fff;
 }
 
 .related-posts {
@@ -642,6 +662,7 @@ a.sidebar-nav-category:focus {
     display: inline-block;
     padding: 0.1rem 0.5rem;
     border: 1px solid #da4453;
+    border-radius: 4px;
 }
 
 span.pagination-item {
@@ -1247,4 +1268,5 @@ a.pagination-item:hover {
     padding: 4px 10px;
     font-weight: bold;
     font-size: 14px;
+    display: inline-block;
 }
