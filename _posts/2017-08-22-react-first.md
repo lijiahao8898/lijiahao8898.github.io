@@ -25,9 +25,7 @@ categories:
 <!--break-->
 ```html
 <script type="text/babel">
-
   // ** Our code goes here! **
-
 </script>
 ```
 
