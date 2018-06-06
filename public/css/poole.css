@@ -390,6 +390,14 @@ tbody tr:nth-child(odd) th {
   text-align: right;
 }
 
+.post-header-img-wrapper{
+  text-align: center;
+}
+
+.post-header-img-wrapper img{
+  display: inline-block;
+}
+
 /* Related posts */
 .related {
   padding-top: 2rem;
