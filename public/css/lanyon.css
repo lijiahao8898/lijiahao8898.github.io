@@ -546,8 +546,7 @@ a.sidebar-nav-category:focus {
 }
 
 .post .post-header{
-    background: #fff;
-    padding: .5rem;
+    padding: 0;
 }
 
 .posts .post:first-child {

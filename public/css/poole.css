@@ -365,7 +365,6 @@ tbody tr:nth-child(odd) th {
 }
 .post h1{
   text-align: center;
-  margin-bottom: 2em;
 }
 .post h2{
 }
@@ -388,14 +387,6 @@ tbody tr:nth-child(odd) th {
   margin-bottom: 1rem;
   color: #9a9a9a;
   text-align: right;
-}
-
-.post-header-img-wrapper{
-  text-align: center;
-}
-
-.post-header-img-wrapper img{
-  display: inline-block;
 }
 
 /* Related posts */

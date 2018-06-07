@@ -4,17 +4,18 @@ layout: default
 
 <div class="post-wrapper">
     <div class="post">
-        <div class="post-header">
-            <h1 class="post-title">{{ page.title }}</h1>
-            <div class="post-header-img-wrapper"><img class="post-header-img filter-img" src="../../../assets/bgc.jpg"></div>
-            <span class="post-date">{{ page.subhead }}</span>
-            <span class="post-date">
-            {% for category in page.categories %}
-              {{ category }}、
-            {% endfor %}
-        </span>
-            <span class="post-date">{{ page.date |  date: "%Y-%m-%d" }}</span>
-            <span class="post-date">资料整理</span>
+        <div class="post-header" id="postHeader">
+            <h1 class="post-title" id="postTitle">{{ page.title }}</h1>
+            <div class="post-info">
+                <span class="post-date">{{ page.subhead }}</span>
+                <span class="post-date">
+                    {% for category in page.categories %}
+                      {{ category }}、
+                    {% endfor %}
+                </span>
+                <span class="post-date">{{ page.date |  date: "%Y-%m-%d" }}</span>
+                <span class="post-date">资料整理</span>
+            </div>
         </div>
         <div class="post-container container">
             {{ content }}
@@ -37,3 +38,44 @@ layout: default
         </ul>
     </div>
 </div>
+
+<script>
+    ;(function () {
+        var height = window.innerHeight;
+        var header = document.getElementById('postHeader');
+        var title = document.getElementById('postTitle');
+        header.style.height = height < 500 ? 500 + 'px' : height + 'px';
+        title.style.top = height < 500 ? 225 + 'px' : (height - 50)/2 + 'px';
+    })()
+</script>
+
+<style type="text/css">
+    .post .post-header{
+        background: url("../../../assets/bgc.jpg") no-repeat 0 0;
+        background-size: cover;
+        background-attachment: fixed;
+        width: 100%;
+        height: 800px;
+        position: relative;
+    }
+
+    .post .post-title{
+        position: absolute;
+        left: 0;
+        right: 0;
+        color: transparent;
+        font-size: 76px;
+        -webkit-text-stroke: 2px #fff;
+        font-family: 'Monaco', courier, monospace,"微软雅黑","Microsoft YaHei",Consolas,Monaco,Andale Mono,Ubuntu Mono!important;
+    }
+
+    .post .post-info{
+        position: absolute;
+        bottom: 50px;
+        right: 50px;
+    }
+
+    .post .post-info .post-date{
+        color: #fff;
+    }
+</style>
