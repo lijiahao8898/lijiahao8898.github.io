@@ -40,7 +40,7 @@ grunt.file.read(filepath [,options])           // 读取并返回文件的内容
 grunt.file.write(filepath, content [,options]) // 将指定的内容写入文件中，如果需要，将创建文件路径中所有不存在的目录。字符串将按照指定的字符编码进行编码，Buffers 将会按照指定的方式写入磁盘。
 ```
 
-```
+```js
 grunt.registerTask('htmlpack', function () {
     var dir = 'view/';      //源文件的路径
     var destDir = 'html';  //要保存的路径

@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .container.post-container {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 1);
     overflow: hidden;
 }
 
@@ -593,7 +593,6 @@ a.sidebar-nav-category:focus {
 
 .post-header {
     padding-top: 35px;
-    border-bottom: 1px dashed #ccc;
 }
 
 /* Meta data line below post title */
