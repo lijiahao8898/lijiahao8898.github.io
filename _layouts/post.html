@@ -2,6 +2,7 @@
 layout: default
 ---
 
+<div id="toc"></div>
 <div class="post-wrapper">
     <div class="post">
         <div class="post-header" id="postHeader">
@@ -17,8 +18,10 @@ layout: default
                 <span class="post-date">资料整理</span>
             </div>
         </div>
-        <div class="post-container container">
-            {{ content }}
+        <div class="post-container-wrapper">
+            <div class="post-container container">
+                {{ content }}
+            </div>
         </div>
     </div>
 
@@ -77,5 +80,23 @@ layout: default
 
     .post .post-info .post-date{
         color: #fff;
+    }
+
+    .post .post-container-wrapper {
+        position: relative;
+    }
+
+    @media (max-width: 1400px) {
+        .post .post-container-wrapper {
+            margin-left: 275px;
+        }
+    }
+
+    #toc{
+        position: absolute;
+        left: 0;
+        top: -10000px;
+        z-index: 1024;
+        background: #fff;
     }
 </style>

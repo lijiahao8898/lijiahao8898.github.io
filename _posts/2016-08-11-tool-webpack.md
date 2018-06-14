@@ -5,7 +5,7 @@ categories:
 - Tool
 ---
 
-## 基本
+### 基本
 
 `webpack` 是以 `commonJS` 的形式来书写的，但对 `AMD/CMD` 的支持也很全面。
 
@@ -19,7 +19,7 @@ categories:
 
 <!--break-->
 
-### 安装：
+### 安装
 
 ```
 mkdir  forwebpack
@@ -34,6 +34,10 @@ sudo npm install webpack --save-dev
 
 —save-dev                                // 将安装信息放入package.json的devDependencies（开发模式）
 ```
+
+### `entry`
+
+单个入口（简写）语法
 
 ### 工程目录：
 

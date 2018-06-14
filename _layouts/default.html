@@ -15,6 +15,19 @@
         bottom: 0;
         z-index: 0;
     }
+    .clickable-header {
+        cursor:pointer;
+    }
+    .clickable-header:hover {
+        text-decoration:underline;
+    }
+    .top-level-header {
+        display:inline;
+    }
+    .back-to-top {
+        margin-left:5px;
+        cursor:pointer;
+    }
 </style>
 <div class="wrap">
     <div class="masthead">
@@ -35,6 +48,34 @@
 <script src="{{ site.baseurl }}/plugin/particles.min.js"></script>
 <script src="{{ site.baseurl }}/plugin/shine/shine.min.js"></script>
 <script src="{{ site.baseurl }}/src/common/common.js"></script>
+<script src="{{ site.baseurl }}/plugin/toc.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#toc').toc({
+            listType: 'ul',
+            noBackToTopLinks: true,
+            minimumHeaders: 2,
+            headers: 'h2, h3, h4, h5, h6',
+            showEffect: 'slideDown'
+        });
+
+        $(window).scroll(function() {
+            if($(window).scrollTop() > window.innerHeight) {
+                $('#toc').css({
+                    position: 'fixed',
+                    top: 0
+                })
+            } else {
+                $('#toc').css({
+                    position: 'absolute',
+                    top: window.innerHeight + 'px'
+            })
+            }
+        });
+
+        $('#toc').find('i').remove()
+    });
+</script>
 <script type="text/javascript">
     (function ($) {
         var main = {
