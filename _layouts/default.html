@@ -55,15 +55,15 @@
             listType: 'ul',
             noBackToTopLinks: true,
             minimumHeaders: 2,
-            headers: 'h2, h3, h4, h5, h6',
+            headers: 'h2, h3',
             showEffect: 'slideDown'
         });
 
         $(window).scroll(function() {
-            if($(window).scrollTop() > window.innerHeight) {
+            if($(window).scrollTop() > window.innerHeight - 57) {
                 $('#toc').css({
                     position: 'fixed',
-                    top: 0
+                    top: 57 + 'px'
                 })
             } else {
                 $('#toc').css({

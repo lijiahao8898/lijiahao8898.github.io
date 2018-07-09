@@ -1,11 +1,11 @@
 ---
 layout: post
-title: tool - webpack
+title: tool - Webpack
 categories:
 - Tool
 ---
 
-### 基本
+## 基本
 
 `webpack` 是以 `commonJS` 的形式来书写的，但对 `AMD/CMD` 的支持也很全面。
 
@@ -19,7 +19,7 @@ categories:
 
 <!--break-->
 
-### 安装
+#### 安装
 
 ```
 mkdir  forwebpack
@@ -35,11 +35,76 @@ sudo npm install webpack --save-dev
 —save-dev                                // 将安装信息放入package.json的devDependencies（开发模式）
 ```
 
-### `entry`
+## 入口起点(Entry)
+`entry`：（可以是数组）这里我们使用的 `entry.js`。
+`entry` 下的路径。`index` 可能是将来生成的文件名。`index.js`   注：如果 `output` 的 `filename` 是有名称的则会使用 `filename` 来命名,否则使用自身的名称
 
-单个入口（简写）语法
 
-### 工程目录：
+### 单个入口（简写）语法
+```js
+const config = {
+    entry: './path/to/my/entry/file.js'
+}
+```
+
+### 对象语法
+```js
+const config = {
+  entry: {
+    app: './src/app.js',
+    vendors: './src/vendors.js'
+  }
+};
+```
+
+## 输出(Output)
+`output`：让 `webpack` 把处理完成的文件放在哪里
+
+* `path` - 输出的路径
+* `filename` - 定义输出的文件名称（支出数组 `【name】`，根据入口文件的 `entry` 的数量）
+
+## 加载器(Loaders)
+`module` 加载器：将用到的文件处理后再输出
+
+* `-loader` 可以省略不写，多个 `loader` 之间用 `!` 连接
+
+* `loader` 是需要安装的 `sudo npm install *-loader —save-dev`
+
+在 `module` 中可以是使用  `module.rules` 配置 `loader` 也可以通过 `module.loaders` 进行配置。（在 < 4的webpack版本中）
+webpack-v4.0以上的还未进行尝试
+
+```js
+ module: {
+    rules: [
+      {
+        test: /\.css$/,
+        use: [
+          { loader: 'style-loader'},
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true
+            }
+          }
+        ]
+      }
+    ]
+  }
+```
+
+### Loader特性
+
+* loader 支持链式传递。能够对资源使用流水线(pipeline)。loader 链式地按照先后顺序进行编译。loader 链中的第一个 loader 返回值给下一个 loader。在最后一个 loader，返回 webpack 所预期的 JavaScript。
+* loader 可以是同步或异步函数。
+* loader 运行在 Node.js 中，并且能够执行任何可能的操作。
+* loader 接收查询参数。用于 loader 间传递配置。
+* loader 也能够使用 options 对象进行配置。
+* 除了使用 package.json 常见的 main 属性，还可以将普通的 npm 模块导出为 loader，做法是在 package.json 里定义一个 loader 字段。
+* 插件(plugin)可以为 loader 带来更多特性。
+* loader 能够产生额外的任意文件。
+
+
+## 工程目录：
 
 ```
 | - dist
@@ -128,22 +193,6 @@ module.exports = {
 };
 ```
 ### webpack 文件详解
-
-* `entry`入口：（可以是数组）这里我们使用的 `entry.js`
-
-`entry` 下的路径。`index` 可能是将来生成的文件名。`index.js`   注：如果 `output` 的 `filename` 是有名称的则会使用 `filename` 来命名,否则使用自身的名称
-
-* `output` 出口：让 `webpack` 把处理完成的文件放在哪里
-
-`path` - 输出的路径
-
-`filename` - 定义输出的文件名称（支出数组 `【name】`，根据入口文件的 `entry` 的数量）
-
-`module` 加载器：将用到的文件处理后再输出
-
-`-loader` 可以省略不写，多个 `loader` 之间用 `!` 连接
-
-`loader` 是需要安装的 `sudo npm install *-loader —save-dev`
 
 #### 入口文件entry.js：
 
@@ -412,6 +461,9 @@ jshint: {
 ```
 npm run start
 ```
+
+## todo
+* `>=webpack4.0`
 
 ### 其他
 
