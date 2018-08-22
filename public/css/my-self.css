@@ -21,6 +21,11 @@
     letter-spacing: 1px;
 }
 
+.middle .me{
+    position: relative;
+    z-index: 10;
+}
+
 .middle .me .wrapper {
     width: 19rem;
     margin: 0 auto;
