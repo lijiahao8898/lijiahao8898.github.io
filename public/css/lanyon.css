@@ -49,6 +49,10 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -.025rem;
 }
 
+.element::-webkit-scrollbar {
+    display:none
+}
+
 /*
  * common style
  *
@@ -561,7 +565,7 @@ a.sidebar-nav-category:focus {
 .posts.index-posts .post {
     padding: 0.5rem 0;
     margin-bottom: 0;
-    overflow: scroll;
+    /*overflow: scroll;*/
 }
 
 .posts.index-posts .post a:hover {
