@@ -52,10 +52,11 @@
 <script type="text/javascript">
     $(document).ready(function() {
         $('#toc').toc({
+            title: document.title,
             listType: 'ul',
             noBackToTopLinks: true,
-            minimumHeaders: 2,
-            headers: 'h2, h3',
+            minimumHeaders: 3,
+            headers: 'h2, h3, h4',
             showEffect: 'slideDown'
         });
 
@@ -72,8 +73,6 @@
             })
             }
         });
-
-        $('#toc').find('i').remove()
     });
 </script>
 <script type="text/javascript">
