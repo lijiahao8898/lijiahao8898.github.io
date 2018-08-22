@@ -5,29 +5,43 @@ categories:
 - React
 ---
 
-### 相关
-* `React` - 实现 `React` 的核心功能
-* `react-dom` - 渲染到浏览器当中
-* `Redux` - 解决状态管理问题
+## 简介
 
-目前已有的其他平台的解决方案还包括：
+### 前言
 
-1. `React Native`
-2. `React VR`
-3. `React XP`
+> 总觉得 `React` 特别难上手，主要还是对javascript这门语言本身的掌握存在着欠缺。所以断断续续的折腾了很久。
+
+> 写这篇文章，主要是用来记录 `React@16.3` 和 `React-dom` 的相关知识。当然大部分还是看别人博文和文章并结合自身理解进行适当的记录和摘抄。
+
+> 前端知识日新月异，麻麻我学不动了~>.<
+
+```
+You cannot improve your past, but you can improve your future.
+so.
+once time is wasted, life is wasted.
+```
+<!--break-->
+### React相关
+
+* `React` - 实现React功能的核心库
+* `React-dom` - 将虚拟DOM渲染到浏览器当中
+* `React-redux` - 解决状态管理问题的react版本
+* `React-router-dom@4.0` - react路由相关
 
 `react` 组件化的开发模式，所以非常适合高级做架构，中级封组件，初级写业务的模式。
 
-### JSX 语法
+## JSX 语法
 `JSX` 是 `JavaScript` 的扩展语法，也可以说是 `JavaScript` 的一种语法糖~。
 
+`JSX` 对 `JavaScript` 的功能没有影响，只是便于程序猿使用。
+
 `React` 独有的 `JSX` 语法， `javascript` 不兼容。使用 `Browser.js` ，将 `JSX` 语法转换成 `javascript` 语法。
-<!--break-->
 ```html
 <script type="text/babel">
   // ** Our code goes here! **
 </script>
 ```
+当然一般项目中使用 `Webpack` 进行打包的，所以使用脚手架工具 `create-react-app` 构建的项目就自带了 `babel` 。
 
 什么是 `JSX` 语法？ 就是 `HTML` 不使用引号直接和 `javascript` 混写。
 
@@ -35,16 +49,30 @@ categories:
 
 `JSX` 允许直接在模板插入 `JavaScript` 变量。如果这个变量是一个数组，则会展开这个数组的所有成员。
 
-### React 基本用法
+### 基本用法
 
 ```jsx
+import React from 'react';
+import ReactDOM from 'react-dom';
 ReactDOM.render(
     <h1>hello,world</h1>,
     document.getElementById('example')
 )
 ```
+一般在项目中使用了 `jsx` 语法，所以需要默认引入 `react` 库，`react-dom` 是对dom进行相关的操作。
 
-### React 组件
+`ReactDOM.render` 实际上是使用了 `react` 的 `createElement` 方法。
+```js
+React.createElement(component, props, ...children)
+```
+
+## 组件
+
+`React` 的组件一般分为 类组件 和 函数组件。
+
+类组件使用 `ES6` 的类方法和类的继承。
+
+### 类组件
 
 ```jsx
 var HelloMessage = React.createClass({
@@ -326,4 +354,7 @@ ReactDOM.render(
 
 * [React中文文档](https://discountry.github.io/react/)
 * [Lean React - 知乎](https://zhuanlan.zhihu.com/leanreact)
+
+### 相关
+ :)鄙人整理的 [`React HTML PPT`](https://lijiahao8898.github.io/react-book/index.html#/)
 
