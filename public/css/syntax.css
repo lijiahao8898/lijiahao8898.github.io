@@ -1,5 +1,5 @@
-.highlighter-rouge {overflow: scroll}
-.highlighter-rouge::-webkit-scrollbar {  display:none  }
+pre {overflow: scroll}
+pre::-webkit-scrollbar {  display:none  }
 .highlight { color: #fff; border-radius: 8px;}
 .highlight .p { color: #ccc; }
 .highlight .hll { background-color: #ffc; }
