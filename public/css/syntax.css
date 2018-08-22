@@ -1,4 +1,6 @@
-.highlight { color: #fff; border-radius: 8px; overflow: scroll}
+.highlighter-rouge {overflow: scroll}
+.highlighter-rouge::-webkit-scrollbar {  display:none  }
+.highlight { color: #fff; border-radius: 8px;}
 .highlight .p { color: #ccc; }
 .highlight .hll { background-color: #ffc; }
 .highlight .c { color: #999; } /* Comment */
