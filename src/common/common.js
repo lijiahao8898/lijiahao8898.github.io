@@ -3,62 +3,12 @@
         init: function () {
             var middle = document.querySelector('.middle');
             var posts = document.querySelector('.posts');
-            var key = 'E3BFEC8B66E084312938C21F3FFC4D4E';
-            var dataId= '141585166';
             if (middle) {
                 middle.style.height = window.innerHeight + 'px';
             }
             if (posts) {
                 posts.style.opacity = 1;
             }
-            
-            // $.ajax({
-            //     url: 'http://api.steampowered.com/IEconDOTA2_570/GetHeroes/v1',
-            //     data: {
-            //         key: key,
-            //         language: 'zh'
-            //     },
-            //     type: 'get',
-            //     dataType: 'jsonp',
-            //     success: function () {
-            //
-            //     },
-            //     error: function () {
-            //
-            //     }
-            // });
-
-            // $.ajax({
-            //     url: 'https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001',
-            //     data: {
-            //         key: key,
-            //         account_id: dataId
-            //     },
-            //     type: 'get',
-            //     dataType: 'jsonp',
-            //     success: function () {
-            //
-            //     },
-            //     error: function () {
-            //
-            //     }
-            // });
-
-            // $.ajax({
-            //     url: 'http://api.steampowered.com/IEconDOTA2_570/GetGameItems/v1',
-            //     type: 'get',
-            //     data: {
-            //         key: key,
-            //         language: 'zh'
-            //     },
-            //     dataType: 'json',
-            //     success: function () {
-            //
-            //     },
-            //     error: function () {
-            //
-            //     }
-            // });
 
             var active = $('.sidebar-nav-item.active');
             active.parents('.category').addClass('active');
@@ -73,38 +23,8 @@
                     $(this).find('ul').delay(0).slideUp();
                 }
             });
-            this.showInfo();
             this.toggle();
             this.time();
-            var id = document.getElementById('my-shine');
-            if (id === null) {
-                return;
-            }
-            var shine = new Shine(id);
-            window.addEventListener('mousemove', function (event) {
-                shine.light.position.x = event.clientX;
-                shine.light.position.y = event.clientY;
-                shine.draw();
-            }, false);
-        },
-        showInfo: function () {
-            var dom = document.getElementsByClassName('ci-item');
-
-            for (var i = 0; i < dom.length; i++) {
-                dom[i].addEventListener('click', function (e) {
-                    var id = Number(this.getAttribute('data-id'));
-                    var info = document.getElementsByClassName('information-wrapper');
-                    for (var n = 0; n < dom.length; n++) {
-                        info[n].style.display = 'none';
-                        dom[n].className = 'ci-item';
-                    }
-                    info[id - 1].style.display = 'block';
-                    this.className += ' ' + 'active';
-                })
-            }
-            if (dom[0]) {
-                dom[0].click()
-            }
         },
         toggle: function () {
             var toggle = document.querySelector('.sidebar-toggle');
