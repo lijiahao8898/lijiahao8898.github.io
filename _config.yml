@@ -24,5 +24,8 @@ author:
   address:           cn
   github:            https://github.com/lijiahao8898
 
+sass:                sass_dir: _sass
+style:               compressed
+
 # Custom vars
 version:             1.0.0
