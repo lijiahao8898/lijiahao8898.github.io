@@ -191,12 +191,15 @@
 // 首页第二屏 start
 .container-wrapper {
   background: $gary;
-
+  overflow: hidden;
   .posts {
     .post-wrapper {
       background: rgba(255, 255, 255, 0.2);
       position: relative;
       transition: all 0.3s;
+      padding: .5rem;
+      border-radius: 2px;
+      margin:.5rem 0;
     }
   }
 
@@ -275,8 +278,6 @@
     }
 
     .posts .post-wrapper {
-      padding: .5rem;
-      border-radius: 2px;
       &:hover {
         background: rgba(255, 255, 255, 1);
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);

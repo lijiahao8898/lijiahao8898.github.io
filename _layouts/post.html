@@ -2,11 +2,16 @@
 layout: default
 ---
 
+<!-- 书签 start -->
 <div id="toc"></div>
+<!-- 书签 end -->
 <div class="post-wrapper">
     <div class="post">
         <div class="post-header" id="postHeader">
-            <h1 class="post-title" id="postTitle">{{ page.title }}</h1>
+            <div class="post-title" id="postTitle">
+                {{ page.title }}
+                <div class="post-title__underscore"></div>
+            </div>
             <div class="post-info">
                 <span class="post-date">{{ page.subhead }}</span>
                 <span class="post-date">
@@ -51,60 +56,3 @@ layout: default
         title.style.top = height < 500 ? 225 + 'px' : (height - 50)/2 + 'px';
     })()
 </script>
-
-<style type="text/css">
-    .post .post-header{
-        width: 100%;
-        height: 800px;
-        position: relative;
-        background: #99a9ce;
-    }
-
-    .post .post-title{
-        position: absolute;
-        left: 0;
-        right: 0;
-        color: transparent;
-        font-size: 68px;
-        -webkit-text-stroke: 2px #fff;
-        font-family: 'Monaco', courier, monospace,"微软雅黑","Microsoft YaHei",Consolas,Monaco,Andale Mono,Ubuntu Mono!important;
-    }
-
-    .post .post-info{
-        position: absolute;
-        bottom: 50px;
-        right: 50px;
-    }
-
-    .post .post-info .post-date{
-        color: #fff;
-    }
-
-    .post .post-container-wrapper {
-        position: relative;
-        background: #fff;
-    }
-
-    @media (max-width: 1400px) {
-        .post .post-container-wrapper {
-            padding-right: 275px;
-        }
-    }
-
-    #toc{
-        position: absolute;
-        right: 20px;
-        top: -10000px;
-        z-index: 1024;
-        font-size: 13px;
-        margin-top: 20px;
-    }
-
-    #toc ul{
-        margin-bottom: 0;
-    }
-
-    #toc ul li {
-        margin-bottom: 5px;
-    }
-</style>

@@ -11,7 +11,7 @@ url:                 http://lanyon.getpoole.com
 baseurl:             ''
 plugins_dir:         [jekyll-paginate]
 gems:                [jekyll-paginate]
-paginate:            20
+paginate:            100
 paginate_path:       "page:num"
 # plugins:           [jekyll-paginate]
 sass:

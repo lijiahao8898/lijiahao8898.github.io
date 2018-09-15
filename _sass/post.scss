@@ -1,0 +1,73 @@
+@import "config";
+
+.post {
+  &-header{
+    width: 100%;
+    height: 800px;
+    position: relative;
+    background: #99a9ce;
+    text-align: center;
+  }
+  &-title{
+    position: relative;
+    text-align: center;
+    color: transparent;
+    font-size: 68px;
+    -webkit-text-stroke: 2px #fff;
+    font-family: 'Monaco', courier, monospace,"微软雅黑","Microsoft YaHei",Consolas,Monaco,Andale Mono,Ubuntu Mono!important;
+    z-index: 1;
+    display: inline-block;
+    margin: 0 auto;
+    &__underscore {
+      width: inherit;
+      height: .5em;
+      background: #eed14e;
+      position: absolute;
+      bottom: 3px;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      border-radius: 10px;
+    }
+  }
+  &-info{
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    color: #fff;
+  }
+  &-date{
+    color: #fff;
+  }
+  .post-container-wrapper {
+    position: relative;
+    background: #fff;
+  }
+}
+
+@media (max-width: 1400px) {
+  #toc {
+    display: none!important;
+  }
+}
+
+#toc{
+  position: absolute;
+  right: 1px;
+  top: -10000px;
+  z-index: 1024;
+  font-size: 14px;
+  margin-top: 1px;
+  background: $gary;
+  color: #fff;
+  box-shadow: 5px 5px 20px $gary;
+  >ul{
+    padding-left: 5px;
+    li{
+      margin-bottom: 5px;
+      a{
+        color: #fff;
+      }
+    }
+  }
+}
