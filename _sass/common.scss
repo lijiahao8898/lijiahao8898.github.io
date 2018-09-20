@@ -28,7 +28,8 @@
     .wrapper {
       width: 20rem;
       margin: 0 auto;
-      min-height: 22rem;
+      //min-height: 22rem;
+      position: relative;
       box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
       background: rgba(255, 255, 255, 0.1);
       text-align: center;
@@ -36,11 +37,18 @@
       -webkit-transition: all .3s;
       -moz-transition: all .3s;
       -o-transition: all .3s;
+      // animation: circle 2s 2s forwards ease-in-out;
       &:hover {
         box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), 2px 2px 4px rgba(0, 0, 0, .4) inset;
         .me-portrait {
           padding-top: 2.4rem;
         }
+      }
+      > div {
+        // position: absolute;
+        // opacity: 0;
+        // visibility: hidden;
+        // animation: show 10.5s 4s forwards;
       }
     }
     &-portrait {
@@ -186,6 +194,62 @@
   }
 }
 
+@keyframes circle {
+  0% {
+    width: 12rem;
+    min-height: 12rem;
+    border-radius: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    bottom: 0;
+  }
+  25% {
+    width: 12rem;
+    min-height: 12rem;
+    border-radius: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    bottom: -200px;
+  }
+
+  50% {
+    width: 12rem;
+    min-height: 12rem;
+    border-radius: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    bottom: 0;
+  }
+
+  75% {
+    width: 12rem;
+    min-height: 12rem;
+    border-radius: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    bottom: 0;
+  }
+  100% {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    min-height: 22rem;
+    bottom: 0;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+    z-index: -100;
+    visibility: hidden;
+  }
+  50% {
+    position: relative;
+    opacity: 1;
+    z-index: -100;
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 // ------- me style ------- end
 
 // 首页第二屏 start
@@ -242,17 +306,21 @@
       .post {
         &-left {
           float: left;
-          width: 43%;
+          width: 41%;
           clear: both;
           margin-top: 50px;
           position: relative;
+          margin-left: 1rem;
+          border: 1px solid #ccc;
         }
         &-right {
           float: right;
-          width: 43%;
+          width: 41%;
           clear: both;
           margin-top: 50px;
           position: relative;
+          margin-right: 1rem;
+          border: 1px solid #ccc;
         }
       }
     }
@@ -281,13 +349,13 @@
       &:hover {
         background: rgba(255, 255, 255, 1);
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+        border: 1px solid $gary;
         .arrow {
           &-one {
             border-left: 12px solid rgba(255, 255, 255, 1);
           }
           &-two{
             border-right: 12px solid rgba(255, 255, 255, 1);
-
           }
         }
       }
