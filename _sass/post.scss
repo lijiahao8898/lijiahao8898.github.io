@@ -6,7 +6,9 @@
       width: 100%;
       height: 800px;
       position: relative;
-      background: #99a9ce;
+      background: linear-gradient(135deg, rgba(34, 139, 87, .4), rgba(139, 34, 139, .4)), url("./../../assets/cover.jpg") no-repeat 0 0 {
+        size: cover;
+      };
       text-align: center;
     }
     &-title{
@@ -24,11 +26,10 @@
         height: .5em;
         background: #eed14e;
         position: absolute;
-        bottom: 3px;
+        bottom: 20px;
         left: 0;
         right: 0;
         z-index: -1;
-        border-radius: 10px;
       }
     }
     &-info{

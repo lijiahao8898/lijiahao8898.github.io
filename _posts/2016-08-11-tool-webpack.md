@@ -297,10 +297,10 @@ body{
 #### 其他有用的指令：
 
 ```
-- webpack —config *.js  // 使用另外一份config文件在打包
-- webpack —watch        // 监听变动自动打包
-- webpack -p                  // 压缩混淆脚本
-- webpack -d                  // 生成map映射文件，告知哪些模块被最终打包到哪里了
+- webpack -—config *.js  // 使用另外一份config文件在打包
+- webpack —watch         // 监听变动自动打包
+- webpack -p             // 压缩混淆脚本
+- webpack -d             // 生成map映射文件，告知哪些模块被最终打包到哪里了
 ```
 
 ### 相关插件介绍：
