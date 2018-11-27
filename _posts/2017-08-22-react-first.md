@@ -10,10 +10,12 @@ categories:
 ### 前言
 
 > 总觉得 `React` 特别难上手，主要还是对javascript这门语言本身的掌握存在着欠缺。所以断断续续的折腾了很久。
-
 > 写这篇文章，主要是用来记录 `React@16.3` 和 `React-dom` 的相关知识。当然大部分还是看别人博文和文章并结合自身理解进行适当的记录和摘抄。
+> 前端知识日新月异，麻麻我学不动了~>.<。
 
-> 前端知识日新月异，麻麻我学不动了~>.<
+> * [React - 中文站 - http://react.yubolun.com/](http://react.yubolun.com/)
+> * [React - 中文文档 - https://discountry.github.io/react/](https://discountry.github.io/react/)
+> * [Lean React - 知乎专栏 - https://zhuanlan.zhihu.com/leanreact](https://zhuanlan.zhihu.com/leanreact)
 
 ```
 You cannot improve your past, but you can improve your future.
@@ -21,32 +23,29 @@ so.
 once time is wasted, life is wasted.
 ```
 <!--break-->
+
 ### React相关
 
-* `React` - 实现React功能的核心库
-* `React-dom` - 将虚拟DOM渲染到浏览器当中
-* `React-redux` - 解决状态管理问题的react版本
-* `React-router-dom@4.0` - react路由相关
+* `React` - 实现React功能的核心库。
+* `React-dom` - 将虚拟DOM渲染到浏览器当中。
+* `React-redux` - 解决状态管理问题的react版本。
+* `React-router-dom@4.0` - react路由相关(4.0以组件的形式存在于各页面中)。
 
 `react` 组件化的开发模式，所以非常适合高级做架构，中级封组件，初级写业务的模式。
 
 ## JSX 语法
+
 `JSX` 是 `JavaScript` 的扩展语法，也可以说是 `JavaScript` 的一种语法糖~。
-
 `JSX` 对 `JavaScript` 的功能没有影响，只是便于程序猿使用。
-
 `React` 独有的 `JSX` 语法， `javascript` 不兼容。使用 `Browser.js` ，将 `JSX` 语法转换成 `javascript` 语法。
 ```html
 <script type="text/babel">
   // ** Our code goes here! **
 </script>
 ```
-当然一般项目中使用 `Webpack` 进行打包的，所以使用脚手架工具 `create-react-app` 构建的项目就自带了 `babel` 。
-
-什么是 `JSX` 语法？ 就是 `HTML` 不使用引号直接和 `javascript` 混写。
-
-`JSX` 语法基本规则：遇到 `HTML` 标签（以 `<` 开头），就用 `HTML` 规则解析；遇到代码块（以 `{` 开头），就用 `JavaScript` 规则解析。
-
+当然一般项目中使用 `Webpack` 进行打包的，所以使用脚手架工具 `create-react-app` 构建的项目就自带了 `babel` 。<br/>
+什么是 `JSX` 语法？ 就是 `HTML` 不使用引号直接和 `javascript` 混写。<br/>
+`JSX` 语法基本规则：遇到 `HTML` 标签（以 `<` 开头），就用 `HTML` 规则解析；遇到代码块（以 `{` 开头），就用 `JavaScript` 规则解析。<br/>
 `JSX` 允许直接在模板插入 `JavaScript` 变量。如果这个变量是一个数组，则会展开这个数组的所有成员。
 
 ### 基本用法
@@ -59,17 +58,14 @@ ReactDOM.render(
     document.getElementById('example')
 )
 ```
-一般在项目中使用了 `jsx` 语法，所以需要默认引入 `react` 库，`react-dom` 是对dom进行相关的操作。
-
+一般在项目中使用了 `jsx` 语法，所以需要默认引入 `react` 库，`react-dom` 是对dom进行相关的操作。<br/>
 `ReactDOM.render` 实际上是使用了 `react` 的 `createElement` 方法。
 ```js
 React.createElement(component, props, ...children)
 ```
 
 ## 组件
-
-`React` 的组件一般分为 类组件 和 函数组件。
-
+`React` 的组件一般分为 类组件 和 函数组件。<br/>
 类组件使用 `ES6` 的类方法和类的继承。
 
 ### 类组件
@@ -155,21 +151,24 @@ class Container extends Component {
 ```
 
 #### 组件的生命周期
+
+组件的生命周期钩子函数只在类组件中才有，所以一般要用到生命周期都要定义成类组件。而函数组件一般定义无状态的组件多点。
+![avatar](../../../assets/react-lifecycle.jpg)
 ```
-    Mounting：已插入真实 DOM
-    Updating：正在被重新渲染
-    Unmounting：已移出真实 DOM
+Mounting：已插入真实 DOM
+Updating：正在被重新渲染
+Unmounting：已移出真实 DOM
 
-    生命周期下对应的方法：
-    componentWillMount()
-    componentDidMount()
-    componentWillUpdate(object nextProps, object nextState)
-    componentDidUpdate(object prevProps, object prevState)
-    componentWillUnmount()
+生命周期下对应的方法：
+componentWillMount()
+componentDidMount()
+componentWillUpdate(object nextProps, object nextState)
+componentDidUpdate(object prevProps, object prevState)
+componentWillUnmount()
 
-    特殊状态的处理函数：
-    componentWillReceiveProps(object nextProps)：已加载组件收到新的参数时调用
-    shouldComponentUpdate(object nextProps, object nextState)：组件判断是否重新渲染时调用
+特殊状态的处理函数：
+componentWillReceiveProps(object nextProps)：已加载组件收到新的参数时调用
+shouldComponentUpdate(object nextProps, object nextState)：组件判断是否重新渲染时调用
 ```
 
 #### 组件的样式写法
@@ -349,11 +348,6 @@ ReactDOM.render(
 其中 `props` 是从外部传入的，内部无法修改，用来渲染展示的数据。
 
 而 `state` 则是组件内部维护，可以跟随应用状态改变而改变的数据（例如用户输入的表单项）。
-
-### 备注
-
-* [React中文文档](https://discountry.github.io/react/)
-* [Lean React - 知乎](https://zhuanlan.zhihu.com/leanreact)
 
 ### 相关
  :)鄙人整理的 [`React HTML PPT`](https://lijiahao8898.github.io/react-book/index.html#/)

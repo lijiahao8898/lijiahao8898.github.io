@@ -63,13 +63,18 @@
   margin-top: 1px;
   background: $gary;
   color: #fff;
-  box-shadow: 5px 5px 20px $gary;
+  box-shadow: 1px 1px 5px $gary;
   >ul{
     padding-left: 5px;
+    width: 200px;
     li{
       margin-bottom: 5px;
+      list-style-type: none;
       a{
-        color: #fff;
+        display: inherit;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
       }
     }
   }
