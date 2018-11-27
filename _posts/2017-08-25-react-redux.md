@@ -5,6 +5,9 @@ categories:
 - React
 ---
 
+> * [redux - 中文文档](http://cn.redux.js.org//index.html)
+> * [知乎专栏 - https://zhuanlan.zhihu.com/p/28241673](https://zhuanlan.zhihu.com/p/28241673)
+
 ### what is redux ?
 `react` 处理数据的方式主要有 `props` 和 `state` 两种。
 
@@ -18,7 +21,6 @@ categories:
 <!--break-->
 
 如下图：
-
 <img src="../../../assets/1.png">
 
 ### Action
@@ -34,8 +36,8 @@ categories:
 ```
 
 ### Reducer
-`Reducer` 则是 `Redux` 的设计理念当中最核心的方法，它接受当前的状态数据以及触发的 `Action` 操作作为参数，根据内
-部 `switch` 结构的逻辑判断，返回一个新的状态数据：
+`Reducer` 则是 `Redux` 的设计理念当中最核心的方法，它接受当前的状态数据以及触发的 `Action` 操作作为参数，
+根据内部 `switch` 结构的逻辑判断，返回一个新的状态数据：
 
 ```js
 (previousState, action) => newState
@@ -148,8 +150,3 @@ class Counter extends Component {
 /* 我们需要通过 connect 方法来包装一下 React 的 Counter 组件，使其获取到 Redux 的 store 当中的方法和数据 */
 Counter = connect(mapStateToProps)(Counter);
 ```
-
-### 参考文档
-
-* [redux中文文档](http://cn.redux.js.org//index.html)
-* [知乎专栏https://zhuanlan.zhihu.com/p/28241673](https://zhuanlan.zhihu.com/p/28241673)

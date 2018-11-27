@@ -65,10 +65,9 @@ React.createElement(component, props, ...children)
 ```
 
 ## 组件
-`React` 的组件一般分为 类组件 和 函数组件。<br/>
-类组件使用 `ES6` 的类方法和类的继承。
+`React` 的组件一般分为 类组件 和 函数组件。类组件使用 `ES6` 的类方法和类的继承。
 
-### 类组件
+#### 老版本的react创建组件的方法
 
 ```jsx
 var HelloMessage = React.createClass({
@@ -173,10 +172,12 @@ shouldComponentUpdate(object nextProps, object nextState)：组件判断是否�
 
 #### 组件的样式写法
 
-```
-错误写法：style="opacity:{this.state.opacity};"
+```js
+// 错误写法
+style="opacity:{this.state.opacity};"
 
-正确写法：style=/{/{opacity: this.state.opacity/}/}
+// 正确写法。因为文档的渲染语法的问题，这里增加了两个点区分，实际不需要。
+style={`{opacity: this.state.opacity}`}
 ```
 
 ### this.props.children
