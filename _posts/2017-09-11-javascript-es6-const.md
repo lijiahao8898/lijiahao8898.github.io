@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ES6 - const
+title: const
 categories:
 - ES6
 subhead: const

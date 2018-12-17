@@ -33,6 +33,9 @@ once time is wasted, life is wasted.
 
 `react` 组件化的开发模式，所以非常适合高级做架构，中级封组件，初级写业务的模式。
 
+## VirtualDOM
+`React` 把真实的 `DOM树` 转换为 `javascript对象树`。
+
 ## JSX 语法
 
 `JSX` 是 `JavaScript` 的扩展语法，也可以说是 `JavaScript` 的一种语法糖~。
