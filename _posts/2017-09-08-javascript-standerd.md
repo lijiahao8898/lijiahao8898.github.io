@@ -1,17 +1,19 @@
 ---
 layout: post
-title: javascript （一）
+title: Javascript（一）
 categories:
 - ES5
 subhead: javascript - 基础
 ---
 
-### Getting Start
+# Javascript
+
+## 基础
 javascript术语基本涵盖了以下三个部分：
 
 * `ECMAScript` - 语言的核心部分（即变量，函数，和循环等等）。
-* 文档对象模型（`DOM`）- DOM标准（与HTML，XML文档交互的方式）。
-* 游览器对象模型（`BOM`）- 与游览器有关的对象集合。
+* `DOM`（文档对象模型）- DOM标准（与HTML，XML文档交互的方式）。
+* `BOM`（游览器对象模型）- 与游览器有关的对象集合。
 
 面向对象程序设计的OOP常用到的概念：
 
