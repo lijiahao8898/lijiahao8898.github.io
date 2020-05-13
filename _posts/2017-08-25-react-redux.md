@@ -150,3 +150,29 @@ class Counter extends Component {
 /* 我们需要通过 connect 方法来包装一下 React 的 Counter 组件，使其获取到 Redux 的 store 当中的方法和数据 */
 Counter = connect(mapStateToProps)(Counter);
 ```
+
+在react里面用redux，一般我们会用到react-redux，其中包括Provider和connect接口
+
+Provider接收redux的createStore()的结果，并且放到context里，让子组件可以通过context属性直接获取到这个
+createStore的结果，这个createStore的结果是啥呢，如下几个函数:
+```
+return {
+        //真正的返回，执行createStore其实返回的就是这些东东
+        dispatch,       //触发action去执行reducer，更新state
+        subscribe,     //订阅state改变，state改变时会执行subscribe的参数（自己定义的一个函数）
+        getState,      //获取state树
+        replaceReducer,       //替换reducer
+ }
+ ```
+而connect，接收到mapStateToProps，会在内部subscribe全局state的改变，来判断props是否更改，如果需要更新，才触发更新。
+
+react-redux就是不需要你自己去subscribe全局state的变化，以及去getState，还有判断组件是否需要更新。也是它存在的意义
+
+
+subscribe 这个函数是用来去订阅 store 的变化，比如你每次对 store 进行 dispatch(action) 都会触发 subscribe 注册的函数调用，这个在实际情况不是必须要的，看自己的应用场景，比如你想监控 store 的全局变化时 可以用 subscript 订阅一下，然后作一些反应
+
+你如果实在想弄清楚，他的应用价值 可以先看下 react-redux 里 connect 实现，里面就应用到了 store 的 subscribe https://github.com/reactjs/react-redux/blob/master/src/utils/Subscription.js#L69
+
+每次通过dispatch 修改数据的时候，其实只是数据发生了变化，如果不手动调用 render方法，页面上的内容是不会发生变化的。
+
+但是每次dispatch之后都手动调用很麻烦啊，所以就使用了发布订阅模式，监听数据变化来自动渲染。

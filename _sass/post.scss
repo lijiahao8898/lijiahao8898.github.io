@@ -64,9 +64,10 @@
   background: $gary;
   color: #fff;
   box-shadow: 1px 1px 5px $gary;
-  >ul{
-    padding-left: 5px;
+  ul{
+    padding-left: 20px;
     width: 200px;
+    margin-bottom: 0;
     li{
       margin-bottom: 5px;
       list-style-type: none;
